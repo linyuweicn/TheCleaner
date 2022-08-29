@@ -65,12 +65,3 @@ public class GameFlowData : MonoBehaviour
     }
     #endregion
 }
-
-public enum PitchTypes
-{
-    Theme,
-    Character,
-    Detail,
-    None
-}
-

@@ -4,6 +4,8 @@ using UnityEngine;
 using System;
 [Serializable] public class Answer
 {
+    #region Variables
+    //json variables
     public string text;
 
     public float satisfaction;
@@ -13,9 +15,13 @@ using System;
 
     public PitchTypes type;
     public int promptNo;
-    public int slotNo;
-    public bool selected;
+    public AnswerTypes answerType;
 
+    //non-json variables
+    public int ranking;
+    #endregion
+
+    #region Constructor
     public Answer(string text, float satisfaction, float censorFulfillment, float innovation, float production, int type, int promptNo, int slotNo)
     {
         this.text = text;
@@ -25,7 +31,7 @@ using System;
         this.production = production;
         this.type = (PitchTypes)type;
         this.promptNo = promptNo;
-        this.slotNo = slotNo;
     }
+    #endregion
 }
 
