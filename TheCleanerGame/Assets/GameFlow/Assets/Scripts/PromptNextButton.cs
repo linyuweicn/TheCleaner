@@ -72,6 +72,7 @@ public class PromptNextButton : MonoBehaviour
         {
             case PromptButtonStates.Next:
                 GeneralFlowStateManager.instance.answerManager.CullAnswers();
+                GeneralFlowStateManager.instance.ChangePromptText(GeneralFlowStateManager.instance.currentPrompt.statement.text);
                 ChangeStateTo(PromptButtonStates.Finish);
                 break;
             case PromptButtonStates.Finish:

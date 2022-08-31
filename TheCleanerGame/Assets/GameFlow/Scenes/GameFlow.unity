@@ -1179,10 +1179,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 374f974c5830e3c478d6731fd156261d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: {fileID: 4900000, guid: 894f848d5a5f55d4d8e0eaf21bea043d, type: 3}
+  promptTextFile: {fileID: 4900000, guid: 894f848d5a5f55d4d8e0eaf21bea043d, type: 3}
+  promptStatementTextFile: {fileID: 4900000, guid: 42283d1cccf3fac47a48e0da4f73431d, type: 3}
   promptBox: {fileID: 675924206}
   promptHeader: {fileID: 1723346908}
-  promptTextFile: {fileID: 4900000, guid: 894f848d5a5f55d4d8e0eaf21bea043d, type: 3}
 --- !u!1 &304303929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,6 +1555,9 @@ MonoBehaviour:
   change: 1
   highlightedColor: {r: 0.56078434, g: 0.5058824, b: 0.27450982, a: 1}
   clickColor: {r: 0.40784314, g: 0.34901962, b: 0.105882354, a: 1}
+  themeContainer: {fileID: 964891815}
+  characterContainer: {fileID: 1265310656}
+  detailContainer: {fileID: 1468916012}
 --- !u!114 &396451617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1909,6 +1912,9 @@ MonoBehaviour:
   change: -1
   highlightedColor: {r: 0.56078434, g: 0.5058824, b: 0.27450982, a: 1}
   clickColor: {r: 0.406, g: 0.3484592, b: 0.10596599, a: 1}
+  themeContainer: {fileID: 964891815}
+  characterContainer: {fileID: 1265310656}
+  detailContainer: {fileID: 1468916012}
 --- !u!65 &537535535
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2335,6 +2341,11 @@ MonoBehaviour:
     pitchType: 0
     promptNo: 0
     visited: 0
+    calculated: 0
+    statement:
+      text: 
+      pitchType: 0
+      promptNo: 0
 --- !u!1 &651288095
 GameObject:
   m_ObjectHideFlags: 0
