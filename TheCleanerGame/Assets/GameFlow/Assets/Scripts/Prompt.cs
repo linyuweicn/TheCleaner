@@ -9,26 +9,29 @@ using System.Linq;
     #region Variables
     //json variables
     public string text;
-    public static Prompt active;
-    public List<Answer> answers;
-
-    public PitchTypes type;
+    public PitchTypes pitchType;
     public int promptNo;
 
     //non-jsonable variables
     public Dictionary<AnswerTypes, List<Answer>> answerDictionary;
+    public bool visited = false;
+    public bool calculated = false;
+
     #endregion
     #region Constructor
     public Prompt()
     {
-        answers = new List<Answer>();
+        answerDictionary = new Dictionary<AnswerTypes, List<Answer>>();
+        foreach (AnswerTypes t in Enum.GetValues(typeof(AnswerTypes)))
+        {
+            answerDictionary.Add(t, new List<Answer>());
+        }
     }
     public Prompt(string text)
     {
-        answers = new List<Answer>();
-
         this.text = text;
 
+        answerDictionary = new Dictionary<AnswerTypes, List<Answer>>();
         foreach (AnswerTypes t in Enum.GetValues(typeof(AnswerTypes)))
         {
             answerDictionary.Add(t, new List<Answer>());

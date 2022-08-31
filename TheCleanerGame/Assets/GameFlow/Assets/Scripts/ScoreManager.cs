@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -28,24 +29,39 @@ public class ScoreManager : MonoBehaviour
     {
         
     }
-
-    public void AddPoints(Answer ans)
+    void ResetScore()
+    {
+        satisfaction = 0.0f;
+        innovation = 0.0f;
+        production = 0.0f;
+        censorFulfillment = 0.0f;
+    }
+    public void RawAddPoints(Answer ans)
     {
         satisfaction += ans.satisfaction;
         innovation += ans.innovation;
         production += ans.production;
         censorFulfillment += ans.censorFulfillment;
+    }
+
+    public void AddPoints(Answer ans)
+    {
+        RawAddPoints(ans);
 
         CalculateAgreement();
         Overwrite();
     }
 
-    public void TakePoints(Answer ans)
+    public void RawTakePoints(Answer ans)
     {
         satisfaction -= ans.satisfaction;
         innovation -= ans.innovation;
         production -= ans.production;
         censorFulfillment -= ans.censorFulfillment;
+    }
+    public void TakePoints(Answer ans)
+    {
+        RawTakePoints(ans);
 
         CalculateAgreement();
         Overwrite();
@@ -62,5 +78,32 @@ public class ScoreManager : MonoBehaviour
     {
         float agreement = (0.5f * censorFulfillment) + (0.3f * innovation) + (0.1f * satisfaction) - (0.1f * production);
         agreeBox.text = agreement.ToString("F2");
+    }
+
+    public void CalculateScore()
+    {
+        GeneralFlowStateManager.instance.currentPrompt.calculated = true;
+        PromptManager promptManager = GeneralFlowStateManager.instance.promptManager;
+        ResetScore();
+
+        foreach (PitchTypes pt in Enum.GetValues(typeof(PitchTypes)))
+        {
+            foreach (Prompt p in promptManager.promptLists[pt].Values)
+            {
+                foreach (AnswerTypes at in Enum.GetValues(typeof(AnswerTypes)))
+                {
+                    foreach (Answer a in p.answerDictionary[at])
+                    {
+                        if (a.calculated)
+                        {
+                            RawAddPoints(a);
+                        }
+                    }
+                }
+            }
+        }
+
+        CalculateAgreement();
+        Overwrite();
     }
 }

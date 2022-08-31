@@ -16,3 +16,9 @@ public enum AnswerTypes
     Blue,
     Purple
 }
+
+public enum PromptButtonStates
+{
+    Next,
+    Finish
+}

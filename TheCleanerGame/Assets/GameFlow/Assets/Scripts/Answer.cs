@@ -13,12 +13,13 @@ using System;
     public float innovation;
     public float production;
 
-    public PitchTypes type;
     public int promptNo;
+    public PitchTypes pitchType;
     public AnswerTypes answerType;
 
     //non-json variables
     public int ranking;
+    public bool calculated;
     #endregion
 
     #region Constructor
@@ -29,8 +30,17 @@ using System;
         this.censorFulfillment = censorFulfillment;
         this.innovation = innovation;
         this.production = production;
-        this.type = (PitchTypes)type;
+        this.pitchType = (PitchTypes)type;
         this.promptNo = promptNo;
+
+        ranking = -1;
+        calculated = false;
+    }
+
+    public Answer()
+    {
+        ranking = -1;
+        calculated = false;
     }
     #endregion
 }

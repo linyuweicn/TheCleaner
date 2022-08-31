@@ -3,34 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Linq;
+using UnityEngine.UI;
 public class PitchContainer : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] PitchTypes type;
-    [SerializeField] List<PitchItems> pitchBoxes;
+    [SerializeField] public PitchTypes pitchType;
+    [SerializeField] TextMeshProUGUI labelText;
     [SerializeField] TextMeshProUGUI fractionText;
+    [SerializeField] public Image logo;
+    [SerializeField] public Vector3 transformedRankPosition;
+    [SerializeField] public Color promptBoxColor;
+    [SerializeField] public float timeToTransitionToRank;
+    [SerializeField] public Vector3 localScaleAtRanking;
+    [SerializeField] public Vector3 transformedUnfocusedPosition;
 
-    public static Dictionary<PitchTypes, PitchContainer> instances;
-    public FlowTransition fTrans;
-    int numCompletedPrompts;
-
-    FlowTransitionManager fMang;
-    PromptManager pMang;
-
+    [HideInInspector] public Vector3 originalPosition;
+    [HideInInspector] public Vector3 originalScale;
+  
     private void Awake()
     {
-        if (instances == null)
-        {
-            instances = new Dictionary<PitchTypes, PitchContainer>();
-        }
-        instances.Add(type, this);
+        originalPosition = transform.localPosition;
+        originalScale = transform.localScale;
     }
     void Start()
     {
-        fMang = FindObjectOfType<FlowTransitionManager>();
-        fTrans = GetComponent<FlowTransition>();
+        
         UpdateText();
-        numCompletedPrompts = 0;
+        
     }
 
     // Update is called once per frame
@@ -41,18 +40,12 @@ public class PitchContainer : MonoBehaviour
 
     public void Hide()
     {
-        foreach (PitchItems p in pitchBoxes)
-        {
-            p.gameObject.SetActive(false);
-        }
+        gameObject.SetActive(false);
     }
 
     public void Show()
     {
-        foreach(PitchItems p in pitchBoxes)
-        {
-            p.gameObject.SetActive(true);
-        }
+        gameObject.SetActive(true);
     }
 
     public void UpdateText()
@@ -63,29 +56,34 @@ public class PitchContainer : MonoBehaviour
 
     public void UpdateFractions()
     {
-        fractionText.text = numCompletedPrompts + " / " + Maximum;
+        PromptManager pMang = GeneralFlowStateManager.instance.promptManager;
+        fractionText.text = pMang.GetNumVisited(pitchType) + " / " + pMang.GetMaximum(pitchType);
     }
 
-    public void UpdateIdeas()
+    public void Selected()
     {
-       for (int i = 0; i < Maximum; i++)
+        if (GeneralFlowStateManager.instance.focusedContainer == null)
         {
-             
+            SetUpForRankState();
+            Prompt nextPrompt = GeneralFlowStateManager.instance.promptManager.GetNextPrompt(pitchType);
+            //Debug.Log("clicked " + nextPrompt.promptNo);
+            GeneralFlowStateManager.instance.TransitionToRank(pitchType, nextPrompt.promptNo, this);
+        } else
+        {
+            //Debug.Log("What is the last prompt: " + GeneralFlowStateManager.instance.currentPrompt.promptNo + " " + GeneralFlowStateManager.instance.currentPrompt.pitchType);
+            GeneralFlowStateManager.instance.TransitionToDefault(this);
         }
     }
 
-    public int Maximum
+    public void SetUpForRankState()
     {
-        get { return pitchBoxes.Count; }
+        fractionText.enabled = false;
+        labelText.enabled = false;
     }
 
-    public int NumCompletedPrompts
+    public void SetUpForDefaultState()
     {
-        get { return numCompletedPrompts; }
-    }
-
-    public void AddCompletedPrompts(int amount)
-    {
-        numCompletedPrompts += amount;
+        fractionText.enabled = true;
+        labelText.enabled = true;
     }
 }
