@@ -42,7 +42,7 @@ public class GeneralFlowStateManager : MonoBehaviour
         if (type == PitchTypes.None || promptNo < 0)
         {
             currentPrompt = null;
-            promptText.text = "";
+            ChangePromptText("");
             return true;
         }
 
@@ -50,7 +50,7 @@ public class GeneralFlowStateManager : MonoBehaviour
         if (p != null)
         {
             currentPrompt = p;
-            promptText.text = p.text;
+            ChangePromptText(p.text);
             return true;
         } else
         {
@@ -177,5 +177,10 @@ public class GeneralFlowStateManager : MonoBehaviour
             promptButton.Show();
             focusedContainer.UpdateText();
         }
+    }
+
+    public void ChangePromptText(String text)
+    {
+        promptText.text = text;
     }
 }

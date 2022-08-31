@@ -8,11 +8,11 @@ using TMPro;
 public class PromptManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] TextAsset promptText;
+    [SerializeField] TextAsset promptTextFile;
+    [SerializeField] TextAsset promptStatementTextFile;
     [SerializeField] TextMeshProUGUI promptBox;
     [SerializeField] TextMeshProUGUI promptHeader;
     public Dictionary<PitchTypes, SortedDictionary<int, Prompt>> promptLists;
-    [SerializeField] TextAsset promptTextFile;
 
 
     #region private classes
@@ -23,9 +23,21 @@ public class PromptManager : MonoBehaviour
 
         public PromptHolder()
         {
-
+            prompts = new List<Prompt>();
         }
     }
+
+    [Serializable]
+    private class PromptStatementHolder
+    {
+        public List<PromptStatement> promptStatements;
+
+        public PromptStatementHolder()
+        {
+            promptStatements = new List<PromptStatement>();
+        }
+    }
+
     #endregion
     private void Awake()
     {
@@ -34,7 +46,9 @@ public class PromptManager : MonoBehaviour
         {
             promptLists.Add(t, new SortedDictionary<int, Prompt>());
         }
+
         ReadPrompts(promptTextFile);
+        ReadPromptStatements(promptStatementTextFile);
     }
     void Start()
     {
@@ -54,6 +68,16 @@ public class PromptManager : MonoBehaviour
         foreach (Prompt p in holder.prompts)
         {
             promptLists[p.pitchType].Add(p.promptNo, p);
+        }
+    }
+
+    void ReadPromptStatements(TextAsset text)
+    {
+        PromptStatementHolder holder = JsonUtility.FromJson<PromptStatementHolder>(text.text);
+
+        foreach (PromptStatement p in holder.promptStatements)
+        {
+            promptLists[p.pitchType][p.promptNo].statement = p;
         }
     }
 

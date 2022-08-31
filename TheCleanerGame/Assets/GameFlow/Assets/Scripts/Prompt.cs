@@ -16,6 +16,7 @@ using System.Linq;
     public Dictionary<AnswerTypes, List<Answer>> answerDictionary;
     public bool visited = false;
     public bool calculated = false;
+    public PromptStatement statement;
 
     #endregion
     #region Constructor
