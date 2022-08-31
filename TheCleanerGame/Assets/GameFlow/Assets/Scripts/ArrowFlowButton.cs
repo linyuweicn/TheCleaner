@@ -11,15 +11,16 @@ public class ArrowFlowButton : MonoBehaviour
     [SerializeField] int change;
     [SerializeField] Color highlightedColor;
     [SerializeField] Color clickColor;
+    [SerializeField] PitchContainer themeContainer;
+    [SerializeField] PitchContainer characterContainer;
+    [SerializeField] PitchContainer detailContainer;
+    PromptManager promptManager;
     Color origColor;
-    FlowTransitionManager fMang;
-    PromptManager pMang;
     Image img;
     bool clickable;
     void Start()
     {
-        fMang = FindObjectOfType<FlowTransitionManager>();
-        pMang = FindObjectOfType<PromptManager>();
+        promptManager = GeneralFlowStateManager.instance.promptManager;
         img = transform.parent.GetComponent<Image>();
 
         origColor = img.color;
@@ -84,52 +85,53 @@ public class ArrowFlowButton : MonoBehaviour
     {
         if (change > 0)
         {
-            clickable = pMang.NextPrompt != null;
-        }
-        else if (change < 0)
+            if (promptManager.GetNextPrompt() != null)
+            {
+                clickable = true;
+            } else
+            {
+                clickable = false;
+            }
+        } else if (change < 0)
         {
-            clickable = pMang.NextPrompt == null || pMang.NextPrompt.type != 0 || pMang.NextPrompt.promptNo != 0 || pMang.NextSlot != 0;
+            if (promptManager.GetLastPrompt() != null)
+            {
+                clickable = true;
+            } else
+            {
+                clickable = false;
+            }
         }
+        
     }
 
     void SwitchToNext()
     {
-        switch (fMang.FlowState)
+        if (GeneralFlowStateManager.instance.focusedContainer == null)
         {
-            case FlowTransitionManager.State.Default:
-                if (pMang.NextPrompt != null)
-                {
-                    fMang.ChangePrompt(pMang.NextPrompt.type, pMang.NextPrompt.promptNo, pMang.NextSlot);
-                }
-                break;
-            case FlowTransitionManager.State.Focused:
-                fMang.ToNextSlot();
-                break;
-            default:
-                break;
+            Prompt p = promptManager.GetNextPrompt();
+            PitchContainer container = p.pitchType == PitchTypes.Theme ? themeContainer :
+                p.pitchType == PitchTypes.Character ? characterContainer : detailContainer;
+            GeneralFlowStateManager.instance.TransitionToRank(p.pitchType, p.promptNo, container);
+        } else
+        {
+            GeneralFlowStateManager.instance.TransitionToDefault(GeneralFlowStateManager.instance.focusedContainer);
         }
-
+        
     }
 
     void SwitchToPrior()
     {
-        switch (fMang.FlowState)
+        if (GeneralFlowStateManager.instance.focusedContainer == null)
         {
-            case FlowTransitionManager.State.Default:
-                if (pMang.NextPrompt == null || pMang.NextPrompt.type != 0 || pMang.NextPrompt.promptNo != 0 || pMang.NextSlot != 0)
-                {
-                    PitchTypes type = 0;
-                    int pNo = -1;
-                    int sNo = -1;
-                    pMang.GetPriorPrompt(pMang.NextPrompt, ref type, ref pNo, ref sNo);
-                    fMang.ChangePrompt(type, pNo, sNo);
-                }
-                break;
-            case FlowTransitionManager.State.Focused:
-                fMang.ToPriorSlot();
-                break;
-            default:
-                break;
+            Prompt p = promptManager.GetLastPrompt();
+            PitchContainer container = p.pitchType == PitchTypes.Theme ? themeContainer :
+                 p.pitchType == PitchTypes.Character ? characterContainer : detailContainer;
+            GeneralFlowStateManager.instance.TransitionToRank(p.pitchType, p.promptNo, container);
+        }
+        else
+        {
+            GeneralFlowStateManager.instance.TransitionToDefault(GeneralFlowStateManager.instance.focusedContainer);
         }
     }
 }
