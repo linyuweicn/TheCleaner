@@ -6,7 +6,7 @@ using System;
 
 public class ScoreManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    #region variables
     [SerializeField] TextMeshProUGUI satBox;
     [SerializeField] TextMeshProUGUI agreeBox;
     [SerializeField] TextMeshProUGUI innoBox;
@@ -16,6 +16,8 @@ public class ScoreManager : MonoBehaviour
     float innovation;
     float production;
     float censorFulfillment;
+    #endregion
+    #region initialization
     void Start()
     {
         satisfaction = 0;
@@ -23,12 +25,14 @@ public class ScoreManager : MonoBehaviour
         production = 0;
         censorFulfillment = 0;
     }
-
+    #endregion
     // Update is called once per frame
     void Update()
     {
         
     }
+
+    #region score calculating
     void ResetScore()
     {
         satisfaction = 0.0f;
@@ -67,18 +71,7 @@ public class ScoreManager : MonoBehaviour
         Overwrite();
     }
 
-    void Overwrite()
-    {
-        satBox.text = satisfaction.ToString("F2");
-        innoBox.text = innovation.ToString("F2");
-        prodBox.text = production.ToString("F2");
-    }
 
-    void CalculateAgreement()
-    {
-        float agreement = (0.5f * censorFulfillment) + (0.3f * innovation) + (0.1f * satisfaction) - (0.1f * production);
-        agreeBox.text = agreement.ToString("F2");
-    }
 
     public void CalculateScore()
     {
@@ -106,4 +99,20 @@ public class ScoreManager : MonoBehaviour
         CalculateAgreement();
         Overwrite();
     }
+    #endregion
+
+    #region edit text
+    void CalculateAgreement()
+    {
+        float agreement = (0.5f * censorFulfillment) + (0.3f * innovation) + (0.1f * satisfaction) - (0.1f * production);
+        agreeBox.text = agreement.ToString("F2");
+    }
+    void Overwrite()
+    {
+        satBox.text = satisfaction.ToString("F2");
+        innoBox.text = innovation.ToString("F2");
+        prodBox.text = production.ToString("F2");
+    }
+    #endregion
+
 }

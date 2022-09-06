@@ -5,14 +5,18 @@ using System;
 
 [Serializable] public class PromptStatement
 {
+    #region variables
     //json variables
     public string text;
-    public PitchTypes pitchType;
+    public PitchTypes pitchType; //the prompt it corresponds to
     public int promptNo;
 
+    //private variables
     int slots;
     List<Answer> answers;
+    #endregion
 
+    #region constructor
     public void Construct()
     {
         slots = 0;
@@ -27,4 +31,5 @@ using System;
             }
         }
     }
+    #endregion
 }

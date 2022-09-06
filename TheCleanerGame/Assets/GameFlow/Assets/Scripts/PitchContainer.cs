@@ -4,9 +4,9 @@ using UnityEngine;
 using TMPro;
 using System.Linq;
 using UnityEngine.UI;
-public class PitchContainer : MonoBehaviour
+public class PitchContainer : MonoBehaviour //handles behavior of pitch containers (the logo that you click to switch to rank state)
 {
-    // Start is called before the first frame update
+    #region variables
     [SerializeField] public PitchTypes pitchType;
     [SerializeField] TextMeshProUGUI labelText;
     [SerializeField] TextMeshProUGUI fractionText;
@@ -19,7 +19,9 @@ public class PitchContainer : MonoBehaviour
 
     [HideInInspector] public Vector3 originalPosition;
     [HideInInspector] public Vector3 originalScale;
-  
+    #endregion
+
+    #region initialization
     private void Awake()
     {
         originalPosition = transform.localPosition;
@@ -27,17 +29,17 @@ public class PitchContainer : MonoBehaviour
     }
     void Start()
     {
-        
-        UpdateText();
-        
+        UpdateText();   
     }
 
-    // Update is called once per frame
+    #endregion
+    
     void Update()
     {
         
     }
 
+    #region visual state changer
     public void Hide()
     {
         gameObject.SetActive(false);
@@ -59,7 +61,9 @@ public class PitchContainer : MonoBehaviour
         PromptManager pMang = GeneralFlowStateManager.instance.promptManager;
         fractionText.text = pMang.GetNumVisited(pitchType) + " / " + pMang.GetMaximum(pitchType);
     }
+    #endregion
 
+    #region on click commands
     public void Selected()
     {
         if (GeneralFlowStateManager.instance.focusedContainer == null)
@@ -74,7 +78,6 @@ public class PitchContainer : MonoBehaviour
             GeneralFlowStateManager.instance.TransitionToDefault(this);
         }
     }
-
     public void SetUpForRankState()
     {
         fractionText.enabled = false;
@@ -86,4 +89,6 @@ public class PitchContainer : MonoBehaviour
         fractionText.enabled = true;
         labelText.enabled = true;
     }
+
+    #endregion
 }

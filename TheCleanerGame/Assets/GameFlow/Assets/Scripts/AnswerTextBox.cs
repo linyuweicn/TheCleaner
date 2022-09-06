@@ -4,39 +4,43 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class AnswerTextBox : MonoBehaviour
+public class AnswerTextBox : MonoBehaviour //handles behavior of AnswerTextBox
 {
     // Start is called before the first frame update
-    [SerializeField] TextMeshProUGUI text;
-    [SerializeField] Image img;
-    [SerializeField] public Collider2D collider;
+    #region variables
+
+    //personal data
     Prompt prompt;
     public Answer answer;
-    AnswerManager answerManager;
 
-    [SerializeField] Color orange;
-    [SerializeField] Color blue;
-    [SerializeField] Color purple;
-    [SerializeField] Color darkOrange;
-    [SerializeField] Color darkBlue;
-    [SerializeField] Color darkPurple;
+    //references
+    [SerializeField] public Collider2D collider;
+    [SerializeField] AnswerTextBoxVisuals ATVisuals;
+    [SerializeField] LayerMask answerTextLayer;
+    [HideInInspector] public AnswerManager answerManager;
+    Camera cam;
+    AnswerTextBox lastSwapped;
+
+    //time floats
+    float elapsed = 0.0f;
     [SerializeField] float transitionTime;
 
+    //answerTextBox states
     bool mouseOver;
     bool mouseClickedOn;
-    bool darkenedColor;
     bool isMoving;
     bool canBeMoved;
 
-    Vector3 origPosition;
-    Vector3 origLocalPosition;
-    Vector3 mousePositionOffset;
-    Camera cam;
-    ShadowTextBox spawnedShadow;
-    Vector3 destination;
-    Vector3 startingPlace;
-    AnswerTextBox lastSwapped;
-    float elapsed = 0.0f;
+    //positions
+    Vector3 origLocalPosition; //the position where it is rooted to
+    Vector3 mousePositionOffset; //the offset from the mouse when you click on it
+    Vector3 destination; //its potential destination
+    Vector3 startingPlace; //source of its lerp
+
+
+    #endregion
+
+    #region initialization
     private void Awake()
     {
         cam = Camera.main;
@@ -50,28 +54,6 @@ public class AnswerTextBox : MonoBehaviour
         origLocalPosition = transform.localPosition;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        CheckToChangeColor();
-        
-        if (mouseClickedOn)
-        {
-            transform.position = mousePositionOffset + GetMousePosition();
-            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y);
-            
-            if (!Input.GetMouseButton(0))
-            {
-                ClickedRelease();
-            }
-
-            CheckIfCollideWithAnswerBoxes();
-        } else
-        {
-            MoveTo();
-        }
-    }
-
     public void Construct(Prompt prompt, Answer answer, int ranking)
     {
         this.prompt = prompt;
@@ -81,144 +63,110 @@ public class AnswerTextBox : MonoBehaviour
         {
             ChangeRanking(ranking);
         }
-        
-        text.text = answer.text;
 
-        BecomeOriginalColor();
-        GenerateShadow();
+        ATVisuals.Construct();
+
     }
+    #endregion
 
-    void CheckToChangeColor()
+    #region Update
+    void Update()
     {
-        if (!Input.GetMouseButton(0) && canBeMoved)
+        if (mouseOver && Input.GetMouseButtonDown(0) && canBeMoved) //handles whether it can be clicked
         {
-            if (mouseOver && !darkenedColor)
+            ClickedOn();
+        }
+
+        if (mouseClickedOn)
+        {
+            transform.position = mousePositionOffset + GetMousePosition();
+            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, -1); //ones out z
+            
+            if (!Input.GetMouseButton(0))
             {
-                darkenedColor = true;
-                BecomeDarkenedColor();
+                ClickedRelease();
             }
-            else if (!mouseOver && darkenedColor)
-            {
-                darkenedColor = false;
-                BecomeOriginalColor();
-            }
-        }
-    }
 
-    void BecomeOriginalColor()
-    {
-        switch (answer.answerType)
+        } else
         {
-            case AnswerTypes.Orange:
-                img.color = orange;
-                break;
-            case AnswerTypes.Blue:
-                img.color = blue;
-                break;
-            case AnswerTypes.Purple:
-                img.color = purple;
-                break;
+            MoveTo(); //only moves while it is not being clicked on
         }
     }
+    #endregion
 
-    void BecomeDarkenedColor()
-    {
-        switch (answer.answerType)
-        {
-            case AnswerTypes.Orange:
-                img.color = darkOrange;
-                break;
-            case AnswerTypes.Blue:
-                img.color = darkBlue;
-                break;
-            case AnswerTypes.Purple:
-                img.color = darkPurple;
-                break;
-        }
-    }
+    #region self-destruct
 
     public void SelfDestruct()
     {
-        DeSpawnShadow();
+        ATVisuals.DeSpawnShadow();
         Destroy(gameObject);
     }
 
+    #endregion
+
+    #region Handle Mouse Interaction
     public void ClickedOn()
     {
-        origPosition = transform.position;
-
-        mousePositionOffset = origPosition - GetMousePosition();
+        mousePositionOffset = transform.position - GetMousePosition();
         mouseClickedOn = true;
-        transform.SetParent(answerManager.superParent);
+        transform.SetParent(answerManager.superParent); //make this over other objects
     }
 
     public void ClickedRelease()
     {
         mouseClickedOn = false;
-
-        transform.SetParent(answerManager.answerTextParent);
+        transform.SetParent(answerManager.answerTextParent); //return back to original layer
         SetDestination(origLocalPosition, true);
     }
 
     private void OnMouseEnter()
     {
         mouseOver = true;
+        ATVisuals.BecomeDarkenedColor();
     }
 
     private void OnMouseExit()
     {
         mouseOver = false;
-    }
-
-    private void OnMouseOver()
-    {
-        if (Input.GetMouseButtonDown(0) && canBeMoved)
-        {
-            ClickedOn();
-        }
+        ATVisuals.BecomeOriginalColor();
     }
 
     private Vector3 GetMousePosition()
     {
         var mousePosition = Input.mousePosition;
-        mousePosition.z = 100;
+        mousePosition.z = transform.position.z - cam.transform.position.z;
         mousePosition = cam.ScreenToWorldPoint(mousePosition);
-        mousePosition.z = 1;
         return mousePosition;
     }
 
-    private void CheckIfCollideWithAnswerBoxes()
+    #endregion
+
+    #region Collision Handling
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        foreach (AnswerTextBox a in answerManager.generatedAnswers[answer.answerType].Values)
+        if (answerTextLayer == (answerTextLayer | (1 << collision.gameObject.layer)))
         {
-            if (a != this && a.collider.bounds.Contains(transform.position) && lastSwapped != a)
+            //Collision with Another Box
+            if (mouseClickedOn)
             {
-                //Debug.Log("Collide with " + a.text.text + " " + answer.ranking + " " + answer.text);
-                SwapPositionsForAnswers(answer.answerType, answer.ranking, a.answer.ranking);
-                break;
+                AnswerTextBox other = collision.gameObject.GetComponent<AnswerTextBox>();
+                if (other != null && !other.isMoving && other.answer.answerType == answer.answerType)
+                {
+                    SwapPositionsAmongAnswers(answer.answerType, answer.ranking, other.answer.ranking);
+                }
             }
         }
     }
 
-    private void GenerateShadow()
-    {
-        spawnedShadow = answerManager.SpawnShadow(transform.position);
-    }
+    #endregion
 
-    private void DeSpawnShadow()
-    {
-        if (spawnedShadow != null)
-        {
-            spawnedShadow.SelfDestruct();
-            spawnedShadow = null;
-        }
-    }
-
-    private void MoveTo()
+    #region Moving and Swapping
+    private void MoveTo() //if it needs to go to a destination, it moves
     {
         if (isMoving)
         {
-            transform.localPosition = Vector3.Lerp(startingPlace, destination, elapsed / transitionTime);
+            transform.localPosition = Vector3.Lerp(startingPlace, destination, elapsed / transitionTime); //always moves in transitionTime
             elapsed += Time.deltaTime;
 
             if (elapsed >= transitionTime)
@@ -232,7 +180,7 @@ public class AnswerTextBox : MonoBehaviour
         }
     }
 
-    public void SetDestination(Vector3 newDest, bool startMoving = false)
+    public void SetDestination(Vector3 newDest, bool startMoving = false) //sets destination without interfering with MoveTo()
     {
         startingPlace = transform.localPosition;
         elapsed = 0.0f;
@@ -241,11 +189,9 @@ public class AnswerTextBox : MonoBehaviour
         destination = newDest;
         origLocalPosition = newDest;
         isMoving = startMoving;
-
-        Debug.Log("OrigDestination is :" + newDest);
     }
 
-    public void SwapRankingsAmongAnswers(AnswerTypes type, int first, int second)
+    public void SwapRankingsAmongAnswers(AnswerTypes type, int first, int second) //swaps interpersonal rankings (in answer)
     {
         AnswerTextBox tempAnswer = answerManager.generatedAnswers[type][first];
         answerManager.generatedAnswers[type][first] = answerManager.generatedAnswers[type][second];
@@ -256,7 +202,7 @@ public class AnswerTextBox : MonoBehaviour
         answerManager.generatedAnswers[type][second].ChangeRanking(tempRanking);
     }
 
-    public void SwapPositionsForAnswers(AnswerTypes type, int first, int second)
+    public void SwapPositionsAmongAnswers(AnswerTypes type, int first, int second)
     {
         if (first != second)
         {
@@ -284,10 +230,22 @@ public class AnswerTextBox : MonoBehaviour
         answer.ranking = newRank;
         prompt.answerDictionary[answer.answerType][newRank] = answer;
     }
+    #endregion
 
+    #region misc
     public void SetToStone()
     {
         canBeMoved = false;
-        DeSpawnShadow();
+        ATVisuals.DeSpawnShadow();
     }
+    #endregion
+
+    #region Fields
+
+    public bool MouseOver
+    {
+       get { return mouseOver; }
+    }
+
+    #endregion
 }
