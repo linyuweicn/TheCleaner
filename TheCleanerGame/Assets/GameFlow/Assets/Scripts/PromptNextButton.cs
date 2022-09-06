@@ -5,24 +5,27 @@ using UnityEngine.UI;
 using TMPro;
 public class PromptNextButton : MonoBehaviour
 {
-    // Start is called before the first frame update
+    #region variables
     [SerializeField] Color orange;
     [SerializeField] Color blue;
     [SerializeField] Color purple;
     [SerializeField] Image img;
     [SerializeField] TextMeshProUGUI text;
     PromptButtonStates state;
+    #endregion
+
+    #region initialization
     void Start()
     {
         Hide();
     }
-
+    #endregion
     // Update is called once per frame
     void Update()
     {
 
     }
-
+    #region visual state changer
     public void Show()
     {
         img.enabled = true;
@@ -66,6 +69,9 @@ public class PromptNextButton : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region handles when clicked
     public void ClickedOn()
     {
         switch (state)
@@ -81,4 +87,6 @@ public class PromptNextButton : MonoBehaviour
                 break;
         }
     }
+    #endregion
+
 }

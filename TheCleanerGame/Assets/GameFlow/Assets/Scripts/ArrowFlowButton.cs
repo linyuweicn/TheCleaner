@@ -5,10 +5,10 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 
-public class ArrowFlowButton : MonoBehaviour
+public class ArrowFlowButton : MonoBehaviour //Handles Behavior of ArrowButtons
 {
-    // Start is called before the first frame update
-    [SerializeField] int change;
+    #region variables
+    [SerializeField] int change; //positive if going forward, negative if going backwards
     [SerializeField] Color highlightedColor;
     [SerializeField] Color clickColor;
     [SerializeField] PitchContainer themeContainer;
@@ -18,21 +18,24 @@ public class ArrowFlowButton : MonoBehaviour
     Color origColor;
     Image img;
     bool clickable;
+    #endregion
+
+    #region initialization
     void Start()
     {
         promptManager = GeneralFlowStateManager.instance.promptManager;
         img = transform.parent.GetComponent<Image>();
 
         origColor = img.color;
-        Physics.queriesHitTriggers = true;
+        Physics.queriesHitTriggers = true; //so you can click on trigger hitboxes.
     }
-
+    #endregion
     // Update is called once per frame
     void Update()
     {
         
     }
-
+    #region handle click events
     public void OnClick()
     {
         if (change > 0)
@@ -81,7 +84,7 @@ public class ArrowFlowButton : MonoBehaviour
         clickable = false;
     }
 
-    void CheckIfClickable()
+    void CheckIfClickable() //determines if the button should be clickable
     {
         if (change > 0)
         {
@@ -104,8 +107,7 @@ public class ArrowFlowButton : MonoBehaviour
         }
         
     }
-
-    void SwitchToNext()
+    void SwitchToNext() //when clicked and it goes to next prompt
     {
         if (GeneralFlowStateManager.instance.focusedContainer == null)
         {
@@ -120,7 +122,7 @@ public class ArrowFlowButton : MonoBehaviour
         
     }
 
-    void SwitchToPrior()
+    void SwitchToPrior() //when clicked and it goes to the last visited prompt
     {
         if (GeneralFlowStateManager.instance.focusedContainer == null)
         {
@@ -134,4 +136,6 @@ public class ArrowFlowButton : MonoBehaviour
             GeneralFlowStateManager.instance.TransitionToDefault(GeneralFlowStateManager.instance.focusedContainer);
         }
     }
+
+    #endregion
 }

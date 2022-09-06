@@ -6,26 +6,28 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class GeneralFlowStateManager : MonoBehaviour
+public class GeneralFlowStateManager : MonoBehaviour //general game manager in charge of transitions and everything
 {
     #region variables
-    public static GeneralFlowStateManager instance;
+    public static GeneralFlowStateManager instance; //should store all other managers,
 
     public PromptManager promptManager;
     public AnswerManager answerManager;
     public ScoreManager scoreManager;
 
-    [SerializeField] GameObject promptObjects;
+    [SerializeField] GameObject promptObjects; //stores the prompt ui
     [SerializeField] Image promptBox;
     [SerializeField] TextMeshProUGUI promptText;
     [SerializeField] PromptNextButton promptButton;
-    [SerializeField] GameObject scoreObjects;
+    [SerializeField] GameObject scoreObjects; //stores the score ui
 
-    [HideInInspector] public PitchContainer focusedContainer;
-    [HideInInspector] public Prompt currentPrompt;
-    bool inTransitionState;
+    [HideInInspector] public PitchContainer focusedContainer; //the current container that is focused
+    [HideInInspector] public Prompt currentPrompt; //the current focused prompt
+    bool inTransitionState; //is it transitioning right now?
 
     #endregion
+
+    #region initialization
     private void Awake()
     {
         instance = this;
@@ -37,7 +39,10 @@ public class GeneralFlowStateManager : MonoBehaviour
         currentPrompt = null;
     }
 
-    public bool SwitchToPromptState(PitchTypes type, int promptNo)
+    #endregion
+
+    #region handle transition
+    public bool SwitchToPromptState(PitchTypes type, int promptNo) //used to switch current prompt
     {
         if (type == PitchTypes.None || promptNo < 0)
         {
@@ -58,12 +63,12 @@ public class GeneralFlowStateManager : MonoBehaviour
         }
     }
 
-    public bool SwitchToPromptState(Prompt prompt)
+    public bool SwitchToPromptState(Prompt prompt) //used to switch current prompt
     {
         return SwitchToPromptState(prompt.pitchType, prompt.promptNo);
     }
 
-    public void TransitionToRank(PitchTypes type, int promptNo, PitchContainer container)
+    public void TransitionToRank(PitchTypes type, int promptNo, PitchContainer container) //transition to state where you rank options
     {
         if (!inTransitionState && SwitchToPromptState(type, promptNo))
         {
@@ -75,7 +80,7 @@ public class GeneralFlowStateManager : MonoBehaviour
         }
     }
 
-    IEnumerator MovingToRankingState(PitchContainer container)
+    IEnumerator MovingToRankingState(PitchContainer container) 
     {
         var containers = FindObjectsOfType<PitchContainer>();
         foreach (PitchContainer c in containers)
@@ -118,7 +123,7 @@ public class GeneralFlowStateManager : MonoBehaviour
         inTransitionState = false;
     }
 
-    public void TransitionToDefault(PitchContainer container)
+    public void TransitionToDefault(PitchContainer container) //transition to default state
     {
         if (!inTransitionState && SwitchToPromptState(PitchTypes.None, -1))
         {
@@ -167,8 +172,10 @@ public class GeneralFlowStateManager : MonoBehaviour
 
         inTransitionState = false;
     }
+    #endregion
 
-    public void VisitPrompt()
+    #region prompt editing
+    public void VisitPrompt() //checks if a prompt is visited
     {
         if (!currentPrompt.visited)
         {
@@ -179,8 +186,9 @@ public class GeneralFlowStateManager : MonoBehaviour
         }
     }
 
-    public void ChangePromptText(String text)
+    public void ChangePromptText(String text) //edits prompt text
     {
         promptText.text = text;
     }
+    #endregion
 }

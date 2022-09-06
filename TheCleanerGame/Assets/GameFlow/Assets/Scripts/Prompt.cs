@@ -9,14 +9,14 @@ using System.Linq;
     #region Variables
     //json variables
     public string text;
-    public PitchTypes pitchType;
+    public PitchTypes pitchType; //we store prompts with pitchType and promptNo
     public int promptNo;
 
     //non-jsonable variables
     public Dictionary<AnswerTypes, List<Answer>> answerDictionary;
-    public bool visited = false;
-    public bool calculated = false;
-    public PromptStatement statement;
+    public bool visited = false; //did we visit this prompt?
+    public bool calculated = false; //did we claculate this prompt
+    public PromptStatement statement; //its corresponding promptStatement
 
     #endregion
     #region Constructor

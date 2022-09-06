@@ -5,15 +5,15 @@ using UnityEngine;
 using System;
 using TMPro;
 
-public class PromptManager : MonoBehaviour
+public class PromptManager : MonoBehaviour //in charge of reading and storing prompts
 {
     // Start is called before the first frame update
     [SerializeField] TextAsset promptTextFile;
-    [SerializeField] TextAsset promptStatementTextFile;
+    [SerializeField] TextAsset promptStatementTextFile; //prompt statements are when we convert prompts to statements
     [SerializeField] TextMeshProUGUI promptBox;
     [SerializeField] TextMeshProUGUI promptHeader;
-    public Dictionary<PitchTypes, SortedDictionary<int, Prompt>> promptLists;
-
+    public Dictionary<PitchTypes, SortedDictionary<int, Prompt>> promptLists; //stores prompts
+    //prompts are stored using their PitchType, and then their Prompt Number
 
     #region private classes
     [Serializable]
@@ -41,10 +41,11 @@ public class PromptManager : MonoBehaviour
     #endregion
     private void Awake()
     {
+        //initializes promptlists
         promptLists = new Dictionary<PitchTypes, SortedDictionary<int, Prompt>>();
         foreach (PitchTypes t in Enum.GetValues(typeof(PitchTypes)))
         {
-            promptLists.Add(t, new SortedDictionary<int, Prompt>());
+            promptLists.Add(t, new SortedDictionary<int, Prompt>()); 
         }
 
         ReadPrompts(promptTextFile);
@@ -81,7 +82,7 @@ public class PromptManager : MonoBehaviour
         }
     }
 
-    public Prompt GetPrompt(PitchTypes type, int promptNo)
+    public Prompt GetPrompt(PitchTypes type, int promptNo) //accesses prompts
     {
         if (promptLists.ContainsKey(type))
         {
@@ -93,12 +94,12 @@ public class PromptManager : MonoBehaviour
         return null;
     }
 
-    public int GetMaximum(PitchTypes type)
+    public int GetMaximum(PitchTypes type) //number of prompts of a certain pitch type
     {
         return promptLists[type].Count;
     }
 
-    public int GetNumVisited(PitchTypes type)
+    public int GetNumVisited(PitchTypes type) //number of prompts that were visited of a certain ptich type
     {
         int sum = 0;
         foreach (int i in promptLists[type].Keys)
@@ -111,7 +112,7 @@ public class PromptManager : MonoBehaviour
         return sum;
     }
 
-    public Prompt GetNextPrompt()
+    public Prompt GetNextPrompt() //returns next unvisited prompt (order from theme -> character -> detail) (ordered from prompt number)
     {
         for (int i = 0; i < Enum.GetValues(typeof(PitchTypes)).Length; i++)
         {
@@ -133,7 +134,7 @@ public class PromptManager : MonoBehaviour
         return null;
     }
 
-    public Prompt GetNextPrompt(PitchTypes type)
+    public Prompt GetNextPrompt(PitchTypes type) //returns next unvisited prompt (ordered by prompt number) of a certain prompt type
     {
         foreach (var pair in promptLists[type].OrderBy(p => p.Key))
         {
@@ -153,7 +154,7 @@ public class PromptManager : MonoBehaviour
         return null;
     }
 
-    public Prompt GetLastPrompt()
+    public Prompt GetLastPrompt() //get the prompt before the next prompt
     {
         Prompt p = GetNextPrompt();
 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7762113082199827759}
   - component: {fileID: 6490651181061901093}
   - component: {fileID: 9141528085745182013}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,9 @@ GameObject:
   - component: {fileID: 5017471554466591837}
   - component: {fileID: 5106940714051639617}
   - component: {fileID: 940077695284367478}
-  m_Layer: 5
+  - component: {fileID: 5904470006484693972}
+  - component: {fileID: 893350230975760239}
+  m_Layer: 7
   m_Name: AnswerBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,16 +268,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be2386af040070b4395f8bc1ab849f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 9141528085745182013}
-  img: {fileID: 5017471554466591837}
+  answer:
+    text: 
+    satisfaction: 0
+    censorFulfillment: 0
+    innovation: 0
+    production: 0
+    promptNo: 0
+    pitchType: 0
+    answerType: 0
+    ranking: -1
+    calculated: 0
   collider: {fileID: 940077695284367478}
-  ranking: 0
-  orange: {r: 0.94509804, g: 0.7137255, b: 0.05490196, a: 1}
-  blue: {r: 0.5568628, g: 0.7254902, b: 0.74509805, a: 1}
-  purple: {r: 0.6901961, g: 0.56078434, b: 0.6313726, a: 1}
-  darkOrange: {r: 0.627451, g: 0.46539408, b: 0, a: 1}
-  darkBlue: {r: 0.23086, g: 0.4504646, b: 0.47599998, a: 1}
-  darkPurple: {r: 0.496, g: 0.281232, b: 0.39837828, a: 1}
+  ATVisuals: {fileID: 5904470006484693972}
+  answerTextLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  answerManager: {fileID: 0}
   transitionTime: 0.35
 --- !u!61 &940077695284367478
 BoxCollider2D:
@@ -287,7 +296,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -303,3 +312,45 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100, y: 100}
   m_EdgeRadius: 0
+--- !u!114 &5904470006484693972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108643559838869966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b511c6b3e4133c4a99a81fd5699b817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ATBehavior: {fileID: 5106940714051639617}
+  text: {fileID: 9141528085745182013}
+  img: {fileID: 5017471554466591837}
+  orange: {r: 0.94509804, g: 0.7137255, b: 0.05490196, a: 1}
+  blue: {r: 0.5568628, g: 0.7254902, b: 0.74509805, a: 1}
+  purple: {r: 0.6901961, g: 0.56078434, b: 0.6313726, a: 1}
+  darkOrange: {r: 0.894, g: 0.53884935, b: 0, a: 1}
+  darkBlue: {r: 0.26017725, g: 0.57239, b: 0.667, a: 1}
+  darkPurple: {r: 0.709, g: 0.3879434, b: 0.65549064, a: 1}
+--- !u!50 &893350230975760239
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108643559838869966}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

@@ -3,51 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
-public class AnswerManager : MonoBehaviour
+public class AnswerManager : MonoBehaviour //reads answers and stores them within prompts, also processes and stores Answer Text Boxes
 {
+    #region variables
     [SerializeField] TextAsset themeAnswersTxtFile;
     [SerializeField] TextAsset detailAnswersTxtFile;
     [SerializeField] TextAsset characterAnswersTxtFile;
-    [SerializeField] public Transform answerTextParent;
-    [SerializeField] public Transform shadowParent;
-    [SerializeField] public Transform superParent;
+    [SerializeField] public Transform answerTextParent; //where we spawn the answer
+    [SerializeField] public Transform shadowParent; //where we place the shadows of answers
+    [SerializeField] public Transform superParent; //where we place the answer when we click on it, so it goes over the other answers
 
     [Header("Answer Positions")]
-    [SerializeField] Vector3 topOrangeTransform;
-    [SerializeField] Vector3 topBlueTransform;
-    [SerializeField] Vector3 topPurpleTransform;
-    [SerializeField] float initialHeightDifference;
-    [SerializeField] float subsequentHeightDifference;
-    [SerializeField] int answerCap;
+    [SerializeField] Vector3 topOrangeTransform; //the place where we store the best orange answer
+    [SerializeField] Vector3 topBlueTransform; //the place where we store the best blue answer
+    [SerializeField] Vector3 topPurpleTransform; //the place where we store the best purple answer
+    [SerializeField] float initialHeightDifference; //after we spawn the best answer, we need to spawn the answers below it by this amount
+    [SerializeField] float subsequentHeightDifference; //the height difference between each subsequent non-best answer
+    [SerializeField] int answerCap; //the maximum answers to spawn per color
 
 
     [Header("Answer Prefabs")]
-    [SerializeField] AnswerTextBox answerBox;
-    [SerializeField] ShadowTextBox shadowAnswerBox;
+    [SerializeField] AnswerTextBox answerBox; //what we're spawning
+    [SerializeField] ShadowTextBox shadowAnswerBox; //the shadow we're spawning
 
     //private variables
-    Dictionary<AnswerTypes, Vector3> topAnswerTransforms;
-    public Dictionary<AnswerTypes, Dictionary<int, AnswerTextBox>> generatedAnswers;
+    Dictionary<AnswerTypes, Vector3> topAnswerTransforms; //stores locations of the best answers by color
+    public Dictionary<AnswerTypes, Dictionary<int, AnswerTextBox>> generatedAnswers; //stores all the answer text boxes
+    //Each answer belongs to a pitch type, a certain prompt
+    #endregion
 
-    //Each answer belongs to a pitch type, a certain prompt, and which slot for that prompt
-    void Start()
-    {
-        ReadAnswers(themeAnswersTxtFile);
-        ReadAnswers(characterAnswersTxtFile);
-        ReadAnswers(detailAnswersTxtFile);
-  
-        topAnswerTransforms = new Dictionary<AnswerTypes, Vector3>();
-        topAnswerTransforms.Add(AnswerTypes.Orange, topOrangeTransform);
-        topAnswerTransforms.Add(AnswerTypes.Blue, topBlueTransform);
-        topAnswerTransforms.Add(AnswerTypes.Purple, topPurpleTransform);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    #region private classes
     [Serializable] private class AnswerHolder
     {
         public List<Answer> answers;
@@ -57,7 +42,24 @@ public class AnswerManager : MonoBehaviour
             answers = new List<Answer>();
         }
     }
+    #endregion 
 
+    #region initialization
+    void Start()
+    {
+        //read answers from json file
+        ReadAnswers(themeAnswersTxtFile);
+        ReadAnswers(characterAnswersTxtFile);
+        ReadAnswers(detailAnswersTxtFile);
+  
+        //initialize dictionary
+        topAnswerTransforms = new Dictionary<AnswerTypes, Vector3>();
+        topAnswerTransforms.Add(AnswerTypes.Orange, topOrangeTransform);
+        topAnswerTransforms.Add(AnswerTypes.Blue, topBlueTransform);
+        topAnswerTransforms.Add(AnswerTypes.Purple, topPurpleTransform);
+
+        Physics.queriesHitTriggers = true; //so you can click on trigger hitboxes.
+    }
     public void ReadAnswers(TextAsset text)
     {
         AnswerHolder ansHolder = JsonUtility.FromJson<AnswerHolder>(text.text);
@@ -67,7 +69,14 @@ public class AnswerManager : MonoBehaviour
             GeneralFlowStateManager.instance.promptManager.promptLists[a.pitchType][a.promptNo].answerDictionary[a.answerType].Add(a);
         }
     }
+    #endregion
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 
+    #region answerTextBox
     void InitializeGeneratedAnswerDictionary()
     {
         generatedAnswers = new Dictionary<AnswerTypes, Dictionary<int, AnswerTextBox>>();
@@ -140,4 +149,5 @@ public class AnswerManager : MonoBehaviour
             }
         }
     }
+    #endregion
 }
