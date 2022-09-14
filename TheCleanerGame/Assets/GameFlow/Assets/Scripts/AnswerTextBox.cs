@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
-public class AnswerTextBox : MonoBehaviour //handles behavior of AnswerTextBox
+public class AnswerTextBox : MonoBehaviour, IPointerClickHandler //handles behavior of AnswerTextBox
 {
     // Start is called before the first frame update
     #region variables
@@ -36,6 +37,12 @@ public class AnswerTextBox : MonoBehaviour //handles behavior of AnswerTextBox
     Vector3 mousePositionOffset; //the offset from the mouse when you click on it
     Vector3 destination; //its potential destination
     Vector3 startingPlace; //source of its lerp
+
+    //double click variables
+    float lastClick = 0f;
+    float interval = 0.4f;
+    int tapTimes;
+    float resetTimer = 0.2f;
 
 
     #endregion
@@ -74,6 +81,7 @@ public class AnswerTextBox : MonoBehaviour //handles behavior of AnswerTextBox
     {
         if (mouseOver && Input.GetMouseButtonDown(0) && canBeMoved) //handles whether it can be clicked
         {
+
             ClickedOn();
         }
 
@@ -91,6 +99,8 @@ public class AnswerTextBox : MonoBehaviour //handles behavior of AnswerTextBox
         {
             MoveTo(); //only moves while it is not being clicked on
         }
+
+       
     }
     #endregion
 
@@ -107,6 +117,7 @@ public class AnswerTextBox : MonoBehaviour //handles behavior of AnswerTextBox
     #region Handle Mouse Interaction
     public void ClickedOn()
     {
+       
         mousePositionOffset = transform.position - GetMousePosition();
         mouseClickedOn = true;
         transform.SetParent(answerManager.superParent); //make this over other objects
@@ -138,6 +149,18 @@ public class AnswerTextBox : MonoBehaviour //handles behavior of AnswerTextBox
         mousePosition = cam.ScreenToWorldPoint(mousePosition);
         return mousePosition;
     }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        
+        if (eventData.clickCount == 2)
+        {
+            Debug.Log("double click");
+        }
+
+    }
+
+  
 
     #endregion
 
