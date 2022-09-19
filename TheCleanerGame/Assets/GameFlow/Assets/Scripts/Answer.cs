@@ -17,6 +17,11 @@ using System;
     public PitchTypes pitchType;
     public AnswerTypes answerType;
 
+    public bool disliked = false;
+    public string imageText;
+    public string criticName;
+    public string feedback;
+
     //non-json variables
     public int ranking;
     public bool calculated; //is it computed in ScoreManager

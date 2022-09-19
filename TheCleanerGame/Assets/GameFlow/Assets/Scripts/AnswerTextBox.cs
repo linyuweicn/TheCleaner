@@ -192,13 +192,18 @@ public class AnswerTextBox : MonoBehaviour, IPointerClickHandler //handles behav
             transform.localPosition = Vector3.Lerp(startingPlace, destination, elapsed / transitionTime); //always moves in transitionTime
             elapsed += Time.deltaTime;
 
-            if (elapsed >= transitionTime)
+            if (elapsed >= transitionTime) //reached destination
             {
                 isMoving = false;
                 transform.localPosition = destination;
                 lastSwapped.lastSwapped = lastSwapped;
                 lastSwapped = this;
                 elapsed = 0.0f;
+
+                if (answer.ranking == 0 && answer.disliked)
+                {
+                    answerManager.CheckForCensorship(answer);
+                }
             }
         }
     }

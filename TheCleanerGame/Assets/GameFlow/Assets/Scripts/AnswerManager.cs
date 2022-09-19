@@ -29,6 +29,7 @@ public class AnswerManager : MonoBehaviour //reads answers and stores them withi
     //private variables
     Dictionary<AnswerTypes, Vector3> topAnswerTransforms; //stores locations of the best answers by color
     public Dictionary<AnswerTypes, Dictionary<int, AnswerTextBox>> generatedAnswers; //stores all the answer text boxes
+    CensorshipUI censorshipUI;
     //Each answer belongs to a pitch type, a certain prompt
     #endregion
 
@@ -45,6 +46,11 @@ public class AnswerManager : MonoBehaviour //reads answers and stores them withi
     #endregion 
 
     #region initialization
+
+    void Awake()
+    {
+        censorshipUI = FindObjectOfType<CensorshipUI>();
+    }
     void Start()
     {
         //read answers from json file
@@ -147,6 +153,15 @@ public class AnswerManager : MonoBehaviour //reads answers and stores them withi
                 }
 
             }
+        }
+    }
+
+    public void CheckForCensorship(Answer answer)
+    {
+        if (answer.disliked)
+        {
+            censorshipUI.SetCensorshipUI(answer);
+            censorshipUI.Show();
         }
     }
     #endregion
