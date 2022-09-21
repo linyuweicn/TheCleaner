@@ -117,10 +117,12 @@ public class AnswerTextBox : MonoBehaviour, IPointerClickHandler //handles behav
     #region Handle Mouse Interaction
     public void ClickedOn()
     {
-       
-        mousePositionOffset = transform.position - GetMousePosition();
-        mouseClickedOn = true;
-        transform.SetParent(answerManager.superParent); //make this over other objects
+        if (answerManager.areAnswersClickable)
+        {
+            mousePositionOffset = transform.position - GetMousePosition();
+            mouseClickedOn = true;
+            transform.SetParent(answerManager.superParent); //make this over other objects
+        }
     }
 
     public void ClickedRelease()
@@ -132,8 +134,11 @@ public class AnswerTextBox : MonoBehaviour, IPointerClickHandler //handles behav
 
     private void OnMouseEnter()
     {
-        mouseOver = true;
-        ATVisuals.BecomeDarkenedColor();
+        if (answerManager.areAnswersClickable)
+        {
+            mouseOver = true;
+            ATVisuals.BecomeDarkenedColor();
+        }
     }
 
     private void OnMouseExit()

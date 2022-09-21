@@ -45,6 +45,11 @@ public class ArrowFlowButton : MonoBehaviour //Handles Behavior of ArrowButtons
         {
             SwitchToPrior();
         }
+
+        if (GeneralFlowStateManager.instance.answerManager.censorshipUI != null)
+        {
+            GeneralFlowStateManager.instance.answerManager.censorshipUI.Hide();
+        }
     }
 
     private void OnMouseEnter()

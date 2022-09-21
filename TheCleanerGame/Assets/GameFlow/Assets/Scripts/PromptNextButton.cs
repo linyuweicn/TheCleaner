@@ -33,17 +33,20 @@ public class PromptNextButton : MonoBehaviour
 
         ChangeStateTo(PromptButtonStates.Next);
 
-        switch (GeneralFlowStateManager.instance.currentPrompt.pitchType)
+        if (GeneralFlowStateManager.instance.currentPrompt != null)
         {
-            case PitchTypes.Theme:
-                img.color = orange;
-                break;
-            case PitchTypes.Character:
-                img.color = blue;
-                break;
-            case PitchTypes.Detail:
-                img.color = purple;
-                break;
+            switch (GeneralFlowStateManager.instance.currentPrompt.pitchType)
+            {
+                case PitchTypes.Theme:
+                    img.color = orange;
+                    break;
+                case PitchTypes.Character:
+                    img.color = blue;
+                    break;
+                case PitchTypes.Detail:
+                    img.color = purple;
+                    break;
+            }
         }
     }
 

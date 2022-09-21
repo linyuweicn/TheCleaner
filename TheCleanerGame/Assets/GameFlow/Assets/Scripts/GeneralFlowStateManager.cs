@@ -18,7 +18,7 @@ public class GeneralFlowStateManager : MonoBehaviour //general game manager in c
     [SerializeField] GameObject promptObjects; //stores the prompt ui
     [SerializeField] Image promptBox;
     [SerializeField] TextMeshProUGUI promptText;
-    [SerializeField] PromptNextButton promptButton;
+    [SerializeField] public PromptNextButton promptButton;
     [SerializeField] GameObject scoreObjects; //stores the score ui
 
     [HideInInspector] public PitchContainer focusedContainer; //the current container that is focused

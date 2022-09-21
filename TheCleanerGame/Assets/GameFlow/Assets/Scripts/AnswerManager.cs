@@ -29,7 +29,8 @@ public class AnswerManager : MonoBehaviour //reads answers and stores them withi
     //private variables
     Dictionary<AnswerTypes, Vector3> topAnswerTransforms; //stores locations of the best answers by color
     public Dictionary<AnswerTypes, Dictionary<int, AnswerTextBox>> generatedAnswers; //stores all the answer text boxes
-    CensorshipUI censorshipUI;
+    public CensorshipUI censorshipUI;
+    [HideInInspector] public bool areAnswersClickable = true;
     //Each answer belongs to a pitch type, a certain prompt
     #endregion
 
@@ -165,4 +166,9 @@ public class AnswerManager : MonoBehaviour //reads answers and stores them withi
         }
     }
     #endregion
+
+    public void SetAreAnswersClickable(bool areAnswersClickable)
+    {
+        this.areAnswersClickable = areAnswersClickable;
+    }
 }

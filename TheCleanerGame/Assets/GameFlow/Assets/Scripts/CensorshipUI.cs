@@ -47,6 +47,8 @@ public class CensorshipUI : MonoBehaviour
         {
             transform.GetChild(i).gameObject.SetActive(true);
         }
+        GeneralFlowStateManager.instance.answerManager.SetAreAnswersClickable(false);
+        GeneralFlowStateManager.instance.promptButton.Hide();
     }
     public void Hide()
     {
@@ -54,6 +56,8 @@ public class CensorshipUI : MonoBehaviour
         {
             transform.GetChild(i).gameObject.SetActive(false);
         }
+        GeneralFlowStateManager.instance.answerManager.SetAreAnswersClickable(true);
+        GeneralFlowStateManager.instance.promptButton.Show();
     }
     public void SetCensorshipUI(Answer answer)
     {
