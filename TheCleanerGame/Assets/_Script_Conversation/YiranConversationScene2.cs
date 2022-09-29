@@ -5,9 +5,7 @@ using DialogueEditor;
 
 public class YiranConversationScene2 : MonoBehaviour
 {
-    public NPCConversation Conversation1;
-    public NPCConversation Conversation2;
-    public NPCConversation Conversation3;
+    public  NPCConversation [] Conversations;
     private int convSequence;
     void Start()
     {
@@ -29,25 +27,31 @@ public class YiranConversationScene2 : MonoBehaviour
 
             if (convSequence == 1)
             {
-                ConversationManager.Instance.StartConversation(Conversation1);
+                ConversationManager.Instance.StartConversation(Conversations[0]);
                 Debug.Log("C1");
             }
             else
             {
-                convSequence = Random.Range(2, 4);
+                convSequence = Random.Range(2, 5);
 
 
                 switch (convSequence)
                 {
                     case 2:
-                        ConversationManager.Instance.StartConversation(Conversation2);
+                        ConversationManager.Instance.StartConversation(Conversations[1]);
                         Debug.Log("C2");
                         break;
 
                     case 3:
-                        ConversationManager.Instance.StartConversation(Conversation3);
+                        ConversationManager.Instance.StartConversation(Conversations[2]);
                         Debug.Log("C3");
                         break;
+
+                    case 4:
+                        ConversationManager.Instance.StartConversation(Conversations[3]);
+                        Debug.Log("C4");
+                        break;
+
                 }
             }
 

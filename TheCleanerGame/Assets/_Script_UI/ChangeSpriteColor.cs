@@ -5,20 +5,36 @@ using DG.Tweening;
 
 public class ChangeSpriteColor : MonoBehaviour
 {
-    [SerializeField] Color colorTo;
+    public Renderer rend;
+    public float FadingTime;
+    public Color32 color;
+ 
+
     void Start()
     {
-        
+        rend = GetComponent<Renderer>();
+        FadingTime = 0.2f;
+
+
     }
 
-    // Update is called once per frame
-    void Update()
+    // The mesh goes red when the mouse is over it...
+    void OnMouseEnter()
     {
-        
+        rend.material.color = color;
     }
 
-    public void HoverChangeColor()
+    // ...the red fades out to cyan as the mouse is held over...
+    void OnMouseOver()
     {
-        gameObject.transform.GetComponent<MeshRenderer>().material.DOColor(colorTo, 0.1f);
+        rend.material.color -= new Color(FadingTime, 0, 0) * Time.deltaTime;
     }
+
+    // ...and the mesh finally turns white when the mouse moves away.
+    void OnMouseExit()
+    {
+        rend.material.color = Color.white;
+    }
+
+ 
 }

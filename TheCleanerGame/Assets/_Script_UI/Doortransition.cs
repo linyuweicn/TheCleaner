@@ -8,8 +8,8 @@ public class Doortransition : MonoBehaviour
 
     public GameObject Labcamera;
     public GameObject ComputerCamera;
-    public bool isDoor1clicked;
-    private bool isDoor2clicked;
+    public static bool isDoor1clicked;
+    public static bool isDoor2clicked;
 
     public static bool CanClick = true;
 
@@ -41,10 +41,10 @@ public class Doortransition : MonoBehaviour
     {
         //when the quiz psanel is up, player cannot move - see quiz manager and canvas management
 
-        if ((gameObject.name == "Lab-office door") && CanClick)// click the Lab-office door
+        if ((gameObject.name == "EntanceDoor") && CanClick)// click the Lab-office door
         {
            
-            if (!isDoor1clicked ) // move to office
+                if (!isDoor1clicked ) // move to office
             {
                 Labcamera.SetActive(false);
                 isDoor1clicked = true;
@@ -66,7 +66,7 @@ public class Doortransition : MonoBehaviour
 
                 Debug.Log(inLab + "inLab");
             }
-        }else if ((gameObject.name == "DoorToMyOffice") && CanClick) // DoorToMyOfficer
+        }else if ((gameObject.name == "OffficeDoor") && CanClick) // DoorToMyOfficer
         {
             if (!isDoor2clicked)
             {
@@ -99,23 +99,28 @@ public class Doortransition : MonoBehaviour
         CanClick = true;
     }
 
+    public void CannotClick() // set at the end of intro converstaion, see the dialogue panels
+    {
+        CanClick = false;
+    }
+
 
     private IEnumerator DeLayDDCanvas() // delay drag and drop canvas
     {
-        yield return new WaitForSeconds(1.75f);
+        yield return new WaitForSeconds(0.5f);
         Debug.Log("wait");
         inLab = true;
     }
 
     private IEnumerator DelayQuestionCanvas() // see canvas management script
     {
-        yield return new WaitForSeconds(1.75f);
+        yield return new WaitForSeconds(0.5f);
         //CanvasManagement.canOpenQuestionCanvas = true;
         inOffice = true;
     }
     private IEnumerator DelayMyOfficeCanvas() // see canvas management script
     {
-        yield return new WaitForSeconds(1.75f);
+        yield return new WaitForSeconds(0.5f);
         inMyOffice = true;
         Debug.Log(inMyOffice + "inMyOffice");
     }

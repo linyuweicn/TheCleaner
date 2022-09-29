@@ -7,6 +7,11 @@ public class WhtieBoard : MonoBehaviour
     bool isOn = false;
     [SerializeField] GameObject BrainStormCanvas;
     [SerializeField] GameObject WhiteBoard;
+
+    public GameObject[] EnabledObjects;
+    public GameObject[] DisabledObjects;
+
+
     void Start()
     {
       
@@ -15,8 +20,7 @@ public class WhtieBoard : MonoBehaviour
     private void OnEnable()
     {
         isOn = false;
-        WhiteBoard.SetActive(true);
-        BrainStormCanvas.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -27,19 +31,36 @@ public class WhtieBoard : MonoBehaviour
 
     public void OnMouseDown()
     {
-        if (isOn) //if barinsotrm canvas is on
+        if (isOn) //brainstorm canvas is showing
         {
-            // make this off
-            isOn = false;
+
             WhiteBoard.SetActive(true);
             BrainStormCanvas.SetActive(false);
+            // make this off
+            isOn = false;
+
+            for (int i = 0; i < DisabledObjects.Length; i++)
+            {
+                DisabledObjects[i].SetActive(true);
+            }
+
         }
         else //if barinsotrm canvas is off
         {
-            // make this on
-            isOn = true;
             WhiteBoard.SetActive(false);
             BrainStormCanvas.SetActive(true);
+            // make this on
+            isOn = true;
+
+            for (int i = 0; i < DisabledObjects.Length; i++)
+            {
+                DisabledObjects[i].SetActive(false);
+            }
+            
+
         }
+                
     }
+
+  
 }
