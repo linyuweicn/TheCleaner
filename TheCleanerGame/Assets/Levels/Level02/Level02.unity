@@ -422,6 +422,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BrainStormCanvas: {fileID: 1748164220}
   WhiteBoard: {fileID: 108888073}
+  EnabledObjects: []
+  DisabledObjects: []
 --- !u!1 &121142958
 GameObject:
   m_ObjectHideFlags: 0
@@ -2583,6 +2585,50 @@ RectTransform:
   m_AnchoredPosition: {x: 10, y: 158}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &459937080
+GameObject:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 459937082}
+  - component: {fileID: 459937081}
+  m_Layer: 0
+  m_Name: Prefab Indexer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &459937081
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459937080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05a7c62fccbafd342991629222351294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scenePrefabInstances: []
+--- !u!4 &459937082
+Transform:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459937080}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &464057837
 GameObject:
   m_ObjectHideFlags: 0
@@ -2626,6 +2672,8 @@ MonoBehaviour:
   answerCap: 4
   answerBox: {fileID: 5106940714051639617, guid: 9aa927a815e54a64789aabaf618eb953, type: 3}
   shadowAnswerBox: {fileID: 853121624899385794, guid: a77d9967593c04e4d863045ff5dbb643, type: 3}
+  censorshipUI: {fileID: 0}
+  areAnswersClickable: 1
 --- !u!4 &464057839
 Transform:
   m_ObjectHideFlags: 0
@@ -3184,7 +3232,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Labcamera: {fileID: 359586729}
   ComputerCamera: {fileID: 2030194364}
-  isDoor1clicked: 0
   inOffice: 0
   inLab: 0
   inMyOffice: 0
@@ -3990,9 +4037,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efc638d2b06dad4d92c2fe95ab2c132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Conversation1: {fileID: 1463143939}
-  Conversation2: {fileID: 195530347}
-  Conversation3: {fileID: 121480511}
+  Conversations:
+  - {fileID: 1463143939}
+  - {fileID: 195530347}
+  - {fileID: 121480511}
+  DisabledObjects: []
 --- !u!61 &820168512
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5775,7 +5824,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244578813}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &1249292305
 GameObject:
   m_ObjectHideFlags: 0
@@ -9593,7 +9642,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Labcamera: {fileID: 359586729}
   ComputerCamera: {fileID: 2030194364}
-  isDoor1clicked: 0
   inOffice: 0
   inLab: 0
   inMyOffice: 0

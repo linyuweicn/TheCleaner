@@ -18,25 +18,26 @@ public class Calendar : MonoBehaviour
         
     }
 
-    public void OpenCalendar()
-    {
-        if (!isCalaendarClicked)
-        {
-            CalendarPage.SetActive(true);
-            isCalaendarClicked = true;
-        }
-        else
-        {
-            CalendarPage.SetActive(false);
-            isCalaendarClicked = false;
-        }
-        
-     
-    }
 
     public void CloseCalendar()
     {
         CalendarPage.SetActive(false);
         isCalaendarClicked = false;
+    }
+
+    private void OnMouseDown()
+    {
+        /* if (!isCalaendarClicked)
+         {
+             CalendarPage.SetActive(true);
+             isCalaendarClicked = true;
+         }
+         else
+         {
+             CalendarPage.SetActive(false);
+             isCalaendarClicked = false;
+         }*/
+        CalendarPage.SetActive(true);
+
     }
 }

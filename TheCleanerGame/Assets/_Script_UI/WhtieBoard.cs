@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class WhtieBoard : MonoBehaviour
 {
-    bool isOn = false;
+    bool isBrainStormOn = false;
     [SerializeField] GameObject BrainStormCanvas;
     [SerializeField] GameObject WhiteBoard;
 
     public GameObject[] EnabledObjects;
     public GameObject[] DisabledObjects;
 
+    public GameObject Animator;
+    Animator m_Animator;
+    
 
     void Start()
     {
-      
+        m_Animator = Animator.GetComponent<Animator>();
     }
 
     private void OnEnable()
     {
-        isOn = false;
+        isBrainStormOn = false;
 
     }
 
@@ -31,13 +34,13 @@ public class WhtieBoard : MonoBehaviour
 
     public void OnMouseDown()
     {
-        if (isOn) //brainstorm canvas is showing
+        if (isBrainStormOn) //brainstorm canvas is showing
         {
 
             WhiteBoard.SetActive(true);
-            BrainStormCanvas.SetActive(false);
+            m_Animator.SetBool("isOn", false);
             // make this off
-            isOn = false;
+            isBrainStormOn = false;
 
             for (int i = 0; i < DisabledObjects.Length; i++)
             {
@@ -48,18 +51,18 @@ public class WhtieBoard : MonoBehaviour
         else //if barinsotrm canvas is off
         {
             WhiteBoard.SetActive(false);
-            BrainStormCanvas.SetActive(true);
+            m_Animator.SetBool("isOn", true); // show brainstorm canvas
             // make this on
-            isOn = true;
+            isBrainStormOn = true;
 
             for (int i = 0; i < DisabledObjects.Length; i++)
             {
-                DisabledObjects[i].SetActive(false);
+                DisabledObjects[i].SetActive(false); // disable all the obajects
             }
-            
+
 
         }
-                
+
     }
 
   
