@@ -1,177 +1,98 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using System;
-using TMPro;
 
-public class PromptManager : MonoBehaviour //in charge of reading and storing prompts
+public class PromptManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    [SerializeField] TextAsset promptTextFile;
-    [SerializeField] TextAsset promptStatementTextFile; //prompt statements are when we convert prompts to statements
-    [SerializeField] TextMeshProUGUI promptBox;
-    [SerializeField] TextMeshProUGUI promptHeader;
-    public Dictionary<PitchTypes, SortedDictionary<int, Prompt>> promptLists; //stores prompts
-    //prompts are stored using their PitchType, and then their Prompt Number
+    #region variables
+    public static PromptManager Instance { get; private set; }
 
-    #region private classes
-    [Serializable]
-    private class PromptHolder
-    {
-        public List<Prompt> prompts;
+    public Dictionary<int, Dictionary<int, PromptObject>> PromptDictionary; //[Day][n-th Prompt]
 
-        public PromptHolder()
-        {
-            prompts = new List<Prompt>();
-        }
-    }
-
-    [Serializable]
-    private class PromptStatementHolder
-    {
-        public List<PromptStatement> promptStatements;
-
-        public PromptStatementHolder()
-        {
-            promptStatements = new List<PromptStatement>();
-        }
-    }
+    [SerializeField] int totalTheme, totalCharacter, totalSetting, totalNarration;
+    int completedTheme, completedCharacter, completedSetting, completedNarration;
 
     #endregion
-    private void Awake()
-    {
-        //initializes promptlists
-        promptLists = new Dictionary<PitchTypes, SortedDictionary<int, Prompt>>();
-        foreach (PitchTypes t in Enum.GetValues(typeof(PitchTypes)))
-        {
-            promptLists.Add(t, new SortedDictionary<int, Prompt>()); 
-        }
 
-        ReadPrompts(promptTextFile);
-        ReadPromptStatements(promptStatementTextFile);
+    #region initialization
+    void Awake()
+    {
+        Instance = this;
+        PromptDictionary = new Dictionary<int, Dictionary<int, PromptObject>>();
     }
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    void InitializeKey(int key)
     {
-
-    }
-
-    void ReadPrompts(TextAsset text)
-    {
-        PromptHolder holder = JsonUtility.FromJson<PromptHolder>(text.text);
-
-        foreach (Prompt p in holder.prompts)
+        if (!PromptDictionary.ContainsKey(key))
         {
-            promptLists[p.pitchType].Add(p.promptNo, p);
+            PromptDictionary.Add(key, new Dictionary<int, PromptObject>());
         }
     }
 
-    void ReadPromptStatements(TextAsset text)
-    {
-        PromptStatementHolder holder = JsonUtility.FromJson<PromptStatementHolder>(text.text);
+    #endregion
 
-        foreach (PromptStatement p in holder.promptStatements)
+    public void AddPrompt(PromptObject prompt)
+    {
+        InitializeKey(prompt.ID.x);
+        PromptDictionary[prompt.ID.x].Add(prompt.ID.y, prompt);
+    }
+
+    #region Get/Set Functions
+    public int GetTotalPromptCount(PromptType type)
+    {
+        switch (type)
         {
-            promptLists[p.pitchType][p.promptNo].statement = p;
+            case PromptType.Theme:
+                return totalTheme;
+            case PromptType.Character:
+                return totalCharacter;
+            case PromptType.Setting:
+                return totalSetting;
+            case PromptType.Narration:
+                return totalNarration;
+            default:
+                return 0;
         }
     }
 
-    public Prompt GetPrompt(PitchTypes type, int promptNo) //accesses prompts
+    public int GetCompletedPromptCount(PromptType type)
     {
-        if (promptLists.ContainsKey(type))
+        switch (type)
         {
-            if (promptLists[type].ContainsKey(promptNo))
-            {
-                return promptLists[type][promptNo];
-            }
+            case PromptType.Theme:
+                return completedTheme;
+            case PromptType.Character:
+                return completedCharacter;
+            case PromptType.Setting:
+                return completedSetting;
+            case PromptType.Narration:
+                return completedNarration;
+            default:
+                return 0;
         }
-        return null;
     }
 
-    public int GetMaximum(PitchTypes type) //number of prompts of a certain pitch type
+    public void IncrementCompletedPromptCount(PromptType type)
     {
-        return promptLists[type].Count;
-    }
-
-    public int GetNumVisited(PitchTypes type) //number of prompts that were visited of a certain ptich type
-    {
-        int sum = 0;
-        foreach (int i in promptLists[type].Keys)
+        switch (type)
         {
-            if (promptLists[type][i].visited)
-            {
-                sum++;
-            }
-        }
-        return sum;
-    }
-
-    public Prompt GetNextPrompt() //returns next unvisited prompt (order from theme -> character -> detail) (ordered from prompt number)
-    {
-        for (int i = 0; i < Enum.GetValues(typeof(PitchTypes)).Length; i++)
-        {
-            foreach (var pair in promptLists[(PitchTypes) i].OrderBy(p => p.Key))
-            {
-                if (!pair.Value.calculated)
-                {
-                    return pair.Value;
-                }
-            }
-        }
-
-        if (promptLists[(PitchTypes) 0].Count > 0)
-        {
-            var it = promptLists[(PitchTypes)0].GetEnumerator();
-            return it.Current.Value;
-        }
-
-        return null;
-    }
-
-    public Prompt GetNextPrompt(PitchTypes type) //returns next unvisited prompt (ordered by prompt number) of a certain prompt type
-    {
-        foreach (var pair in promptLists[type].OrderBy(p => p.Key))
-        {
-            if (!pair.Value.calculated)
-            {
-                return pair.Value;
-            }
-        }
-
-        if (promptLists[type].Count > 0)
-        {
-            var it = promptLists[(PitchTypes)0].GetEnumerator();
-            it.MoveNext();
-            return it.Current.Value;
-        }
-
-        return null;
-    }
-
-    public Prompt GetLastPrompt() //get the prompt before the next prompt
-    {
-        Prompt p = GetNextPrompt();
-
-        if (p.promptNo > 0)
-        {
-            return GetPrompt(p.pitchType, p.promptNo - 1);
-        } else
-        {
-            if (p.pitchType != (PitchTypes) (0))
-            {
-                PitchTypes lastType = p.pitchType - 1;
-                IEnumerator it = null;
-                return promptLists[lastType].Last<KeyValuePair<int, Prompt>>().Value;
-            } else
-            {
-                return null;
-            }
+            case PromptType.Theme:
+                completedTheme++;
+                break;
+            case PromptType.Character:
+                completedCharacter++;
+                break;
+            case PromptType.Setting:
+                completedSetting++;
+                break;
+            case PromptType.Narration:
+                completedNarration++;
+                break;
         }
     }
+    #endregion
 }

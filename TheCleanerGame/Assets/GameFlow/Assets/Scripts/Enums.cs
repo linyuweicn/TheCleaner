@@ -1,0 +1,40 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public enum PromptType
+{
+    Theme,
+    Character,
+    Setting,
+    Narration
+}
+public enum FeedbackType
+{
+    Positive,
+    Neutral,
+    Negative
+}
+
+public enum CriticType
+{
+    Yiran,
+    Benjamine,
+    Team
+}
+
+public enum BrainstormState
+{
+    Menu,
+    TransToMenu,
+    Rank,
+    TransToRank,
+    Inactive
+}
+
+public enum ContainerState
+{
+    Revealed,
+    Hidden,
+    Moving
+}
