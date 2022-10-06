@@ -12,11 +12,18 @@ public class PromptObject : ScriptableObject
     [SerializeField] Vector2Int id;
     [SerializeField] PromptType promptType;
     [SerializeField] string text;
+    public bool completed;
 
     [Header("Answers")]
-    [SerializeField] List<AnswerObject> firstColumnAnswers;
-    [SerializeField] List<AnswerObject> secondColumnAnswers;
-    [SerializeField] List<AnswerObject> thirdColumnAnswers;
+    [SerializeField] List<NestedList> AnswersStorage; //don't modify this
+    public List<List<AnswerObject>> Answers;
+    #region private class
+    [Serializable]
+    public class NestedList
+    {
+        public List<AnswerObject> answerColumn;
+    }
+    #endregion
 
     public Vector2Int ID
     {
@@ -32,23 +39,34 @@ public class PromptObject : ScriptableObject
     }
     #endregion
 
-    #region answerobject class
-    [Serializable]
-    private class AnswerObject
-    {
-        [Header("Answer Variables")]
-        [SerializeField] public string text;
-        [SerializeField] public float satisfaction;
-        [SerializeField] public float censorFulfillment;
-        [SerializeField] public float innovation;
-        [SerializeField] public float production;
+    #region initialization
 
-        [Header("Feedback Variables")]
-        [SerializeField] public FeedbackType feedbackType;
-        [SerializeField] public string feedbackText;
-        [SerializeField] public CriticType criticType;
+    private void OnEnable()
+    {
+        Answers = new List<List<AnswerObject>>();
+        for (int i = 0; i < AnswersStorage.Count; i++)
+        {
+            Answers.Add(new List<AnswerObject>());
+            for (int j = 0; j < AnswersStorage[i].answerColumn.Count; j++)
+            {
+                Answers[i].Add(AnswersStorage[i].answerColumn[j]);
+            }
+        }
+        completed = false;
+    }
+
+    #endregion
+
+    #region public functions
+    public void SwapRankings(int column, int here, int other)
+    {
+        AnswerObject temp = Answers[column][here];
+        Answers[column][here] = Answers[column][other];
+        Answers[column][other] = temp;
     }
     #endregion
 
-
+    #region Get/Set Functions
+    
+    #endregion
 }

@@ -11,6 +11,7 @@ public enum PromptType
 }
 public enum FeedbackType
 {
+    None,
     Positive,
     Neutral,
     Negative
@@ -37,4 +38,16 @@ public enum ContainerState
     Revealed,
     Hidden,
     Moving
+}
+
+public enum RankPanelState
+{
+    Ranking,
+    Feedback
+}
+
+public enum ButtonType
+{
+    Forward,
+    Back
 }

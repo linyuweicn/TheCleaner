@@ -17,7 +17,16 @@ public class PromptManager : MonoBehaviour
     #region initialization
     void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            Destroy(this);
+            return;
+        }
         PromptDictionary = new Dictionary<int, Dictionary<int, PromptObject>>();
     }
     void Start()
@@ -92,6 +101,15 @@ public class PromptManager : MonoBehaviour
             case PromptType.Narration:
                 completedNarration++;
                 break;
+        }
+    }
+
+    public void MarkPromptAsCompleted(PromptObject prompt)
+    {
+        if (!prompt.completed)
+        {
+            prompt.completed = true;
+            IncrementCompletedPromptCount(prompt.Type);
         }
     }
     #endregion

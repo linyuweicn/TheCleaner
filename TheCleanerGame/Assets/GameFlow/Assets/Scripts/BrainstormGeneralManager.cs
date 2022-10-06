@@ -8,7 +8,7 @@ public class BrainstormGeneralManager : MonoBehaviour
     #region variables
     public static BrainstormGeneralManager Instance { get; private set; }
     public Dictionary<int, BrainstormContainer> ContainerDictionary;
-    [HideInInspector] public int focusedContainer;
+    [HideInInspector] int focusedContainer;
     [HideInInspector] public BrainstormState state;
 
     [SerializeField] GameObject rankPanel;
@@ -30,7 +30,8 @@ public class BrainstormGeneralManager : MonoBehaviour
 
     private void Start()
     {
-        FinishPreparingMenu();
+        state = BrainstormState.Menu; 
+        StartPreparingMenu();
     }
 
     public void AddContainterToList(BrainstormContainer container)
@@ -53,7 +54,6 @@ public class BrainstormGeneralManager : MonoBehaviour
             state = BrainstormState.TransToRank;
             foreach (BrainstormContainer c in ContainerDictionary.Values)
             {
-                Debug.Log("moving " + c.name);
                 c.MoveToRankState();
             }
             Action func = FinishPreparingRank;
@@ -71,6 +71,7 @@ public class BrainstormGeneralManager : MonoBehaviour
         {
             focusedContainer = -1;
 
+            StartPreparingMenu();
             state = BrainstormState.TransToMenu;
             foreach (BrainstormContainer c in ContainerDictionary.Values)
             {
@@ -88,11 +89,17 @@ public class BrainstormGeneralManager : MonoBehaviour
 
     #region helper functions
 
+
+    void StartPreparingMenu()
+    {
+        menuPanel.SetActive(true);
+        rankPanel.SetActive(false);
+    }
+
     void FinishPreparingMenu()
     {
         state = BrainstormState.Menu;
-        menuPanel.SetActive(true);
-        rankPanel.SetActive(false);
+        rankPanelManager.DestroyAllAnswers();
     }
 
     void FinishPreparingRank()
@@ -102,6 +109,7 @@ public class BrainstormGeneralManager : MonoBehaviour
         menuPanel.SetActive(false);
 
         rankPanelManager.UpdatePromptText();
+        rankPanelManager.GenerateAnswers();
     }
 
     IEnumerator WaitUntilContainersBecome(ContainerState cState, Action func)
@@ -120,8 +128,10 @@ public class BrainstormGeneralManager : MonoBehaviour
             }
             yield return null;
         }
-        Debug.Log("Finished waiting");
-        func();
+        if (func != null)
+        {
+            func();
+        }
     }
 
     #endregion

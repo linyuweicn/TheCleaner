@@ -66,7 +66,7 @@ public class BrainstormContainer : MonoBehaviour
 
     public void MoveToMenuState()
     {
-        if (state == ContainerState.Revealed)
+        if (state == ContainerState.Hidden)
         {
             UpdateText();
             Action func = FinishSwitchingToMenu;
@@ -98,7 +98,6 @@ public class BrainstormContainer : MonoBehaviour
             }
             yield return null;
         }
-        Debug.Log("Finished moving to position " + name);
         func();
     }
 
@@ -133,7 +132,6 @@ public class BrainstormContainer : MonoBehaviour
 
     public void ClickedOn()
     {
-        Debug.Log("clicked on " + name);
         if (state == ContainerState.Revealed)
         {
             BrainstormGeneralManager.Instance.SwitchToRankState(PromptID);
