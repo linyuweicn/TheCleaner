@@ -19,13 +19,13 @@ public class FeedbackManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI criticalFeedbackText;
 
     [SerializeField] List<criticPair> criticPairs;
-    Dictionary<String, Sprite> CriticDictionary;
+    Dictionary<CriticType, Sprite> CriticDictionary;
 
     #region private struct
     [Serializable]
     struct criticPair
     {
-        public string name;
+        public CriticType type;
         public Sprite image;
     }
     #endregion
@@ -34,10 +34,10 @@ public class FeedbackManager : MonoBehaviour
     #region initialization
     void Start()
     {
-        CriticDictionary = new Dictionary<string, Sprite>();
+        CriticDictionary = new Dictionary<CriticType, Sprite>();
         foreach (criticPair c in criticPairs)
         {
-            CriticDictionary.Add(c.name, c.image);
+            CriticDictionary.Add(c.type, c.image);
         }
         ResetFeedback();
     }
@@ -55,20 +55,20 @@ public class FeedbackManager : MonoBehaviour
         switch (answer.feedbackType)
         {
             case FeedbackType.Positive:
-                TriggerCriticalFeedback(answer.criticType.ToString(), answer.feedbackText);
+                TriggerCriticalFeedback(answer.criticType, answer.feedbackText);
                 break;
             case FeedbackType.Neutral:
                 TriggerNeutralFeedback(answer.feedbackText);
                 break;
             case FeedbackType.Negative:
-                TriggerCriticalFeedback(answer.criticType.ToString(), answer.feedbackText);
+                TriggerCriticalFeedback(answer.criticType, answer.feedbackText);
                 break;
         }
     }
-    public void TriggerCriticalFeedback(string name, string feedbackText)
+    public void TriggerCriticalFeedback(CriticType type, string feedbackText)
     {
-        criticalFeedbackName.text = name;
-        criticalFeedbackImage.sprite = CriticDictionary[name];
+        criticalFeedbackName.text = type.ToString();
+        criticalFeedbackImage.sprite = CriticDictionary[type];
         criticalFeedbackText.text = feedbackText;
         OpenCriticalFeedback();
     }

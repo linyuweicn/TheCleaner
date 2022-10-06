@@ -70,6 +70,10 @@ public class AnswerBox : MonoBehaviour, IPointerClickHandler
             {
                 ClickedUp();
             }
+            else if (rankPanelManager.State == RankPanelState.Feedback)
+            {
+                ClickedUp();
+            }
         }
 
         if (clickedOn)

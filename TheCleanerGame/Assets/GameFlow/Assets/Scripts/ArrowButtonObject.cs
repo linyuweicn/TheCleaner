@@ -59,7 +59,6 @@ public class ArrowButtonObject : MonoBehaviour
     }
     public void ClickedOn()
     {
-        Debug.Log("Clicked on ");
         switch (buttonType)
         {
             case ButtonType.Back:
