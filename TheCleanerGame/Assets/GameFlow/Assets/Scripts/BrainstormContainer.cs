@@ -8,11 +8,12 @@ public class BrainstormContainer : MonoBehaviour
 {
     #region variables
     [SerializeField] PromptObject associatedPrompt;
+    [SerializeField] Vector3 origPosition;
     [SerializeField] Vector3 hiddenPosition;
     [SerializeField] float speed;
     [SerializeField] TextMeshProUGUI fractionText;
 
-    Vector3 origPosition;
+    
     ContainerState state;
 
     bool mouseOver;
@@ -25,7 +26,7 @@ public class BrainstormContainer : MonoBehaviour
     #region initialization
     private void Awake()
     {
-        origPosition = transform.position;
+        //origPosition = transform.position;
         state = ContainerState.Revealed;
     }
     void Start()

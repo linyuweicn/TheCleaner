@@ -27,16 +27,7 @@ public class Calendar : MonoBehaviour
 
     private void OnMouseDown()
     {
-        /* if (!isCalaendarClicked)
-         {
-             CalendarPage.SetActive(true);
-             isCalaendarClicked = true;
-         }
-         else
-         {
-             CalendarPage.SetActive(false);
-             isCalaendarClicked = false;
-         }*/
+     
         CalendarPage.SetActive(true);
 
     }

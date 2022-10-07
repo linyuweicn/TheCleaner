@@ -1,4 +1,4 @@
-    using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,18 +6,18 @@ using UnityEngine.SceneManagement;
 public class Doortransition : MonoBehaviour
 {
 
-    public GameObject Labcamera;
-    public GameObject ComputerCamera;
+    public GameObject EntranceCamera;
+    public GameObject BrainstormCamera;
+    public GameObject YiranOfficeCamera;
+    public GameObject PersonalRoomCamera;
     public static bool isDoor1clicked;
     public static bool isDoor2clicked;
 
+    [SerializeField] GameObject CalendarPage;
+
     public static bool CanClick = true;
 
-    public bool inOffice = false; // sued for CanvasManager and controls the drag and drop canvas
-    public bool inLab = false; // sued for CanvasManager and controls the drag and drop canvas
-    public bool inMyOffice = false; // sued for CanvasManager and controls the drag and drop canvas
-
-    
+  
     
     
     public void Update()
@@ -33,65 +33,51 @@ public class Doortransition : MonoBehaviour
             //Debug.Log(CanClick);
         }
 
-        //Debug.Log(SceneManager.GetActiveScene().buildIndex);
-        inLab = true;
+        CalendarPage.SetActive(false);
+
     }
 
     private void OnMouseDown()
     {
-        //when the quiz psanel is up, player cannot move - see quiz manager and canvas management
 
-        if ((gameObject.name == "EntanceDoor") && CanClick)// click the Lab-office door
+        if ((gameObject.name == "LabDoor") && CanClick)// click the Lab door
         {
-           
-                if (!isDoor1clicked ) // move to office
+
+            if (!isDoor1clicked) // move to office
             {
-                Labcamera.SetActive(false);
+                BrainstormCamera.SetActive(true);
                 isDoor1clicked = true;
-                
-                inLab = false;
-                StartCoroutine(DelayQuestionCanvas());
-                //inoffice = true
-                
+
             }
-            else // move to lab
+            else // move to entrance
             {
-                Labcamera.SetActive(true);
+                BrainstormCamera.SetActive(false);
 
                 isDoor1clicked = false;
 
-                inOffice = false;
-                StartCoroutine(DeLayDDCanvas());
-                
-
-                Debug.Log(inLab + "inLab");
             }
-        }else if ((gameObject.name == "OffficeDoor") && CanClick) // DoorToMyOfficer
+        }
+        else if ((gameObject.name == "OffficeDoor") && CanClick) // DoorToMyOfficer
         {
             if (!isDoor2clicked)
             {
-                ComputerCamera.SetActive(true); // move to personal offcice
+                YiranOfficeCamera.SetActive(true); // move to Yiran offcice
                 isDoor2clicked = true;
-
-                inOffice = false;
-                CanvasManagement.canOpenQuestionCanvas = false;
-                StartCoroutine(DelayMyOfficeCanvas());
-                //Debug.Log(inOffice + " inOffice");
             }
-            else // move to offcice
+            else // move to brainstorm room
             {
-                ComputerCamera.SetActive(false);
+                YiranOfficeCamera.SetActive(false);
                 isDoor2clicked = false;
 
-                inMyOffice = false;
-                StartCoroutine(DelayQuestionCanvas());
-
             }
-            
-            
-        }        
-       
-       
+        }
+        else if ((gameObject.name == "ExitDoor") && CanClick) // transit to personal room = end the day 
+        {
+            CalendarPage.SetActive(true);
+
+        }
+
+
     }
 
     public void SetCanClick() // set at the end of intro converstaion, see the dialogue panels
@@ -104,26 +90,9 @@ public class Doortransition : MonoBehaviour
         CanClick = false;
     }
 
-
-    private IEnumerator DeLayDDCanvas() // delay drag and drop canvas
+    public void SetCameraActive()
     {
-        yield return new WaitForSeconds(0.5f);
-        Debug.Log("wait");
-        inLab = true;
+        PersonalRoomCamera.SetActive(true);
     }
-
-    private IEnumerator DelayQuestionCanvas() // see canvas management script
-    {
-        yield return new WaitForSeconds(0.5f);
-        //CanvasManagement.canOpenQuestionCanvas = true;
-        inOffice = true;
-    }
-    private IEnumerator DelayMyOfficeCanvas() // see canvas management script
-    {
-        yield return new WaitForSeconds(0.5f);
-        inMyOffice = true;
-        Debug.Log(inMyOffice + "inMyOffice");
-    }
-
 
 }

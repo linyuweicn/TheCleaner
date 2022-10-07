@@ -49,7 +49,7 @@ public class CanvasManagement : MonoBehaviour
 
         
 
-        if ( (doorScript.inLab && canOpenCanvas))  // when player is not in the office, for the firt level
+      /*  if ( (doorScript.inLab && canOpenCanvas))  // when player is not in the office, for the firt level
         {
             for (int i = 0; i < DragDropCanvas.Length; i++)
             {
@@ -88,7 +88,7 @@ public class CanvasManagement : MonoBehaviour
             {
                 QuestionCanvas[i].SetActive(false);
             }
-        }
+        }*/
         
         /*if (!doorScript.inOffice)
         {
