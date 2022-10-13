@@ -15,7 +15,7 @@ MonoBehaviour:
   id: {x: 0, y: 1}
   promptType: 1
   text: The Hero of the game is [Ajective] [Noun]
-  completed: 1
+  completed: 0
   AnswersStorage:
   - answerColumn:
     - text: Adorable
@@ -23,7 +23,7 @@ MonoBehaviour:
       censorFulfillment: 0
       innovation: 0
       production: 0
-      feedbackType: 3
+      feedbackType: 2
       feedbackText: Are you just trying too hard?
       criticType: 3
     - text: Arrogant
@@ -33,7 +33,7 @@ MonoBehaviour:
       production: 0
       feedbackType: 3
       feedbackText: I really don't think the NEA Censors would like this.
-      criticType: 1
+      criticType: 4
     - text: Rebelious
       satisfaction: 0
       censorFulfillment: 0
@@ -57,7 +57,7 @@ MonoBehaviour:
       production: 0
       feedbackType: 1
       feedbackText: 'This kind of character is a perfect role model for our nation '
-      criticType: 1
+      criticType: 4
   - answerColumn:
     - text: Pacifist
       satisfaction: 0
@@ -66,36 +66,38 @@ MonoBehaviour:
       production: 0
       feedbackType: 2
       feedbackText: Really? Is this the best we can do?
-      criticType: 1
+      criticType: 4
     - text: Super Soldier
       satisfaction: 0
       censorFulfillment: 0
       innovation: 0
       production: 0
       feedbackType: 2
-      feedbackText: Spy
-      criticType: 1
+      feedbackText: 'Interesting. This type of character can go either way, and be
+        careful for what could be censored. '
+      criticType: 0
     - text: Spy
       satisfaction: 0
       censorFulfillment: 0
       innovation: 0
       production: 0
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      feedbackType: 2
+      feedbackText: Meh. If we have to.
+      criticType: 3
     - text: Gun Runner
       satisfaction: 0
       censorFulfillment: 0
       innovation: 0
       production: 0
-      feedbackType: 0
-      feedbackText: 
+      feedbackType: 3
+      feedbackText: 'Hmm, anti-hero is always a rare case. And I must say, I''m concerned
+        with NEA censorship. '
       criticType: 0
     - text: Journalist
       satisfaction: 0
       censorFulfillment: 0
       innovation: 0
       production: 0
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      feedbackType: 2
+      feedbackText: We need someone to stand up for change.
+      criticType: 3

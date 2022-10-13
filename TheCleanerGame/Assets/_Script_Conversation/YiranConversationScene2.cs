@@ -5,10 +5,12 @@ using DialogueEditor;
 
 public class YiranConversationScene2 : MonoBehaviour
 {
-    public  NPCConversation [] Conversations;
+    public NPCConversation[] B4CompleteConversations;
+    public NPCConversation[] AfterCompleteConversations;
     public GameObject[] DisabledObjects;
     private int convSequence;
     bool isConOver;
+
 
     void Start()
     {
@@ -18,6 +20,8 @@ public class YiranConversationScene2 : MonoBehaviour
         }
 
         isConOver = false;
+
+
     }
 
     // Update is called once per frame
@@ -43,60 +47,115 @@ public class YiranConversationScene2 : MonoBehaviour
 
     private void OnMouseOver()
     {
-      
-
-        if (Input.GetMouseButtonDown(0))
+        if (!BrainstormGeneralManager.Instance.ContainerDictionary[0].Prompt.completed)
         {
-            
-            convSequence++;
-
-            if (Conversations.Length >1) // when there are more than 1 conversation
+            //Debug.Log("not completed");
+            if (Input.GetMouseButtonDown(0))
             {
 
-                if (convSequence == 1)
+                convSequence++;
+
+                if (B4CompleteConversations.Length > 1) // when there are more than 1 conversation
                 {
-                    ConversationManager.Instance.StartConversation(Conversations[0]);
-                    Debug.Log("C1");
+
+                    if (convSequence == 1)
+                    {
+                        ConversationManager.Instance.StartConversation(B4CompleteConversations[0]);
+                        Debug.Log("C1");
+                    }
+                    else
+                    {
+                        convSequence = Random.Range(2, B4CompleteConversations.Length);
+
+
+                        switch (convSequence)
+                        {
+                            case 2:
+                                ConversationManager.Instance.StartConversation(B4CompleteConversations[1]);
+                                Debug.Log("C2");
+                                break;
+
+                            case 3:
+                                ConversationManager.Instance.StartConversation(B4CompleteConversations[2]);
+                                Debug.Log("C3");
+                                break;
+
+                            case 4:
+                                ConversationManager.Instance.StartConversation(B4CompleteConversations[3]);
+                                Debug.Log("C4");
+                                break;
+
+                        }
+                    }
+
+
                 }
                 else
                 {
-                    convSequence = Random.Range(2, 5);
+                    ConversationManager.Instance.StartConversation(B4CompleteConversations[0]);
+                    Debug.Log("C1");
 
-
-                    switch (convSequence)
-                    {
-                        case 2:
-                            ConversationManager.Instance.StartConversation(Conversations[1]);
-                            Debug.Log("C2");
-                            break;
-
-                        case 3:
-                            ConversationManager.Instance.StartConversation(Conversations[2]);
-                            Debug.Log("C3");
-                            break;
-
-                        case 4:
-                            ConversationManager.Instance.StartConversation(Conversations[3]);
-                            Debug.Log("C4");
-                            break;
-
-                    }
                 }
-             
+
 
             }
-            else
+        }
+        else
+        {
+            //Debug.Log(" completed");
+            if (Input.GetMouseButtonDown(0))
             {
-                ConversationManager.Instance.StartConversation(Conversations[0]);
-                Debug.Log("C1");
+
+                convSequence++;
+
+                if (AfterCompleteConversations.Length > 1) // when there are more than 1 conversation
+                {
+
+                    if (convSequence == 1)
+                    {
+                        ConversationManager.Instance.StartConversation(AfterCompleteConversations[0]);
+                        Debug.Log("AC1");
+                    }
+                    else
+                    {
+                        convSequence = Random.Range(2, AfterCompleteConversations.Length);
+
+
+                        switch (convSequence)
+                        {
+                            case 2:
+                                ConversationManager.Instance.StartConversation(AfterCompleteConversations[1]);
+                                Debug.Log("AC2");
+                                break;
+
+                            case 3:
+                                ConversationManager.Instance.StartConversation(AfterCompleteConversations[2]);
+                                Debug.Log("AC3");
+                                break;
+
+                            case 4:
+                                ConversationManager.Instance.StartConversation(AfterCompleteConversations[3]);
+                                Debug.Log("AC4");
+                                break;
+
+                        }
+                    }
+
+
+                } else
+                {
+                    ConversationManager.Instance.StartConversation(AfterCompleteConversations[0]);
+                    Debug.Log("AC1");
+
+                }
 
             }
+
+
 
 
         }
 
-        
+
     }
-
-
 }

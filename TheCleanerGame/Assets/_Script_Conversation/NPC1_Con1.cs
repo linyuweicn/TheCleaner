@@ -6,9 +6,8 @@ using DialogueEditor;
 public class NPC1_Con1 : MonoBehaviour
 {
     private int convSequence;
-    public NPCConversation Conversation1;
-    public NPCConversation Conversation2;
-    public NPCConversation Conversation3;
+    public NPCConversation[] B4CompleteConversations;
+    public GameObject[] DisabledObjects;
 
     void Start()
     {
@@ -18,7 +17,25 @@ public class NPC1_Con1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        void Update()
+        {
+            if (ConversationManager.Instance.IsConversationActive)
+            {
+
+                for (int i = 0; i < DisabledObjects.Length; i++)
+                {
+                    DisabledObjects[i].SetActive(false);
+                }
+
+            }
+            else
+            {
+                for (int i = 0; i < DisabledObjects.Length; i++)
+                {
+                    DisabledObjects[i].SetActive(true);
+                }
+            }
+        }
     }
 
     public void OnMouseOver()
@@ -29,23 +46,23 @@ public class NPC1_Con1 : MonoBehaviour
 
             if (convSequence == 1)
             {
-                ConversationManager.Instance.StartConversation(Conversation1);
+                ConversationManager.Instance.StartConversation(B4CompleteConversations[0]);
                 Debug.Log("C1");
             }
             else
             {
-                convSequence = Random.Range(2, 4);
+                convSequence = Random.Range(2, B4CompleteConversations.Length);
 
 
                 switch (convSequence)
                 {
                     case 2:
-                        ConversationManager.Instance.StartConversation(Conversation2);
+                        ConversationManager.Instance.StartConversation(B4CompleteConversations[1]);
                         Debug.Log("C2");
                         break;
 
                     case 3:
-                        ConversationManager.Instance.StartConversation(Conversation3);
+                        ConversationManager.Instance.StartConversation(B4CompleteConversations[2]);
                         Debug.Log("C3");
                         break;
                 }

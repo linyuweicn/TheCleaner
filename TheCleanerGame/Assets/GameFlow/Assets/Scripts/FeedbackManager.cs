@@ -12,6 +12,7 @@ public class FeedbackManager : MonoBehaviour
     [SerializeField] GameObject redFeedbackBubble;
     [SerializeField] GameObject neutralFeedbackBubble;
     [SerializeField] TextMeshProUGUI neutralFeedbackText;
+    [SerializeField] TextMeshProUGUI neutralFeedbackName;
 
     [SerializeField] GameObject criticalFeedbackBubble;
     [SerializeField] Image criticalFeedbackImage;
@@ -58,7 +59,7 @@ public class FeedbackManager : MonoBehaviour
                 TriggerCriticalFeedback(answer.criticType, answer.feedbackText);
                 break;
             case FeedbackType.Neutral:
-                TriggerNeutralFeedback(answer.feedbackText);
+                TriggerNeutralFeedback(answer.criticType, answer.feedbackText);
                 break;
             case FeedbackType.Negative:
                 TriggerCriticalFeedback(answer.criticType, answer.feedbackText);
@@ -72,9 +73,10 @@ public class FeedbackManager : MonoBehaviour
         criticalFeedbackText.text = feedbackText;
         OpenCriticalFeedback();
     }
-    public void TriggerNeutralFeedback(string feedbackText)
+    public void TriggerNeutralFeedback(CriticType type, string feedbackText)
     {
         neutralFeedbackText.text = feedbackText;
+        neutralFeedbackName.text = type.ToString();
         OpenRedBubble();
     }
     public void CloseCriticalFeedback()

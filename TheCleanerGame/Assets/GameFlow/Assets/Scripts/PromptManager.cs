@@ -11,6 +11,7 @@ public class PromptManager : MonoBehaviour
 
     [SerializeField] int totalTheme, totalCharacter, totalSetting, totalNarration;
     int completedTheme, completedCharacter, completedSetting, completedNarration;
+    //[SerializeField] GameObject ExitDoor;// enable the door when prompts are completed
 
     #endregion
 
@@ -31,7 +32,7 @@ public class PromptManager : MonoBehaviour
     }
     void Start()
     {
-        
+        //ExitDoor.SetActive(false);
     }
 
     void InitializeKey(int key)
@@ -110,6 +111,7 @@ public class PromptManager : MonoBehaviour
         {
             prompt.completed = true;
             IncrementCompletedPromptCount(prompt.Type);
+            //ExitDoor.SetActive(true);
         }
     }
     #endregion
