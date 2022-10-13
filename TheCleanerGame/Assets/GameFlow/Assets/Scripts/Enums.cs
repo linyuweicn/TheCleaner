@@ -21,7 +21,10 @@ public enum CriticType
 {
     Yiran,
     Benjamine,
-    Team
+    Team,
+    Luca,
+    Charlie,
+    Olivia
 }
 
 public enum BrainstormState

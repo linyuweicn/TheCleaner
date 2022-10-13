@@ -58,6 +58,7 @@ public class BrainstormContainer : MonoBehaviour
         {
             Action func = FinishSwitchingToRank;
             MoveToPosition(hiddenPosition, func);
+            Debug.Log(hiddenPosition);
         }
         else
         {
