@@ -26,7 +26,6 @@ public class BrainstormContainer : MonoBehaviour
     #region initialization
     private void Awake()
     {
-        //origPosition = transform.position;
         state = ContainerState.Revealed;
     }
     void Start()
@@ -56,8 +55,9 @@ public class BrainstormContainer : MonoBehaviour
     {
         if (state == ContainerState.Revealed)
         {
+            origPosition = transform.position;
             Action func = FinishSwitchingToRank;
-            MoveToPosition(hiddenPosition, func);
+            MoveToPosition(transform.position + hiddenPosition, func);
             Debug.Log(hiddenPosition);
         }
         else
