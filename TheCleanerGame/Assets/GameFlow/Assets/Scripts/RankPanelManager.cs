@@ -20,6 +20,7 @@ public class RankPanelManager : MonoBehaviour
     public List<List<AnswerBox>> AnswerBoxes;
     public List<GameObject> ShadowBoxes;
     public RankPanelState State { get; set; }
+    public FeedbackManager feedbackManager;
     #endregion
 
     #region initialization
@@ -82,6 +83,33 @@ public class RankPanelManager : MonoBehaviour
         {
             Destroy(ShadowBoxes[i]);
         }
+        ShadowBoxes.Clear();
+    }
+
+    public void CullAnswers()
+    {
+        for (int i = 0; i < AnswerBoxes.Count; i++)
+        {
+            AnswerBox top = AnswerBoxes[i][0];
+            for (int j = 1; j < AnswerBoxes[i].Count; j++)
+            {
+                AnswerBoxes[i][j].SelfDestruct();
+            }
+            AnswerBoxes[i].Clear();
+            AnswerBoxes[i].Add(top);
+        }
+        for (int i = 0; i < ShadowBoxes.Count; i++)
+        {
+            Destroy(ShadowBoxes[i]);
+        }
+        ShadowBoxes.Clear();
+    }
+
+    public void NextStage()
+    {
+        feedbackManager.ResetFeedback();
+        State = RankPanelState.Culled;
+        CullAnswers();
     }
 
     #endregion

@@ -46,7 +46,8 @@ public enum ContainerState
 public enum RankPanelState
 {
     Ranking,
-    Feedback
+    Feedback,
+    Culled
 }
 
 public enum ButtonType

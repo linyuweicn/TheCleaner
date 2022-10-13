@@ -86,8 +86,7 @@ public class ArrowButtonObject : MonoBehaviour
         }
         else if (BrainstormGeneralManager.Instance.state == BrainstormState.Rank)
         {
-            PromptManager.Instance.MarkPromptAsCompleted(BrainstormGeneralManager.Instance.FocusedContainer.Prompt);
-            BrainstormGeneralManager.Instance.SwitchToMenuState();
+            RankNext();
         }
         else if (BrainstormGeneralManager.Instance.state == BrainstormState.Menu)
         {
@@ -103,6 +102,21 @@ public class ArrowButtonObject : MonoBehaviour
         }
     }
 
+    public void RankNext()
+    {
+        if (BrainstormGeneralManager.Instance.state == BrainstormState.Rank)
+        {
+            if (rankPanelManager.State != RankPanelState.Culled)
+            {
+                PromptManager.Instance.MarkPromptAsCompleted(BrainstormGeneralManager.Instance.FocusedContainer.Prompt);
+                rankPanelManager.NextStage();
+            }
+            else
+            {
+                GoBack();
+            }
+        }
+    }
     void DeactivateButton()
     {
         if (activated)
