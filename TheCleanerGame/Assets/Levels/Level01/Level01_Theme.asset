@@ -15,22 +15,22 @@ MonoBehaviour:
   id: {x: 0, y: 0}
   promptType: 0
   text: 'The Theme of the game will be '
-  completed: 1
+  completed: 0
   AnswersStorage:
   - answerColumn:
     - text: Power Corrupts
-      satisfaction: 0
-      censorFulfillment: 0
-      innovation: 0
-      production: 0
+      satisfaction: 10
+      censorFulfillment: 10
+      innovation: 10
+      production: 10
       feedbackType: 2
       feedbackText: It's all about the paradox of power.
       criticType: 2
     - text: Family
-      satisfaction: 0
-      censorFulfillment: 0
-      innovation: 0
-      production: 0
+      satisfaction: 100
+      censorFulfillment: 100
+      innovation: 100
+      production: 100
       feedbackType: 1
       feedbackText: This feel good to me.
       criticType: 0
@@ -43,7 +43,7 @@ MonoBehaviour:
       feedbackText: This is a solid theme. Very patriotic.
       criticType: 4
     - text: Loyalty
-      satisfaction: 0
+      satisfaction: 10
       censorFulfillment: 0
       innovation: 0
       production: 0

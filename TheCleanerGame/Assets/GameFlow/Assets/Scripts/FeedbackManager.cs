@@ -18,9 +18,15 @@ public class FeedbackManager : MonoBehaviour
     [SerializeField] Image criticalFeedbackImage;
     [SerializeField] TextMeshProUGUI criticalFeedbackName;
     [SerializeField] TextMeshProUGUI criticalFeedbackText;
+    [HideInInspector] public float totalScore;
+    [SerializeField] TextMeshProUGUI totalScoreText;
 
     [SerializeField] List<criticPair> criticPairs;
     Dictionary<CriticType, Sprite> CriticDictionary;
+
+    //for calculation scores
+    
+    
 
     #region private struct
     [Serializable]
@@ -109,6 +115,13 @@ public class FeedbackManager : MonoBehaviour
         neutralFeedbackBubble.SetActive(true);
     }
 
+    public float GetScores(AnswerObject answer)
+    {
+        totalScore = 0.1f*answer.satisfaction + 0.3f*answer.innovation + 0.5f*answer.censorFulfillment - 0.1f*answer.production;
+        //totalScoreText.text = totalScore.ToString();
+        Debug.Log(totalScore);
+        return totalScore;
+    }
 
     #endregion
 

@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.EventSystems;
 
 
-public class AnswerBox : MonoBehaviour, IPointerClickHandler
+public class AnswerBox : MonoBehaviour
 {
     #region variables
     [Header("Debug Attributes")]
@@ -26,6 +26,9 @@ public class AnswerBox : MonoBehaviour, IPointerClickHandler
 
     RankPanelManager rankPanelManager;
     FeedbackManager feedbackManager;
+    ScoreProgress scoreProgress;
+    public PromptObject promptObject;
+
     Camera cam;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] TextMeshProUGUI text;
@@ -40,6 +43,7 @@ public class AnswerBox : MonoBehaviour, IPointerClickHandler
     }
     void Start()
     {
+        scoreProgress = FindObjectOfType<ScoreProgress>();
         
     }
 
@@ -154,9 +158,16 @@ public class AnswerBox : MonoBehaviour, IPointerClickHandler
 
                 elapsed = 0.0f;
 
-                if (ranking == 0) //handles Feedback
+                if (ranking == 0) //handles Feedback and calculate scores
                 {
                     feedbackManager.TriggerFeedback(BrainstormGeneralManager.Instance.FocusedContainer.Prompt.Answers[column][ranking]);
+                    
+                    //get the score for the top choice
+                    float totalScores = feedbackManager.GetScores(BrainstormGeneralManager.Instance.FocusedContainer.Prompt.Answers[column][ranking]);
+                   /* float totalNoOfColum = promptObject.AnswersStorage.Count;
+                    Debug.Log("totalNoOfColum is" + totalNoOfColum);*/
+                    //increment the likeness bar
+                    scoreProgress.IncrementProgress(totalScores);
                 }
             }
 
@@ -205,7 +216,7 @@ public class AnswerBox : MonoBehaviour, IPointerClickHandler
         return mousePosition;
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+   /* public void OnPointerClick(PointerEventData eventData)
     {
 
         if (eventData.clickCount == 2)
@@ -213,7 +224,7 @@ public class AnswerBox : MonoBehaviour, IPointerClickHandler
             Debug.Log("double click");
         }
 
-    }
+    }*/
 
     #endregion
 

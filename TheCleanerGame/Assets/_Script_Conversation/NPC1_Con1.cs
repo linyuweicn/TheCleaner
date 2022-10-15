@@ -43,32 +43,41 @@ public class NPC1_Con1 : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             convSequence++;
+            if (B4CompleteConversations.Length > 1)
+            {
+                if (convSequence == 1)
+                {
+                    ConversationManager.Instance.StartConversation(B4CompleteConversations[0]);
+                    Debug.Log("C1");
+                }
+                else
+                {
+                    convSequence = Random.Range(2, B4CompleteConversations.Length);
 
-            if (convSequence == 1)
+
+                    switch (convSequence)
+                    {
+                        case 2:
+                            ConversationManager.Instance.StartConversation(B4CompleteConversations[1]);
+                            Debug.Log("C2");
+                            break;
+
+                        case 3:
+                            ConversationManager.Instance.StartConversation(B4CompleteConversations[2]);
+                            Debug.Log("C3");
+                            break;
+                    }
+                }
+            }
+            else
             {
                 ConversationManager.Instance.StartConversation(B4CompleteConversations[0]);
                 Debug.Log("C1");
             }
-            else
-            {
-                convSequence = Random.Range(2, B4CompleteConversations.Length);
-
-
-                switch (convSequence)
-                {
-                    case 2:
-                        ConversationManager.Instance.StartConversation(B4CompleteConversations[1]);
-                        Debug.Log("C2");
-                        break;
-
-                    case 3:
-                        ConversationManager.Instance.StartConversation(B4CompleteConversations[2]);
-                        Debug.Log("C3");
-                        break;
-                }
-            }
 
             
         }
+
+        Debug.Log("Clicked");
     }
 }

@@ -15,8 +15,9 @@ public class PromptObject : ScriptableObject
     public bool completed;
 
     [Header("Answers")]
-    [SerializeField] List<NestedList> AnswersStorage; //don't modify this
+    [SerializeField] public List<NestedList> AnswersStorage; //don't modify this
     public List<List<AnswerObject>> Answers;
+
     #region private class
     [Serializable]
     public class NestedList
