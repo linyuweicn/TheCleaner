@@ -110,7 +110,7 @@ public class YiranConversationScene2 : MonoBehaviour
             {
 
                 convSequence++;
-
+                audioManager.PlaySFX(audioClip);
                 if (AfterCompleteConversations.Length > 1) // when there are more than 1 conversation
                 {
 

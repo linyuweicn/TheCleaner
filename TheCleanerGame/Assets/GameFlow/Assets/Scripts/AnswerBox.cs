@@ -168,8 +168,7 @@ public class AnswerBox : MonoBehaviour
                     
                     //get the score for the top choice
                     float totalScores = feedbackManager.GetScores(BrainstormGeneralManager.Instance.FocusedContainer.Prompt.Answers[column][ranking]);
-                   /* float totalNoOfColum = promptObject.AnswersStorage.Count;
-                    Debug.Log("totalNoOfColum is" + totalNoOfColum);*/
+
                     //increment the likeness bar
                     scoreProgress.IncrementProgress(totalScores);
                 }

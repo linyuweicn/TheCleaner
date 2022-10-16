@@ -42,6 +42,7 @@ public class NPC1_Con1 : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            Debug.Log("Clicked");
             convSequence++;
             if (B4CompleteConversations.Length > 1)
             {
@@ -78,6 +79,17 @@ public class NPC1_Con1 : MonoBehaviour
             
         }
 
-        Debug.Log("Clicked");
+        
+    }
+
+    public void ClickButtonPeople()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+
+            convSequence++;
+            ConversationManager.Instance.StartConversation(B4CompleteConversations[0]);
+            Debug.Log("C1 button");
+        }
     }
 }

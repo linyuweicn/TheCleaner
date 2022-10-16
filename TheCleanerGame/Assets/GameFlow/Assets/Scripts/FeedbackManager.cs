@@ -117,8 +117,9 @@ public class FeedbackManager : MonoBehaviour
 
     public float GetScores(AnswerObject answer)
     {
-        totalScore = 0.1f*answer.satisfaction + 0.3f*answer.innovation + 0.5f*answer.censorFulfillment - 0.1f*answer.production;
+        //totalScore = 0.1f*answer.satisfaction + 0.3f*answer.innovation + 0.5f*answer.censorFulfillment - 0.1f*answer.production;
         //totalScoreText.text = totalScore.ToString();
+        totalScore = answer.totalscore;
         Debug.Log(totalScore);
         return totalScore;
     }

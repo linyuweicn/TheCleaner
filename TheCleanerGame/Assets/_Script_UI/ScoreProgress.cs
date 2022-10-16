@@ -9,6 +9,10 @@ public class ScoreProgress : MonoBehaviour
     private float targetProgress =0f;
     [SerializeField] float fillSpeed;
 
+
+    // inside of your update or animation method
+    
+
     FeedbackManager feedbackManager;
     
 
@@ -36,21 +40,23 @@ public class ScoreProgress : MonoBehaviour
         {
             slider.value -= fillSpeed * Time.deltaTime;
         }
-        
+
     }
 
     public void IncrementProgress(float newProgress)
     {
-        //newProgress = feedbackManager.totalScore;
-        if (newProgress >= targetProgress)
+        //newProgress = answer.totalscore;
+        /*if (newProgress >= targetProgress)
         {
             targetProgress = slider.value + newProgress;
         }
         else
         {
             targetProgress = newProgress;
-        }
+        }*/
 
-        
+        targetProgress = newProgress;
+
+        Debug.Log("new progress is "+ newProgress);
     }
 }
