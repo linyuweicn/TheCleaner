@@ -14,6 +14,7 @@ public class ArrowButtonObject : MonoBehaviour
     Color origColor;
     RankPanelManager rankPanelManager;
     FeedbackManager feedbackManager;
+    AudioManager audioManager;
 
     #endregion
     private void Awake()
@@ -22,6 +23,7 @@ public class ArrowButtonObject : MonoBehaviour
         origColor = img.color;
         rankPanelManager = FindObjectOfType<RankPanelManager>();
         feedbackManager = FindObjectOfType<FeedbackManager>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     private void FixedUpdate()
@@ -62,10 +64,10 @@ public class ArrowButtonObject : MonoBehaviour
         switch (buttonType)
         {
             case ButtonType.Back:
-                GoBack();
+                GoBack();                
                 break;
             case ButtonType.Forward:
-                GoForward();
+                GoForward();               
                 break;
         }
     }
@@ -76,6 +78,7 @@ public class ArrowButtonObject : MonoBehaviour
         {
             BrainstormGeneralManager.Instance.SwitchToMenuState();
         }
+  
     }
 
     public void GoForward()
@@ -100,6 +103,7 @@ public class ArrowButtonObject : MonoBehaviour
             }
             BrainstormGeneralManager.Instance.SwitchToRankState(0);
         }
+
     }
 
     public void RankNext()

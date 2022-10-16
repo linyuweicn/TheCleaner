@@ -33,6 +33,9 @@ public class AnswerBox : MonoBehaviour
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] TextMeshProUGUI text;
     [SerializeField] LayerMask answerBoxLayer;
+
+    
+    AudioManager audiomanager;
     #endregion
 
     #region initialization
@@ -44,7 +47,7 @@ public class AnswerBox : MonoBehaviour
     void Start()
     {
         scoreProgress = FindObjectOfType<ScoreProgress>();
-        
+        audiomanager = FindObjectOfType< AudioManager>();
     }
 
     public void Construct(int column, int ranking, Vector3 position)
@@ -69,6 +72,7 @@ public class AnswerBox : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 ClickedDown();
+                audiomanager.PlayUiSound("ui_click");
             }
             else if (!Input.GetMouseButton(0))
             {

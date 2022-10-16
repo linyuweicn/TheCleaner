@@ -12,7 +12,7 @@ public class BrainstormContainer : MonoBehaviour
     [SerializeField] Vector3 hiddenPosition;
     [SerializeField] float speed;
     [SerializeField] TextMeshProUGUI fractionText;
-
+    AudioManager audioManager;
     
     ContainerState state;
 
@@ -30,6 +30,8 @@ public class BrainstormContainer : MonoBehaviour
     }
     void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
+
         BrainstormGeneralManager.Instance.AddContainterToList(this);
         PromptManager.Instance.AddPrompt(Prompt);
         UpdateText();
@@ -137,6 +139,8 @@ public class BrainstormContainer : MonoBehaviour
         {
             BrainstormGeneralManager.Instance.SwitchToRankState(PromptID);
         }
+
+        audioManager.PlayUiSound("ui_drag_02");
     }
 
     #endregion

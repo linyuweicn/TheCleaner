@@ -5,12 +5,14 @@ using DialogueEditor;
 
 public class YiranConversationScene2 : MonoBehaviour
 {
+    [SerializeField] AudioClip audioClip;
+    AudioManager audioManager;
     public NPCConversation[] B4CompleteConversations;
     public NPCConversation[] AfterCompleteConversations;
     public GameObject[] DisabledObjects;
     private int convSequence;
     bool isConOver;
-
+   
 
     void Start()
     {
@@ -21,7 +23,7 @@ public class YiranConversationScene2 : MonoBehaviour
 
         isConOver = false;
 
-
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
@@ -54,6 +56,7 @@ public class YiranConversationScene2 : MonoBehaviour
             {
 
                 convSequence++;
+                audioManager.PlaySFX(audioClip);
 
                 if (B4CompleteConversations.Length > 1) // when there are more than 1 conversation
                 {

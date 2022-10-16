@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,32 +7,51 @@ public class AudioManager : MonoBehaviour
 {
     //---------------- Singleton ----------------
     private static AudioManager instance;
-    void Awake() { instance=this; }
+    public float fadeTime = 1;
+
+
+
+    void Awake() { instance = this; }
     //---------------- Public Static ----------------
 
-    public static void PlayUiSound(string sfxName)
+    public void PlayUiSound(string sfxName) // why public static void?
     {
         switch (sfxName)
         {
-            case "click1":
+            case "ui_click1":
                 PlaySFX(instance.uiSounds[0]);
                 break;
-            
-            case "click2":
+
+            case "ui_confirm":
                 PlaySFX(instance.uiSounds[1]);
                 break;
-            
+
+            case "ui_drag_02":
+                PlaySFX(instance.uiSounds[2]);
+                break;
+            case "ui_click":
+                PlaySFX(instance.uiSounds[3]);
+                break;
+
             default:
                 Debug.LogWarning("Wrong sfx Name");
                 break;
         }
     }
 
-    public static void PlaySFX(AudioClip clip)
+    public void PlaySFX(AudioClip clip)
     {
         instance._playSFX(clip);
     }
-    
+
+
+
+    public void FadeAudio (AudioSource audioSource)
+    {     
+            audioSource.volume = Mathf.Lerp(1, 0,3 );
+      
+    }
+
     //---------------- Variables ----------------
     public AudioSource[] audioSources;
     

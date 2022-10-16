@@ -13,11 +13,12 @@ public class WhtieBoard : MonoBehaviour
 
     public GameObject Animator;
     Animator m_Animator;
-    
+    AudioManager audioManager;
 
     void Start()
     {
         m_Animator = Animator.GetComponent<Animator>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     private void OnEnable()
@@ -60,6 +61,7 @@ public class WhtieBoard : MonoBehaviour
                 DisabledObjects[i].SetActive(false); // disable all the obajects
             }
 
+            audioManager.PlayUiSound("ui_click");
 
         }
 
