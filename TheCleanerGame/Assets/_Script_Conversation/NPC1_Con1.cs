@@ -17,8 +17,7 @@ public class NPC1_Con1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        void Update()
-        {
+       
             if (ConversationManager.Instance.IsConversationActive)
             {
 
@@ -26,6 +25,7 @@ public class NPC1_Con1 : MonoBehaviour
                 {
                     DisabledObjects[i].SetActive(false);
                 }
+               
 
             }
             else
@@ -35,7 +35,7 @@ public class NPC1_Con1 : MonoBehaviour
                     DisabledObjects[i].SetActive(true);
                 }
             }
-        }
+        
     }
 
     public void OnMouseOver()

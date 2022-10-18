@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: M_ObjectOutline
   m_Shader: {fileID: 4800000, guid: 62505ee61d20098489c6f861ed25cce1, type: 3}
-  m_ShaderKeywords: _OUTLINEENABLED_ON _OUTLINEMODE_SOLID _OUTLINEPOSITION_INSIDE_UNDER_SPRITE
+  m_ShaderKeywords: _OUTLINEENABLED_ON _OUTLINEMODE_GRADIENT _OUTLINEPOSITION_INSIDE_UNDER_SPRITE
     _OUTLINESHAPE_CONTOUR _TILEMODE_STRETCH
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -42,21 +42,21 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AlphaThreshold: 0
-    - _Angle: 45
+    - _Angle: 0
     - _ConnectedAlpha: 0
     - _EnableExternalAlpha: 0
     - _OutlineEnabled: 1
-    - _OutlineMode: 0
+    - _OutlineMode: 1
     - _OutlinePosition: 0
     - _OutlineShape: 0
-    - _Thickness: 5.24
+    - _Thickness: 3
     - _TileMode: 0
-    - _Weight: 0.52
+    - _Weight: 0.502
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _GradientOutline1: {r: 1, g: 0.38364774, b: 0.38364774, a: 1}
-    - _GradientOutline2: {r: 0.9725491, g: 0.909804, b: 0.098039225, a: 1}
+    - _GradientOutline1: {r: 0.9725491, g: 0.909804, b: 0.098039225, a: 1}
+    - _GradientOutline2: {r: 1, g: 1, b: 1, a: 1}
     - _ImageOutline: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _SolidOutline: {r: 0.9716981, g: 0.9098667, b: 0.09778087, a: 1}

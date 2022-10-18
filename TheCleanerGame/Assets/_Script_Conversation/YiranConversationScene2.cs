@@ -16,11 +16,11 @@ public class YiranConversationScene2 : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; i < DisabledObjects.Length; i++)
+        /*for (int i = 0; i < DisabledObjects.Length; i++)
         {
             DisabledObjects[i].SetActive(true);
         }
-
+*/
         isConOver = false;
 
         audioManager = FindObjectOfType<AudioManager>();
