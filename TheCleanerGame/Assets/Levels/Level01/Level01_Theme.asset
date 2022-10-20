@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: {x: 0, y: 0}
   promptType: 0
-  text: 'The Theme of the game will be '
+  text: The Theme of the game will be [genre]
   completed: 0
   AnswersStorage:
   - answerColumn:
@@ -51,3 +51,6 @@ MonoBehaviour:
       feedbackText: It's not terribly original, but it's also not offensive and that's
         the most important thing.
       criticType: 4
+  segments:
+  - 'The Theme of the game will be '
+  - 

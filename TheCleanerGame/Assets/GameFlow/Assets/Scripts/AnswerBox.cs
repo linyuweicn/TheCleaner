@@ -239,4 +239,17 @@ public class AnswerBox : MonoBehaviour
     }
 
     #endregion
+
+    #region get/set
+
+    public AnswerObject GetAnswer()
+    {
+        return BrainstormGeneralManager.Instance.FocusedContainer.Prompt.Answers[column][ranking];
+    }
+    public string GetAnswerText()
+    {
+        return GetAnswer().text;
+    }
+
+    #endregion
 }

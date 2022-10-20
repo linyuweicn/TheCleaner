@@ -114,7 +114,6 @@ public class ArrowButtonObject : MonoBehaviour
             {
                 PromptManager.Instance.MarkPromptAsCompleted(BrainstormGeneralManager.Instance.FocusedContainer.Prompt);
                 rankPanelManager.NextStage();
-
            
             }
             else

@@ -103,6 +103,7 @@ public class RankPanelManager : MonoBehaviour
             Destroy(ShadowBoxes[i]);
         }
         ShadowBoxes.Clear();
+        RewritePrompt();
     }
 
     public void NextStage()
@@ -127,6 +128,21 @@ public class RankPanelManager : MonoBehaviour
         GameObject output = Instantiate(shadowBox, answerParent.transform);
         output.transform.localPosition = position;
         return output;
+    }
+
+    void RewritePrompt()
+    {
+        PromptObject prompt = BrainstormGeneralManager.Instance.FocusedContainer.Prompt;
+        promptText.text = prompt.segments[0];
+        for (int i = 1; i < prompt.segments.Count; i++)
+        {
+            if (i - 1 < AnswerBoxes.Count)
+            {
+                promptText.text += AnswerBoxes[i - 1][0].GetAnswerText();
+            }
+
+            promptText.text += (prompt.segments[i]);
+        }
     }
     #endregion
 

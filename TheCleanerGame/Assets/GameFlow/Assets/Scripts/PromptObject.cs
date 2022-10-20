@@ -17,6 +17,7 @@ public class PromptObject : ScriptableObject
     [Header("Answers")]
     [SerializeField] public List<NestedList> AnswersStorage; //don't modify this
     public List<List<AnswerObject>> Answers;
+    public List<string> segments;
 
     #region private class
     [Serializable]
@@ -54,6 +55,27 @@ public class PromptObject : ScriptableObject
             }
         }
         completed = false;
+        ParseSegment();
+    }
+
+    void ParseSegment()
+    {
+        int start = 0;
+        segments = new List<string>();
+        for (int c = 0; c < text.Length; c++)
+        {
+            if (text[c] == '[')
+            {
+                segments.Add(text.Substring(start, c - start));
+                start = c + 1;
+            }
+            else if (text[c] == ']')
+            {
+                start = c + 1;
+                
+            }
+        }
+        segments.Add(text.Substring(start, text.Length - start));
     }
 
     #endregion

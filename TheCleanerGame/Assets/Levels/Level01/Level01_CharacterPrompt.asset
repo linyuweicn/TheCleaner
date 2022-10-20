@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: {x: 0, y: 1}
   promptType: 1
-  text: The Hero of the game is [Ajective] [Noun]
-  completed: 0
+  text: The Hero of the game is [Adjective] [Noun]
+  completed: 1
   AnswersStorage:
   - answerColumn:
     - text: Adorable
@@ -80,3 +80,7 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: 'I LOVE this character already. '
       criticType: 4
+  segments:
+  - 'The Hero of the game is '
+  - ' '
+  - 

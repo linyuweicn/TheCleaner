@@ -70,6 +70,7 @@ public class BrainstormGeneralManager : MonoBehaviour
         if (state == BrainstormState.Rank)
         {
             focusedContainer = -1;
+            rankPanelManager.State = RankPanelState.Ranking;
 
             StartPreparingMenu();
             state = BrainstormState.TransToMenu;
