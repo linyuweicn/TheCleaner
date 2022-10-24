@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransitionButton : MonoBehaviour
 {
-    
+    [SerializeField] Animator aimator; 
     void Start()
     {
        
@@ -20,9 +20,17 @@ public class SceneTransitionButton : MonoBehaviour
 
     public void ToNextScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(LoadNextScene());
         
     }
 
+    IEnumerator LoadNextScene( )
+    {
+        aimator.SetTrigger("Start");
+
+        yield return new WaitForSeconds(1f);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
    
 }

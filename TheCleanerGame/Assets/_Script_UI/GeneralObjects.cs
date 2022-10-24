@@ -21,7 +21,7 @@ public class GeneralObjects : MonoBehaviour
             m_Animator = Animator.GetComponent<Animator>();
             //for aniamted objects, enable them at the begining
         }
-        else
+        else if (enableObjects != null)
         {
             enableObjects.SetActive(false);
         }
@@ -59,7 +59,7 @@ public class GeneralObjects : MonoBehaviour
 
     }
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         if (m_Animator != null)
         {

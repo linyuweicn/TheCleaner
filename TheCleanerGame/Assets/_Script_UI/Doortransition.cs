@@ -39,6 +39,7 @@ public class Doortransition : MonoBehaviour
 
     private void OnMouseDown()
     {
+        //bug note: if the objects does not react to clicking, reassign the caermas in the scene to the scripts.
 
         if ((gameObject.name == "LabDoor") && CanClick)// click the Lab door
         {
@@ -57,12 +58,13 @@ public class Doortransition : MonoBehaviour
 
             }
         }
-        else if ((gameObject.name == "OffficeDoor") && CanClick) // DoorToMyOfficer
+        else if ((gameObject.name == "OfficeDoor") && CanClick) // DoorToMyOfficer
         {
             if (!isDoor2clicked)
             {
                 YiranOfficeCamera.SetActive(true); // move to Yiran offcice
                 isDoor2clicked = true;
+                Debug.Log("Clicked");
             }
             else // move to brainstorm room
             {
