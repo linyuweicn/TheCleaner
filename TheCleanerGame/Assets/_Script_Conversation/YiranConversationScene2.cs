@@ -9,18 +9,15 @@ public class YiranConversationScene2 : MonoBehaviour
     AudioManager audioManager;
     public NPCConversation[] B4CompleteConversations;
     public NPCConversation[] AfterCompleteConversations;
-    public GameObject[] DisabledObjects;
+    //public GameObject[] DisabledObjects;
+    [SerializeField] BoxCollider2D[] boxCollider2D;
     private int convSequence;
     bool isConOver;
    
 
     void Start()
     {
-        /*for (int i = 0; i < DisabledObjects.Length; i++)
-        {
-            DisabledObjects[i].SetActive(true);
-        }
-*/
+  
         isConOver = false;
 
         audioManager = FindObjectOfType<AudioManager>();
@@ -32,17 +29,21 @@ public class YiranConversationScene2 : MonoBehaviour
         if (ConversationManager.Instance.IsConversationActive)
         {
 
-            for (int i = 0; i < DisabledObjects.Length; i++)
+     
+
+            for (int i = 0; i < boxCollider2D.Length; i++)
             {
-                DisabledObjects[i].SetActive(false);
+                boxCollider2D[i].enabled = false;
             }
 
         }
         else
         {
-            for (int i = 0; i < DisabledObjects.Length; i++)
+          
+
+            for (int i = 0; i < boxCollider2D.Length; i++)
             {
-                DisabledObjects[i].SetActive(true);
+                boxCollider2D[i].enabled = true;
             }
         }
     }

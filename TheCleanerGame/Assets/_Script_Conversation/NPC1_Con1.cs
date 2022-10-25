@@ -7,7 +7,8 @@ public class NPC1_Con1 : MonoBehaviour
 {
     private int convSequence;
     public NPCConversation[] B4CompleteConversations;
-    public GameObject[] DisabledObjects;
+    [SerializeField] Collider2D[] boxCollider2D;
+    
 
     void Start()
     {
@@ -22,18 +23,18 @@ public class NPC1_Con1 : MonoBehaviour
             if (ConversationManager.Instance.IsConversationActive)
             {
 
-                for (int i = 0; i < DisabledObjects.Length; i++)
+                for (int i = 0; i < boxCollider2D.Length; i++)
                 {
-                    DisabledObjects[i].SetActive(false);
+                    boxCollider2D[i].enabled = false;
                 }
 
 
             }
             else
             {
-                for (int i = 0; i < DisabledObjects.Length; i++)
+                for (int i = 0; i < boxCollider2D.Length; i++)
                 {
-                    DisabledObjects[i].SetActive(true);
+                    boxCollider2D[i].enabled = true;
                 }
             }
         }

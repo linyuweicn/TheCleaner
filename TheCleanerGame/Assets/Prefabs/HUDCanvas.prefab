@@ -810,7 +810,7 @@ MonoBehaviour:
   ScrollSpeed: 0.25
   BackgroundImage: {fileID: 21300000, guid: 2c38d230085b5c6469fe6b9243a93568, type: 3}
   BackgroundImageSliced: 1
-  OptionImage: {fileID: 21300000, guid: 2c38d230085b5c6469fe6b9243a93568, type: 3}
+  OptionImage: {fileID: 21300000, guid: bf566e80557acbc45b9a695fcaa25327, type: 3}
   OptionImageSliced: 1
   AllowMouseInteraction: 1
   DialoguePanel: {fileID: 3862735245174808218}
@@ -1441,7 +1441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d76980068ab8cb444898e8d6b2c78412, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aimator: {fileID: 0}
+  aimator: {fileID: 1796045099714811927}
 --- !u!1 &7395448799518095678
 GameObject:
   m_ObjectHideFlags: 0
@@ -2436,7 +2436,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Do you want to end the day?
+  m_text: Go to the next day?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2673,18 +2673,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &7395448800705649589
 GameObject:
@@ -2984,7 +2972,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7395448800898905353
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3296,6 +3284,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 109517769065333191, guid: b967980ba88ecb04ba0f64ca2829ca49, type: 3}
   m_PrefabInstance: {fileID: 1831206191329352156}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1796045099714811927 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 109517769065333195, guid: b967980ba88ecb04ba0f64ca2829ca49, type: 3}
+  m_PrefabInstance: {fileID: 1831206191329352156}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3903156744516367218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3521,6 +3514,22 @@ PrefabInstance:
     - target: {fileID: 4226144523472313131, guid: 11e8ea80cf8fa8441b959478e2b73670, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4226144523649690238, guid: 11e8ea80cf8fa8441b959478e2b73670, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4226144523649690238, guid: 11e8ea80cf8fa8441b959478e2b73670, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 4226144523649690238, guid: 11e8ea80cf8fa8441b959478e2b73670, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4226144523649690238, guid: 11e8ea80cf8fa8441b959478e2b73670, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11e8ea80cf8fa8441b959478e2b73670, type: 3}
