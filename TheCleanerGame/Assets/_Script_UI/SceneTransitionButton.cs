@@ -16,6 +16,15 @@ public class SceneTransitionButton : MonoBehaviour
     {
 
         //Debug.Log("1");
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }else if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SceneManager.LoadScene(0);
+        }
+
     }
 
     public void ToNextScene()
@@ -31,6 +40,11 @@ public class SceneTransitionButton : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void CloseGame()
+    {
+        Application.Quit();
     }
    
 }

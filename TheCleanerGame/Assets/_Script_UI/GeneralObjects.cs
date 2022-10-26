@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class GeneralObjects : MonoBehaviour
 {
-    [SerializeField] GameObject enableObjects;
-    [SerializeField] BoxCollider2D [] boxCollider2D;
-
-    private bool isCalaendarClicked;
-
+    
     [SerializeField] GameObject Animator;
     Animator m_Animator;
+
+    [SerializeField] Collider2D[] Colliders;
+    [SerializeField] Collider2D[] CharaColliders;
+
+    //to coontrol character's collider 
+    
 
     void Start()
     {
@@ -21,11 +23,9 @@ public class GeneralObjects : MonoBehaviour
             m_Animator = Animator.GetComponent<Animator>();
             //for aniamted objects, enable them at the begining
         }
-        else if (enableObjects != null)
-        {
-            enableObjects.SetActive(false);
-        }
+
         
+
     }
 
     // Update is called once per frame
@@ -43,19 +43,33 @@ public class GeneralObjects : MonoBehaviour
         {
             m_Animator.SetBool("isOn", false);
 
-        }
-        else
-        {
-            enableObjects.SetActive(false); // open objects that does not require aniamtions
-        }
-        
 
-        for (int i = 0; i < boxCollider2D.Length; i++)
-        {
-            boxCollider2D[i].enabled = true;
-        }
+            for (int i = 0; i < Colliders.Length; i++)
+            {
+                Colliders[i].enabled = true;
+            }
 
-        isCalaendarClicked = false;
+            if (!NPC1_Con1.canTurnOffCollider )
+            {
+                for (int i = 0; i < CharaColliders.Length; i++)
+                {
+                    CharaColliders[i].enabled = true;
+                }
+
+            }
+            else
+            {
+                for (int i = 0; i < CharaColliders.Length; i++)
+                {
+                    CharaColliders[i].enabled = false;
+                }
+            }
+            
+            
+        }
+       
+
+    
 
     }
 
@@ -63,20 +77,18 @@ public class GeneralObjects : MonoBehaviour
     {
         if (m_Animator != null)
         {
-            m_Animator.SetBool("isOn", true);
-            
-        }
-        else
-        {
-            enableObjects.SetActive(true);
-        }
+            m_Animator.SetBool("isOn", true); // turn on stuff such as calendar or email
+
+            //Disable other clickable objects
+
+            for (int i = 0; i < Colliders.Length; i++)
+            {
+                Colliders[i].enabled = false;
+            }
+            Debug.Log("clicked on iem");
 
 
-        //Disable other clickable objects
-        for (int i = 0; i< boxCollider2D.Length; i++)
-        {
-            boxCollider2D[i].enabled = false;
         }
-
+    
     }
 }

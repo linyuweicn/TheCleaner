@@ -8,6 +8,7 @@ public class ChangeSpriteMaterial : MonoBehaviour
     public Renderer rend;
     private Material originalMat;
     public Material material;
+    private bool isShown;
 
     void Start()
     {
@@ -35,5 +36,22 @@ public class ChangeSpriteMaterial : MonoBehaviour
         rend.material = originalMat;
     }
 
+    public void ChangMaterialForSeconds()
+    {
+        if (!isShown)
+        {
+            StartCoroutine(ChangeMaterial());
+            isShown = true;
+        }
+        
+    }
+
+    IEnumerator ChangeMaterial()
+    {
+
+        rend.material = material;
+        yield return new WaitForSeconds(2f);
+        rend.material = originalMat;
+    }
 
 }
