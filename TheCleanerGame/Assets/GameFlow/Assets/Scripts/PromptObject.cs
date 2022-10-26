@@ -19,6 +19,7 @@ public class PromptObject : ScriptableObject
     public List<List<AnswerObject>> Answers;
     public List<string> segments;
 
+    //Answers.count
     #region private class
     [Serializable]
     public class NestedList

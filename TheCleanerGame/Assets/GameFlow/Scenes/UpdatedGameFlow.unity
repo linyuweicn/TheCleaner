@@ -157,6 +157,12 @@ MonoBehaviour:
     _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Panel.prefab
   - _gameObject: {fileID: 1623864735}
     _prefab: Assets/Prefabs/Male Team Member_Placeholder.prefab
+  - _gameObject: {fileID: 1973489296}
+    _prefab: Assets/Prefabs/Male Team Member_Placeholder.prefab
+  - _gameObject: {fileID: 1498589499}
+    _prefab: Assets/Prefabs/Male Team Member_Placeholder.prefab
+  - _gameObject: {fileID: 1877822737}
+    _prefab: Assets/Prefabs/Male Team Member_Placeholder.prefab
   - _gameObject: {fileID: 924189587}
     _prefab: Assets/GameFlow/Assets/Prefabs/AnswerBox.prefab
   - _gameObject: {fileID: 262460140}
@@ -289,6 +295,10 @@ PrefabInstance:
     - target: {fileID: 839790356005523152, guid: 1b54442b0b05f6142b596996f2d3bab8, type: 3}
       propertyPath: m_Name
       value: Audio Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 839790356005523152, guid: 1b54442b0b05f6142b596996f2d3bab8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 839790356005523153, guid: 1b54442b0b05f6142b596996f2d3bab8, type: 3}
       propertyPath: m_RootOrder
@@ -672,6 +682,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1498589499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 820455028661718813, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+  m_PrefabInstance: {fileID: 5735007599171711991}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1593889518
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,7 +706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1593889519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -839,6 +854,16 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6460080332855267015, guid: 8751829fc4dab354cb287a148f755140, type: 3}
   m_PrefabInstance: {fileID: 5735007599171711991}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1877822737 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7522276177286166436, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+  m_PrefabInstance: {fileID: 5735007599171711991}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1973489296 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7448905675819679138, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+  m_PrefabInstance: {fileID: 5735007599171711991}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5735007599171711991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -846,6 +871,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 969373933471613687, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 969373933471613687, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 969373933471613687, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 969373933471613687, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2341956151719628358, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
