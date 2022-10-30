@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4881651575747411709}
   - component: {fileID: 6653893139809926924}
   - component: {fileID: 3504606069776780761}
+  - component: {fileID: 1511159297945962881}
   m_Layer: 7
   m_Name: AnswerBox
   m_TagString: Untagged
@@ -103,6 +104,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1511159297945962881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598786472179814562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e883cf61567f6d4f97cf66b75d7c704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 8470f7725edbb0447b24a567e7d7b3fb, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &2605622013806853133
 GameObject:
   m_ObjectHideFlags: 0

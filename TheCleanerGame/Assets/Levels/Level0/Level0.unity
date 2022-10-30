@@ -525,7 +525,7 @@ MonoBehaviour:
   - {fileID: 990881245}
   GameObjets:
   - {fileID: 2054666435}
-  - {fileID: 931133357}
+  - {fileID: 0}
 --- !u!212 &181504670
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1840,33 +1840,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &931133357 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4387831574767638169, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
-  m_PrefabInstance: {fileID: 1045905907}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &931133358 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4387831574767638172, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
-  m_PrefabInstance: {fileID: 1045905907}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 931133357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d83e3bc7b630d9c40a6fb1ccddae1002, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &931133359 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4387831574767638171, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
-  m_PrefabInstance: {fileID: 1045905907}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 931133357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be3f963c62ad44542a186f4913a42200, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &990881243
 GameObject:
   m_ObjectHideFlags: 0
@@ -1953,7 +1926,7 @@ PrefabInstance:
     - target: {fileID: 372407880, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: Colliders.Array.data[0]
       value: 
-      objectReference: {fileID: 1206166883}
+      objectReference: {fileID: 0}
     - target: {fileID: 372407880, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: Colliders.Array.data[1]
       value: 
@@ -1965,7 +1938,7 @@ PrefabInstance:
     - target: {fileID: 372407880, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: Collider2D.Array.data[1]
       value: 
-      objectReference: {fileID: 1206166883}
+      objectReference: {fileID: 0}
     - target: {fileID: 372407880, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: enableObjects.Array.size
       value: 2
@@ -1985,7 +1958,7 @@ PrefabInstance:
     - target: {fileID: 372407880, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: enableObjects.Array.data[1]
       value: 
-      objectReference: {fileID: 931133357}
+      objectReference: {fileID: 0}
     - target: {fileID: 372407880, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: CharaColliders.Array.data[0]
       value: 
@@ -2171,11 +2144,6 @@ GameObject:
 --- !u!1 &1045905917 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7390087118211352739, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
-  m_PrefabInstance: {fileID: 1045905907}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &1206166883 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 4387831574767638170, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
   m_PrefabInstance: {fileID: 1045905907}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1367699787
@@ -2595,7 +2563,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 931133359}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ChangeSpriteMaterial, Assembly-CSharp
         m_MethodName: ChangMaterialForSeconds
         m_Mode: 1
@@ -2662,7 +2630,7 @@ PrefabInstance:
       objectReference: {fileID: 1045905912}
     - target: {fileID: 3969910526253247722, guid: 470e1f8b3c45c9e48b0d27ffacd813b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 49.469997
+      value: 41.899998
       objectReference: {fileID: 0}
     - target: {fileID: 3969910526253247722, guid: 470e1f8b3c45c9e48b0d27ffacd813b9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2735,6 +2703,10 @@ PrefabInstance:
     - target: {fileID: 3969910527296975303, guid: 470e1f8b3c45c9e48b0d27ffacd813b9, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969910527867545088, guid: 470e1f8b3c45c9e48b0d27ffacd813b9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21.959997
       objectReference: {fileID: 0}
     - target: {fileID: 3969910527867545089, guid: 470e1f8b3c45c9e48b0d27ffacd813b9, type: 3}
       propertyPath: m_Follow
@@ -2845,7 +2817,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'CONGRATULATIONS LIA! You have just been promoted to Jr. Designer here
+  m_text: 'CONGRATULATIONS LIA! You have just been promoted to Lead Designer here
     at TheRealStudio. For the first time ever, you are going to be making real choices
     that affect the development of our next BIG GAME!
 
@@ -3377,7 +3349,7 @@ PrefabInstance:
     - target: {fileID: 5663114897778377032, guid: 47c82489de3ce9940ba6e17fe460ea85, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 931133358}
+      objectReference: {fileID: 0}
     - target: {fileID: 5663114897778377032, guid: 47c82489de3ce9940ba6e17fe460ea85, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CloseObject
@@ -3820,6 +3792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28fe614b88daf184a841493ff6bdcd86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fakeButton: {fileID: 0}
   ScrollText: 1
   ScrollSpeed: 0.25
   BackgroundImage: {fileID: 21300000, guid: 2c38d230085b5c6469fe6b9243a93568, type: 3}

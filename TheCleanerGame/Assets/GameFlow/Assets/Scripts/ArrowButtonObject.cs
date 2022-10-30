@@ -16,6 +16,10 @@ public class ArrowButtonObject : MonoBehaviour
     FeedbackManager feedbackManager;
     AudioManager audioManager;
 
+    //to change button to confirm after called RankNext
+    private Image buttonImage;
+    private Sprite OriginalSprite;
+
     #endregion
     private void Awake()
     {
@@ -24,6 +28,9 @@ public class ArrowButtonObject : MonoBehaviour
         rankPanelManager = FindObjectOfType<RankPanelManager>();
         feedbackManager = FindObjectOfType<FeedbackManager>();
         audioManager = FindObjectOfType<AudioManager>();
+
+        buttonImage = gameObject.GetComponent<Image>();
+        OriginalSprite = img.GetComponent<Image>().sprite;
     }
 
     private void FixedUpdate()
@@ -78,7 +85,8 @@ public class ArrowButtonObject : MonoBehaviour
         {
             BrainstormGeneralManager.Instance.SwitchToMenuState();
         }
-  
+
+        buttonImage.sprite = OriginalSprite;
     }
 
     public void GoForward()
@@ -114,7 +122,12 @@ public class ArrowButtonObject : MonoBehaviour
             {
                 PromptManager.Instance.MarkPromptAsCompleted(BrainstormGeneralManager.Instance.FocusedContainer.Prompt);
                 rankPanelManager.NextStage();
-           
+
+                //change sprite to confirm button
+                string path = "ConfirmButton_Green"; // filename.png should be stored in your Assets/Resources folder
+                Sprite newSprite = Resources.Load<Sprite>(path);
+                buttonImage.sprite = newSprite;
+
             }
             else
             {
@@ -129,6 +142,7 @@ public class ArrowButtonObject : MonoBehaviour
             button.enabled = false;
             img.color = deactivatedColor;
             activated = false;
+            
         }
     }
 

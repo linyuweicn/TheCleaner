@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DialogueEditor;
 
-public class YiranConversationScene2 : MonoBehaviour
+public class NPCConvWithWhiteBoard : MonoBehaviour
 {
     [SerializeField] AudioClip audioClip;
     AudioManager audioManager;
