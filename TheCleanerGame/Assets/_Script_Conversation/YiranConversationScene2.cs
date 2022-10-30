@@ -13,6 +13,7 @@ public class YiranConversationScene2 : MonoBehaviour
     [SerializeField] BoxCollider2D[] boxCollider2D;
     private int convSequence;
     bool isConOver;
+
    
 
     void Start()
@@ -46,6 +47,15 @@ public class YiranConversationScene2 : MonoBehaviour
                 boxCollider2D[i].enabled = true;
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+            ConversationManager.Instance.SelectPreviousOption();
+        else if (Input.GetKeyDown(KeyCode.DownArrow)|| Input.GetKeyDown(KeyCode.S))
+            ConversationManager.Instance.SelectNextOption();
+        else if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space))
+                ConversationManager.Instance.PressSelectedOption();
+        
+       
     }
 
     private void OnMouseOver()

@@ -22,6 +22,7 @@ namespace DialogueEditor
         SerializedProperty ScrollTextProperty;
         SerializedProperty ScrollTextSpeedProperty;
         SerializedProperty AllowMouseInteractionProperty;
+        //SerializedProperty FakeButtonProperty;
 
         private void OnEnable()
         {
@@ -32,6 +33,7 @@ namespace DialogueEditor
             ScrollTextProperty = serializedObject.FindProperty("ScrollText");
             ScrollTextSpeedProperty = serializedObject.FindProperty("ScrollSpeed");
             AllowMouseInteractionProperty = serializedObject.FindProperty("AllowMouseInteraction");
+            //FakeButtonProperty = serializedObject.FindProperty("FakeButton");
         }
 
         public override void OnInspectorGUI()
@@ -46,6 +48,8 @@ namespace DialogueEditor
             EditorGUILayout.BeginVertical();
             GUILayout.Space(BOX_HEIGHT + OPTION_BUFFER + OPTION_HEIGHT);
             EditorGUILayout.EndVertical();
+
+           
 
             // Background image
             GUILayout.Label("Dialogue Image Options", EditorStyles.boldLabel);
@@ -66,9 +70,17 @@ namespace DialogueEditor
                 EditorGUILayout.PropertyField(ScrollTextSpeedProperty);
             EditorGUILayout.Space();
 
+            /*// Background image
+            GUILayout.Label("FakeButton Image Options", EditorStyles.boldLabel);
+            EditorGUILayout.PropertyField(FakeButtonProperty);
+            //EditorGUILayout.PropertyField(FakeButtonProperty);
+            EditorGUILayout.Space();*/
+
             // Interaction options
             GUILayout.Label("Interaction options", EditorStyles.boldLabel);
             EditorGUILayout.PropertyField(AllowMouseInteractionProperty);
+
+           
 
             // Apply changes to the serializedProperty - always do this in the end of OnInspectorGUI.
             serializedObject.ApplyModifiedProperties();

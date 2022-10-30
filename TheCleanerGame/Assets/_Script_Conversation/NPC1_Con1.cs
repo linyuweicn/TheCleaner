@@ -43,8 +43,14 @@ public class NPC1_Con1 : MonoBehaviour
                 }
             }
         }
-           
-        
+
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+            ConversationManager.Instance.SelectPreviousOption();
+        else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+            ConversationManager.Instance.SelectNextOption();
+        else if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space))
+            ConversationManager.Instance.PressSelectedOption();
+
     }
 
     public void OnMouseOver()

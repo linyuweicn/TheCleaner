@@ -29,6 +29,8 @@ namespace DialogueEditor
         public static ConversationStartEvent OnConversationStarted;
         public static ConversationEndEvent OnConversationEnded;
 
+        public GameObject fakeButton;
+
         // User-Facing options
         // Drawn by custom inspector
         public bool ScrollText;
@@ -53,7 +55,8 @@ namespace DialogueEditor
         // Components
         public AudioSource AudioPlayer;
         // Prefabs
-        public UIConversationButton ButtonPrefab;
+        public UIConversationButton ButtonPrefab; 
+        public UIConversationButton ButtonPrefabContinue;
         // Default values
         public Sprite BlankSprite;
 
@@ -100,8 +103,14 @@ namespace DialogueEditor
             NpcIcon.sprite = BlankSprite;
             DialogueText.text = "";
             TurnOffUI();
+
+
+            fakeButton = GameObject.Find("FakeButton");
+            
+
         }
 
+        
         private void OnDestroy()
         {
             Instance = null;
@@ -655,6 +664,9 @@ namespace DialogueEditor
                     {
                         UIConversationButton uiOption = CreateButton();
                         uiOption.SetupButton(UIConversationButton.eButtonType.Option, connection.OptionNode);
+
+                        //a temporary solution
+                        //fakeButton.SetActive(true);
                     }
                 }
             }
@@ -664,29 +676,48 @@ namespace DialogueEditor
                 bool notAutoAdvance = !m_currentSpeech.AutomaticallyAdvance;
                 bool allowVisibleOptionWithAuto = (m_currentSpeech.AutomaticallyAdvance && m_currentSpeech.AutoAdvanceShouldDisplayOption);
 
+                //change sprite image 
+                string path = "transparent"; // filename.png should be stored in your Assets/Resources folder
+                Sprite sprite = Resources.Load<Sprite>(path);
+                
+
                 if (notAutoAdvance || allowVisibleOptionWithAuto)
                 {
                     if (m_currentSpeech.ConnectionType == Connection.eConnectionType.Speech)
                     {
-                        UIConversationButton uiOption = CreateButton();
+
+                        UIConversationButton uiOption = CreateButton(); //CreateButton
                         SpeechNode next = GetValidSpeechOfNode(m_currentSpeech);
+                        
+                       
+                        uiOption.SetImage(sprite,true);
+                        //uiOption.SetAlpha(0f);
 
                         // If there was no valid speech node (due to no conditions being met) this becomes a None button type
                         if (next == null)
                         {
                             uiOption.SetupButton(UIConversationButton.eButtonType.End, null, endFont: m_conversation.EndConversationFont);
+                            //change sprite image 
+                            uiOption.SetImage(sprite, true);
+                            //uiOption.SetAlpha(0);
                         }
                         // Else, valid speech node found
                         else
                         {
                             uiOption.SetupButton(UIConversationButton.eButtonType.Speech, next, continueFont: m_conversation.ContinueFont);
+                            //change sprite image 
+                            uiOption.SetImage(sprite, true);
+                            //uiOption.SetAlpha(0);
                         }
                         
                     }
                     else if (m_currentSpeech.ConnectionType == Connection.eConnectionType.None)
                     {
-                        UIConversationButton uiOption = CreateButton();
+                        UIConversationButton uiOption = CreateButton(); //CreateButton
                         uiOption.SetupButton(UIConversationButton.eButtonType.End, null, endFont: m_conversation.EndConversationFont);
+                        uiOption.SetImage(sprite, true);
+                        //uiOption.SetAlpha(0);
+
                     }
                 }
 
@@ -699,6 +730,7 @@ namespace DialogueEditor
                 m_uiOptions[i].SetImage(OptionImage, OptionImageSliced);
                 m_uiOptions[i].SetAlpha(0);
                 m_uiOptions[i].gameObject.SetActive(false);
+               
             }
         }
 
@@ -744,6 +776,13 @@ namespace DialogueEditor
         private UIConversationButton CreateButton()
         {
             UIConversationButton button = GameObject.Instantiate(ButtonPrefab, OptionsPanel);
+            m_uiOptions.Add(button);
+            return button;
+        }
+
+        private UIConversationButton CreateContinueButton() // NEED TO FIND OUT HOW TO INSTANTIATE ButtonPrefabContinue
+        {
+            UIConversationButton button = GameObject.Instantiate(ButtonPrefabContinue, OptionsPanel);
             m_uiOptions.Add(button);
             return button;
         }
