@@ -16,6 +16,12 @@ public class AnswerBox : MonoBehaviour
     Vector3 mouseOffset;
     Vector3 startLerpPos;
 
+    // List of scores, AveScore[0] is for Character, AveScore[1], AveScore[2] are for Narration, 
+    // AveScore[3] AveScore[4] are for Theme
+
+    //List<float> AveScore = new List<float>(){0.0f, 0.0f, 0.0f, 0.0f, 0.0f};
+
+
     bool mouseOver;
     bool clickedOn;
     bool isMoving;
@@ -167,7 +173,40 @@ public class AnswerBox : MonoBehaviour
                     feedbackManager.TriggerFeedback(BrainstormGeneralManager.Instance.FocusedContainer.Prompt.Answers[column][ranking]);
                     
                     //get the score for the top choice
-                    float totalScores = feedbackManager.GetScores(BrainstormGeneralManager.Instance.FocusedContainer.Prompt.Answers[column][ranking]);
+                    float tempScores = feedbackManager.GetScores(BrainstormGeneralManager.Instance.FocusedContainer.Prompt.Answers[column][ranking]);
+                    
+                    PromptType type = BrainstormGeneralManager.Instance.FocusedContainer.Prompt.Type;
+
+                    int j = 0;
+
+                    switch (type)
+                    {
+                        case PromptType.Theme:
+                            BrainstormGeneralManager.AveScore[0] = tempScores;
+                            j = 0;
+                            break;
+                        case PromptType.Character:
+                            if(column == 1){BrainstormGeneralManager.AveScore[1] = tempScores; j = 1;}else{BrainstormGeneralManager.AveScore[2] = tempScores; j = 2;};
+                            break;
+                        case PromptType.Setting:
+                            if(column == 1){BrainstormGeneralManager.AveScore[3] = tempScores; j = 3;}else{BrainstormGeneralManager.AveScore[4] = tempScores; j = 4;};
+                            break;
+                    };
+
+                    float count = 1.0f;
+
+                    for(int i = 0; i < 5; i++)
+                    {
+                        if(BrainstormGeneralManager.AveScore[i] != 0.0f && i != j)
+                        {
+                            count = count + 1.0f;
+                            tempScores = tempScores + BrainstormGeneralManager.AveScore[i];
+                        }
+                    };
+
+                    float totalScores = tempScores/count;
+                    
+                    Debug.Log(tempScores.ToString());
 
                     //increment the likeness bar
                     scoreProgress.IncrementProgress(totalScores);

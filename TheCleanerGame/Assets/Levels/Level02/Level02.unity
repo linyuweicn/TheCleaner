@@ -700,16 +700,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 509862493205393731, guid: 8751829fc4dab354cb287a148f755140, type: 3}
   m_PrefabInstance: {fileID: 199617868}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &300397965 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4387831574767638169, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
-  m_PrefabInstance: {fileID: 2026036935}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &300397968 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 4387831574767638170, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
-  m_PrefabInstance: {fileID: 2026036935}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &307750724 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4387831574788649084, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
@@ -920,6 +910,12 @@ MonoBehaviour:
   - _gameObject: {fileID: 109289203}
     _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Panel.prefab
   - _gameObject: {fileID: 865059105}
+    _prefab: Assets/Prefabs/Male Team Member_Placeholder.prefab
+  - _gameObject: {fileID: 1503845050}
+    _prefab: Assets/Prefabs/Male Team Member_Placeholder.prefab
+  - _gameObject: {fileID: 1237167701}
+    _prefab: Assets/Prefabs/Male Team Member_Placeholder.prefab
+  - _gameObject: {fileID: 1691891931}
     _prefab: Assets/Prefabs/Male Team Member_Placeholder.prefab
   - _gameObject: {fileID: 203774705}
     _prefab: Assets/GameFlow/Assets/Prefabs/AnswerBox.prefab
@@ -1465,7 +1461,7 @@ MonoBehaviour:
   - {fileID: 1707974764}
   GameObjets:
   - {fileID: 307750724}
-  - {fileID: 300397965}
+  - {fileID: 1998410235}
 --- !u!114 &953600259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1842,6 +1838,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6460080332082806219, guid: 8751829fc4dab354cb287a148f755140, type: 3}
   m_PrefabInstance: {fileID: 199617868}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1237167701 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 820455028661718813, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+  m_PrefabInstance: {fileID: 199617868}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1337616874 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6460080331578096273, guid: 8751829fc4dab354cb287a148f755140, type: 3}
@@ -1941,6 +1942,11 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4387831574249257176, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
   m_PrefabInstance: {fileID: 2026036935}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1503845050 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7448905675819679138, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+  m_PrefabInstance: {fileID: 199617868}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1507454166 stripped
 GameObject:
@@ -2604,6 +2610,11 @@ MonoBehaviour:
   TMPFont: {fileID: 0}
   Icon: {fileID: 0}
   Audio: {fileID: 0}
+--- !u!1 &1691891931 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7522276177286166436, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+  m_PrefabInstance: {fileID: 199617868}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1707974762
 GameObject:
   m_ObjectHideFlags: 0
@@ -3093,6 +3104,16 @@ MonoBehaviour:
   TMPFont: {fileID: 0}
   Icon: {fileID: 0}
   Audio: {fileID: 0}
+--- !u!1 &1998410235 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 362583216971412062, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+  m_PrefabInstance: {fileID: 2026036935}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1998410239 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 2327864212430875060, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+  m_PrefabInstance: {fileID: 2026036935}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2026036935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3111,7 +3132,7 @@ PrefabInstance:
     - target: {fileID: 372407880, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: Colliders.Array.data[0]
       value: 
-      objectReference: {fileID: 300397968}
+      objectReference: {fileID: 1998410239}
     - target: {fileID: 372407880, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: Colliders.Array.data[1]
       value: 
@@ -3162,7 +3183,7 @@ PrefabInstance:
       objectReference: {fileID: 1112813260}
     - target: {fileID: 4387831573563643315, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4387831574065667621, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: CalendarPage
@@ -3296,6 +3317,26 @@ PrefabInstance:
       propertyPath: PersonalRoomCamera
       value: 
       objectReference: {fileID: 1112813260}
+    - target: {fileID: 7147723777900094338, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: CalendarPage
+      value: 
+      objectReference: {fileID: 196518434}
+    - target: {fileID: 7147723777900094338, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: EntranceCamera
+      value: 
+      objectReference: {fileID: 1112813263}
+    - target: {fileID: 7147723777900094338, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: BrainstormCamera
+      value: 
+      objectReference: {fileID: 1112813262}
+    - target: {fileID: 7147723777900094338, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: YiranOfficeCamera
+      value: 
+      objectReference: {fileID: 1112813261}
+    - target: {fileID: 7147723777900094338, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: PersonalRoomCamera
+      value: 
+      objectReference: {fileID: 1112813260}
     - target: {fileID: 7390087118211352792, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: CalendarPage
       value: 
@@ -3316,6 +3357,22 @@ PrefabInstance:
       propertyPath: PersonalRoomCamera
       value: 
       objectReference: {fileID: 1112813260}
+    - target: {fileID: 8084904101425945098, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: Animator
+      value: 
+      objectReference: {fileID: 196518438}
+    - target: {fileID: 8084904101425945098, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: Colliders.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8084904101425945098, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: Colliders.Array.data[0]
+      value: 
+      objectReference: {fileID: 307750725}
+    - target: {fileID: 8084904101425945098, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: Colliders.Array.data[1]
+      value: 
+      objectReference: {fileID: 953600260}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
 --- !u!1 &2026036936 stripped
