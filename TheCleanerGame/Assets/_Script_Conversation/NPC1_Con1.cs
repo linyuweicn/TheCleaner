@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DialogueEditor;
+using UnityEngine.UI;
 
 public class NPC1_Con1 : MonoBehaviour
 {
@@ -10,12 +11,14 @@ public class NPC1_Con1 : MonoBehaviour
     [SerializeField] GameObject[] GameObjets;
     Collider2D CharaCollider;
     public static bool canTurnOffCollider; //GeneralObjects uses this 
-    
+    private Button mybutton;
+     
+
 
     void Start()
     {
         CharaCollider = gameObject.GetComponent<Collider2D>();
-
+        mybutton = gameObject.GetComponent<Button>();
     }
 
     // Update is called once per frame
@@ -55,6 +58,23 @@ public class NPC1_Con1 : MonoBehaviour
 
     public void OnMouseOver()
     {
+        if (mybutton = null)
+        {
+            ClikOnNonButtonConv();
+        }
+        else
+        {
+            ClickButtonPeople();
+
+        }
+       
+
+
+    }
+
+
+    public void ClikOnNonButtonConv()
+    {
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("Clicked");
@@ -62,71 +82,44 @@ public class NPC1_Con1 : MonoBehaviour
             //Debug.Log(convSequence);
             if (convSequence <= B4CompleteConversations.Length)
             {
-                ConversationManager.Instance.StartConversation(B4CompleteConversations[convSequence-1]);
+                ConversationManager.Instance.StartConversation(B4CompleteConversations[convSequence - 1]);
 
                 //diable the first item, do not let it had more conversation.
-                
+
                 if (convSequence == B4CompleteConversations.Length)
                 {
-                    canTurnOffCollider = true; 
+                    canTurnOffCollider = true;
                     if (canTurnOffCollider)
                     {
                         CharaCollider.enabled = false;
                     }
 
-                    
+
                 }
 
             }
-          
-
-            /*if (B4CompleteConversations.Length > 1)
-            {
-                if (convSequence == 1)
-                {
-                    ConversationManager.Instance.StartConversation(B4CompleteConversations[0]);
-                    Debug.Log("C1");
-                }
-                else
-                {
-                    convSequence = Random.Range(2, B4CompleteConversations.Length);
-
-
-                    switch (convSequence)
-                    {
-                        case 2:
-                            ConversationManager.Instance.StartConversation(B4CompleteConversations[1]);
-                            Debug.Log("C2");
-                            break;
-
-                        case 3:
-                            ConversationManager.Instance.StartConversation(B4CompleteConversations[2]);
-                            Debug.Log("C3");
-                            break;
-                    }
-                }
-            }
-            else
-            {
-                ConversationManager.Instance.StartConversation(B4CompleteConversations[0]);
-                Debug.Log("C1");
-                
-            }*/
-
 
         }
 
-        
     }
-
-  /*  public void ClickButtonPeople()
+    public void ClickButtonPeople()
     {
         if (Input.GetMouseButtonDown(0))
         {
-
             convSequence++;
-            ConversationManager.Instance.StartConversation(B4CompleteConversations[0]);
-            Debug.Log("C1 button");
+            if (convSequence <= B4CompleteConversations.Length)
+            {
+                ConversationManager.Instance.StartConversation(B4CompleteConversations[convSequence - 1]);
+
+            }
+            else
+            {
+                Debug.Log("should disable button");
+              /*  ColorBlock colorVar = mybutton.colors;
+                colorVar.highlightedColor = new Color(255, 255, 255);
+                mybutton.colors = colorVar;*/
+           
+            }
         }
-    }*/
+    }
 }

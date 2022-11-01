@@ -393,14 +393,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efc638d2b06dad4d92c2fe95ab2c132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: ff1c23dcee092994ca8ebc639eb47134, type: 3}
+  audioClip: {fileID: 8300000, guid: e173fba4a244a1749a3672c3c57da0fa, type: 3}
   B4CompleteConversations:
   - {fileID: 315923229}
   - {fileID: 1671524069}
   AfterCompleteConversations:
   - {fileID: 1671524069}
   boxCollider2D:
-  - {fileID: 782763329}
   - {fileID: 25838945}
   - {fileID: 196477017}
 --- !u!212 &196477019
@@ -470,6 +469,7 @@ GameObject:
   - component: {fileID: 234479329}
   - component: {fileID: 234479331}
   - component: {fileID: 234479330}
+  - component: {fileID: 234479332}
   m_Layer: 0
   m_Name: ConversationEventInfo
   m_TagString: Untagged
@@ -526,6 +526,25 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   NodeID: 0
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 7fbac77c32bc5d84287dbed7468734e5, type: 3}
+  Audio: {fileID: 0}
+--- !u!114 &234479332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234479328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 10
   TMPFont: {fileID: 0}
   Icon: {fileID: 21300000, guid: 7fbac77c32bc5d84287dbed7468734e5, type: 3}
   Audio: {fileID: 0}
@@ -981,10 +1000,18 @@ MonoBehaviour:
     _prefab: Assets/Prefabs/Male Team Member_Placeholder.prefab
   - _gameObject: {fileID: 1571869326}
     _prefab: Assets/Prefabs/Male Team Member_Placeholder.prefab
+  - _gameObject: {fileID: 2011231272}
+    _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Panel.prefab
+  - _gameObject: {fileID: 2011231272}
+    _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Panel.prefab
   - _gameObject: {fileID: 1529531251}
     _prefab: Assets/Prefabs/Male Team Member_Placeholder.prefab
+  - _gameObject: {fileID: 2011231272}
+    _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Panel.prefab
   - _gameObject: {fileID: 1145905352}
     _prefab: Assets/Prefabs/Male Team Member_Placeholder.prefab
+  - _gameObject: {fileID: 2011231272}
+    _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Panel.prefab
   - _gameObject: {fileID: 2011231271}
     _prefab: Assets/GameFlow/Assets/Prefabs/AnswerBox.prefab
   - _gameObject: {fileID: 2011231270}
@@ -1274,7 +1301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efc638d2b06dad4d92c2fe95ab2c132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 888a33a9479d60c44918ad410756421c, type: 3}
+  audioClip: {fileID: 8300000, guid: e173fba4a244a1749a3672c3c57da0fa, type: 3}
   B4CompleteConversations:
   - {fileID: 1674980140}
   - {fileID: 757588864}
@@ -1894,10 +1921,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83189876d4d389f43b7dd2e925aa112e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentIDCounter: 10
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":8}],"EditorInfo":{"isRoot":true,"xPos":291.6667,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"(Wow,
-    it is a long day)","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0.25,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":296.6667,"yPos":156},"ID":8,"ParamActions":[],"TMPFontGUID":null,"Text":"(But
-    it''s nice to see everyone.)","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
+  CurrentIDCounter: 11
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":8}],"EditorInfo":{"isRoot":true,"xPos":128.666656,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"(Wow,
+    it is a long day)","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0.25,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":10}],"EditorInfo":{"isRoot":false,"xPos":133.666656,"yPos":156},"ID":8,"ParamActions":[],"TMPFontGUID":null,"Text":"(
+    I hope I will not see Mr. Benjamine tomorrow.)","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":125,"yPos":288},"ID":10,"ParamActions":[],"TMPFontGUID":null,"Text":"(Ohh,
+    someone shoots me an email this late?)","parentUIDs":[8],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -1905,6 +1933,7 @@ MonoBehaviour:
   NodeSerializedDataList:
   - {fileID: 234479331}
   - {fileID: 234479330}
+  - {fileID: 234479332}
   ContinueFont: {fileID: 0}
   EndConversationFont: {fileID: 0}
   Event:
@@ -2009,66 +2038,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &637834669
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 637834670}
-  - component: {fileID: 637834671}
-  m_Layer: 0
-  m_Name: Yiran_Conv2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &637834670
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 637834669}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1246653240}
-  m_Father: {fileID: 1986064813}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &637834671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 637834669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83189876d4d389f43b7dd2e925aa112e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CurrentIDCounter: 10
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":8}],"EditorInfo":{"isRoot":true,"xPos":291.6667,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"(
-    I hope I don''t see Mr. Benjamine tomorrow.)","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":277.6667,"yPos":174},"ID":8,"ParamActions":[],"TMPFontGUID":null,"Text":"(Ohh,
-    someone shoots me an email this late?)","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
-  saveVersion: 110
-  DefaultName: 
-  DefaultSprite: {fileID: 0}
-  DefaultFont: {fileID: 0}
-  NodeSerializedDataList:
-  - {fileID: 1246653242}
-  - {fileID: 1246653241}
-  ContinueFont: {fileID: 0}
-  EndConversationFont: {fileID: 0}
-  Event:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &703881992
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2077,12 +2046,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 839790355781279252, guid: 1b54442b0b05f6142b596996f2d3bab8, type: 3}
+      propertyPath: m_Volume
+      value: 0.609
+      objectReference: {fileID: 0}
+    - target: {fileID: 839790355781279252, guid: 1b54442b0b05f6142b596996f2d3bab8, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 839790355781279258, guid: 1b54442b0b05f6142b596996f2d3bab8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 839790356005523152, guid: 1b54442b0b05f6142b596996f2d3bab8, type: 3}
       propertyPath: m_Name
@@ -2134,7 +2107,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 839790356259416068, guid: 1b54442b0b05f6142b596996f2d3bab8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 839790356259416070, guid: 1b54442b0b05f6142b596996f2d3bab8, type: 3}
+      propertyPath: m_Volume
+      value: 0.559
       objectReference: {fileID: 0}
     - target: {fileID: 839790356259416070, guid: 1b54442b0b05f6142b596996f2d3bab8, type: 3}
       propertyPath: m_Enabled
@@ -2379,11 +2356,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 485728221127968775, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
   m_PrefabInstance: {fileID: 4387831574434259041}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &782763329 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 485728221127968891, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
-  m_PrefabInstance: {fileID: 4387831574434259041}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &820168508
 GameObject:
   m_ObjectHideFlags: 0
@@ -2481,7 +2453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efc638d2b06dad4d92c2fe95ab2c132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 3b8421432cc9c26479be093090e76452, type: 3}
+  audioClip: {fileID: 8300000, guid: e173fba4a244a1749a3672c3c57da0fa, type: 3}
   B4CompleteConversations:
   - {fileID: 1463143939}
   - {fileID: 195530347}
@@ -3026,76 +2998,6 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 3969910526468956587, guid: 470e1f8b3c45c9e48b0d27ffacd813b9, type: 3}
   m_PrefabInstance: {fileID: 3969910527713010260}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1246653239
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1246653240}
-  - component: {fileID: 1246653242}
-  - component: {fileID: 1246653241}
-  m_Layer: 0
-  m_Name: ConversationEventInfo
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1246653240
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1246653239}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 637834670}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1246653241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1246653239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event:
-    m_PersistentCalls:
-      m_Calls: []
-  NodeID: 8
-  TMPFont: {fileID: 0}
-  Icon: {fileID: 21300000, guid: 7fbac77c32bc5d84287dbed7468734e5, type: 3}
-  Audio: {fileID: 0}
---- !u!114 &1246653242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1246653239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event:
-    m_PersistentCalls:
-      m_Calls: []
-  NodeID: 0
-  TMPFont: {fileID: 0}
-  Icon: {fileID: 21300000, guid: 7fbac77c32bc5d84287dbed7468734e5, type: 3}
-  Audio: {fileID: 0}
 --- !u!1 &1249292305
 GameObject:
   m_ObjectHideFlags: 0
@@ -3753,7 +3655,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7395448800898905352, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7395448801167989121, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_LocalScale.x
@@ -3933,7 +3835,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   B4CompleteConversations:
   - {fileID: 524411052}
-  - {fileID: 637834671}
   GameObjets:
   - {fileID: 63868568}
   - {fileID: 330104808}
@@ -4487,7 +4388,6 @@ Transform:
   m_Children:
   - {fileID: 1345584754}
   - {fileID: 524411051}
-  - {fileID: 637834670}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4717,7 +4617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3969910526468956586, guid: 470e1f8b3c45c9e48b0d27ffacd813b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.8900003
+      value: -15.069997
       objectReference: {fileID: 0}
     - target: {fileID: 3969910526468956586, guid: 470e1f8b3c45c9e48b0d27ffacd813b9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4789,11 +4689,11 @@ PrefabInstance:
       objectReference: {fileID: 422480611}
     - target: {fileID: 3969910527867545095, guid: 470e1f8b3c45c9e48b0d27ffacd813b9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3969910528058604030, guid: 470e1f8b3c45c9e48b0d27ffacd813b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.959997
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3969910528058604030, guid: 470e1f8b3c45c9e48b0d27ffacd813b9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4844,6 +4744,14 @@ PrefabInstance:
       propertyPath: CharaColliders.Array.data[0]
       value: 
       objectReference: {fileID: 1345584757}
+    - target: {fileID: 485728221127968775, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 485728221127968892, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: ExitDoor
+      value: 
+      objectReference: {fileID: 782763326}
     - target: {fileID: 485728221127968892, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: CalendarPage
       value: 
@@ -4864,6 +4772,10 @@ PrefabInstance:
       propertyPath: PersonalRoomCamera
       value: 
       objectReference: {fileID: 1005867922}
+    - target: {fileID: 1880798978696324265, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: ExitDoor
+      value: 
+      objectReference: {fileID: 782763326}
     - target: {fileID: 1880798978696324265, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: CalendarPage
       value: 
@@ -4886,7 +4798,7 @@ PrefabInstance:
       objectReference: {fileID: 1005867922}
     - target: {fileID: 4387831573563643315, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4387831574065667621, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: CalendarPage
@@ -5029,6 +4941,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5292414893204378113, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: ExitDoor
+      value: 
+      objectReference: {fileID: 782763326}
+    - target: {fileID: 5292414893204378113, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: CalendarPage
       value: 
       objectReference: {fileID: 1291877187}
@@ -5049,6 +4965,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1005867922}
     - target: {fileID: 7147723777900094338, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: ExitDoor
+      value: 
+      objectReference: {fileID: 782763326}
+    - target: {fileID: 7147723777900094338, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: CalendarPage
       value: 
       objectReference: {fileID: 1291877187}
@@ -5068,6 +4988,10 @@ PrefabInstance:
       propertyPath: PersonalRoomCamera
       value: 
       objectReference: {fileID: 1005867922}
+    - target: {fileID: 7390087118211352792, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: ExitDoor
+      value: 
+      objectReference: {fileID: 782763326}
     - target: {fileID: 7390087118211352792, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: CalendarPage
       value: 

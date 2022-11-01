@@ -10,6 +10,7 @@ public class Doortransition : MonoBehaviour
     public GameObject BrainstormCamera;
     public GameObject YiranOfficeCamera;
     public GameObject PersonalRoomCamera;
+    public GameObject ExitDoor;
     public static bool isDoor1clicked;
     public static bool isDoor2clicked;
 
@@ -17,12 +18,17 @@ public class Doortransition : MonoBehaviour
 
     public static bool CanClick = true;
 
+   
   
     
     
     public void Update()
     {
-       
+        if (BrainstormGeneralManager.Instance.ContainerDictionary[0].Prompt.completed)
+        {
+            ExitDoor.SetActive(true);
+        }
+
     }
 
     public void Start()
@@ -34,7 +40,7 @@ public class Doortransition : MonoBehaviour
         }
 
         CalendarPage.SetActive(false);
-
+        ExitDoor.SetActive(false);
     }
 
     private void OnMouseDown()
