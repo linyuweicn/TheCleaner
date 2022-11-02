@@ -123,10 +123,7 @@ public class ArrowButtonObject : MonoBehaviour
                 PromptManager.Instance.MarkPromptAsCompleted(BrainstormGeneralManager.Instance.FocusedContainer.Prompt);
                 rankPanelManager.NextStage();
 
-                //change sprite to confirm button
-                string path = "ConfirmButton_Green"; // filename.png should be stored in your Assets/Resources folder
-                Sprite newSprite = Resources.Load<Sprite>(path);
-                buttonImage.sprite = newSprite;
+                MakeGreen();
 
             }
             else
@@ -154,5 +151,12 @@ public class ArrowButtonObject : MonoBehaviour
             img.color = origColor;
             activated = true;
         }
+    }
+
+    public void MakeGreen()
+    {
+        string path = "ConfirmButton_Green"; // filename.png should be stored in your Assets/Resources folder
+        Sprite newSprite = Resources.Load<Sprite>(path);
+        buttonImage.sprite = newSprite;
     }
 }

@@ -8,6 +8,7 @@ public class RankPanelManager : MonoBehaviour
 {
     #region variables
     [SerializeField] TextMeshProUGUI promptText;
+    [SerializeField] ArrowButtonObject nextButton;
 
     [SerializeField] AnswerBox answerBox;
     [SerializeField] GameObject shadowBox;
@@ -98,19 +99,37 @@ public class RankPanelManager : MonoBehaviour
             AnswerBoxes[i].Clear();
             AnswerBoxes[i].Add(top);
         }
+        PromptObject prompt = BrainstormGeneralManager.Instance.FocusedContainer.Prompt;
+        for (int i = 0; i < prompt.Answers.Count; i++)
+        {
+            AnswerObject answer = prompt.Answers[i][0];
+            prompt.Answers[i].Clear();
+            prompt.Answers[i].Add(answer);
+        }
         for (int i = 0; i < ShadowBoxes.Count; i++)
         {
             Destroy(ShadowBoxes[i]);
         }
         ShadowBoxes.Clear();
-        RewritePrompt();
+
     }
 
+    public void StartCulledStage()
+    {
+        feedbackManager.ResetFeedback();
+        GenerateAnswers();
+        UpdatePromptText();
+        State = RankPanelState.Culled;
+        nextButton.MakeGreen();
+        RewritePrompt();
+
+    }
     public void NextStage()
     {
         feedbackManager.ResetFeedback();
         State = RankPanelState.Culled;
         CullAnswers();
+        RewritePrompt();
     }
 
     #endregion
@@ -132,17 +151,8 @@ public class RankPanelManager : MonoBehaviour
 
     void RewritePrompt()
     {
-        PromptObject prompt = BrainstormGeneralManager.Instance.FocusedContainer.Prompt;
-        promptText.text = prompt.segments[0];
-        for (int i = 1; i < prompt.segments.Count; i++)
-        {
-            if (i - 1 < AnswerBoxes.Count)
-            {
-                promptText.text += AnswerBoxes[i - 1][0].GetAnswerText();
-            }
-
-            promptText.text += (prompt.segments[i]);
-        }
+        BrainstormGeneralManager.Instance.FocusedContainer.Prompt.FillInPromptPlaceholders();
+        UpdatePromptText();
     }
     #endregion
 

@@ -140,7 +140,10 @@ public class BrainstormContainer : MonoBehaviour
             BrainstormGeneralManager.Instance.SwitchToRankState(PromptID);
         }
 
-        audioManager.PlayUiSound("ui_drag_02");
+        if (audioManager != null)
+        {
+            audioManager.PlayUiSound("ui_drag_02");
+        }
     }
 
     #endregion

@@ -11,7 +11,8 @@ public class PromptObject : ScriptableObject
     [Tooltip("First value is which day, second value is the nth prompt of that day")]
     [SerializeField] Vector2Int id;
     [SerializeField] PromptType promptType;
-    [SerializeField] string text;
+    [SerializeField] string text; //don't modify this
+    string displayText;
     public bool completed;
 
     [Header("Answers")]
@@ -38,7 +39,7 @@ public class PromptObject : ScriptableObject
     }
     public string Text
     {
-        get { return text; }
+        get { return displayText; }
     }
     #endregion
 
@@ -56,6 +57,7 @@ public class PromptObject : ScriptableObject
             }
         }
         completed = false;
+        displayText = text;
         ParseSegment();
     }
 
@@ -87,6 +89,20 @@ public class PromptObject : ScriptableObject
         AnswerObject temp = Answers[column][here];
         Answers[column][here] = Answers[column][other];
         Answers[column][other] = temp;
+    }
+
+    public void FillInPromptPlaceholders()
+    {
+        displayText = segments[0];
+        for (int i = 1; i < segments.Count; i++)
+        {
+            if (i - 1 < Answers.Count)
+            {
+                displayText += Answers[i - 1][0].text;
+            }
+
+            displayText += (segments[i]);
+        }
     }
     #endregion
 

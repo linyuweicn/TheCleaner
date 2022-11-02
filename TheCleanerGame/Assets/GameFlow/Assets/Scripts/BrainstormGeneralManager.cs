@@ -114,8 +114,15 @@ public class BrainstormGeneralManager : MonoBehaviour
         rankPanel.SetActive(true);
         menuPanel.SetActive(false);
 
-        rankPanelManager.UpdatePromptText();
-        rankPanelManager.GenerateAnswers();
+        if (FocusedContainer.Prompt.completed)
+        {
+            rankPanelManager.StartCulledStage();
+        }
+        else
+        {
+            rankPanelManager.UpdatePromptText();
+            rankPanelManager.GenerateAnswers();
+        }
     }
 
     IEnumerator WaitUntilContainersBecome(ContainerState cState, Action func)
