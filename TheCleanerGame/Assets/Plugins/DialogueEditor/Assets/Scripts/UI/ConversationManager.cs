@@ -84,6 +84,10 @@ namespace DialogueEditor
         private List<UIConversationButton> m_uiOptions;
         private int m_currentSelectedIndex;
 
+        //deal with continue and end states
+        private bool isEndState; //true if current at last dialogue of convo with no more options
+        private bool isContinueState; //true if in the middle of convo but no options currently
+
 
         //--------------------------------------
         // Awake, Start, Destroy, Update
@@ -107,6 +111,9 @@ namespace DialogueEditor
 
             fakeButton = GameObject.Find("FakeButton");
             
+            //initialize
+            isEndState = false;
+            isContinueState = false;
 
         }
 
@@ -144,9 +151,23 @@ namespace DialogueEditor
                     TransitioningDialogueBoxOff_Update();
                     break;
             }
+
+            ManageContinueAndEndState(); //constantly check if user wants to continue or end convo by mouse, space, or e
         }
 
-
+        //--------------------------------------
+        // Helper function for continue and end states
+        //--------------------------------------
+        private void ManageContinueAndEndState()
+        {
+            if((Input.GetMouseButtonDown(0) || Input.GetKeyDown("space") || Input.GetKeyDown("e")) && isEndState)
+                EndButtonSelected();
+            else if((Input.GetMouseButtonDown(0) || Input.GetKeyDown("space") || Input.GetKeyDown("e")) && isContinueState)
+            {
+                SpeechNode next = GetValidSpeechOfNode(m_currentSpeech);
+                SetupSpeech(next);
+            }
+        }
 
         //--------------------------------------
         // Public functions
@@ -154,6 +175,10 @@ namespace DialogueEditor
 
         public void StartConversation(NPCConversation conversation)
         {
+            //reset end and continue states at start of each new convo
+            isEndState = false; 
+            isContinueState = false;
+
             m_conversation = conversation.Deserialize();
             if (OnConversationStarted != null)
                 OnConversationStarted.Invoke();
@@ -560,6 +585,9 @@ namespace DialogueEditor
         public void SpeechSelected(SpeechNode speech)
         {
             SetupSpeech(speech);
+
+            //reset isContinueState after dialogue has continued
+            isContinueState = false;
         }
 
         public void OptionSelected(OptionNode option)
@@ -677,16 +705,26 @@ namespace DialogueEditor
                 bool allowVisibleOptionWithAuto = (m_currentSpeech.AutomaticallyAdvance && m_currentSpeech.AutoAdvanceShouldDisplayOption);
 
                 //change sprite image 
-                string path = "transparent"; // filename.png should be stored in your Assets/Resources folder
-                Sprite sprite = Resources.Load<Sprite>(path);
+                //string path = "transparent"; // filename.png should be stored in your Assets/Resources folder
+                //Sprite sprite = Resources.Load<Sprite>(path);
                 
 
                 if (notAutoAdvance || allowVisibleOptionWithAuto)
                 {
                     if (m_currentSpeech.ConnectionType == Connection.eConnectionType.Speech)
                     {
-
-                        UIConversationButton uiOption = CreateButton(); //CreateButton
+                        SpeechNode next = GetValidSpeechOfNode(m_currentSpeech);
+                        //ending convo
+                        if(next == null)
+                        {
+                            isEndState = true;
+                        }
+                        //continuing in convo
+                        else
+                        {
+                            isContinueState = true;
+                        }   
+                        /*UIConversationButton uiOption = CreateButton(); //CreateButton
                         SpeechNode next = GetValidSpeechOfNode(m_currentSpeech);
                         
                        
@@ -708,14 +746,17 @@ namespace DialogueEditor
                             //change sprite image 
                             uiOption.SetImage(sprite, true);
                             //uiOption.SetAlpha(0);
-                        }
+                        }*/
                         
                     }
                     else if (m_currentSpeech.ConnectionType == Connection.eConnectionType.None)
                     {
-                        UIConversationButton uiOption = CreateButton(); //CreateButton
+                        //ending convo
+                        isEndState = true;
+                        
+                        /*UIConversationButton uiOption = CreateButton(); //CreateButton
                         uiOption.SetupButton(UIConversationButton.eButtonType.End, null, endFont: m_conversation.EndConversationFont);
-                        uiOption.SetImage(sprite, true);
+                        uiOption.SetImage(sprite, true);*/
                         //uiOption.SetAlpha(0);
 
                     }
