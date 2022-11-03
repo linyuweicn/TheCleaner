@@ -54,4 +54,8 @@ public class ChangeSpriteMaterial : MonoBehaviour
         rend.material = originalMat;
     }
 
+    public void DisableChange()
+    {
+        rend.material = originalMat;
+    }
 }

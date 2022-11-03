@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class NPC1_Con1 : MonoBehaviour
 {
+    // this script should be intergrated with NPCConWithWhiteBoard.
+
+
     private int convSequence=0;
     public NPCConversation[] B4CompleteConversations;
     [SerializeField] GameObject[] GameObjets;
