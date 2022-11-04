@@ -16,6 +16,6 @@ public class AnswerObject
 
     [Header("Feedback Variables")]
     [SerializeField] public FeedbackType feedbackType;
-    [SerializeField] public string feedbackText;
+    [SerializeField] [TextArea(2, 20)] public string feedbackText;
     [SerializeField] public CriticType criticType;
 }

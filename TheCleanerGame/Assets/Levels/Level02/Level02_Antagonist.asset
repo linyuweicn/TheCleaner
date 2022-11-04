@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3741161dcb797d44cab592e1f9930bc6, type: 3}
+  m_Name: Level02_Antagonist
+  m_EditorClassIdentifier: 
+  id: {x: 1, y: 2}
+  promptType: 1
+  text: The Antagonist of the game will be [adjective] [noun].
+  completed: 1
+  AnswersStorage:
+  - answerColumn:
+    - text: Cowardly
+      totalscore: 68
+      feedbackType: 1
+      feedbackText: 'This kind of character is a perfect role model for our nation. '
+      criticType: 4
+    - text: Comical
+      totalscore: 62
+      feedbackType: 1
+      feedbackText: Yes! Who doesn't love a character with such charisma?
+      criticType: 0
+    - text: Greedy
+      totalscore: 56
+      feedbackType: 1
+      feedbackText: Wow. I really like that. I can already see the character.
+      criticType: 4
+    - text: Misguided
+      totalscore: 50
+      feedbackType: 2
+      feedbackText: 'I see your intention here, but think of polishing it up more. '
+      criticType: 0
+    - text: Charismatic
+      totalscore: 23
+      feedbackType: 3
+      feedbackText: Are you sure this is the kind of trait you want a HERO to have?
+      criticType: 4
+    - text: Brilliant
+      totalscore: 20
+      feedbackType: 3
+      feedbackText: hmm, very unconventional. I'm just afraid it won't be too appealing
+        to the NEA Censors.
+      criticType: 0
+  - answerColumn:
+    - text: Tyrant
+      totalscore: 71
+      feedbackType: 1
+      feedbackText: 'I LOVE this character already. '
+      criticType: 4
+    - text: Alien
+      totalscore: 62
+      feedbackType: 3
+      feedbackText: Really? Come on, guys.
+      criticType: 3
+    - text: Cartoon Lizard
+      totalscore: 52
+      feedbackType: 2
+      feedbackText: 'Interesting. This type of character can go either way, and be
+        careful for what could be censored. '
+      criticType: 0
+    - text: Hunter
+      totalscore: 50
+      feedbackType: 1
+      feedbackText: Oh cool. I can totally see this type of hero.
+      criticType: 4
+    - text: Henchman
+      totalscore: 41
+      feedbackType: 3
+      feedbackText: 'I''m not sure if it is a good idea. We are making a game, not
+        duplicate reality, try to think out of the box more. '
+      criticType: 0
+    - text: Nobleman
+      totalscore: 20
+      feedbackType: 1
+      feedbackText: Now that's what I'm talking about.
+      criticType: 3
+  segments:
+  - 'The Antagonist of the game will be '
+  - ' '
+  - .

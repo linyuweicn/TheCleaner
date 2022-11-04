@@ -11,7 +11,7 @@ public class PromptObject : ScriptableObject
     [Tooltip("First value is which day, second value is the nth prompt of that day")]
     [SerializeField] Vector2Int id;
     [SerializeField] PromptType promptType;
-    [SerializeField] string text; //don't modify this
+    [SerializeField] [TextArea(2, 20)] string text; //don't modify this
     string displayText;
     public bool completed;
 
