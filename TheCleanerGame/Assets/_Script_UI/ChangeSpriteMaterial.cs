@@ -30,7 +30,7 @@ public class ChangeSpriteMaterial : MonoBehaviour
     }
 
     // ...and the mesh finally turns white when the mouse moves away.
-    void OnMouseExit()
+    public void OnMouseExit()
     {
         //rend.material.color = Color.white;
         rend.material = originalMat;

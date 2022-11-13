@@ -11,6 +11,7 @@ public class GeneralObjects : MonoBehaviour
     [SerializeField] Collider2D[] Colliders;
     [SerializeField] Collider2D[] CharaColliders;
 
+    private bool hasClicked;
     //to coontrol character's collider 
     
 
@@ -49,7 +50,7 @@ public class GeneralObjects : MonoBehaviour
                 Colliders[i].enabled = true;
             }
 
-            if (!NPC1_Con1.canTurnOffCollider )
+           /* if (!NPC1_Con1.canTurnOffCollider )
             {
                 for (int i = 0; i < CharaColliders.Length; i++)
                 {
@@ -63,8 +64,8 @@ public class GeneralObjects : MonoBehaviour
                 {
                     CharaColliders[i].enabled = false;
                 }
-            }
-            
+            }*/
+            hasClicked = false;
             
         }
        
@@ -73,22 +74,33 @@ public class GeneralObjects : MonoBehaviour
 
     }
 
-    public void OnMouseDown()
+    public void OnMouseDown() // enable animation
     {
-        if (m_Animator != null)
+
+        if (hasClicked == false)
         {
-            m_Animator.SetBool("isOn", true); // turn on stuff such as calendar or email
-
-            //Disable other clickable objects
-
-            for (int i = 0; i < Colliders.Length; i++)
+            if (m_Animator != null)
             {
-                Colliders[i].enabled = false;
+                m_Animator.SetBool("isOn", true); // turn on stuff such as calendar or email
+
+                //Disable other clickable objects
+
+                for (int i = 0; i < Colliders.Length; i++)
+                {
+                    Colliders[i].enabled = false;
+                    Debug.Log("clicked on iem");
+                    Debug.Log(Colliders[0].enabled);
+                }
+
+                hasClicked = true;
             }
-            Debug.Log("clicked on iem");
-
-
+          
         }
+        else
+        {
+            CloseObject();
+        }
+        
     
     }
 }

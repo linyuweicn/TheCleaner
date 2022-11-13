@@ -35,22 +35,10 @@ public class WhtieBoard : MonoBehaviour
 
     public void OnMouseDown()
     {
-        if (isBrainStormOn) //brainstorm canvas is showing
+        if (!isBrainStormOn) //brainstorm canvas is showing
         {
 
-            WhiteBoard.SetActive(true);
-            m_Animator.SetBool("isOn", false);
-            // make this off
-            isBrainStormOn = false;
-
-            for (int i = 0; i < DisabledObjects.Length; i++)
-            {
-                DisabledObjects[i].SetActive(true);
-            }
-
-        }
-        else //if barinsotrm canvas is off
-        {
+   
             WhiteBoard.SetActive(false);
             m_Animator.SetBool("isOn", true); // show brainstorm canvas
             // make this on
@@ -64,8 +52,24 @@ public class WhtieBoard : MonoBehaviour
             audioManager.PlayUiSound("ui_click");
 
         }
+       
+    }
+
+    public void CloseBrainstorm()
+    {
+        if (isBrainStormOn)
+        {
+            WhiteBoard.SetActive(true);
+            m_Animator.SetBool("isOn", false);
+            // make this off
+            isBrainStormOn = false;
+
+            for (int i = 0; i < DisabledObjects.Length; i++)
+            {
+                DisabledObjects[i].SetActive(true);
+            }
+        }
 
     }
 
-  
 }
