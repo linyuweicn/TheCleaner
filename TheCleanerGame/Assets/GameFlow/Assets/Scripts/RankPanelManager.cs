@@ -11,15 +11,17 @@ public class RankPanelManager : MonoBehaviour
     [SerializeField] ArrowButtonObject nextButton;
 
     [SerializeField] AnswerBox answerBox;
-    [SerializeField] GameObject shadowBox;
-    [SerializeField] GameObject answerParent;
+    [SerializeField] ShadowBox shadowBox;
+    public GameObject answerParent;
+    public GameObject shadowParent;
+    public GameObject superParent;
 
     [SerializeField] Vector3 initialAnswerPos;
     [SerializeField] float heightDiff;
     [SerializeField] float widthDiff;
 
     public List<List<AnswerBox>> AnswerBoxes;
-    public List<GameObject> ShadowBoxes;
+    public List<ShadowBox> ShadowBoxes;
     public RankPanelState State { get; set; }
     public FeedbackManager feedbackManager;
     #endregion
@@ -49,7 +51,7 @@ public class RankPanelManager : MonoBehaviour
     public void GenerateAnswers()
     {
         AnswerBoxes = new List<List<AnswerBox>>();
-        ShadowBoxes = new List<GameObject>();
+        ShadowBoxes = new List<ShadowBox>();
 
         PromptObject prompt = BrainstormGeneralManager.Instance.FocusedContainer.Prompt;
         for (int i = 0; i < prompt.Answers.Count; i++)
@@ -58,8 +60,15 @@ public class RankPanelManager : MonoBehaviour
             for (int j = 0; j < prompt.Answers[i].Count; j++)
             {
                 Vector3 spawnPoint = initialAnswerPos + (i * widthDiff * Vector3.right) + (j * heightDiff * Vector3.down);
-                AnswerBoxes[i].Add(SpawnAnswer(i, j, spawnPoint));
-                ShadowBoxes.Add(SpawnShadow(spawnPoint));
+                if (prompt.Answers[i][j] != null)
+                {
+                    AnswerBoxes[i].Add(SpawnAnswer(i, j, spawnPoint));
+                }
+                else if (j == 0)
+                {
+                    AnswerBoxes[i].Add(null);
+                }
+                ShadowBoxes.Add(SpawnShadow(i, j, spawnPoint));
             }
         }
     }
@@ -94,7 +103,10 @@ public class RankPanelManager : MonoBehaviour
             AnswerBox top = AnswerBoxes[i][0];
             for (int j = 1; j < AnswerBoxes[i].Count; j++)
             {
-                AnswerBoxes[i][j].SelfDestruct();
+                if (AnswerBoxes[i][j] != null)
+                {
+                    AnswerBoxes[i][j].SelfDestruct();
+                }
             }
             AnswerBoxes[i].Clear();
             AnswerBoxes[i].Add(top);
@@ -108,7 +120,7 @@ public class RankPanelManager : MonoBehaviour
         }
         for (int i = 0; i < ShadowBoxes.Count; i++)
         {
-            Destroy(ShadowBoxes[i]);
+            Destroy(ShadowBoxes[i].gameObject);
         }
         ShadowBoxes.Clear();
 
@@ -142,10 +154,11 @@ public class RankPanelManager : MonoBehaviour
         return output;
     }
 
-    GameObject SpawnShadow(Vector3 position)
+    ShadowBox SpawnShadow(int column, int ranking, Vector3 position)
     {
-        GameObject output = Instantiate(shadowBox, answerParent.transform);
+        ShadowBox output = Instantiate(shadowBox, shadowParent.transform);
         output.transform.localPosition = position;
+        output.Construct(column, ranking, position);
         return output;
     }
 

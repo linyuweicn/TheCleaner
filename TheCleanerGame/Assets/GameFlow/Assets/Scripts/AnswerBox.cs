@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.EventSystems;
 
 
-public class AnswerBox : MonoBehaviour
+public class AnswerBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     #region variables
     [Header("Debug Attributes")]
@@ -23,7 +23,7 @@ public class AnswerBox : MonoBehaviour
 
 
     bool mouseOver;
-    bool clickedOn;
+    public bool clickedOn;
     bool isMoving;
 
     float elapsed;
@@ -36,7 +36,6 @@ public class AnswerBox : MonoBehaviour
     public PromptObject promptObject;
 
     Camera cam;
-    [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] TextMeshProUGUI text;
     [SerializeField] LayerMask answerBoxLayer;
 
@@ -107,43 +106,97 @@ public class AnswerBox : MonoBehaviour
         if (answerBoxLayer == (answerBoxLayer | (1 << collision.gameObject.layer)))
         {
             //Collision with Another Box
-            if (clickedOn)
+/*            if (clickedOn)
             {
                 AnswerBox other = collision.gameObject.GetComponent<AnswerBox>();
                 if (other != null && !other.isMoving && other.column == column)
                 {
                     SwapPositionsAmongAnswers(column, other);
                 }
+            }*/
+        }
+    }
+
+    public void TryToSwapAnswers(int column, AnswerBox other, Vector3 otherPosition)
+    {
+        if (clickedOn)
+        {
+            if (other == null)
+            {
+                MoveAnswerToEmptyTopChoice(column, other, otherPosition);
             }
+            else if (ranking != other.ranking)
+            {
+                SwapPositionsAmongAnswers(column, other);
+            }
+        }
+    }
+
+    void MoveAnswerToEmptyTopChoice(int column, AnswerBox other, Vector3 otherPosition)
+    {
+        BrainstormGeneralManager.Instance.FocusedContainer.Prompt.SwapRankings(column, ranking, 0);
+        rankPanelManager.SwapAnswers(column, ranking, 0);
+
+        int oldRanking = ranking;
+        ranking = 0;
+
+        Vector3 oldAssignedPosition = assignedPos;
+        SetAssignedPos(otherPosition);
+
+        for (int i = oldRanking + 1; i < rankPanelManager.AnswerBoxes[column].Count; i++)
+        {
+            BrainstormGeneralManager.Instance.FocusedContainer.Prompt.SwapRankings(column, i, i - 1);
+
+            AnswerBox otherAnswer = rankPanelManager.AnswerBoxes[column][i];
+
+            otherAnswer.ranking--;
+
+            Vector3 tempAssignedPos = oldAssignedPosition;
+            oldAssignedPosition = otherAnswer.assignedPos;
+            otherAnswer.SetAssignedPos(tempAssignedPos, true);
+
+            rankPanelManager.SwapAnswers(column, i, i - 1);
+        }
+
+        bool allAtTop = true;
+        for (int i = 0; i < rankPanelManager.AnswerBoxes.Count; i++)
+        {
+            if (rankPanelManager.AnswerBoxes[i][0] == null)
+            {
+                allAtTop = false;
+                break;
+            }
+        }
+
+        if (allAtTop)
+        {
+            PromptManager.Instance.MarkPromptAsCompleted(BrainstormGeneralManager.Instance.FocusedContainer.Prompt);
         }
     }
 
     void SwapPositionsAmongAnswers(int column, AnswerBox other)
     {
-        if (ranking != other.ranking)
+        int j;
+        int targetRanking = other.ranking;
+        for (int i = ranking; i != targetRanking; i = j)
         {
-            int j;
-            int targetRanking = other.ranking;
-            for (int i = ranking; i != targetRanking; i = j)
-            {
-                j = i + (i < other.ranking ? 1 : -1);
-                
-                BrainstormGeneralManager.Instance.FocusedContainer.Prompt.SwapRankings(column, i, j);
+            j = i + (i < other.ranking ? 1 : -1);
 
-                AnswerBox otherAnswer = rankPanelManager.AnswerBoxes[column][j];
+            BrainstormGeneralManager.Instance.FocusedContainer.Prompt.SwapRankings(column, i, j);
 
-                int tempRanking = ranking;
-                ranking = otherAnswer.ranking;
-                otherAnswer.ranking = tempRanking;
+            AnswerBox otherAnswer = rankPanelManager.AnswerBoxes[column][j];
 
-                Vector3 tempAssignedPos = assignedPos;
-                SetAssignedPos(otherAnswer.assignedPos, true);
-                otherAnswer.SetAssignedPos(tempAssignedPos, true);
+            int tempRanking = ranking;
+            ranking = otherAnswer.ranking;
+            otherAnswer.ranking = tempRanking;
 
-                rankPanelManager.SwapAnswers(column, i, j);
-            }
-            PromptManager.Instance.MarkPromptAsCompleted(BrainstormGeneralManager.Instance.FocusedContainer.Prompt);
+            Vector3 tempAssignedPos = assignedPos;
+            SetAssignedPos(otherAnswer.assignedPos, true);
+            otherAnswer.SetAssignedPos(tempAssignedPos, true);
+
+            rankPanelManager.SwapAnswers(column, i, j);
         }
+
     }
 
     public void SetAssignedPos(Vector3 assigned, bool startMoving = false) //sets destination without interfering with MoveTo()
@@ -170,46 +223,7 @@ public class AnswerBox : MonoBehaviour
 
                 if (ranking == 0) //handles Feedback and calculate scores
                 {
-                    feedbackManager.TriggerFeedback(BrainstormGeneralManager.Instance.FocusedContainer.Prompt.Answers[column][ranking]);
-                    
-                    //get the score for the top choice
-                    float tempScores = feedbackManager.GetScores(BrainstormGeneralManager.Instance.FocusedContainer.Prompt.Answers[column][ranking]);
-                    
-                    PromptType type = BrainstormGeneralManager.Instance.FocusedContainer.Prompt.Type;
-
-                    int j = 0;
-
-                    switch (type)
-                    {
-                        case PromptType.Theme:
-                            BrainstormGeneralManager.AveScore[0] = tempScores;
-                            j = 0;
-                            break;
-                        case PromptType.Character:
-                            if(column == 1){BrainstormGeneralManager.AveScore[1] = tempScores; j = 1;}else{BrainstormGeneralManager.AveScore[2] = tempScores; j = 2;};
-                            break;
-                        case PromptType.Setting:
-                            if(column == 1){BrainstormGeneralManager.AveScore[3] = tempScores; j = 3;}else{BrainstormGeneralManager.AveScore[4] = tempScores; j = 4;};
-                            break;
-                    };
-
-                    float count = 1.0f;
-
-                    for(int i = 0; i < 5; i++)
-                    {
-                        if(BrainstormGeneralManager.AveScore[i] != 0.0f && i != j)
-                        {
-                            count = count + 1.0f;
-                            tempScores = tempScores + BrainstormGeneralManager.AveScore[i];
-                        }
-                    };
-
-                    float totalScores = tempScores/count;
-                    
-                    Debug.Log(tempScores.ToString());
-
-                    //increment the likeness bar
-                    scoreProgress.IncrementProgress(totalScores);
+                    BecomeTopRank();
                 }
             }
 
@@ -217,17 +231,61 @@ public class AnswerBox : MonoBehaviour
         }
     }
 
+    private void BecomeTopRank()
+    {
+        feedbackManager.TriggerFeedback(BrainstormGeneralManager.Instance.FocusedContainer.Prompt.Answers[column][ranking]);
+
+        //get the score for the top choice
+        float tempScores = feedbackManager.GetScores(BrainstormGeneralManager.Instance.FocusedContainer.Prompt.Answers[column][ranking]);
+
+        PromptType type = BrainstormGeneralManager.Instance.FocusedContainer.Prompt.Type;
+
+        int j = 0;
+
+        switch (type)
+        {
+            case PromptType.Theme:
+                BrainstormGeneralManager.AveScore[0] = tempScores;
+                j = 0;
+                break;
+            case PromptType.Character:
+                if (column == 1) { BrainstormGeneralManager.AveScore[1] = tempScores; j = 1; } else { BrainstormGeneralManager.AveScore[2] = tempScores; j = 2; };
+                break;
+            case PromptType.Setting:
+                if (column == 1) { BrainstormGeneralManager.AveScore[3] = tempScores; j = 3; } else { BrainstormGeneralManager.AveScore[4] = tempScores; j = 4; };
+                break;
+        };
+
+        float count = 1.0f;
+
+        for (int i = 0; i < 5; i++)
+        {
+            if (BrainstormGeneralManager.AveScore[i] != 0.0f && i != j)
+            {
+                count = count + 1.0f;
+                tempScores = tempScores + BrainstormGeneralManager.AveScore[i];
+            }
+        };
+
+        float totalScores = tempScores / count;
+
+        //Debug.Log(tempScores.ToString());
+
+        //increment the likeness bar
+        scoreProgress.IncrementProgress(totalScores);
+    }
+
     #endregion
 
     #region mouse interface
-    private void OnMouseEnter()
+    public void OnPointerEnter(PointerEventData pointerEventData)
     {
         if (rankPanelManager.State == RankPanelState.Ranking)
         {
             mouseOver = true;
         }
     }
-    private void OnMouseExit()
+    public void OnPointerExit(PointerEventData pointerEventData)
     {
         mouseOver = false;
     }
@@ -237,14 +295,14 @@ public class AnswerBox : MonoBehaviour
         {
             clickedOn = true;
             mouseOffset = transform.position - GetMousePosition();
-            spriteRenderer.sortingOrder++;
+            transform.parent = rankPanelManager.superParent.transform;
         }
     }
     private void ClickedUp()
     {
         if (clickedOn)
         {
-            spriteRenderer.sortingOrder--;
+            transform.parent = rankPanelManager.answerParent.transform;
             SetAssignedPos(assignedPos, true);
         }
         clickedOn = false;

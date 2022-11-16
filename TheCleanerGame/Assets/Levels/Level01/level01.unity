@@ -1199,20 +1199,6 @@ MonoBehaviour:
     _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Panel.prefab
   - _gameObject: {fileID: 180952495}
     _prefab: Assets/Prefabs/Chara Prefab/Male Team Member_Placeholder.prefab
-  - _gameObject: {fileID: 1571869326}
-    _prefab: Assets/Prefabs/Chara Prefab/Male Team Member_Placeholder.prefab
-  - _gameObject: {fileID: 2011231272}
-    _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Panel.prefab
-  - _gameObject: {fileID: 2011231272}
-    _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Panel.prefab
-  - _gameObject: {fileID: 1529531251}
-    _prefab: Assets/Prefabs/Chara Prefab/Male Team Member_Placeholder.prefab
-  - _gameObject: {fileID: 2011231272}
-    _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Panel.prefab
-  - _gameObject: {fileID: 1145905352}
-    _prefab: Assets/Prefabs/Chara Prefab/Male Team Member_Placeholder.prefab
-  - _gameObject: {fileID: 2011231272}
-    _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Panel.prefab
   - _gameObject: {fileID: 2011231271}
     _prefab: Assets/GameFlow/Assets/Prefabs/AnswerBox.prefab
   - _gameObject: {fileID: 2011231270}
@@ -1233,6 +1219,20 @@ MonoBehaviour:
     _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Containers/Characters.prefab
   - _gameObject: {fileID: 2011231262}
     _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Containers/Narration.prefab
+  - _gameObject: {fileID: 1571869326}
+    _prefab: Assets/Prefabs/Chara Prefab/Male Team Member_Placeholder.prefab
+  - _gameObject: {fileID: 2011231272}
+    _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Panel.prefab
+  - _gameObject: {fileID: 2011231272}
+    _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Panel.prefab
+  - _gameObject: {fileID: 1529531251}
+    _prefab: Assets/Prefabs/Chara Prefab/Male Team Member_Placeholder.prefab
+  - _gameObject: {fileID: 2011231272}
+    _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Panel.prefab
+  - _gameObject: {fileID: 1145905352}
+    _prefab: Assets/Prefabs/Chara Prefab/Male Team Member_Placeholder.prefab
+  - _gameObject: {fileID: 2011231272}
+    _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Panel.prefab
   - _gameObject: {fileID: 1958799045}
     _prefab: Assets/Prefabs/BackgroundAndDoors.prefab
   - _gameObject: {fileID: 25838944}
@@ -4433,6 +4433,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2043609906}
+    - target: {fileID: 509862493205393731, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2341956151719628358, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4441,10 +4445,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2043609906}
+    - target: {fileID: 3821978857860373996, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5031224691646149461, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5735007598471613059, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1244578815}
+    - target: {fileID: 5735007598471613059, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1424716417
+      objectReference: {fileID: 0}
     - target: {fileID: 5735007598682170250, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: widthDiff
       value: 5
@@ -4501,6 +4517,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5735007599450594823, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5735007599631209990, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -4509,6 +4529,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2043609906}
+    - target: {fileID: 7085425096840221573, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7725246608282548577, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

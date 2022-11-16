@@ -9,7 +9,6 @@ public class FeedbackManager : MonoBehaviour
     #region variables
     [SerializeField] RankPanelManager rankPanelManager;
 
-    [SerializeField] GameObject redFeedbackBubble;
     [SerializeField] GameObject neutralFeedbackBubble;
     [SerializeField] TextMeshProUGUI neutralFeedbackText;
     [SerializeField] TextMeshProUGUI neutralFeedbackName;
@@ -21,19 +20,20 @@ public class FeedbackManager : MonoBehaviour
     [HideInInspector] public float totalScore;
     [SerializeField] TextMeshProUGUI totalScoreText;
 
-    [SerializeField] List<criticPair> criticPairs;
-    Dictionary<CriticType, Sprite> CriticDictionary;
+    [SerializeField] List<criticInfo> criticPairs;
+    Dictionary<CriticType, criticInfo> CriticDictionary;
+    HashSet<AnswerObject> triggeredFeedbackAnswers;
 
     //for calculation scores
     
-    
-
     #region private struct
     [Serializable]
-    struct criticPair
+    struct criticInfo
     {
         public CriticType type;
         public Sprite image;
+        public GameObject redFeedbackBubble;
+        public Transform neutralConversationBubbleLocation;
     }
     #endregion
     #endregion
@@ -41,10 +41,11 @@ public class FeedbackManager : MonoBehaviour
     #region initialization
     void Start()
     {
-        CriticDictionary = new Dictionary<CriticType, Sprite>();
-        foreach (criticPair c in criticPairs)
+        CriticDictionary = new Dictionary<CriticType,criticInfo>();
+        triggeredFeedbackAnswers = new HashSet<AnswerObject>();
+        foreach (criticInfo c in criticPairs)
         {
-            CriticDictionary.Add(c.type, c.image);
+            CriticDictionary.Add(c.type, c);
         }
         ResetFeedback();
     }
@@ -58,24 +59,28 @@ public class FeedbackManager : MonoBehaviour
     #region Feedback Triggers
     public void TriggerFeedback(AnswerObject answer)
     {
-        ResetFeedback();
-        switch (answer.feedbackType)
+        if (!triggeredFeedbackAnswers.Contains(answer))
         {
-            case FeedbackType.Positive:
-                TriggerCriticalFeedback(answer.criticType, answer.feedbackText);
-                break;
-            case FeedbackType.Neutral:
-                TriggerNeutralFeedback(answer.criticType, answer.feedbackText);
-                break;
-            case FeedbackType.Negative:
-                TriggerCriticalFeedback(answer.criticType, answer.feedbackText);
-                break;
+            ResetFeedback();
+            switch (answer.feedbackType)
+            {
+                case FeedbackType.Positive:
+                    TriggerCriticalFeedback(answer.criticType, answer.feedbackText);
+                    break;
+                case FeedbackType.Neutral:
+                    TriggerNeutralFeedback(answer.criticType, answer.feedbackText);
+                    break;
+                case FeedbackType.Negative:
+                    TriggerCriticalFeedback(answer.criticType, answer.feedbackText);
+                    break;
+            }
+            triggeredFeedbackAnswers.Add(answer);
         }
     }
     public void TriggerCriticalFeedback(CriticType type, string feedbackText)
     {
         criticalFeedbackName.text = type.ToString();
-        criticalFeedbackImage.sprite = CriticDictionary[type];
+        criticalFeedbackImage.sprite = CriticDictionary[type].image;
         criticalFeedbackText.text = feedbackText;
         OpenCriticalFeedback();
     }
@@ -83,7 +88,7 @@ public class FeedbackManager : MonoBehaviour
     {
         neutralFeedbackText.text = feedbackText;
         neutralFeedbackName.text = type.ToString();
-        OpenRedBubble();
+        OpenRedBubble(CriticDictionary[type].redFeedbackBubble, CriticDictionary[type].neutralConversationBubbleLocation.position);
     }
     public void CloseCriticalFeedback()
     {
@@ -99,7 +104,13 @@ public class FeedbackManager : MonoBehaviour
 
     public void CloseNeutralRedBubble()
     {
-        redFeedbackBubble.SetActive(false);
+        foreach (criticInfo info in CriticDictionary.Values)
+        {
+            if (info.redFeedbackBubble != null)
+            {
+                info.redFeedbackBubble.SetActive(false);
+            }
+        }
     }
 
     public void ResetFeedback()
@@ -128,8 +139,9 @@ public class FeedbackManager : MonoBehaviour
 
     #region helper functions
 
-    void OpenRedBubble()
+    void OpenRedBubble(GameObject redFeedbackBubble, Vector3 conversationBubblePostion)
     {
+        neutralFeedbackBubble.transform.position = conversationBubblePostion;
         redFeedbackBubble.SetActive(true);
     }
 
