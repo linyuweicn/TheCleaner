@@ -8,17 +8,24 @@ public class GeneralObjects : MonoBehaviour
     [SerializeField] GameObject Animator;
     Animator m_Animator;
 
-    [SerializeField] Collider2D[] Colliders;
-    [SerializeField] Collider2D[] CharaColliders;
 
+    [SerializeField] BoxCollider2D[] Colliders;
+
+    //a temp fix for rn
+    [SerializeField] GameObject[] Objects;
     private bool hasClicked;
-    //to coontrol character's collider 
+
     
 
     void Start()
     {
-        
-        
+        for (int i = 0; i < Colliders.Length; i++)
+        {
+            Colliders[i].GetComponent<Collider2D>();
+        }
+
+
+
         if (Animator != null)
         {
             m_Animator = Animator.GetComponent<Animator>();
@@ -36,43 +43,6 @@ public class GeneralObjects : MonoBehaviour
     }
 
 
-    public void CloseObject()
-    {
-        
-        
-        if (m_Animator != null)
-        {
-            m_Animator.SetBool("isOn", false);
-
-
-            for (int i = 0; i < Colliders.Length; i++)
-            {
-                Colliders[i].enabled = true;
-            }
-
-           /* if (!NPC1_Con1.canTurnOffCollider )
-            {
-                for (int i = 0; i < CharaColliders.Length; i++)
-                {
-                    CharaColliders[i].enabled = true;
-                }
-
-            }
-            else
-            {
-                for (int i = 0; i < CharaColliders.Length; i++)
-                {
-                    CharaColliders[i].enabled = false;
-                }
-            }*/
-            hasClicked = false;
-            
-        }
-       
-
-    
-
-    }
 
     public void OnMouseDown() // enable animation
     {
@@ -87,14 +57,17 @@ public class GeneralObjects : MonoBehaviour
 
                 for (int i = 0; i < Colliders.Length; i++)
                 {
-                    Colliders[i].enabled = false;
-                    Debug.Log("clicked on iem");
-                    Debug.Log(Colliders[0].enabled);
+                    Colliders[i].enabled = false; 
+
+                }  
+                for (int i = 0; i < Objects.Length; i++)
+                {
+                    Objects[i].SetActive(false);
                 }
 
                 hasClicked = true;
             }
-          
+            
         }
         else
         {
@@ -102,5 +75,30 @@ public class GeneralObjects : MonoBehaviour
         }
         
     
+    }
+
+
+    public void CloseObject()
+    {
+
+
+        if (m_Animator != null)
+        {
+            m_Animator.SetBool("isOn", false);
+
+
+            for (int i = 0; i < Colliders.Length; i++)
+            {
+                Colliders[i].enabled = true;
+            }
+            for (int i = 0; i < Objects.Length; i++)
+            {
+                Objects[i].SetActive(true);
+            }
+
+            hasClicked = false;
+
+        }
+
     }
 }

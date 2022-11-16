@@ -41,6 +41,11 @@ public class AnswerBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     
     AudioManager audiomanager;
+
+   /* //change cursor sprites
+    public Texture2D cursorTexture;
+    public CursorMode cursorMode = CursorMode.Auto;
+    public Vector2 hotSpot = Vector2.zero;*/
     #endregion
 
     #region initialization
@@ -87,7 +92,9 @@ public class AnswerBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
             {
                 ClickedUp();
             }
+            
         }
+
 
         if (clickedOn)
         {
@@ -284,10 +291,12 @@ public class AnswerBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         {
             mouseOver = true;
         }
+        //Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
     }
     public void OnPointerExit(PointerEventData pointerEventData)
     {
         mouseOver = false;
+        //Cursor.SetCursor(null, Vector2.zero, cursorMode);
     }
     private void ClickedDown()
     {
