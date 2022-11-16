@@ -36,9 +36,13 @@ public class ScoreProgress : MonoBehaviour
             
             slider.value += fillSpeed * Time.deltaTime;
         }
-        else
+        else if (slider.value > targetProgress + fillSpeed * Time.deltaTime)
         {
             slider.value -= fillSpeed * Time.deltaTime;
+        }
+        else
+        {
+            slider.value = targetProgress;
         }
 
     }

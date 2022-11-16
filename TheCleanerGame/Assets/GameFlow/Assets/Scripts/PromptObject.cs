@@ -51,6 +51,7 @@ public class PromptObject : ScriptableObject
         for (int i = 0; i < AnswersStorage.Count; i++)
         {
             Answers.Add(new List<AnswerObject>());
+            Answers[i].Add(null); //0 is null to indicate ranking
             for (int j = 0; j < AnswersStorage[i].answerColumn.Count; j++)
             {
                 Answers[i].Add(AnswersStorage[i].answerColumn[j]);

@@ -18,7 +18,7 @@ public class BrainstormGeneralManager : MonoBehaviour
 
     [SerializeField] GameObject rankPanel;
     [SerializeField] GameObject menuPanel;
-    [SerializeField] RankPanelManager rankPanelManager;
+    public RankPanelManager rankPanelManager;
     public BrainstormContainer FocusedContainer
     {
         get { return ContainerDictionary[focusedContainer]; }
@@ -30,7 +30,7 @@ public class BrainstormGeneralManager : MonoBehaviour
     {
         Instance = this;
         ContainerDictionary = new Dictionary<int, BrainstormContainer>();
-        Physics.queriesHitTriggers = true;
+        Physics.queriesHitTriggers = false;
     }
 
     private void Start()
