@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3741161dcb797d44cab592e1f9930bc6, type: 3}
+  m_Name: Level03_NarrationPlayerExp
+  m_EditorClassIdentifier: 
+  id: {x: 2, y: 1}
+  promptType: 3
+  text: 'The plot of the game will be told through a [narration type] narrative with
+    a focus on [player experience]. '
+  completed: 1
+  AnswersStorage:
+  - answerColumn:
+    - text: Linear
+      totalscore: 66
+      feedbackType: 3
+      feedbackText: Why would I play if I can't change anything? Sounds terrible.
+      criticType: 3
+    - text: Branching
+      totalscore: 54
+      feedbackType: 1
+      feedbackText: 'This is exactly the game experience we want to give to our players,
+        to freely and interactively explore themselves as the protagonists of the
+        world. '
+      criticType: 0
+    - text: Environmental
+      totalscore: 54
+      feedbackType: 1
+      feedbackText: Exploring new environments! I like the sound of that.
+      criticType: 3
+    - text: String of Pearls
+      totalscore: 35
+      feedbackType: 2
+      feedbackText: I can see how this can be fun. It will be a lot to review, but
+        that's what the NEA is for!
+      criticType: 4
+    - text: Interaction
+      totalscore: 28
+      feedbackType: 3
+      feedbackText: 'Interactivity is always key to a good game experience. Yet sometimes
+        it is not only about the interactivity itself, but how and why the interaction. '
+      criticType: 0
+  - answerColumn:
+    - text: Parasocial Character Development
+      totalscore: 63
+      feedbackType: 1
+      feedbackText: 'Love it. Connecting with your character emotionally always signifies
+        immersive and meaningful game play. '
+      criticType: 0
+    - text: Changing the Environment
+      totalscore: 51
+      feedbackType: 3
+      feedbackText: 'I''m not sure the NEA wants the general public to feel like
+        they can make changes to the world. What if they change the real world?! '
+      criticType: 4
+    - text: Completing the Narrative
+      totalscore: 39
+      feedbackType: 3
+      feedbackText: No replay value here. Just a quick cash grab for completing the
+        narrative.
+      criticType: 3
+    - text: Online Multiplayer Matches
+      totalscore: 38
+      feedbackType: 1
+      feedbackText: 'This style is not usually story focused, it''s money focused
+        and the NEA loves money. '
+      criticType: 4
+    - text: Wish Fulfillment
+      totalscore: 23
+      feedbackType: 2
+      feedbackText: Yeah, I'm ok with this. They did play for the game after all.
+      criticType: 3
+  segments:
+  - 'The plot of the game will be told through a '
+  - ' narrative with a focus on '
+  - '. '
