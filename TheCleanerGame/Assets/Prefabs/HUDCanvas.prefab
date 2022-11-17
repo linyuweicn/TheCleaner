@@ -774,6 +774,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 109517769065333191, guid: b967980ba88ecb04ba0f64ca2829ca49, type: 3}
   m_PrefabInstance: {fileID: 1831206191329352156}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1796045099714811927 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 109517769065333195, guid: b967980ba88ecb04ba0f64ca2829ca49, type: 3}
+  m_PrefabInstance: {fileID: 1831206191329352156}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2281271622561353221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1311,6 +1316,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 253548492290374191}
     m_Modifications:
+    - target: {fileID: 5663114897626420597, guid: 47c82489de3ce9940ba6e17fe460ea85, type: 3}
+      propertyPath: aimator
+      value: 
+      objectReference: {fileID: 1796045099714811927}
     - target: {fileID: 5663114897778377032, guid: 47c82489de3ce9940ba6e17fe460ea85, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
