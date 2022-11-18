@@ -338,11 +338,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4387831574321334288, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
   m_PrefabInstance: {fileID: 4387831574434259041}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &180952495 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5735007599609868449, guid: 8751829fc4dab354cb287a148f755140, type: 3}
-  m_PrefabInstance: {fileID: 2011231261}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &185296708
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1177,8 +1172,6 @@ MonoBehaviour:
     _prefab: Assets/Prefabs/ConversationManager Variant.prefab
   - _gameObject: {fileID: 2011231272}
     _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Panel.prefab
-  - _gameObject: {fileID: 180952495}
-    _prefab: Assets/Prefabs/Chara Prefab/Male Team Member_Placeholder.prefab
   - _gameObject: {fileID: 2011231271}
     _prefab: Assets/GameFlow/Assets/Prefabs/AnswerBox.prefab
   - _gameObject: {fileID: 2011231270}
@@ -3694,6 +3687,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1899551605}
+    - target: {fileID: 253548493712607748, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 360101264038986287, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_Enabled
       value: 0
