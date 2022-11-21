@@ -9,11 +9,13 @@ public class ChangeSpriteMaterial : MonoBehaviour
     private Material originalMat;
     public Material material;
     private bool isShown;
+    AudioManager audioManager;
 
     void Start()
     {
         rend = GetComponent<Renderer>();
         originalMat = GetComponent<Renderer>().material;
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     // The mesh goes red when the mouse is over it...
@@ -21,6 +23,7 @@ public class ChangeSpriteMaterial : MonoBehaviour
     {
         //rend.material.color = Color.red;
         rend.material = material;
+        audioManager.PlayUiSound("ui_highlight");
     }
 
     // ...the red fades out to cyan as the mouse is held over...

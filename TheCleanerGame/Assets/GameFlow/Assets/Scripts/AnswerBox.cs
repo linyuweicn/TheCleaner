@@ -82,7 +82,7 @@ public class AnswerBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
             if (Input.GetMouseButtonDown(0))
             {
                 ClickedDown();
-                audiomanager.PlayUiSound("ui_click");
+                audiomanager.PlayUiSound("ui_drag_03");
             }
             else if (!Input.GetMouseButton(0))
             {

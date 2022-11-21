@@ -5,8 +5,8 @@ using DialogueEditor;
 
 public class NPCConvWithWhiteBoard : MonoBehaviour
 {
-    [SerializeField] AudioClip audioClip;
-    AudioManager audioManager;
+
+    
     public NPCConversation[] B4CompleteConversations;
     public NPCConversation[] AfterCompleteConversations;
     private int convSequenceB4;
@@ -22,7 +22,7 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
     void Start()
     {
 
-        audioManager = FindObjectOfType<AudioManager>();
+        
 
     }
 
@@ -84,7 +84,7 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
     {
         if (!BrainstormGeneralManager.Instance.ContainerDictionary[0].Prompt.completed)
         {
-
+            
             StartConvBeforeWhieBoard();
             //Debug.Log("not completed");
         }
@@ -93,7 +93,7 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
             StartAfterBeforeWhieBoard();
         
         }
-
+     
 
     }
 

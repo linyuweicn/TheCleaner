@@ -142,7 +142,7 @@ public class BrainstormContainer : MonoBehaviour
 
         if (audioManager != null)
         {
-            audioManager.PlayUiSound("ui_drag_02");
+            audioManager.PlayUiSound("ui_confirm");
         }
     }
 

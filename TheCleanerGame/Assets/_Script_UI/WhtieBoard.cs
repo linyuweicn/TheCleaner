@@ -49,7 +49,7 @@ public class WhtieBoard : MonoBehaviour
                 DisabledObjects[i].SetActive(false); // disable all the obajects
             }
 
-            audioManager.PlayUiSound("ui_click");
+            audioManager.PlayUiSound("ui_confirm");
 
         }
        

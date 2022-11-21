@@ -26,11 +26,14 @@ public class AudioManager : MonoBehaviour
                 PlaySFX(instance.uiSounds[1]);
                 break;
 
-            case "ui_drag_02":
+            case "ui_drag_03":
                 PlaySFX(instance.uiSounds[2]);
                 break;
             case "ui_click":
                 PlaySFX(instance.uiSounds[3]);
+                break; 
+            case "ui_highlight":
+                PlaySFX(instance.uiSounds[4]);
                 break;
 
             default:
