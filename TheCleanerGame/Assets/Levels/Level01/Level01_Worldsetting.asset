@@ -16,7 +16,7 @@ MonoBehaviour:
   promptType: 2
   text: The game will be set in a [world setting] with a focus on [unique style]
     game mechanic.
-  completed: 0
+  completed: 1
   AnswersStorage:
   - answerColumn:
     - text: Post Apocalyptic Future
@@ -51,11 +51,10 @@ MonoBehaviour:
       criticType: 0
     - text: Series of Historical Battles
       totalscore: 60
-      feedbackType: 1
-      feedbackText: Troubled times are always infused with all kinds of conflicts,
-        and conflicts are so central to our game-making. Keep going with it, I really
-        like the perspective you are taking.
-      criticType: 0
+      feedbackType: 3
+      feedbackText: 'Do we really want to focus so much on the past? The ANEA has
+        emphasized that they want to focus on future facing content. '
+      criticType: 1
   - answerColumn:
     - text: Racing Simulator
       totalscore: 60
@@ -97,3 +96,7 @@ MonoBehaviour:
         ban it outright but be aware that they are scrutinizing these games more
         than others. '
       criticType: 4
+  segments:
+  - 'The game will be set in a '
+  - ' with a focus on '
+  - ' game mechanic.'

@@ -168,11 +168,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 11
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":10}],"EditorInfo":{"isRoot":true,"xPos":19.666687,"yPos":120},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"The
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":10}],"EditorInfo":{"isRoot":true,"xPos":64.33334,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"The
     Critical Inquiry mentions how outdated the language is used in determining what
-    can be censorced. ","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":9}],"EditorInfo":{"isRoot":false,"xPos":185.666687,"yPos":440},"ID":8,"ParamActions":[],"TMPFontGUID":null,"Text":"You
-    aren''t leader designer for no reason, just try your best. ","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":181.666687,"yPos":586},"ID":9,"ParamActions":[],"TMPFontGUID":null,"Text":"
-    Let''s drop ideas on the white board.","parentUIDs":[8],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":4.333374,"yPos":222},"ID":10,"ParamActions":[],"TMPFontGUID":null,"Text":"If
+    can be censorced. ","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":9}],"EditorInfo":{"isRoot":false,"xPos":230.333344,"yPos":342},"ID":8,"ParamActions":[],"TMPFontGUID":null,"Text":"You
+    aren''t leader designer for no reason, just try your best. ","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":226.333344,"yPos":488},"ID":9,"ParamActions":[],"TMPFontGUID":null,"Text":"
+    Let''s drop ideas on the white board.","parentUIDs":[8],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":49.00003,"yPos":124},"ID":10,"ParamActions":[],"TMPFontGUID":null,"Text":"If
     they use the same censopship system as it used to be, the Agency could really
     set back the gaming industry for decades. ","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
@@ -458,8 +458,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1112813260}
     - target: {fileID: 253548493552941918, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1646905868}
+    - target: {fileID: 253548493552941918, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1646905868}
+    - target: {fileID: 253548493552941918, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 253548493552941918, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: PlaySFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 253548493552941918, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: FadeAudio
       objectReference: {fileID: 0}
     - target: {fileID: 253548493552941918, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -469,9 +485,33 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 253548493552941918, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1033320828}
     - target: {fileID: 253548493712607748, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 315329706613215281, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 336.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 315329706613215281, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 118.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 315329706613215281, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -312.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 315329706613215281, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 528.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 468352288791161880, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1969992102177298768, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_IsActive
@@ -539,7 +579,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5228136887167918926, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -389.61572
+      value: -389.61557
+      objectReference: {fileID: 0}
+    - target: {fileID: 6481111624994406986, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_text
+      value: 'ANEA CENSORS ARE ACTIVE
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 6572269734565807531, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: BackgroundImage
@@ -601,43 +647,47 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -13.847507
       objectReference: {fileID: 0}
+    - target: {fileID: 7034995205094218431, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7395448799599413504, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 573
+      value: 635
       objectReference: {fileID: 0}
     - target: {fileID: 7395448799599413504, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -205.26996
+      value: -340.46
       objectReference: {fileID: 0}
     - target: {fileID: 7395448799599413505, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_text
-      value: "Now that the NEA is up and running, officials inside the administration
-        are finding that they are grossly understaffed to meet their stated goal
-        of \u201Capproving all media created across all platforms.\u201D In an era
-        where publishing is as easy as pressing a few buttons, the question of \u2018what
-        is media?\u2019 becomes apparent. "
+      value: "In stark contrast to weeks ago, many of the opponents of the ANEA have
+        taken a more reserved approach when commenting on the organizations new mandate
+        to control vital cultural outlets. This is a sweeping reversal as just last
+        week, members of Aspa\u2019s parliament were incredibly vocal opponents to
+        the reinstatement of the ANEA."
       objectReference: {fileID: 0}
     - target: {fileID: 7395448799980517275, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_text
-      value: QUESTIONS RISE OVER NEA CENSOR TRAINING
+      value: "CRITICS of GOV\u2019T GO SILENT\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7395448800439609818, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 573
+      value: 635
       objectReference: {fileID: 0}
     - target: {fileID: 7395448800439609818, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 411
+      value: 384.4
       objectReference: {fileID: 0}
     - target: {fileID: 7395448800439609819, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_text
-      value: "For instance, this very publication is considered NEWS MEDIA but by
-        virtue of us needing to print every single day, it would require an NEA Censor
-        to be available 24/7 to read articles before they are published. And while
-        that might not seem too daunting, having 2 or 3 dedicated officials here
-        in the office, imagine trying to fill that role in the 42 media companies
-        in this city alone, not to mention the countless local newspapers, radio
-        stations, and the myriad of video game companies\u2026"
+      value: "  While some members have given off the record reservations of the
+        NEA, most on the record statements convey that battle the NEA is just not
+        a priority.\r\n   \u201CWe have rising unemployment, rising inflation, and
+        a surging national debt. I just don\u2019t think it\u2019s important to discuss
+        how we regulate a cultural marketplace at this time,\u201D said one freshman
+        member of parliament.\r\n     As the nation deals with economic uncertainty,
+        one thing is clear\u2026\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7395448800671002218, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -729,6 +779,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7395448800898905352, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395448801167989120, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7716391190682981640, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
@@ -742,6 +796,23 @@ PrefabInstance:
     - target: {fileID: 7716391190682981640, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041557089827988202, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 331
+      objectReference: {fileID: 0}
+    - target: {fileID: 8409618402429773039, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_text
+      value: "Anonymous reports are coming in from across the nation that the newest
+        members of the ANEA are coming into workplaces and forcing changes within
+        the company. \n\nWhile none have come forward to make an official statement,
+        a silent majority is brewing on what many view as a detrimental force in
+        game production pipeline. As we often cover, game developers often face problems
+        of high stress and overworking, a phenomenon called \u201Ccrunch,\u201D but
+        these new  interventions from the nation\u2019s newest governmental agency
+        (the ANEA) are causing a whole new era of inconveniences. Coders, engineers,
+        and artists all claim that arduous regulation belabor an already stressed
+        workflow.\r\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 8900570836872944403, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -822,6 +893,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!224 &196518453 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7921302329604088902, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+  m_PrefabInstance: {fileID: 196518430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &199617868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1044,6 +1120,141 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 509862493205393731, guid: 8751829fc4dab354cb287a148f755140, type: 3}
   m_PrefabInstance: {fileID: 199617868}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &228204741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 228204743}
+  - component: {fileID: 228204742}
+  m_Layer: 0
+  m_Name: Lia_Conv1 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &228204742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228204741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83189876d4d389f43b7dd2e925aa112e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentIDCounter: 6
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":80.66666,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"palceholder
+    text","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":79.99997,"yPos":129},"ID":5,"ParamActions":[],"TMPFontGUID":null,"Text":"(Hope
+    the guidelines will be easier and clearer in the future)","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
+  saveVersion: 110
+  DefaultName: 
+  DefaultSprite: {fileID: 0}
+  DefaultFont: {fileID: 0}
+  NodeSerializedDataList:
+  - {fileID: 742902758}
+  - {fileID: 742902756}
+  ContinueFont: {fileID: 0}
+  EndConversationFont: {fileID: 0}
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &228204743
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228204741}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 27.605127, y: 16.543346, z: 0}
+  m_LocalScale: {x: 0.61659884, y: 0.61659884, z: 0.61659884}
+  m_Children:
+  - {fileID: 742902757}
+  m_Father: {fileID: 553894836}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &236290448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 236290449}
+  - component: {fileID: 236290451}
+  - component: {fileID: 236290450}
+  m_Layer: 5
+  m_Name: FLYER
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &236290449
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236290448}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5286028, y: 0.5286028, z: 0.5286028}
+  m_Children: []
+  m_Father: {fileID: 196518453}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: -573, y: -78}
+  m_SizeDelta: {x: 675, y: 745}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &236290450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236290448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: e0771a84cb956474a87820dd73457168, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &236290451
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236290448}
+  m_CullTransparentMesh: 1
 --- !u!61 &307750725 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 4387831574788649024, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
@@ -1060,11 +1271,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83e3bc7b630d9c40a6fb1ccddae1002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &360051415 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 693207189369412312, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
-  m_PrefabInstance: {fileID: 889168416}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &387035345
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,27 +1316,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 20
-  json: '{"Options":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":8}],"EditorInfo":{"isRoot":false,"xPos":254.666687,"yPos":-230},"ID":7,"ParamActions":[],"TMPFontGUID":null,"Text":"Hmm,
-    I just wish I don''t mess it up. ","parentUIDs":[],"SpeechUID":-1}],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":10}],"EditorInfo":{"isRoot":true,"xPos":66.66669,"yPos":-651},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Good
-    morning Team, so Prime Minister Cain wants has just released his mandate on censorship
-    guidelines. ","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":12}],"EditorInfo":{"isRoot":false,"xPos":59.666687,"yPos":-449},"ID":6,"ParamActions":[],"TMPFontGUID":null,"Text":"First
+  json: '{"Options":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":8}],"EditorInfo":{"isRoot":false,"xPos":249.666656,"yPos":443},"ID":7,"ParamActions":[],"TMPFontGUID":null,"Text":"Hmm,
+    I just wish I don''t mess it up. ","parentUIDs":[],"SpeechUID":-1}],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":61.6666565,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"PLACEHOLDER
+    CONVERSTAION","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":12}],"EditorInfo":{"isRoot":false,"xPos":54.6666565,"yPos":224},"ID":6,"ParamActions":[],"TMPFontGUID":null,"Text":"First
     off, let''s talk about who our primary audience is. PM Cain wants all media to
-    cater toward two major population groups...","parentUIDs":[10],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":9}],"EditorInfo":{"isRoot":false,"xPos":276.6667,"yPos":-156},"ID":8,"ParamActions":[],"TMPFontGUID":null,"Text":"You
-    aren''t leader designer for no reason, just try your best. ","parentUIDs":[7],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":291.6667,"yPos":-53},"ID":9,"ParamActions":[],"TMPFontGUID":null,"Text":"
-    Let''s drop ideas on the white board.","parentUIDs":[8],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":6}],"EditorInfo":{"isRoot":false,"xPos":50.333374,"yPos":-549},"ID":10,"ParamActions":[],"TMPFontGUID":null,"Text":"This
+    cater toward two major population groups...","parentUIDs":[10],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":9}],"EditorInfo":{"isRoot":false,"xPos":271.666656,"yPos":517},"ID":8,"ParamActions":[],"TMPFontGUID":null,"Text":"You
+    aren''t leader designer for no reason, just try your best. ","parentUIDs":[7],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":286.666656,"yPos":620},"ID":9,"ParamActions":[],"TMPFontGUID":null,"Text":"
+    Let''s drop ideas on the white board.","parentUIDs":[8],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":6}],"EditorInfo":{"isRoot":false,"xPos":45.3333435,"yPos":124},"ID":10,"ParamActions":[],"TMPFontGUID":null,"Text":"This
     means I can finally give you some government approved guidance as you make creative
-    choices.","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":13}],"EditorInfo":{"isRoot":false,"xPos":-22.333313,"yPos":-326},"ID":12,"ParamActions":[],"TMPFontGUID":null,"Text":"1.
-    Members of the Loyal Nationalist Party","parentUIDs":[6],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Charlie","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":14}],"EditorInfo":{"isRoot":false,"xPos":-46.333313,"yPos":-202},"ID":13,"ParamActions":[],"TMPFontGUID":null,"Text":"2.
-    Followers of the Church of ASPA","parentUIDs":[12],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Charlie","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":15}],"EditorInfo":{"isRoot":false,"xPos":-45.333313,"yPos":-68},"ID":14,"ParamActions":[],"TMPFontGUID":null,"Text":"So
-    what does this mean for us?","parentUIDs":[13],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":16}],"EditorInfo":{"isRoot":false,"xPos":-55.333313,"yPos":51},"ID":15,"ParamActions":[],"TMPFontGUID":null,"Text":"Good
+    choices.","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":13}],"EditorInfo":{"isRoot":false,"xPos":-27.3333435,"yPos":347},"ID":12,"ParamActions":[],"TMPFontGUID":null,"Text":"1.
+    Members of the Loyal Nationalist Party","parentUIDs":[6],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Charlie","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":14}],"EditorInfo":{"isRoot":false,"xPos":-51.3333435,"yPos":471},"ID":13,"ParamActions":[],"TMPFontGUID":null,"Text":"2.
+    Followers of the Church of ASPA","parentUIDs":[12],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Charlie","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":15}],"EditorInfo":{"isRoot":false,"xPos":-50.3333435,"yPos":605},"ID":14,"ParamActions":[],"TMPFontGUID":null,"Text":"So
+    what does this mean for us?","parentUIDs":[13],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":16}],"EditorInfo":{"isRoot":false,"xPos":-60.3333435,"yPos":724},"ID":15,"ParamActions":[],"TMPFontGUID":null,"Text":"Good
     question. We''ll I''ve gotten approval from the Boss to allow us to revisit the
-    work we did yesterday.","parentUIDs":[14],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":17}],"EditorInfo":{"isRoot":false,"xPos":-56.333313,"yPos":177},"ID":16,"ParamActions":[],"TMPFontGUID":null,"Text":"I
+    work we did yesterday.","parentUIDs":[14],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":17}],"EditorInfo":{"isRoot":false,"xPos":-61.3333435,"yPos":850},"ID":16,"ParamActions":[],"TMPFontGUID":null,"Text":"I
     want us to think about whether or not our choices will pass the censor panel
-    now.","parentUIDs":[15],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":18}],"EditorInfo":{"isRoot":false,"xPos":-44.333313,"yPos":282},"ID":17,"ParamActions":[],"TMPFontGUID":null,"Text":"Charlie
+    now.","parentUIDs":[15],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":18}],"EditorInfo":{"isRoot":false,"xPos":-49.3333435,"yPos":955},"ID":17,"ParamActions":[],"TMPFontGUID":null,"Text":"Charlie
     is a member of both the Loyal Nationalist Party and the Church of Aspa. You should
     ask him if you need help.","parentUIDs":[16],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran
-    ","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":19}],"EditorInfo":{"isRoot":false,"xPos":227.666687,"yPos":284},"ID":18,"ParamActions":[],"TMPFontGUID":null,"Text":"Appreciated,
-    Yiran! ","parentUIDs":[17],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Charlie","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":200.666687,"yPos":380},"ID":19,"ParamActions":[],"TMPFontGUID":null,"Text":"I
+    ","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":19}],"EditorInfo":{"isRoot":false,"xPos":222.666656,"yPos":957},"ID":18,"ParamActions":[],"TMPFontGUID":null,"Text":"Appreciated,
+    Yiran! ","parentUIDs":[17],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Charlie","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":195.666656,"yPos":1053},"ID":19,"ParamActions":[],"TMPFontGUID":null,"Text":"I
     would be happy to answer any questions you may have about our beliefs so that
     you can better cater towards people like me!","parentUIDs":[18],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Charlie","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
@@ -1292,6 +1497,99 @@ MonoBehaviour:
   Event:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1001 &438621520
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 693207189808960768, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 693207189808960768, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -32.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 693207189808960768, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -20.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 693207189808960768, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 693207189808960768, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 693207189808960768, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 693207189808960768, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 693207189808960768, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 693207189808960768, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 693207189808960768, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 693207189808960768, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 693207189808960769, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
+      propertyPath: m_Name
+      value: Lia (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991998720191209086, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
+      propertyPath: CharaCollider.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991998720191209086, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
+      propertyPath: boxCollider2D.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991998720191209086, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
+      propertyPath: CharaCollider.Array.data[0]
+      value: 
+      objectReference: {fileID: 1388711586}
+    - target: {fileID: 3991998720191209086, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
+      propertyPath: boxCollider2D.Array.data[0]
+      value: 
+      objectReference: {fileID: 307750725}
+    - target: {fileID: 3991998720191209086, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
+      propertyPath: boxCollider2D.Array.data[1]
+      value: 
+      objectReference: {fileID: 1998410239}
+    - target: {fileID: 3991998720191209086, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
+      propertyPath: B4CompleteConversations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991998720191209086, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
+      propertyPath: AfterCompleteConversations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991998720191209086, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
+      propertyPath: B4CompleteConversations.Array.data[0]
+      value: 
+      objectReference: {fileID: 228204742}
+    - target: {fileID: 3991998720191209086, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
+      propertyPath: AfterCompleteConversations.Array.data[0]
+      value: 
+      objectReference: {fileID: 228204742}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
 --- !u!1 &459937080
 GameObject:
   m_ObjectHideFlags: 11
@@ -1402,7 +1700,7 @@ MonoBehaviour:
     _prefab: Assets/Prefabs/lights.prefab
   - _gameObject: {fileID: 1646905867}
     _prefab: Assets/Prefabs/Audio Manager.prefab
-  - _gameObject: {fileID: 889168417}
+  - _gameObject: {fileID: 553894835}
     _prefab: Assets/Prefabs/Chara Prefab/Lia.prefab
   - _gameObject: {fileID: 469871563}
     _prefab: Assets/Prefabs/Chara Prefab/Luca.prefab
@@ -1424,6 +1722,88 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &463971603
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 463971604}
+  - component: {fileID: 463971605}
+  m_Layer: 0
+  m_Name: Lia_idle_0 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &463971604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463971603}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.88, y: 1.65, z: 0}
+  m_LocalScale: {x: 0.32790935, y: 0.32790935, z: 0.32790935}
+  m_Children: []
+  m_Father: {fileID: 553894836}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &463971605
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463971603}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1015411917
+  m_SortingLayer: 1
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 6ead54d7f61a9d84c96f8024a3a61229, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.88, y: 2.48}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1001 &469871562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1441,7 +1821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1810707933068493827, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.7
+      value: 13.9
       objectReference: {fileID: 0}
     - target: {fileID: 1810707933068493827, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1481,15 +1861,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1810707934999391398, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
       propertyPath: boxCollider2D.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1810707934999391398, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
       propertyPath: boxCollider2D.Array.data[0]
       value: 
-      objectReference: {fileID: 2026036959}
+      objectReference: {fileID: 2026036964}
+    - target: {fileID: 1810707934999391398, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
+      propertyPath: boxCollider2D.Array.data[1]
+      value: 
+      objectReference: {fileID: 2026036945}
+    - target: {fileID: 1810707934999391398, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
+      propertyPath: boxCollider2D.Array.data[2]
+      value: 
+      objectReference: {fileID: 2026036943}
+    - target: {fileID: 1810707934999391398, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
+      propertyPath: boxCollider2D.Array.data[3]
+      value: 
+      objectReference: {fileID: 689142529}
     - target: {fileID: 1810707934999391398, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
       propertyPath: B4CompleteConversations.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1810707934999391398, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
       propertyPath: AfterCompleteConversations.Array.size
@@ -1502,11 +1894,11 @@ PrefabInstance:
     - target: {fileID: 1810707934999391398, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
       propertyPath: B4CompleteConversations.Array.data[1]
       value: 
-      objectReference: {fileID: 429704060}
+      objectReference: {fileID: 0}
     - target: {fileID: 1810707934999391398, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
       propertyPath: AfterCompleteConversations.Array.data[0]
       value: 
-      objectReference: {fileID: 163595109}
+      objectReference: {fileID: 644686910}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
 --- !u!1 &469871563 stripped
@@ -1518,6 +1910,16 @@ GameObject:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1810707933068493827, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
   m_PrefabInstance: {fileID: 469871562}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &553894835 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 693207189808960769, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
+  m_PrefabInstance: {fileID: 438621520}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &553894836 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 693207189808960768, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
+  m_PrefabInstance: {fileID: 438621520}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &644686908
 GameObject:
@@ -1564,14 +1966,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 6
-  json: '{"Options":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":4}],"EditorInfo":{"isRoot":false,"xPos":317.6667,"yPos":189},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"I''m
-    just so busy, Luca. Rain check?","parentUIDs":[],"SpeechUID":-1}],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":5}],"EditorInfo":{"isRoot":true,"xPos":144.666687,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Hey
-    Lia, Did you notice how the censors are finally realizing how difficult a task
-    they''re trying to tackle?","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":17.666687,"yPos":250},"ID":2,"ParamActions":[],"TMPFontGUID":null,"Text":"Sounds
-    like we need to drown the censors in some work.","parentUIDs":[5],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":308.6667,"yPos":286},"ID":4,"ParamActions":[],"TMPFontGUID":null,"Text":"Eh
+  json: '{"Options":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":4}],"EditorInfo":{"isRoot":false,"xPos":241.333344,"yPos":358},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"I''m
+    just so busy, Luca. Rain check?","parentUIDs":[],"SpeechUID":-1}],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":68.33334,"yPos":191},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"PLACEHOLDER
+    CONVERSATION","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":-58.6666565,"yPos":419},"ID":2,"ParamActions":[],"TMPFontGUID":null,"Text":"Sounds
+    like we need to drown the censors in some work.","parentUIDs":[5],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":232.333344,"yPos":455},"ID":4,"ParamActions":[],"TMPFontGUID":null,"Text":"Eh
     alright. Taking this new position seriously, huh? No worries, I''ll catch up
-    with ya soon.","parentUIDs":[3],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":2}],"EditorInfo":{"isRoot":false,"xPos":66,"yPos":124},"ID":5,"ParamActions":[],"TMPFontGUID":null,"Text":"Yeah,
-    Luca. It doesn''t make sense how they think they can make this happen.","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
+    with ya soon.","parentUIDs":[3],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":2}],"EditorInfo":{"isRoot":false,"xPos":-10.3333435,"yPos":293},"ID":5,"ParamActions":[],"TMPFontGUID":null,"Text":"Yeah,
+    Luca. It doesn''t make sense how they think they can make this happen.","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -1743,6 +2144,76 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6460080332855267015, guid: 8751829fc4dab354cb287a148f755140, type: 3}
   m_PrefabInstance: {fileID: 199617868}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &742902755
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 742902757}
+  - component: {fileID: 742902758}
+  - component: {fileID: 742902756}
+  m_Layer: 0
+  m_Name: ConversationEventInfo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &742902756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742902755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 5
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 7fbac77c32bc5d84287dbed7468734e5, type: 3}
+  Audio: {fileID: 0}
+--- !u!4 &742902757
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742902755}
+  m_LocalRotation: {x: -0, y: -0, z: 0.046314817, w: 0.99892694}
+  m_LocalPosition: {x: -19.607218, y: -5.045908, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 228204743}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &742902758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742902755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 0
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 7fbac77c32bc5d84287dbed7468734e5, type: 3}
+  Audio: {fileID: 0}
 --- !u!1 &755068720
 GameObject:
   m_ObjectHideFlags: 0
@@ -2473,68 +2944,6 @@ MonoBehaviour:
   TMPFont: {fileID: 0}
   Icon: {fileID: 21300000, guid: a056ab62475517c4ba23e3b3061d91c0, type: 3}
   Audio: {fileID: 0}
---- !u!1001 &889168416
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 693207189808960768, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 693207189808960768, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -32.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 693207189808960768, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -20.49
-      objectReference: {fileID: 0}
-    - target: {fileID: 693207189808960768, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 693207189808960768, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 693207189808960768, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 693207189808960768, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 693207189808960768, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 693207189808960768, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 693207189808960768, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 693207189808960768, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 693207189808960769, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
-      propertyPath: m_Name
-      value: Lia (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
---- !u!1 &889168417 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 693207189808960769, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
-  m_PrefabInstance: {fileID: 889168416}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &923689215
 GameObject:
   m_ObjectHideFlags: 0
@@ -2813,13 +3222,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 11
-  json: '{"Options":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":6}],"EditorInfo":{"isRoot":false,"xPos":-0.333313,"yPos":304},"ID":5,"ParamActions":[],"TMPFontGUID":null,"Text":"Yes,
-    can''t wait for another sec!","parentUIDs":[],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":8}],"EditorInfo":{"isRoot":false,"xPos":286.6667,"yPos":294},"ID":7,"ParamActions":[],"TMPFontGUID":null,"Text":"Hmm,
-    I just wish I don''t mess it up. ","parentUIDs":[],"SpeechUID":-1}],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":10}],"EditorInfo":{"isRoot":true,"xPos":110.666687,"yPos":60},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Morning
-    Lia.  have you seen the news about censorship on ASPA National Herald? ","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":-26.333313,"yPos":402},"ID":6,"ParamActions":[],"TMPFontGUID":null,"Text":"That''s
-    the spirit to go. Let''s drop ideas on the white board.","parentUIDs":[5],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":9}],"EditorInfo":{"isRoot":false,"xPos":290.6667,"yPos":410},"ID":8,"ParamActions":[],"TMPFontGUID":null,"Text":"You
-    aren''t leader designer for no reason, just try your best. ","parentUIDs":[7],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":286.6667,"yPos":556},"ID":9,"ParamActions":[],"TMPFontGUID":null,"Text":"
-    Let''s drop ideas on the white board.","parentUIDs":[8],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":109.333374,"yPos":192},"ID":10,"ParamActions":[],"TMPFontGUID":null,"Text":"I''m
+  json: '{"Options":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":6}],"EditorInfo":{"isRoot":false,"xPos":-46.6666565,"yPos":266},"ID":5,"ParamActions":[],"TMPFontGUID":null,"Text":"Yes,
+    can''t wait for another sec!","parentUIDs":[],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":8}],"EditorInfo":{"isRoot":false,"xPos":240.333344,"yPos":256},"ID":7,"ParamActions":[],"TMPFontGUID":null,"Text":"Hmm,
+    I just wish I don''t mess it up. ","parentUIDs":[],"SpeechUID":-1}],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":10}],"EditorInfo":{"isRoot":true,"xPos":64.33334,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Morning
+    Lia.  have you seen the news about censorship on ASPA National Herald? ","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":-72.66666,"yPos":364},"ID":6,"ParamActions":[],"TMPFontGUID":null,"Text":"That''s
+    the spirit to go. Let''s drop ideas on the white board.","parentUIDs":[5],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":9}],"EditorInfo":{"isRoot":false,"xPos":244.333344,"yPos":372},"ID":8,"ParamActions":[],"TMPFontGUID":null,"Text":"You
+    aren''t leader designer for no reason, just try your best. ","parentUIDs":[7],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":240.333344,"yPos":518},"ID":9,"ParamActions":[],"TMPFontGUID":null,"Text":"
+    Let''s drop ideas on the white board.","parentUIDs":[8],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":63.00003,"yPos":154},"ID":10,"ParamActions":[],"TMPFontGUID":null,"Text":"I''m
     really concerned with the impact NEA will have on our newly developing games.
     ","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
@@ -2909,6 +3318,11 @@ MonoBehaviour:
   TMPFont: {fileID: 0}
   Icon: {fileID: 21300000, guid: 64caa36d5fdcb23478016da84debeed4, type: 3}
   Audio: {fileID: 0}
+--- !u!82 &1033320828 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 839790356259416070, guid: 1b54442b0b05f6142b596996f2d3bab8, type: 3}
+  m_PrefabInstance: {fileID: 1646905866}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1112813257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2934,7 +3348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3969910526468956586, guid: 470e1f8b3c45c9e48b0d27ffacd813b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.8900003
+      value: -15.069997
       objectReference: {fileID: 0}
     - target: {fileID: 3969910526468956586, guid: 470e1f8b3c45c9e48b0d27ffacd813b9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3006,11 +3420,11 @@ PrefabInstance:
       objectReference: {fileID: 1179249580}
     - target: {fileID: 3969910527867545095, guid: 470e1f8b3c45c9e48b0d27ffacd813b9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3969910528058604030, guid: 470e1f8b3c45c9e48b0d27ffacd813b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.959997
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3969910528058604030, guid: 470e1f8b3c45c9e48b0d27ffacd813b9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3097,12 +3511,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 5
-  json: '{"Options":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":3}],"EditorInfo":{"isRoot":false,"xPos":62.00003,"yPos":185},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Yes
-    I did.","parentUIDs":[0],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":4}],"EditorInfo":{"isRoot":false,"xPos":278.6667,"yPos":184},"ID":2,"ParamActions":[],"TMPFontGUID":null,"Text":"Nope
-    I haven''t.","parentUIDs":[0],"SpeechUID":-1}],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":1},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":2}],"EditorInfo":{"isRoot":true,"xPos":144.666687,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Hey
-    Lia! Are you having a good day? Have you heard Yiran''s announcement early on?
-    ","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Charlie","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":37.666687,"yPos":271},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"Sounds
-    good, I''m happy to answer any question you have. ","parentUIDs":[1],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Charlie","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":283.6667,"yPos":259},"ID":4,"ParamActions":[],"TMPFontGUID":null,"Text":"I
+  json: '{"Options":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":3}],"EditorInfo":{"isRoot":false,"xPos":-21,"yPos":185},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Yes
+    I did.","parentUIDs":[],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":4}],"EditorInfo":{"isRoot":false,"xPos":195.666656,"yPos":184},"ID":2,"ParamActions":[],"TMPFontGUID":null,"Text":"Nope
+    I haven''t.","parentUIDs":[],"SpeechUID":-1}],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":61.6666565,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"PLACEHOLDER","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Charlie","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":-45.3333435,"yPos":271},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"Sounds
+    good, I''m happy to answer any question you have. ","parentUIDs":[1],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Charlie","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":200.666656,"yPos":259},"ID":4,"ParamActions":[],"TMPFontGUID":null,"Text":"I
     believe we have some updates on the design process, I would recommend talking
     to her first. ","parentUIDs":[2],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Charlie","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
@@ -3139,7 +3551,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: boxCollider2D.Array.size
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: boxCollider2D.Array.data[0]
@@ -3148,18 +3560,18 @@ PrefabInstance:
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: boxCollider2D.Array.data[1]
       value: 
-      objectReference: {fileID: 2026036945}
+      objectReference: {fileID: 0}
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: boxCollider2D.Array.data[2]
       value: 
-      objectReference: {fileID: 2026036943}
+      objectReference: {fileID: 689142529}
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: boxCollider2D.Array.data[3]
       value: 
       objectReference: {fileID: 689142529}
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: B4CompleteConversations.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: AfterCompleteConversations.Array.size
@@ -3172,7 +3584,7 @@ PrefabInstance:
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: B4CompleteConversations.Array.data[1]
       value: 
-      objectReference: {fileID: 1796886425}
+      objectReference: {fileID: 0}
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: B4CompleteConversations.Array.data[2]
       value: 
@@ -3187,7 +3599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7369066094207266820, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -23.16
       objectReference: {fileID: 0}
     - target: {fileID: 7369066094207266820, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3434,6 +3846,16 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4387831574249257176, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
   m_PrefabInstance: {fileID: 2026036935}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1388711583 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 693207189369412316, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
+  m_PrefabInstance: {fileID: 438621520}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1388711586 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 693207189369412312, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
+  m_PrefabInstance: {fileID: 438621520}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1402771364
 GameObject:
@@ -4610,7 +5032,7 @@ PrefabInstance:
       objectReference: {fileID: 689142529}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: B4CompleteConversations.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: AfterCompleteConversations.Array.size
@@ -4623,11 +5045,11 @@ PrefabInstance:
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: B4CompleteConversations.Array.data[1]
       value: 
-      objectReference: {fileID: 6059739}
+      objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: AfterCompleteConversations.Array.data[0]
       value: 
-      objectReference: {fileID: 394636763}
+      objectReference: {fileID: 387035347}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15923eefecdf7434785518204a650a62, type: 3}
 --- !u!1 &1800908161 stripped
@@ -4889,9 +5311,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 196518432}
     - target: {fileID: 372407880, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: Objects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 372407880, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: Colliders.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 372407880, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: Objects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1388711583}
     - target: {fileID: 372407880, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: Colliders.Array.data[0]
       value: 
@@ -4911,7 +5341,7 @@ PrefabInstance:
     - target: {fileID: 372407880, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: CharaColliders.Array.data[0]
       value: 
-      objectReference: {fileID: 360051415}
+      objectReference: {fileID: 0}
     - target: {fileID: 485728221127968892, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: ExitDoor
       value: 
@@ -5019,7 +5449,7 @@ PrefabInstance:
     - target: {fileID: 4387831574529843308, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: DisabledObjects.Array.data[3]
       value: 
-      objectReference: {fileID: 1190591879}
+      objectReference: {fileID: 469871563}
     - target: {fileID: 4387831574529843308, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: DisabledObjects.Array.data[4]
       value: 
@@ -5169,9 +5599,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 196518438}
     - target: {fileID: 8084904101425945098, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: Objects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8084904101425945098, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: Colliders.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8084904101425945098, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: Objects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1388711583}
     - target: {fileID: 8084904101425945098, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: Colliders.Array.data[0]
       value: 
@@ -5187,7 +5625,7 @@ PrefabInstance:
     - target: {fileID: 8084904101425945098, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: CharaColliders.Array.data[0]
       value: 
-      objectReference: {fileID: 360051415}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
 --- !u!1 &2026036936 stripped
@@ -5249,11 +5687,6 @@ BoxCollider2D:
 --- !u!4 &2026036946 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4387831574773974695, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
-  m_PrefabInstance: {fileID: 2026036935}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &2026036959 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 7147723777900094341, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
   m_PrefabInstance: {fileID: 2026036935}
   m_PrefabAsset: {fileID: 0}
 --- !u!61 &2026036964 stripped

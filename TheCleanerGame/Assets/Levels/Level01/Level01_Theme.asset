@@ -15,7 +15,7 @@ MonoBehaviour:
   id: {x: 0, y: 0}
   promptType: 0
   text: The Theme of the game will be [Theme].
-  completed: 0
+  completed: 1
   AnswersStorage:
   - answerColumn:
     - text: Power Corrupts
@@ -26,9 +26,9 @@ MonoBehaviour:
     - text: Revenge
       totalscore: 44
       feedbackType: 3
-      feedbackText: Hmm. This is going to be a hard theme to get approved. I'm not
-        saying it's impossible, but definitely not what the NEA wants.
-      criticType: 4
+      feedbackText: This is going to be a hard theme to get approved. I'm not saying
+        it's impossible, but definitely not what the ANEA wants.
+      criticType: 1
     - text: Justice
       totalscore: 62
       feedbackType: 1
@@ -47,10 +47,10 @@ MonoBehaviour:
       criticType: 4
     - text: The Circle of Life
       totalscore: 51
-      feedbackType: 2
+      feedbackType: 3
       feedbackText: It's not terribly original, but it's also not offensive and that's
         the most important thing.
-      criticType: 4
+      criticType: 1
   segments:
   - 'The Theme of the game will be '
   - .

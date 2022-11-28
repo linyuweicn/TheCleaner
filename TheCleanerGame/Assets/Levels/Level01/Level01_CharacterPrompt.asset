@@ -15,7 +15,7 @@ MonoBehaviour:
   id: {x: 0, y: 1}
   promptType: 1
   text: The Hero of the game is [Adjective] [Noun]
-  completed: 0
+  completed: 1
   AnswersStorage:
   - answerColumn:
     - text: Adorable
@@ -27,7 +27,7 @@ MonoBehaviour:
       totalscore: 23
       feedbackType: 3
       feedbackText: I really don't think the NEA Censors would like this.
-      criticType: 4
+      criticType: 1
     - text: Rebelious
       totalscore: 32
       feedbackType: 2
@@ -51,15 +51,14 @@ MonoBehaviour:
   - answerColumn:
     - text: Police officer
       totalscore: 65
-      feedbackType: 3
-      feedbackText: Meh. If we have to.
-      criticType: 3
+      feedbackType: 1
+      feedbackText: Police officer could work
+      criticType: 1
     - text: Executioner
       totalscore: 38
-      feedbackType: 2
-      feedbackText: 'I''m not sure if it is a good idea. We are making a game, not
-        duplicate reality, try to think out of the box more. '
-      criticType: 0
+      feedbackType: 3
+      feedbackText: ' I don''t see this kind of character as the Hero.'
+      criticType: 1
     - text: Assassin
       totalscore: 30
       feedbackType: 3
