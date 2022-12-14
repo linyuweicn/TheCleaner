@@ -926,10 +926,34 @@ PrefabInstance:
       propertyPath: B4CompleteConversations.Array.data[0]
       value: 
       objectReference: {fileID: 2077571075}
+    - target: {fileID: 600523516364753233, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 600523516364753233, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 600523516364753233, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 812283614214435503, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: B4CompleteConversations.Array.data[0]
       value: 
       objectReference: {fileID: 1785675991}
+    - target: {fileID: 1597389007652395724, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1597389007652395724, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1597389007652395724, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2341956151719628358, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1072,7 +1096,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5735007599962322208, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: totalCharacter
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735007599962322208, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: TotalProtagonist
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5735007600028711157, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: m_text
@@ -1498,10 +1526,16 @@ MonoBehaviour:
     _prefab: Assets/GameFlow/Assets/Prefabs/AnswerBox.prefab
   - _gameObject: {fileID: 1516403660}
     _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Containers/Theme.prefab
+  - _gameObject: {fileID: 109289203}
+    _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Panel.prefab
   - _gameObject: {fileID: 1528869009}
     _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Containers/Characters.prefab
+  - _gameObject: {fileID: 109289203}
+    _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Panel.prefab
   - _gameObject: {fileID: 1713462786}
     _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Containers/Narration.prefab
+  - _gameObject: {fileID: 109289203}
+    _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Panel.prefab
   - _gameObject: {fileID: 1503845050}
     _prefab: Assets/Prefabs/Chara Prefab/Male Team Member_Placeholder.prefab
   - _gameObject: {fileID: 109289203}
@@ -1513,6 +1547,10 @@ MonoBehaviour:
   - _gameObject: {fileID: 109289203}
     _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Panel.prefab
   - _gameObject: {fileID: 1691891931}
+    _prefab: Assets/Prefabs/Chara Prefab/Male Team Member_Placeholder.prefab
+  - _gameObject: {fileID: 109289203}
+    _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Panel.prefab
+  - _gameObject: {fileID: 1430305843}
     _prefab: Assets/Prefabs/Chara Prefab/Male Team Member_Placeholder.prefab
   - _gameObject: {fileID: 109289203}
     _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Panel.prefab
@@ -4225,6 +4263,11 @@ MonoBehaviour:
   TMPFont: {fileID: 0}
   Icon: {fileID: 21300000, guid: f8163297365fc7a4aa00e366c8ed171e, type: 3}
   Audio: {fileID: 0}
+--- !u!1 &1430305843 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3168093456869998056, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+  m_PrefabInstance: {fileID: 199617868}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1434653497 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4387831574529843311, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}

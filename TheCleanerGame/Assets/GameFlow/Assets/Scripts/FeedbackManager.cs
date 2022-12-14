@@ -17,8 +17,8 @@ public class FeedbackManager : MonoBehaviour
     [SerializeField] Image criticalFeedbackImage;
     [SerializeField] TextMeshProUGUI criticalFeedbackName;
     [SerializeField] TextMeshProUGUI criticalFeedbackText;
-    [HideInInspector] public float totalScore;
-    [SerializeField] TextMeshProUGUI totalScoreText;
+    [HideInInspector] public float censorFulfillmentScore;
+    [SerializeField] TextMeshProUGUI censorFulfillmentScoreText;
 
     [SerializeField] List<criticInfo> criticPairs;
     Dictionary<CriticType, criticInfo> CriticDictionary;
@@ -130,9 +130,9 @@ public class FeedbackManager : MonoBehaviour
     {
         //totalScore = 0.1f*answer.satisfaction + 0.3f*answer.innovation + 0.5f*answer.censorFulfillment - 0.1f*answer.production;
         //totalScoreText.text = totalScore.ToString();
-        totalScore = answer.totalscore;
-        Debug.Log(totalScore);
-        return totalScore;
+        censorFulfillmentScore = answer.censorFulfillment;
+        Debug.Log(censorFulfillmentScore);
+        return censorFulfillmentScore;
     }
 
     #endregion

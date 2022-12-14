@@ -15,39 +15,63 @@ MonoBehaviour:
   id: {x: 2, y: 0}
   promptType: 2
   text: The game will have a [art style] art style.
-  completed: 1
+  completed: 0
   AnswersStorage:
   - answerColumn:
-    - text: Pixel Art
-      totalscore: 73
-      feedbackType: 1
-      feedbackText: It's a bit simple but I like it.
-      criticType: 4
-    - text: Anime
-      totalscore: 67
-      feedbackType: 1
-      feedbackText: 'This is the mainstream at the moment, and I believe there are
-        a lot possibilities we can explore! '
-      criticType: 0
-    - text: Low Poly
-      totalscore: 63
-      feedbackType: 3
-      feedbackText: 'Sometimes the art style limits the content we could explore
-        in-game, and this seems to be the case here. '
-      criticType: 0
-    - text: Photorealism
-      totalscore: 54
-      feedbackType: 2
-      feedbackText: 'Well, this just sounds average. Meh. '
-      criticType: 3
     - text: Cel Shading
-      totalscore: 42
+      production: 70
+      satisfaction: 45
+      censorFulfillment: 85
+      innovation: 75
+      totalscore: 82
       feedbackType: 3
       feedbackText: If I wanted this, I'd go back to the 70s. I'd also like to point
         out how boring this is going to be.
       criticType: 3
-    - text: Abstract Surrealism
-      totalscore: 37
+    - text: Low Poly
+      production: 55
+      satisfaction: 55
+      censorFulfillment: 70
+      innovation: 70
+      totalscore: 73
+      feedbackType: 3
+      feedbackText: 'Sometimes the art style limits the content we could explore
+        in-game, and this seems to be the case here. '
+      criticType: 0
+    - text: Pixel Art
+      production: 50
+      satisfaction: 65
+      censorFulfillment: 55
+      innovation: 65
+      totalscore: 64
+      feedbackType: 1
+      feedbackText: It's a bit simple but I like it.
+      criticType: 4
+    - text: Anime
+      production: 40
+      satisfaction: 75
+      censorFulfillment: 40
+      innovation: 50
+      totalscore: 51
+      feedbackType: 1
+      feedbackText: 'This is the mainstream at the moment, and I believe there are
+        a lot possibilities we can explore! '
+      criticType: 0
+    - text: Photorealism
+      production: 80
+      satisfaction: 85
+      censorFulfillment: 25
+      innovation: 40
+      totalscore: 33
+      feedbackType: 2
+      feedbackText: 'Well, this just sounds average. Meh. '
+      criticType: 3
+    - text: Street Art
+      production: 80
+      satisfaction: 85
+      censorFulfillment: 25
+      innovation: 40
+      totalscore: 33
       feedbackType: 3
       feedbackText: I don't understand it and I don't think the censor board will
         either.

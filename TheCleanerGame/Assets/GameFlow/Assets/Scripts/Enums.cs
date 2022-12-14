@@ -7,7 +7,9 @@ public enum PromptType
     Theme,
     Character,
     Setting,
-    Narration
+    Narration,
+    Protagonist,
+    Antagonist
 }
 public enum FeedbackType
 {

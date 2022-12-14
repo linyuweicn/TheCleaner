@@ -13,72 +13,120 @@ MonoBehaviour:
   m_Name: Level02_Protagonist
   m_EditorClassIdentifier: 
   id: {x: 1, y: 0}
-  promptType: 1
+  promptType: 4
   text: The NEW HERO of the game will be [adjective] [noun].
-  completed: 1
+  completed: 0
   AnswersStorage:
   - answerColumn:
     - text: Obedient
-      totalscore: 62
+      production: 60
+      satisfaction: 45
+      censorFulfillment: 85
+      innovation: 60
+      totalscore: 77
       feedbackType: 1
       feedbackText: 'This kind of character is a perfect role model for our nation. '
       criticType: 4
     - text: Brave
-      totalscore: 62
+      production: 40
+      satisfaction: 55
+      censorFulfillment: 70
+      innovation: 75
+      totalscore: 77
       feedbackType: 1
       feedbackText: Yes! Who doesn't love a character with such charisma?
       criticType: 0
     - text: Powerful
-      totalscore: 59
+      production: 30
+      satisfaction: 65
+      censorFulfillment: 55
+      innovation: 85
+      totalscore: 74
       feedbackType: 1
       feedbackText: Wow. I really like that. I can already see the character.
       criticType: 4
     - text: Mysterious
-      totalscore: 53
+      production: 65
+      satisfaction: 75
+      censorFulfillment: 40
+      innovation: 80
+      totalscore: 59
       feedbackType: 2
       feedbackText: 'I see your intention here, but think of polishing it up more. '
       criticType: 0
     - text: Unusual
-      totalscore: 43
+      production: 4
+      satisfaction: 74
+      censorFulfillment: 1
+      innovation: 0
+      totalscore: 45
       feedbackType: 3
       feedbackText: Are you sure this is the kind of trait you want a HERO to have?
       criticType: 4
     - text: Mischievous
-      totalscore: 35
+      production: 40
+      satisfaction: 95
+      censorFulfillment: 10
+      innovation: 40
+      totalscore: 30
       feedbackType: 3
       feedbackText: hmm, very unconventional. I'm just afraid it won't be too appealing
         to the NEA Censors.
       criticType: 0
   - answerColumn:
     - text: Cartoon Dog
-      totalscore: 62
+      production: 40
+      satisfaction: 45
+      censorFulfillment: 85
+      innovation: 60
+      totalscore: 80
       feedbackType: 1
       feedbackText: 'I LOVE this character already. '
       criticType: 4
     - text: Scientist
+      production: 55
+      satisfaction: 55
+      censorFulfillment: 70
+      innovation: 50
       totalscore: 65
       feedbackType: 3
       feedbackText: Really? Come on, guys.
       criticType: 3
     - text: Super Soldier
+      production: 0
+      satisfaction: 0
+      censorFulfillment: 0
+      innovation: 0
       totalscore: 62
       feedbackType: 2
       feedbackText: 'Interesting. This type of character can go either way, and be
         careful for what could be censored. '
       criticType: 0
     - text: Spy
-      totalscore: 59
+      production: 65
+      satisfaction: 75
+      censorFulfillment: 40
+      innovation: 90
+      totalscore: 63
       feedbackType: 1
       feedbackText: Oh cool. I can totally see this type of hero.
       criticType: 4
     - text: Farmer
-      totalscore: 44
+      production: 40
+      satisfaction: 85
+      censorFulfillment: 25
+      innovation: 65
+      totalscore: 48
       feedbackType: 3
       feedbackText: 'I''m not sure if it is a good idea. We are making a game, not
         duplicate reality, try to think out of the box more. '
       criticType: 0
     - text: Demon
-      totalscore: 34
+      production: 30
+      satisfaction: 95
+      censorFulfillment: 10
+      innovation: 75
+      totalscore: 45
       feedbackType: 1
       feedbackText: Now that's what I'm talking about.
       criticType: 3
