@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1675403119560262484}
   - component: {fileID: 4411631929432621259}
   - component: {fileID: 74582550979078959}
+  - component: {fileID: 5573336770150533513}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -193,6 +194,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!95 &5573336770150533513
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013265223866302657}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a0f677762b6025b41bc9d50a65c86ce5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &7981520086263379211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -303,7 +323,7 @@ PrefabInstance:
     - target: {fileID: 3900108755196472086, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca, type: 3}
       propertyPath: BackgroundImage
       value: 
-      objectReference: {fileID: 21300000, guid: 2c38d230085b5c6469fe6b9243a93568, type: 3}
+      objectReference: {fileID: 21300000, guid: 61238a491ef62ed4988877ef262598a8, type: 3}
     - target: {fileID: 3900108755196472087, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
