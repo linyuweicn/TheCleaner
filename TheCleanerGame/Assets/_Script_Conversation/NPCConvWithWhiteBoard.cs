@@ -15,14 +15,16 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
     [SerializeField] BoxCollider2D[] boxCollider2D;
     [SerializeField] Collider2D []CharaCollider;
 
-    
+    Vector3 origPosition;
+    [SerializeField] Vector3 NewPosition;
+
     private bool canTurnOffCollider; //GeneralObjects uses this 
 
 
     void Start()
     {
 
-        
+        origPosition = transform.position;
 
     }
 
@@ -70,12 +72,12 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
            
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+ /*       if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             ConversationManager.Instance.SelectPreviousOption();
         else if (Input.GetKeyDown(KeyCode.DownArrow)|| Input.GetKeyDown(KeyCode.S))
             ConversationManager.Instance.SelectNextOption();
         else if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space))
-                ConversationManager.Instance.PressSelectedOption();
+                ConversationManager.Instance.PressSelectedOption();*/
         
        
     }
@@ -87,6 +89,7 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
             
             StartConvBeforeWhieBoard();
             //Debug.Log("not completed");
+            //MoveToNewPos();
         }
         else
         {
@@ -144,5 +147,29 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
             }
 
         }
+    }
+
+    IEnumerator MovingTo(Vector3 pos, float speed)
+    {
+       
+        while (transform.position != pos)
+        {
+
+            transform.position = Vector3.MoveTowards(transform.position, pos, speed * Time.deltaTime);
+            
+            if (Vector3.Distance(transform.position, pos) <= 0.01f)
+            {
+                transform.position = pos;
+                break;
+            }
+            yield return null;
+        
+        }
+
+    }
+
+    public void MoveToNewPos()
+    { 
+        StartCoroutine(MovingTo(NewPosition, 0.1f));
     }
 }
