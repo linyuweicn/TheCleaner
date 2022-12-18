@@ -114,7 +114,7 @@ namespace DialogueEditor
             //initialize
             isEndState = false;
             isContinueState = false;
-
+            m_currentSelectedIndex = -1;
         }
 
         
@@ -141,6 +141,7 @@ namespace DialogueEditor
 
                 case eState.Idle:
                     Idle_Update();
+                    ManageContinueAndEndState(); //constantly check if user wants to continue or end convo by mouse, space, or e
                     break;
 
                 case eState.TransitioningOptionsOff:
@@ -151,8 +152,6 @@ namespace DialogueEditor
                     TransitioningDialogueBoxOff_Update();
                     break;
             }
-
-            ManageContinueAndEndState(); //constantly check if user wants to continue or end convo by mouse, space, or e
         }
 
         //--------------------------------------
@@ -165,7 +164,8 @@ namespace DialogueEditor
             else if((Input.GetMouseButtonDown(0) || Input.GetKeyDown("space") || Input.GetKeyDown("e")) && isContinueState)
             {
                 SpeechNode next = GetValidSpeechOfNode(m_currentSpeech);
-                SetupSpeech(next);
+                if(next != null)
+                    SetupSpeech(next);
             }
         }
 
@@ -225,13 +225,14 @@ namespace DialogueEditor
 
             UIConversationButton button = m_uiOptions[m_currentSelectedIndex];
             button.OnButtonPressed();
+            m_currentSelectedIndex = -1; //reset selected index
         }
 
         public void AlertHover(UIConversationButton button)
         {
             for (int i = 0; i < m_uiOptions.Count; i++)
             {
-                if (m_uiOptions[i] == button && m_currentSelectedIndex != i)
+                if (m_uiOptions[i] == button) //&& m_currentSelectedIndex != i)
                 {
                     SetSelectedOption(i);
                     return;
@@ -499,7 +500,7 @@ namespace DialogueEditor
 
             // Clear current options
             ClearOptions();
-            m_currentSelectedIndex = 0;
+            m_currentSelectedIndex = -1;
 
             // Set sprite
             if (speech.Icon == null)
@@ -763,7 +764,7 @@ namespace DialogueEditor
                 }
 
             }
-            SetSelectedOption(0);
+            //SetSelectedOption(0);
 
             // Set the button sprite and alpha
             for (int i = 0; i < m_uiOptions.Count; i++)
@@ -800,7 +801,7 @@ namespace DialogueEditor
             if (index > m_uiOptions.Count - 1)
                 index = m_uiOptions.Count - 1;
 
-            if (m_currentSelectedIndex >= 0)
+            if (m_currentSelectedIndex >= 0) 
                 m_uiOptions[m_currentSelectedIndex].SetHovering(false);
             m_currentSelectedIndex = index;
             m_uiOptions[index].SetHovering(true);
