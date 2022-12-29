@@ -14,11 +14,14 @@ public class GeneralObjects : MonoBehaviour
     //a temp fix for rn
     [SerializeField] GameObject[] Objects;
     private bool hasClicked;
+    public bool OpenAtBegining;
 
     
 
     void Start()
     {
+       
+        
         for (int i = 0; i < Colliders.Length; i++)
         {
             Colliders[i].GetComponent<Collider2D>();
@@ -30,6 +33,11 @@ public class GeneralObjects : MonoBehaviour
         {
             m_Animator = Animator.GetComponent<Animator>();
             //for aniamted objects, enable them at the begining
+            if (OpenAtBegining)
+            {
+                OnMouseDown();
+                Debug.Log("ShouldClick");
+            }
         }
 
         

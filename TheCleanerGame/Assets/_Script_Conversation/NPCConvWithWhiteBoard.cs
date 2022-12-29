@@ -9,6 +9,7 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
     
     public NPCConversation[] B4CompleteConversations;
     public NPCConversation[] AfterCompleteConversations;
+
     private int convSequenceB4;
     private int convSequenceAfter;
 
@@ -172,4 +173,6 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
     { 
         StartCoroutine(MovingTo(NewPosition, 0.1f));
     }
+
+
 }

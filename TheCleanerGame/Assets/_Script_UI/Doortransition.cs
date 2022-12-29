@@ -24,7 +24,10 @@ public class Doortransition : MonoBehaviour
     
     public void Update()
     {
-        if (BrainstormGeneralManager.Instance.ContainerDictionary[0].Prompt.completed)
+        if (BrainstormGeneralManager.Instance.ContainerDictionary[0].Prompt.completed
+            && BrainstormGeneralManager.Instance.ContainerDictionary[1].Prompt.completed
+            && BrainstormGeneralManager.Instance.ContainerDictionary[2].Prompt.completed
+            )
         {
             ExitDoor.SetActive(true);
         }
@@ -33,12 +36,13 @@ public class Doortransition : MonoBehaviour
 
     public void Start()
     {
-       if (SceneManager.GetActiveScene().buildIndex == 1)
-        {
-           CanClick = true;
-            //Debug.Log(CanClick);
-        }
+        /*       if (SceneManager.GetActiveScene().buildIndex == 1)
+                {
+                   CanClick = true;
+                    //Debug.Log(CanClick);
+                }*/
 
+        CanClick = true;
         CalendarPage.SetActive(false);
         ExitDoor.SetActive(false);
     }
@@ -50,15 +54,15 @@ public class Doortransition : MonoBehaviour
         if ((gameObject.name == "LabDoor") && CanClick)// click the Lab door
         {
 
-            if (!isDoor1clicked) // move to office
+            if (!isDoor1clicked) // move to move to entrance
             {
-                BrainstormCamera.SetActive(true);
+                EntranceCamera.SetActive(true);
                 isDoor1clicked = true;
 
             }
-            else // move to entrance
+            else // move to offuce
             {
-                BrainstormCamera.SetActive(false);
+                EntranceCamera.SetActive(false);
 
                 isDoor1clicked = false;
 
@@ -68,13 +72,13 @@ public class Doortransition : MonoBehaviour
         {
             if (!isDoor2clicked)
             {
-                YiranOfficeCamera.SetActive(true); // move to Yiran offcice
+                BrainstormCamera.SetActive(true); // move to brainstorm room
                 isDoor2clicked = true;
                 Debug.Log("Clicked");
             }
-            else // move to brainstorm room
+            else // move to Yiran room
             {
-                YiranOfficeCamera.SetActive(false);
+                BrainstormCamera.SetActive(false);
                 isDoor2clicked = false;
 
             }

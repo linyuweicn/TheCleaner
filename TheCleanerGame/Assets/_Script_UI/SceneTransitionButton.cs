@@ -35,11 +35,19 @@ public class SceneTransitionButton : MonoBehaviour
 
     IEnumerator LoadNextScene( )
     {
-        aimator.SetTrigger("Start");
+        if (aimator)
+        {
+            aimator.SetTrigger("Start");
 
-        yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1f);
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+            
     }
 
     public void CloseGame()
