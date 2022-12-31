@@ -325,15 +325,7 @@ public class AnswerBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         return mousePosition;
     }
 
-   /* public void OnPointerClick(PointerEventData eventData)
-    {
-
-        if (eventData.clickCount == 2)
-        {
-            Debug.Log("double click");
-        }
-
-    }*/
+ 
 
     #endregion
 
@@ -343,6 +335,7 @@ public class AnswerBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     {
         Destroy(gameObject);
     }
+
 
     #endregion
 

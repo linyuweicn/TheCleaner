@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class SceneTransitionButton : MonoBehaviour
 {
     [SerializeField] Animator aimator; 
+    [SerializeField] GameObject PauseMene;
+    public static bool gameIsPaused;
     void Start()
     {
        
@@ -19,10 +21,16 @@ public class SceneTransitionButton : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
-        }else if (Input.GetKeyDown(KeyCode.Alpha1))
+            pauseGame();
+
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SceneManager.LoadScene(0);
+        }
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
     }
@@ -54,5 +62,23 @@ public class SceneTransitionButton : MonoBehaviour
     {
         Application.Quit();
     }
-   
+    public void ToStartPage()
+    {
+        SceneManager.LoadScene(0);
+
+    }
+
+    public void resume()
+    {
+        PauseMene.SetActive(false);
+        Time.timeScale = 1f;
+        gameIsPaused = false;
+    }
+    public void pauseGame()
+    {
+        PauseMene.SetActive(true);
+        Time.timeScale = 0f;
+        gameIsPaused = true;
+    }
+
 }

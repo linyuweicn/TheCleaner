@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class GeneralObjects : MonoBehaviour
 {
@@ -55,34 +56,29 @@ public class GeneralObjects : MonoBehaviour
     public void OnMouseDown() // enable animation
     {
 
+        if (SceneTransitionButton.gameIsPaused)
+        {
+            Debug.Log("game is paused and prevent clicking");
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                return; // when the game is paused, prevent clicking objects
+            }
+        }
+       
+
         if (hasClicked == false)
         {
-            if (m_Animator != null)
-            {
-                m_Animator.SetBool("isOn", true); // turn on stuff such as calendar or email
 
-                //Disable other clickable objects
-
-                for (int i = 0; i < Colliders.Length; i++)
-                {
-                    Colliders[i].enabled = false; 
-
-                }  
-                for (int i = 0; i < Objects.Length; i++)
-                {
-                    Objects[i].SetActive(false);
-                }
-
-                hasClicked = true;
-            }
-            
+            OpenObjects();
         }
         else
         {
             CloseObject();
         }
-        
-    
+
+
+
+
     }
 
 
@@ -109,4 +105,27 @@ public class GeneralObjects : MonoBehaviour
         }
 
     }
+
+    public void OpenObjects()
+    {
+        if (m_Animator != null)
+        {
+            m_Animator.SetBool("isOn", true); // turn on stuff such as calendar or email
+
+            //Disable other clickable objects
+
+            for (int i = 0; i < Colliders.Length; i++)
+            {
+                Colliders[i].enabled = false;
+
+            }
+            for (int i = 0; i < Objects.Length; i++)
+            {
+                Objects[i].SetActive(false);
+            }
+
+            hasClicked = true;
+        }
+    }
+
 }

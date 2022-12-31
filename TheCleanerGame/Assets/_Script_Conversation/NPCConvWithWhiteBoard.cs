@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DialogueEditor;
+using UnityEngine.EventSystems;
 
 public class NPCConvWithWhiteBoard : MonoBehaviour
 {
@@ -32,8 +33,11 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         if (ConversationManager.Instance.IsConversationActive) 
         {
+
 
             for (int i = 0; i < boxCollider2D.Length; i++)
             {
@@ -103,8 +107,20 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
 
     public void StartConvBeforeWhieBoard()
     {
+        
+
         if (Input.GetMouseButtonDown(0))
         {
+
+
+            if (SceneTransitionButton.gameIsPaused)
+            {
+                Debug.Log("game is paused and prevent conversation");
+                if (EventSystem.current.IsPointerOverGameObject())
+                {
+                    return; // when the game is paused, prevent changing spite outline.
+                }
+            }
             //Debug.Log("Clicked");
             convSequenceB4++;
             //Debug.Log(convSequence);
@@ -130,6 +146,14 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            if (SceneTransitionButton.gameIsPaused)
+            {
+                Debug.Log("game is paused and prevent conversation");
+                if (EventSystem.current.IsPointerOverGameObject())
+                {
+                    return; // when the game is paused, prevent changing spite outline.
+                }
+            }
             canTurnOffCollider = false;
             Debug.Log("Clicked");
             convSequenceAfter++;

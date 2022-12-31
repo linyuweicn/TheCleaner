@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class WhtieBoard : MonoBehaviour
 {
     bool isBrainStormOn = false;
-    [SerializeField] GameObject BrainStormCanvas;
-    [SerializeField] GameObject WhiteBoard;
+    public GameObject Animator;
+    //[SerializeField] GameObject WhiteBoard;
+    [SerializeField] BoxCollider2D WhiteBoardCollider;
 
     public GameObject[] EnabledObjects;
     public GameObject[] DisabledObjects;
 
-    public GameObject Animator;
+    
     Animator m_Animator;
     AudioManager audioManager;
 
@@ -35,11 +37,20 @@ public class WhtieBoard : MonoBehaviour
 
     public void OnMouseDown()
     {
+        if (SceneTransitionButton.gameIsPaused)
+        {
+            //Debug.Log("game is paused and prevent changing color");
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                return; // when the game is paused, prevent changing spite outline.
+            }
+        }
         if (!isBrainStormOn) //brainstorm canvas is showing
         {
 
    
-            WhiteBoard.SetActive(false);
+            //WhiteBoard.SetActive(false);
+            WhiteBoardCollider.enabled = false;
             m_Animator.SetBool("isOn", true); // show brainstorm canvas
             // make this on
             isBrainStormOn = true;
@@ -59,7 +70,8 @@ public class WhtieBoard : MonoBehaviour
     {
         if (isBrainStormOn)
         {
-            WhiteBoard.SetActive(true);
+            //WhiteBoard.SetActive(true);
+            WhiteBoardCollider.enabled = true;
             m_Animator.SetBool("isOn", false);
             // make this off
             isBrainStormOn = false;

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.EventSystems;
 
 public class ChangeSpriteMaterial : MonoBehaviour
 {
@@ -21,18 +22,22 @@ public class ChangeSpriteMaterial : MonoBehaviour
     // The mesh goes red when the mouse is over it...
     void OnMouseEnter()
     {
-        //rend.material.color = Color.red;
+
+        if (SceneTransitionButton.gameIsPaused)
+        {
+            //Debug.Log("game is paused and prevent changing color");
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                return; // when the game is paused, prevent changing spite outline.
+            }
+        }
+
         rend.material = material;
         audioManager.PlayUiSound("ui_highlight");
+
     }
 
-    // ...the red fades out to cyan as the mouse is held over...
-    void OnMouseOver()
-    {
-        //rend.material.color -= new Color(0.1F, 0, 0) * Time.deltaTime;
-    }
 
-    // ...and the mesh finally turns white when the mouse moves away.
     public void OnMouseExit()
     {
         //rend.material.color = Color.white;

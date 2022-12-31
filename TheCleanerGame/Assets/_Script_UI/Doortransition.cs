@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class Doortransition : MonoBehaviour
 {
@@ -50,7 +51,14 @@ public class Doortransition : MonoBehaviour
     private void OnMouseDown()
     {
         //bug note: if the objects does not react to clicking, reassign the caermas in the scene to the scripts.
-
+        if (SceneTransitionButton.gameIsPaused)
+        {
+            Debug.Log("game is paused and prevent door transition");
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                return; // when the game is paused, prevent changing spite outline.
+            }
+        }
         if ((gameObject.name == "LabDoor") && CanClick)// click the Lab door
         {
 

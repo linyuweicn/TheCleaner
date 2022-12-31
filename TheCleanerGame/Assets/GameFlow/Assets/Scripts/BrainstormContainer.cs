@@ -13,6 +13,7 @@ public class BrainstormContainer : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] TextMeshProUGUI fractionText;
     AudioManager audioManager;
+    BrainstormTutorial brainstormTutorial;
     
     ContainerState state;
 
@@ -31,6 +32,7 @@ public class BrainstormContainer : MonoBehaviour
     void Start()
     {
         audioManager = FindObjectOfType<AudioManager>();
+        brainstormTutorial = FindObjectOfType<BrainstormTutorial>();
 
         BrainstormGeneralManager.Instance.AddContainterToList(this);
         PromptManager.Instance.AddPrompt(Prompt);
@@ -47,6 +49,9 @@ public class BrainstormContainer : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 ClickedOn();
+                if ( brainstormTutorial)
+                     brainstormTutorial.StartPanelTutorial();
+
             }
         }
     }
