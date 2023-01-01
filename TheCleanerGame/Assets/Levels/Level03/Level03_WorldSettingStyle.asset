@@ -16,7 +16,7 @@ MonoBehaviour:
   promptType: 2
   text: 'The revised game will be set in a [world setting] with a focus on [unique
     style] game mechanic. '
-  completed: 0
+  completed: 1
   AnswersStorage:
   - answerColumn:
     - text: Time Where Dinosaurs Ruled
@@ -55,10 +55,10 @@ MonoBehaviour:
       censorFulfillment: 64
       innovation: 75
       totalscore: 73
-      feedbackType: 1
-      feedbackText: 'Yes! I can hear the crowds cheering now. As long as it doesn''t
-        get too violent, I think we can sneak this one by the sensors. '
-      criticType: 3
+      feedbackType: 2
+      feedbackText: 'As long as it doesn''t get too violent, I think we can sneak
+        this one by the sensors. '
+      criticType: 0
     - text: Cartoon World
       production: 70
       satisfaction: 47
@@ -97,9 +97,9 @@ MonoBehaviour:
       innovation: 85
       totalscore: 41
       feedbackType: 1
-      feedbackText: Terrifying, challenging, and right up my alley. How do we get
-        the NEA to approve this?
-      criticType: 3
+      feedbackText: Terrifying and challenging. How do we get the NEA to approve
+        this?
+      criticType: 0
     - text: Narrative Driven Puzzles
       production: 60
       satisfaction: 71
@@ -108,7 +108,7 @@ MonoBehaviour:
       totalscore: 57
       feedbackType: 1
       feedbackText: Ok, this one could work. Thinking is totally not overrated.
-      criticType: 3
+      criticType: 0
     - text: Dance Battles and Rhythm Revolutions
       production: 50
       satisfaction: 59

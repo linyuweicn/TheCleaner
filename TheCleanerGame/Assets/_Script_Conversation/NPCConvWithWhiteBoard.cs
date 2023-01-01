@@ -176,11 +176,13 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
 
     IEnumerator MovingTo(Vector3 pos, float speed)
     {
-       
+
+
+        yield return new WaitForSeconds(1.3f);
         while (transform.position != pos)
         {
 
-            transform.position = Vector3.MoveTowards(transform.position, pos, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, pos, speed * Time.deltaTime*60);
             
             if (Vector3.Distance(transform.position, pos) <= 0.01f)
             {

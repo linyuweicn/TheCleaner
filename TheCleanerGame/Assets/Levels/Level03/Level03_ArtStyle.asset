@@ -15,7 +15,7 @@ MonoBehaviour:
   id: {x: 2, y: 0}
   promptType: 2
   text: The game will have a [art style] art style.
-  completed: 0
+  completed: 1
   AnswersStorage:
   - answerColumn:
     - text: Cel Shading
@@ -24,10 +24,10 @@ MonoBehaviour:
       censorFulfillment: 85
       innovation: 75
       totalscore: 82
-      feedbackType: 3
-      feedbackText: If I wanted this, I'd go back to the 70s. I'd also like to point
-        out how boring this is going to be.
-      criticType: 3
+      feedbackType: 1
+      feedbackText: This sounds absolutely delightful. I love fun, simple styles
+        the best.
+      criticType: 4
     - text: Low Poly
       production: 55
       satisfaction: 55
@@ -73,8 +73,8 @@ MonoBehaviour:
       innovation: 40
       totalscore: 33
       feedbackType: 3
-      feedbackText: I don't understand it and I don't think the censor board will
-        either.
+      feedbackText: I don't love it, but I don't hate it. I will concede that there
+        is a market for it, so it will probably pass ANEA scrutiny.
       criticType: 4
   segments:
   - 'The game will have a '

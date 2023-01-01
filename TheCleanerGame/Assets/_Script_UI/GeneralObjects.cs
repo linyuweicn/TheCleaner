@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class GeneralObjects : MonoBehaviour
 {
     
-    [SerializeField] GameObject Animator;
+    [SerializeField] GameObject AnimatorOrObject;
     Animator m_Animator;
 
 
@@ -30,9 +30,9 @@ public class GeneralObjects : MonoBehaviour
 
 
 
-        if (Animator != null)
+        if (AnimatorOrObject != null)
         {
-            m_Animator = Animator.GetComponent<Animator>();
+            m_Animator = AnimatorOrObject.GetComponent<Animator>();
             //for aniamted objects, enable them at the begining
             if (OpenAtBegining)
             {
@@ -91,19 +91,22 @@ public class GeneralObjects : MonoBehaviour
             m_Animator.SetBool("isOn", false);
 
 
-            for (int i = 0; i < Colliders.Length; i++)
-            {
-                Colliders[i].enabled = true;
-            }
-            for (int i = 0; i < Objects.Length; i++)
-            {
-                Objects[i].SetActive(true);
-            }
-
-            hasClicked = false;
-
+        }
+        else
+        {
+            AnimatorOrObject.SetActive(false);
+        }
+        
+        for (int i = 0; i < Colliders.Length; i++)
+        {
+            Colliders[i].enabled = true;
+        }
+        for (int i = 0; i < Objects.Length; i++)
+        {
+            Objects[i].SetActive(true);
         }
 
+        hasClicked = false;
     }
 
     public void OpenObjects()
@@ -112,20 +115,26 @@ public class GeneralObjects : MonoBehaviour
         {
             m_Animator.SetBool("isOn", true); // turn on stuff such as calendar or email
 
-            //Disable other clickable objects
-
-            for (int i = 0; i < Colliders.Length; i++)
-            {
-                Colliders[i].enabled = false;
-
-            }
-            for (int i = 0; i < Objects.Length; i++)
-            {
-                Objects[i].SetActive(false);
-            }
-
-            hasClicked = true;
+           
         }
+        else
+        {
+            AnimatorOrObject.SetActive(true);
+        }
+        //Disable other clickable objects
+
+        for (int i = 0; i < Colliders.Length; i++)
+        {
+            Colliders[i].enabled = false;
+
+        }
+        for (int i = 0; i < Objects.Length; i++)
+        {
+            Objects[i].SetActive(false);
+        }
+
+        hasClicked = true;
     }
+
 
 }

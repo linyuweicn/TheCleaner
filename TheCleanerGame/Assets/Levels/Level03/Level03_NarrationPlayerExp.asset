@@ -16,7 +16,7 @@ MonoBehaviour:
   promptType: 3
   text: 'The plot of the game will be told through a [narration type] narrative with
     a focus on [player experience]. '
-  completed: 0
+  completed: 1
   AnswersStorage:
   - answerColumn:
     - text: Interaction
@@ -37,7 +37,7 @@ MonoBehaviour:
       totalscore: 66
       feedbackType: 3
       feedbackText: Why would I play if I can't change anything? Sounds terrible.
-      criticType: 3
+      criticType: 0
     - text: String of Pearls
       production: 50
       satisfaction: 71
@@ -65,9 +65,10 @@ MonoBehaviour:
       censorFulfillment: 10
       innovation: 80
       totalscore: 39
-      feedbackType: 1
-      feedbackText: Exploring new environments! I like the sound of that.
-      criticType: 3
+      feedbackType: 2
+      feedbackText: 'Great Idea. Environmental storytelling is just as critical as
+        written texts to convey emotions. '
+      criticType: 0
   - answerColumn:
     - text: Parasocial Character Development
       production: 50
@@ -96,9 +97,9 @@ MonoBehaviour:
       innovation: 50
       totalscore: 65
       feedbackType: 3
-      feedbackText: No replay value here. Just a quick cash grab for completing the
-        narrative.
-      criticType: 3
+      feedbackText: 'The narratives are only one element of a game, but they shouldn''t
+        be consuming the other aspects.   '
+      criticType: 0
     - text: Online Multiplayer Matches
       production: 70
       satisfaction: 47
@@ -116,8 +117,9 @@ MonoBehaviour:
       innovation: 55
       totalscore: 55
       feedbackType: 2
-      feedbackText: Yeah, I'm ok with this. They did play for the game after all.
-      criticType: 3
+      feedbackText: Well I guess people want to be entertained, but are we sure we
+        want to give audiences that much agency?
+      criticType: 4
   segments:
   - 'The plot of the game will be told through a '
   - ' narrative with a focus on '

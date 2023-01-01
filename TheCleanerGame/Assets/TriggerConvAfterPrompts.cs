@@ -6,6 +6,7 @@ using DialogueEditor;
 public class TriggerConvAfterPrompts : MonoBehaviour
 {
     [SerializeField] NPCConversation EndingComments;
+    [SerializeField] GameObject npc;
     private bool hasTriggered;
     void Start()
     {
@@ -26,6 +27,7 @@ public class TriggerConvAfterPrompts : MonoBehaviour
             && !hasTriggered)
         {
             Debug.Log("trigger end");
+            npc.SetActive(true);
             StartCoroutine(StartConv());
             hasTriggered = true;
         }
@@ -43,4 +45,6 @@ public class TriggerConvAfterPrompts : MonoBehaviour
         // has been triggred is true
         ConversationManager.Instance.StartConversation(EndingComments);
     }
+
+  
 }
