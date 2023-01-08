@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 [Serializable]
 public class AnswerObject
@@ -19,4 +20,7 @@ public class AnswerObject
     [SerializeField] public FeedbackType feedbackType;
     [SerializeField] [TextArea(2, 20)] public string feedbackText;
     [SerializeField] public CriticType criticType;
+
+    [Header("Decision Variables")]
+    [SerializeField] public Sprite image;
 }

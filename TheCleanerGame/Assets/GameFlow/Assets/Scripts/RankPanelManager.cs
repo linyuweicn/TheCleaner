@@ -9,6 +9,8 @@ public class RankPanelManager : MonoBehaviour
     #region variables
     [SerializeField] TextMeshProUGUI promptText;
     [SerializeField] ArrowButtonObject nextButton;
+    [SerializeField] float decisionTimeDelay;
+    [SerializeField] DecisionImage decisionImage;
 
     [SerializeField] AnswerBox answerBox;
     [SerializeField] ShadowBox shadowBox;
@@ -43,6 +45,20 @@ public class RankPanelManager : MonoBehaviour
     }
 
     #region public functions
+    public void PrepareRankedState()
+    {
+        decisionImage.Hide();
+        if (BrainstormGeneralManager.Instance.FocusedContainer.Prompt.completed)
+        {
+            SkipToDecisionState();
+        }
+        else
+        {
+            UpdatePromptText();
+            GenerateAnswers();
+        }
+    }
+
     public void UpdatePromptText()
     {
         promptText.text = BrainstormGeneralManager.Instance.FocusedContainer.Prompt.Text;
@@ -126,7 +142,7 @@ public class RankPanelManager : MonoBehaviour
 
     }
 
-    public void StartCulledStage()
+    public void SkipToDecisionState()
     {
         feedbackManager.ResetFeedback();
         GenerateAnswers();
@@ -135,13 +151,37 @@ public class RankPanelManager : MonoBehaviour
         nextButton.MakeGreen();
         RewritePrompt();
 
+        decisionImage.ShowNoAnimation(BrainstormGeneralManager.Instance.FocusedContainer.Prompt.TopImage);
     }
-    public void NextStage()
+    public void ToDecisionState()
     {
         feedbackManager.ResetFeedback();
         State = RankPanelState.Culled;
         CullAnswers();
         RewritePrompt();
+
+        StartDelay();
+    }
+
+    public void StartDelay()
+    {
+        feedbackManager.TriggerSummaryFeedback();
+        StartCoroutine(DelayForSketch());
+    }
+
+    IEnumerator DelayForSketch()
+    {
+        State = RankPanelState.TransToCulled;
+       
+        decisionImage.ShowAnimation(BrainstormGeneralManager.Instance.FocusedContainer.Prompt.TopImage);
+        float elapsed = 0.0f;
+        while (elapsed < decisionTimeDelay)
+        {
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        State = RankPanelState.Culled;
+        
     }
 
     #endregion

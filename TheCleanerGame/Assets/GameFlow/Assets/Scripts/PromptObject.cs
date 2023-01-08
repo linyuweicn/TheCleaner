@@ -12,6 +12,7 @@ public class PromptObject : ScriptableObject
     [SerializeField] Vector2Int id;
     [SerializeField] PromptType promptType;
     [SerializeField] [TextArea(2, 20)] string text; //don't modify this
+    [SerializeField] int imageColumn;
     string displayText;
     public bool completed;
 
@@ -40,6 +41,21 @@ public class PromptObject : ScriptableObject
     public string Text
     {
         get { return displayText; }
+    }
+
+    public Sprite TopImage
+    {
+        get
+        {
+            if (completed)
+            {
+                return Answers[imageColumn][0].image;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
     #endregion
 

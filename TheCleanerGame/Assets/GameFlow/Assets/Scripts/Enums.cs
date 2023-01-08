@@ -49,11 +49,13 @@ public enum RankPanelState
 {
     Ranking,
     Feedback,
+    TransToCulled,
     Culled
 }
 
 public enum ButtonType
 {
     Forward,
-    Back
+    Back,
+    CloseFeedback
 }

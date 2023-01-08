@@ -350,5 +350,6 @@ public class AnswerBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         return GetAnswer().text;
     }
 
+    public int GetColumn() { return column; }
     #endregion
 }

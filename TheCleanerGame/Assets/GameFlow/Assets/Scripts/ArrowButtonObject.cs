@@ -35,15 +35,15 @@ public class ArrowButtonObject : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (rankPanelManager.State == RankPanelState.Feedback)
+        if (buttonType == ButtonType.CloseFeedback || rankPanelManager.State == RankPanelState.Feedback)
         {
-            if (buttonType == ButtonType.Back)
-            {
-                DeactivateButton();
-            }
-            else if (buttonType == ButtonType.Forward)
+            if (buttonType == ButtonType.CloseFeedback)
             {
                 ActivateButton();
+            }
+            else
+            {
+                DeactivateButton();
             }
         }
         else if (BrainstormGeneralManager.Instance.state == BrainstormState.Menu)
@@ -59,9 +59,17 @@ public class ArrowButtonObject : MonoBehaviour
         }
         else if (BrainstormGeneralManager.Instance.state == BrainstormState.Rank)
         {
-            ActivateButton();
+            if (rankPanelManager.State == RankPanelState.TransToCulled || rankPanelManager.State == RankPanelState.Feedback
+                    || !BrainstormGeneralManager.Instance.FocusedContainer.Prompt.completed)
+            {
+                DeactivateButton();
+            }
+            else
+            {
+                ActivateButton();
+            }
         }
-        else if (BrainstormGeneralManager.Instance.state == BrainstormState.TransToMenu || BrainstormGeneralManager.Instance.state != BrainstormState.TransToRank)
+        else if (BrainstormGeneralManager.Instance.state == BrainstormState.TransToMenu || BrainstormGeneralManager.Instance.state == BrainstormState.TransToRank)
         {
             DeactivateButton();
         }
@@ -75,6 +83,9 @@ public class ArrowButtonObject : MonoBehaviour
                 break;
             case ButtonType.Forward:
                 GoForward();               
+                break;
+            case ButtonType.CloseFeedback:
+                CloseFeedback();
                 break;
         }
     }
@@ -93,7 +104,7 @@ public class ArrowButtonObject : MonoBehaviour
     {
         if (rankPanelManager.State == RankPanelState.Feedback)
         {
-            feedbackManager.ResetFeedback();
+            CloseFeedback();
         }
         else if (BrainstormGeneralManager.Instance.state == BrainstormState.Rank)
         {
@@ -114,14 +125,19 @@ public class ArrowButtonObject : MonoBehaviour
 
     }
 
+    public void CloseFeedback()
+    {
+        feedbackManager.ResetFeedback();
+    }
+
     public void RankNext()
     {
         if (BrainstormGeneralManager.Instance.state == BrainstormState.Rank)
         {
-            if (rankPanelManager.State != RankPanelState.Culled)
+            if (rankPanelManager.State == RankPanelState.Ranking)
             {
                 PromptManager.Instance.MarkPromptAsCompleted(BrainstormGeneralManager.Instance.FocusedContainer.Prompt);
-                rankPanelManager.NextStage();
+                rankPanelManager.ToDecisionState();
 
                 MakeGreen();
 
@@ -139,7 +155,6 @@ public class ArrowButtonObject : MonoBehaviour
             button.enabled = false;
             img.color = deactivatedColor;
             activated = false;
-            
         }
     }
 

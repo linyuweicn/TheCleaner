@@ -24,6 +24,8 @@ public class FeedbackManager : MonoBehaviour
     Dictionary<CriticType, criticInfo> CriticDictionary;
     HashSet<AnswerObject> triggeredFeedbackAnswers;
 
+    [SerializeField] List<TotalFeedbackStruct> totalFeedbackList;
+
     //for calculation scores
     
     #region private struct
@@ -34,6 +36,14 @@ public class FeedbackManager : MonoBehaviour
         public Sprite image;
         public GameObject redFeedbackBubble;
         public Transform neutralConversationBubbleLocation;
+    }
+
+    [Serializable]
+    struct TotalFeedbackStruct
+    {
+        public Vector2 range;
+        public string feedbackText;
+        public FeedbackType feedbackType;
     }
     #endregion
     #endregion
@@ -75,6 +85,26 @@ public class FeedbackManager : MonoBehaviour
                     break;
             }
             triggeredFeedbackAnswers.Add(answer);
+        }
+    }
+    public void TriggerSummaryFeedback()
+    {
+        float totalScore = 0;
+        PromptObject prompt = BrainstormGeneralManager.Instance.FocusedContainer.Prompt;
+        for (int i = 0; i < prompt.Answers.Count; i++)
+        {
+            totalScore += prompt.Answers[i][0].totalscore;
+        }
+
+        foreach (TotalFeedbackStruct t in totalFeedbackList)
+        {
+            if (totalScore >= t.range.x && totalScore <= t.range.y)
+            {
+                RankPanelState oldState = rankPanelManager.State;
+                TriggerCriticalFeedback(CriticType.Yiran, t.feedbackText);
+                rankPanelManager.State = oldState;
+                break;
+            }    
         }
     }
     public void TriggerCriticalFeedback(CriticType type, string feedbackText)

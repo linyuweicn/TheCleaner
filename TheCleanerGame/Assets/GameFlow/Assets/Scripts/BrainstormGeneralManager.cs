@@ -18,7 +18,9 @@ public class BrainstormGeneralManager : MonoBehaviour
 
     [SerializeField] GameObject rankPanel;
     [SerializeField] GameObject menuPanel;
+    
     public RankPanelManager rankPanelManager;
+    public FeedbackManager feedbackManager;
     public BrainstormContainer FocusedContainer
     {
         get { return ContainerDictionary[focusedContainer]; }
@@ -77,6 +79,8 @@ public class BrainstormGeneralManager : MonoBehaviour
             focusedContainer = -1;
             rankPanelManager.State = RankPanelState.Ranking;
 
+            feedbackManager.ResetFeedback();
+
             StartPreparingMenu();
             state = BrainstormState.TransToMenu;
             foreach (BrainstormContainer c in ContainerDictionary.Values)
@@ -114,15 +118,7 @@ public class BrainstormGeneralManager : MonoBehaviour
         rankPanel.SetActive(true);
         menuPanel.SetActive(false);
 
-        if (FocusedContainer.Prompt.completed)
-        {
-            rankPanelManager.StartCulledStage();
-        }
-        else
-        {
-            rankPanelManager.UpdatePromptText();
-            rankPanelManager.GenerateAnswers();
-        }
+        rankPanelManager.PrepareRankedState();
     }
 
     IEnumerator WaitUntilContainersBecome(ContainerState cState, Action func)

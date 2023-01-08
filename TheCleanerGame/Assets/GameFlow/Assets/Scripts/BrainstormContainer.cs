@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 using TMPro;
 
@@ -12,6 +13,7 @@ public class BrainstormContainer : MonoBehaviour
     [SerializeField] Vector3 hiddenPosition;
     [SerializeField] float speed;
     [SerializeField] TextMeshProUGUI fractionText;
+    [SerializeField] SpriteRenderer image;
     AudioManager audioManager;
     BrainstormTutorial brainstormTutorial;
     
@@ -77,6 +79,12 @@ public class BrainstormContainer : MonoBehaviour
         if (state == ContainerState.Hidden)
         {
             UpdateText();
+
+            if (Prompt.completed)
+            {
+                image.sprite = Prompt.TopImage;
+            }
+
             Action func = FinishSwitchingToMenu;
             MoveToPosition(origPosition, func);
         }

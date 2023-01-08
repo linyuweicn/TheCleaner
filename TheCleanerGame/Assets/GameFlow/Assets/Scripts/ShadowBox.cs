@@ -31,7 +31,7 @@ public class ShadowBox : MonoBehaviour
         if (gameObject.layer == collision.gameObject.layer)
         {
             AnswerBox other = collision.gameObject.GetComponent<AnswerBox>();
-            if (ranking == 0 || BrainstormGeneralManager.Instance.FocusedContainer.Prompt.Answers[column][ranking] != null)
+            if (column == other.GetColumn() && (ranking == 0 || BrainstormGeneralManager.Instance.FocusedContainer.Prompt.Answers[column][ranking] != null))
             {
                 other.TryToSwapAnswers(column, BrainstormGeneralManager.Instance.rankPanelManager.AnswerBoxes[column][ranking], transform.position);
             }
