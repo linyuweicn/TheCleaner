@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2539964609188857521}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.88, y: 3.9, z: 0}
-  m_LocalScale: {x: 0.32790935, y: 0.32790935, z: 0.32790935}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0361062, y: 1.0361062, z: 1.0361062}
   m_Children: []
   m_Father: {fileID: 2539964609858106681}
   m_RootOrder: 0
@@ -74,9 +74,9 @@ SpriteRenderer:
   m_SortingLayerID: -1015411917
   m_SortingLayer: 1
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 8b315324cfebb4b4b80906e106c936bb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c3441377e7ecb4f48b8ca650bba5f6e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.88, y: 2.48}
@@ -97,12 +97,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efc638d2b06dad4d92c2fe95ab2c132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: e173fba4a244a1749a3672c3c57da0fa, type: 3}
   B4CompleteConversations: []
   AfterCompleteConversations: []
   boxCollider2D: []
   CharaCollider:
   - {fileID: 2539964609188857534}
+  NewPosition: {x: 0, y: 0, z: 0}
 --- !u!61 &2539964609188857534
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -120,7 +120,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10, y: 10}
+    oldSize: {x: 5.65, y: 10.14}
     newSize: {x: 0.88, y: 2.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

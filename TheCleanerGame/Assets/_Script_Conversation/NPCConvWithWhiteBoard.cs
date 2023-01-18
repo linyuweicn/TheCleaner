@@ -197,7 +197,7 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
 
     public void MoveToNewPos()
     { 
-        StartCoroutine(MovingTo(NewPosition, 0.1f));
+        StartCoroutine(MovingTo(NewPosition, 0.2f));
     }
 
 
