@@ -15,7 +15,8 @@ MonoBehaviour:
   id: {x: 0, y: 0}
   promptType: 0
   text: The Theme of the game will be [Theme].
-  completed: 1
+  imageColumn: 0
+  completed: 0
   AnswersStorage:
   - answerColumn:
     - text: Power Corrupts
@@ -27,6 +28,7 @@ MonoBehaviour:
       feedbackType: 2
       feedbackText: It's all about the paradox of power.
       criticType: 4
+      image: {fileID: 0}
     - text: Revenge
       production: 60
       satisfaction: 85
@@ -37,6 +39,7 @@ MonoBehaviour:
       feedbackText: This is going to be a hard theme to get approved. I'm not saying
         it's impossible, but definitely not what the ANEA wants.
       criticType: 1
+      image: {fileID: 0}
     - text: Justice
       production: 60
       satisfaction: 55
@@ -47,6 +50,7 @@ MonoBehaviour:
       feedbackText: I really like the idea. The word already suggests conflicts,
         which is so essential to out game's success.
       criticType: 0
+      image: {fileID: 0}
     - text: Rule of Law
       production: 50
       satisfaction: 45
@@ -56,6 +60,7 @@ MonoBehaviour:
       feedbackType: 3
       feedbackText: This literally goes against what I stand for.
       criticType: 3
+      image: {fileID: 0}
     - text: Survival
       production: 60
       satisfaction: 75
@@ -65,6 +70,7 @@ MonoBehaviour:
       feedbackType: 2
       feedbackText: I do love a challenge.
       criticType: 4
+      image: {fileID: 0}
     - text: The Circle of Life
       production: 70
       satisfaction: 65
@@ -75,6 +81,7 @@ MonoBehaviour:
       feedbackText: It's not terribly original, but it's also not offensive and that's
         the most important thing.
       criticType: 1
+      image: {fileID: 21300000, guid: 9e87864577d81694882886d52fdd23b4, type: 3}
   segments:
   - 'The Theme of the game will be '
   - .

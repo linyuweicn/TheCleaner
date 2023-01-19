@@ -10,13 +10,17 @@ public class CardContainer : BrainstormPanelUI
     #region variables
     [SerializeField] PromptObject associatedPrompt;
     [SerializeField] TextMeshProUGUI fractionText;
+    [SerializeField] TextMeshProUGUI mouseOverPrompt;
+    [SerializeField] TextMeshProUGUI mouseOverName;
     [SerializeField] GameObject card;
+    [SerializeField] SpriteRenderer image;
     [SerializeField] Animator animator;
 
     AudioManager audioManager;
     BrainstormTutorial brainstormTutorial;
 
     [SerializeField] bool mouseOver;
+    private bool clickedOn;
 
     public PromptObject Prompt { get { return associatedPrompt; } }
     public int PromptID { get { return associatedPrompt.ID.y; } }
@@ -32,6 +36,9 @@ public class CardContainer : BrainstormPanelUI
         PromptManager.Instance.AddPrompt(Prompt);
 
         UpdateText();
+
+        mouseOverName.text = associatedPrompt.Type.ToString();
+        mouseOverPrompt.text = associatedPrompt.Text;
     }
     #endregion
 
@@ -57,6 +64,8 @@ public class CardContainer : BrainstormPanelUI
         if (newState == BrainstormState.Menu)
         {
             StartCoroutine(Enter());
+            clickedOn = false;
+            brainstormManager.EventManager.OnAnswerRankedTop -= ReassignImage;
         }
         else
         {
@@ -104,11 +113,13 @@ public class CardContainer : BrainstormPanelUI
     private void OnMouseEnter()
     {
         mouseOver = true;
+        animator.SetTrigger("MouseEnter");
     }
 
     private void OnMouseExit()
     {
         mouseOver = false;
+        animator.SetTrigger("MouseExit");
     }
 
     public void ClickedOn()
@@ -116,6 +127,7 @@ public class CardContainer : BrainstormPanelUI
         if (brainstormManager.MyBrainstormState == BrainstormState.Menu)
         {
             brainstormManager.AssignPrompt(associatedPrompt);
+            clickedOn = true;
 
             if (associatedPrompt.completed)
             {
@@ -125,6 +137,8 @@ public class CardContainer : BrainstormPanelUI
             {
                 brainstormManager.SwitchState(BrainstormState.Rank);
             }
+
+            brainstormManager.EventManager.OnAnswerRankedTop += ReassignImage;
         }
 
         if (audioManager != null)
@@ -133,6 +147,16 @@ public class CardContainer : BrainstormPanelUI
         }
 
         if (brainstormTutorial) { brainstormTutorial.StartPanelTutorial(); }
+    }
+
+    private void ReassignImage(AnswerBox answerBox)
+    {
+        AnswerObject answer = answerBox.GetAnswer();
+
+        if (answer != null && answer.image != null)
+        {
+            image.sprite = answer.image;
+        }
     }
 
     #endregion
