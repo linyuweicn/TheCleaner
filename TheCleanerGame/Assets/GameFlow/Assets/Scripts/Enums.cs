@@ -13,10 +13,11 @@ public enum PromptType
 }
 public enum FeedbackType
 {
-    None,
-    Positive,
+    Null,
+    Critical,
     Neutral,
-    Negative
+    Summary,
+    Note
 }
 
 public enum CriticType
@@ -31,26 +32,25 @@ public enum CriticType
 
 public enum BrainstormState
 {
+    Inactive,
     Menu,
-    TransToMenu,
     Rank,
-    TransToRank,
-    Inactive
+    Decision
 }
 
-public enum ContainerState
+public enum FeedbackState
 {
-    Revealed,
-    Hidden,
-    Moving
+    Null,
+    Neutral,
+    Critical,
+    Summary
 }
 
-public enum RankPanelState
+public enum NeutralFeedbackState
 {
-    Ranking,
-    Feedback,
-    TransToCulled,
-    Culled
+    Inactive,
+    Triggered,
+    Active
 }
 
 public enum ButtonType

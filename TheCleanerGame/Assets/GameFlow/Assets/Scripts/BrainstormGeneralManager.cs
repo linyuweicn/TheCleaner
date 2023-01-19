@@ -12,18 +12,34 @@ public class BrainstormGeneralManager : MonoBehaviour
     public static List<float> AveScore = new List<float>(){0.0f, 0.0f, 0.0f, 0.0f, 0.0f};
     
     public static BrainstormGeneralManager Instance { get; private set; }
-    public Dictionary<int, BrainstormContainer> ContainerDictionary;
-    [HideInInspector] int focusedContainer;
-    [HideInInspector] public BrainstormState state;
-
-    [SerializeField] GameObject rankPanel;
-    [SerializeField] GameObject menuPanel;
     
-    public RankPanelManager rankPanelManager;
-    public FeedbackManager feedbackManager;
-    public BrainstormContainer FocusedContainer
+    public Dictionary<int, CardContainer> ContainerDictionary;
+    public Dictionary<BrainstormState, List<BrainstormPanelUI>> PanelUIDictionary = new Dictionary<BrainstormState, List<BrainstormPanelUI>>();
+
+    [SerializeField] PromptObject prompt; 
+    [SerializeField] BrainstormState brainstormState;
+    [SerializeField] FeedbackType feedbackState;
+
+    [SerializeField] BrainstormEventManager eventManager;
+
+    public PromptObject Prompt
     {
-        get { return ContainerDictionary[focusedContainer]; }
+        get { return prompt; }
+    }
+
+    public BrainstormState MyBrainstormState
+    {
+       get { return brainstormState; }
+    }
+
+    public FeedbackType MyFeedbackState
+    {
+        get { return feedbackState; }
+    }
+
+    public BrainstormEventManager EventManager
+    {
+        get { return eventManager; }
     }
     #endregion
 
@@ -31,17 +47,18 @@ public class BrainstormGeneralManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        ContainerDictionary = new Dictionary<int, BrainstormContainer>();
         Physics.queriesHitTriggers = false;
+
+        ContainerDictionary = new Dictionary<int, CardContainer>();
+
     }
 
     private void Start()
     {
-        state = BrainstormState.Menu; 
-        StartPreparingMenu();
+        brainstormState = BrainstormState.Menu; 
     }
 
-    public void AddContainterToList(BrainstormContainer container)
+    public void AddContainerToGeneralManager(CardContainer container)
     {
         if (ContainerDictionary.ContainsKey(container.PromptID))
         {
@@ -49,99 +66,90 @@ public class BrainstormGeneralManager : MonoBehaviour
         }
         ContainerDictionary[container.PromptID] = container;
     }
+
+    public void AddPanelUIToGeneralManager(BrainstormPanelUI panelUI, List<BrainstormState> activeStates)
+    {
+        foreach (BrainstormState state in activeStates)
+        {
+            if (!PanelUIDictionary.ContainsKey(state))
+            {
+                PanelUIDictionary.Add(state, new List<BrainstormPanelUI>());
+            }
+            PanelUIDictionary[state].Add(panelUI);
+        }
+    }
+
     #endregion
 
     #region public functions
-    public void SwitchToRankState(int focused)
+    public void SwitchState(BrainstormState targetState)
     {
-        if (state == BrainstormState.Menu)
-        {
-            focusedContainer = focused;
-
-            state = BrainstormState.TransToRank;
-            foreach (BrainstormContainer c in ContainerDictionary.Values)
-            {
-                c.MoveToRankState();
-            }
-            Action func = FinishPreparingRank;
-            StartCoroutine(WaitUntilContainersBecome(ContainerState.Hidden, func));
-        }
-        else
-        {
-            Debug.LogError("Should not switch to rank state while not during menu state");
-        }
+        TriggerUIStateChanges(brainstormState, targetState);
+        TriggerEventStateChanges(brainstormState, targetState);
+        brainstormState = targetState;
     }
 
-    public void SwitchToMenuState()
+    public void SwitchFeedbackState(FeedbackType feedbackType)
     {
-        if (state == BrainstormState.Rank)
-        {
-            focusedContainer = -1;
-            rankPanelManager.State = RankPanelState.Ranking;
-
-            feedbackManager.ResetFeedback();
-
-            StartPreparingMenu();
-            state = BrainstormState.TransToMenu;
-            foreach (BrainstormContainer c in ContainerDictionary.Values)
-            {
-                c.MoveToMenuState();
-            }
-            Action func = FinishPreparingMenu;
-            StartCoroutine(WaitUntilContainersBecome(ContainerState.Revealed, func));
-        }
-        else
-        {
-            Debug.LogError("Should not switch to menu state while not during rank state");
-        }
+        feedbackState = feedbackType;
     }
+
+    public void AssignPrompt(PromptObject prompt)
+    {
+        this.prompt = prompt;
+    }
+
     #endregion
 
     #region helper functions
 
-
-    void StartPreparingMenu()
+    void TriggerUIStateChanges(BrainstormState oldState, BrainstormState targetState)
     {
-        menuPanel.SetActive(true);
-        rankPanel.SetActive(false);
-    }
+        List<BrainstormPanelUI> triggeredUI = new List<BrainstormPanelUI>();
 
-    void FinishPreparingMenu()
-    {
-        state = BrainstormState.Menu;
-        rankPanelManager.DestroyAllAnswers();
-    }
-
-    void FinishPreparingRank()
-    {
-        state = BrainstormState.Rank;
-        rankPanel.SetActive(true);
-        menuPanel.SetActive(false);
-
-        rankPanelManager.PrepareRankedState();
-    }
-
-    IEnumerator WaitUntilContainersBecome(ContainerState cState, Action func)
-    {
-        bool ready = false;
-        while (!ready)
+        foreach (BrainstormPanelUI ui in PanelUIDictionary[oldState])
         {
-            ready = true;
-            foreach (BrainstormContainer c in ContainerDictionary.Values)
-            {
-                if (c.State != cState)
-                {
-                    ready = false;
-                    break;
-                }
-            }
-            yield return null;
+            if (!triggeredUI.Contains(ui)) { triggeredUI.Add(ui); }
         }
-        if (func != null)
+
+        foreach (BrainstormPanelUI ui in PanelUIDictionary[targetState])
         {
-            func();
+            if (!triggeredUI.Contains(ui)) { triggeredUI.Add(ui); }
+        }
+
+        foreach (BrainstormPanelUI ui in triggeredUI)
+        {
+            ui.TransitionFromStates(oldState, targetState);
         }
     }
 
+    void TriggerEventStateChanges(BrainstormState oldState, BrainstormState targetState)
+    {
+        switch (oldState)
+        {
+            case BrainstormState.Menu:
+                EventManager.OnExitMenuStateEvent();
+                break;
+            case BrainstormState.Rank:
+                EventManager.OnExitRankingStateEvent();
+                break;
+            case BrainstormState.Decision:
+                EventManager.OnExitDecisionStateEvent();
+                break;
+        }
+
+        switch (targetState)
+        {
+            case BrainstormState.Menu:
+                EventManager.OnEnterMenuStateEvent();
+                break;
+            case BrainstormState.Rank:
+                EventManager.OnEnterRankingStateEvent();
+                break;
+            case BrainstormState.Decision:
+                EventManager.OnEnterDecisionStateEvent();
+                break;
+        }
+    }
     #endregion
 }

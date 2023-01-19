@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using System;
 public class ArrowButtonObject : MonoBehaviour
 {
-    #region variables
+/*    #region variables
     [SerializeField] Image img;
     [SerializeField] ButtonType buttonType;
     [SerializeField] Color deactivatedColor;
@@ -46,7 +46,7 @@ public class ArrowButtonObject : MonoBehaviour
                 DeactivateButton();
             }
         }
-        else if (BrainstormGeneralManager.Instance.state == BrainstormState.Menu)
+        else if (BrainstormGeneralManager.Instance.brainstormState == BrainstormState.Menu)
         {
             if (buttonType == ButtonType.Back)
             {
@@ -57,7 +57,7 @@ public class ArrowButtonObject : MonoBehaviour
                 ActivateButton();
             }
         }
-        else if (BrainstormGeneralManager.Instance.state == BrainstormState.Rank)
+        else if (BrainstormGeneralManager.Instance.brainstormState == BrainstormState.Rank)
         {
             if (rankPanelManager.State == RankPanelState.TransToCulled || rankPanelManager.State == RankPanelState.Feedback
                     || !BrainstormGeneralManager.Instance.FocusedContainer.Prompt.completed)
@@ -69,7 +69,7 @@ public class ArrowButtonObject : MonoBehaviour
                 ActivateButton();
             }
         }
-        else if (BrainstormGeneralManager.Instance.state == BrainstormState.TransToMenu || BrainstormGeneralManager.Instance.state == BrainstormState.TransToRank)
+        else if (BrainstormGeneralManager.Instance.brainstormState == BrainstormState.TransToMenu || BrainstormGeneralManager.Instance.brainstormState == BrainstormState.TransToRank)
         {
             DeactivateButton();
         }
@@ -92,7 +92,7 @@ public class ArrowButtonObject : MonoBehaviour
 
     public void GoBack()
     {
-        if (BrainstormGeneralManager.Instance.state == BrainstormState.Rank)
+        if (BrainstormGeneralManager.Instance.brainstormState == BrainstormState.Rank)
         {
             BrainstormGeneralManager.Instance.SwitchToMenuState();
         }
@@ -106,11 +106,11 @@ public class ArrowButtonObject : MonoBehaviour
         {
             CloseFeedback();
         }
-        else if (BrainstormGeneralManager.Instance.state == BrainstormState.Rank)
+        else if (BrainstormGeneralManager.Instance.brainstormState == BrainstormState.Rank)
         {
             RankNext();
         }
-        else if (BrainstormGeneralManager.Instance.state == BrainstormState.Menu)
+        else if (BrainstormGeneralManager.Instance.brainstormState == BrainstormState.Menu)
         {
             foreach (int i in BrainstormGeneralManager.Instance.ContainerDictionary.Keys)
             {
@@ -132,7 +132,7 @@ public class ArrowButtonObject : MonoBehaviour
 
     public void RankNext()
     {
-        if (BrainstormGeneralManager.Instance.state == BrainstormState.Rank)
+        if (BrainstormGeneralManager.Instance.brainstormState == BrainstormState.Rank)
         {
             if (rankPanelManager.State == RankPanelState.Ranking)
             {
@@ -173,5 +173,5 @@ public class ArrowButtonObject : MonoBehaviour
         string path = "ConfirmButton_Green"; // filename.png should be stored in your Assets/Resources folder
         Sprite newSprite = Resources.Load<Sprite>(path);
         buttonImage.sprite = newSprite;
-    }
+    }*/
 }

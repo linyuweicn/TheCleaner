@@ -3,24 +3,50 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class NotePanel : MonoBehaviour
+public class NotePanelFeedbackUI : FeedbackUI
 {
     // Start is called before the first frame update
     [SerializeField] GameObject note;
     [SerializeField] TextMeshProUGUI text;
-    bool mouseOver = false;
+
     void Start()
     {
-        
+        feedbackUIContainer.AddToFeedbackDictionary(this);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !mouseOver)
+
+    }
+
+    public override void Show()
+    {
+        OpenNote();
+    }
+
+    public override void Hide()
+    {
+        CloseNote();
+    }
+
+    public override void OnClick(FeedbackButton button)
+    {
+        if (note.activeSelf)
         {
-            CloseNote();
+            brainstormManager.SwitchFeedbackState(FeedbackType.Null);
+            Hide();
         }
+        else
+        {
+            brainstormManager.SwitchFeedbackState(FeedbackType.Note);
+            Show();
+        }
+    }
+
+    public override void Trigger(AnswerObject answer)
+    {
+        
     }
 
     public void OpenNote()
@@ -32,6 +58,7 @@ public class NotePanel : MonoBehaviour
     public void CloseNote()
     {
         note.SetActive(false);
+        brainstormManager.SwitchFeedbackState(FeedbackType.Null);
     }
 
     void UpdateTextForNote(string str)
@@ -42,22 +69,12 @@ public class NotePanel : MonoBehaviour
     string GetTotalText()
     {
         string output = "";
-        foreach (BrainstormContainer c in BrainstormGeneralManager.Instance.ContainerDictionary.Values)
+        foreach (CardContainer c in BrainstormGeneralManager.Instance.ContainerDictionary.Values)
         {
             output += c.Prompt.Text;
             output += "\n\n";
         }
         return output;
-    }
-
-    private void OnMouseEnter()
-    {
-        mouseOver = true;
-    }
-
-    private void OnMouseExit()
-    {
-        mouseOver = false;
     }
 
 }

@@ -6,7 +6,7 @@ using TMPro;
 using System;
 public class FeedbackManager : MonoBehaviour
 {
-    #region variables
+/*    #region variables
     [SerializeField] RankPanelManager rankPanelManager;
 
     [SerializeField] GameObject neutralFeedbackBubble;
@@ -180,5 +180,5 @@ public class FeedbackManager : MonoBehaviour
         rankPanelManager.State = RankPanelState.Feedback;
         criticalFeedbackBubble.SetActive(true);
     }
-    #endregion
+    #endregion*/
 }

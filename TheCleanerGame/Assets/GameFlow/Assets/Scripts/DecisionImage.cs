@@ -3,36 +3,62 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DecisionImage : MonoBehaviour
+public class DecisionImage : BrainstormPanelUI
 {
-    public Image MyImage { get; set; }
-    Animator animator;
+    [SerializeField] private Image image;
+    [SerializeField] private Animator animator;
 
-    private void Awake()
+    private void Start()
     {
-        MyImage = GetComponent<Image>();
-        animator = GetComponent<Animator>();
-    }
-    
-    public void Hide()
-    {
-        MyImage.enabled = false;
-        MyImage.color = new Color(MyImage.color.r, MyImage.color.g, MyImage.color.b, 0);
+        brainstormManager.EventManager.OnAnswerRankedTop += SetImageFromTopAnswer;
     }
 
-
-    public void ShowNoAnimation(Sprite sprite)
+    public override void Hide()
     {
-        MyImage.enabled = true;
-        MyImage.sprite = sprite;
-        animator.SetTrigger("Stay");
+        image.enabled = false;
+        image.color = new Color(image.color.r, image.color.g, image.color.b, 0);
     }
-    public void ShowAnimation(Sprite sprite)
+
+    public override void Show()
     {
-        MyImage.enabled = true;
-        MyImage.sprite = sprite;
+        image.enabled = true;
+    }
+
+    IEnumerator SlideUpAnimation()
+    {
+        image.enabled = true;
+        animator.SetTrigger("SlideUp");
+        yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).IsName("SlideUp"));
+        Show();
+    }
+
+    IEnumerator FadeInAnimation()
+    {
+        image.enabled = true;
         animator.SetTrigger("FadeIn");
+        yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).IsName("FadeIn"));
+        Show();
     }
 
+    public override void TransitionFromStates(BrainstormState oldState, BrainstormState newState)
+    {
+        if (oldState == BrainstormState.Menu && newState == BrainstormState.Decision)
+        {
+            StartCoroutine(SlideUpAnimation());
+        }
+        else if (oldState == BrainstormState.Rank && newState == BrainstormState.Decision)
+        {
+            StartCoroutine(FadeInAnimation());
+        }
+        else
+        {
+            Hide();
+        }
+    }
 
+    public void SetImageFromTopAnswer(AnswerBox answerbox)
+    {
+        AnswerObject answer = answerbox.GetAnswer();
+        if (answer != null && answer.image != null) { image.sprite = answer.image; }
+    }
 }

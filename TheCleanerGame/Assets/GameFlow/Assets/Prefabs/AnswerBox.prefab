@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6653893139809926924}
   - component: {fileID: 3504606069776780761}
   - component: {fileID: 381838037526828996}
+  - component: {fileID: 7867537182718670557}
   m_Layer: 7
   m_Name: AnswerBox
   m_TagString: Untagged
@@ -48,15 +49,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56c10a2f18c23654fa1c7f0a6de33c9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ranking: 0
-  assignedPos: {x: 0, y: 0, z: 0}
-  clickedOn: 0
   transitionTime: 0.4
-  promptObject: {fileID: 0}
   text: {fileID: 1474730456249709182}
   answerBoxLayer:
     serializedVersion: 2
     m_Bits: 128
+  animator: {fileID: 7867537182718670557}
 --- !u!61 &6653893139809926924
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -119,6 +117,25 @@ MonoBehaviour:
   cursorTexture: {fileID: 2800000, guid: 8470f7725edbb0447b24a567e7d7b3fb, type: 3}
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
+--- !u!95 &7867537182718670557
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598786472179814562}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d9a39c44e29312f46a88f0f237b6371f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3264192921857730917
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,7 +161,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3264192921857730917}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.0134, y: 0.0134, z: 1}
   m_Children: []

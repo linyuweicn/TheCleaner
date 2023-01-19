@@ -9,12 +9,12 @@ public class AnswerBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 {
     #region variables
     [Header("Debug Attributes")]
-    public int ranking;
-    int column;
+    private int ranking;
+    private int column;
 
-    public Vector3 assignedPos;
-    Vector3 mouseOffset;
-    Vector3 startLerpPos;
+    private Vector3 assignedPos;
+    private Vector3 mouseOffset;
+    private Vector3 startLerpPos;
 
     // List of scores, AveScore[0] is for Character, AveScore[1], AveScore[2] are for Narration, 
     // AveScore[3] AveScore[4] are for Theme
@@ -22,22 +22,22 @@ public class AnswerBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     //List<float> AveScore = new List<float>(){0.0f, 0.0f, 0.0f, 0.0f, 0.0f};
 
 
-    bool mouseOver;
-    public bool clickedOn;
-    bool isMoving;
+    private bool mouseOver;
+    private bool clickedOn;
+    private bool isMoving;
 
-    float elapsed;
+    private float elapsed;
     [Header("Actual Variables")]
-    [SerializeField] float transitionTime;
+    [SerializeField] private float transitionTime;
 
-    RankPanelManager rankPanelManager;
-    FeedbackManager feedbackManager;
-    ScoreProgress scoreProgress;
-    public PromptObject promptObject;
+    private AnswerUIContainer answerUIContainer;
+    private ScoreProgress scoreProgress;
+    private PromptObject promptObject;
 
     Camera cam;
     [SerializeField] TextMeshProUGUI text;
     [SerializeField] LayerMask answerBoxLayer;
+    [SerializeField] Animator animator;
 
     
     AudioManager audiomanager;
@@ -58,19 +58,20 @@ public class AnswerBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     {
         scoreProgress = FindObjectOfType<ScoreProgress>();
         audiomanager = FindObjectOfType< AudioManager>();
+
+        animator.SetTrigger("Enter");
     }
 
-    public void Construct(int column, int ranking, Vector3 position)
+    public void Construct(int column, int ranking, Vector3 position, AnswerUIContainer container)
     {
         transform.localPosition = position;
         assignedPos = transform.position;
 
         this.column = column;
         this.ranking = ranking;
+        answerUIContainer = container;
 
-        rankPanelManager = FindObjectOfType<RankPanelManager>();
-        feedbackManager = FindObjectOfType<FeedbackManager>();
-        text.text = BrainstormGeneralManager.Instance.FocusedContainer.Prompt.Answers[column][ranking].text;
+        text.text = BrainstormGeneralManager.Instance.Prompt.Answers[column][ranking].text;
     }
 
     #endregion
@@ -88,7 +89,7 @@ public class AnswerBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
             {
                 ClickedUp();
             }
-            else if (rankPanelManager.State == RankPanelState.Feedback)
+            else if (BrainstormGeneralManager.Instance.MyFeedbackState != FeedbackType.Null)
             {
                 ClickedUp();
             }
@@ -141,8 +142,8 @@ public class AnswerBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     void MoveAnswerToEmptyTopChoice(int column, AnswerBox other, Vector3 otherPosition)
     {
-        BrainstormGeneralManager.Instance.FocusedContainer.Prompt.SwapRankings(column, ranking, 0);
-        rankPanelManager.SwapAnswers(column, ranking, 0);
+        BrainstormGeneralManager.Instance.Prompt.SwapRankings(column, ranking, 0);
+        answerUIContainer.SwapAnswers(column, ranking, 0);
 
         int oldRanking = ranking;
         ranking = 0;
@@ -150,11 +151,11 @@ public class AnswerBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         Vector3 oldAssignedPosition = assignedPos;
         SetAssignedPos(otherPosition);
 
-        for (int i = oldRanking + 1; i < rankPanelManager.AnswerBoxes[column].Count; i++)
+        for (int i = oldRanking + 1; i < answerUIContainer.AnswerBoxes[column].Count; i++)
         {
-            BrainstormGeneralManager.Instance.FocusedContainer.Prompt.SwapRankings(column, i, i - 1);
+            BrainstormGeneralManager.Instance.Prompt.SwapRankings(column, i, i - 1);
 
-            AnswerBox otherAnswer = rankPanelManager.AnswerBoxes[column][i];
+            AnswerBox otherAnswer = answerUIContainer.AnswerBoxes[column][i];
 
             otherAnswer.ranking--;
 
@@ -162,13 +163,13 @@ public class AnswerBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
             oldAssignedPosition = otherAnswer.assignedPos;
             otherAnswer.SetAssignedPos(tempAssignedPos, true);
 
-            rankPanelManager.SwapAnswers(column, i, i - 1);
+            answerUIContainer.SwapAnswers(column, i, i - 1);
         }
 
         bool allAtTop = true;
-        for (int i = 0; i < rankPanelManager.AnswerBoxes.Count; i++)
+        for (int i = 0; i < answerUIContainer.AnswerBoxes.Count; i++)
         {
-            if (rankPanelManager.AnswerBoxes[i][0] == null)
+            if (answerUIContainer.AnswerBoxes[i][0] == null)
             {
                 allAtTop = false;
                 break;
@@ -177,7 +178,7 @@ public class AnswerBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
         if (allAtTop)
         {
-            PromptManager.Instance.MarkPromptAsCompleted(BrainstormGeneralManager.Instance.FocusedContainer.Prompt);
+            PromptManager.Instance.MarkPromptAsCompleted(BrainstormGeneralManager.Instance.Prompt);
         }
     }
 
@@ -189,9 +190,9 @@ public class AnswerBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         {
             j = i + (i < other.ranking ? 1 : -1);
 
-            BrainstormGeneralManager.Instance.FocusedContainer.Prompt.SwapRankings(column, i, j);
+            BrainstormGeneralManager.Instance.Prompt.SwapRankings(column, i, j);
 
-            AnswerBox otherAnswer = rankPanelManager.AnswerBoxes[column][j];
+            AnswerBox otherAnswer = answerUIContainer.AnswerBoxes[column][j];
 
             int tempRanking = ranking;
             ranking = otherAnswer.ranking;
@@ -201,7 +202,7 @@ public class AnswerBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
             SetAssignedPos(otherAnswer.assignedPos, true);
             otherAnswer.SetAssignedPos(tempAssignedPos, true);
 
-            rankPanelManager.SwapAnswers(column, i, j);
+            answerUIContainer.SwapAnswers(column, i, j);
         }
 
     }
@@ -240,46 +241,7 @@ public class AnswerBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     private void BecomeTopRank()
     {
-        feedbackManager.TriggerFeedback(BrainstormGeneralManager.Instance.FocusedContainer.Prompt.Answers[column][ranking]);
-
-        //get the score for the top choice
-        float tempScores = feedbackManager.GetScores(BrainstormGeneralManager.Instance.FocusedContainer.Prompt.Answers[column][ranking]);
-
-        PromptType type = BrainstormGeneralManager.Instance.FocusedContainer.Prompt.Type;
-
-        int j = 0;
-
-        switch (type)
-        {
-            case PromptType.Theme:
-                BrainstormGeneralManager.AveScore[0] = tempScores;
-                j = 0;
-                break;
-            case PromptType.Character:
-                if (column == 1) { BrainstormGeneralManager.AveScore[1] = tempScores; j = 1; } else { BrainstormGeneralManager.AveScore[2] = tempScores; j = 2; };
-                break;
-            case PromptType.Setting:
-                if (column == 1) { BrainstormGeneralManager.AveScore[3] = tempScores; j = 3; } else { BrainstormGeneralManager.AveScore[4] = tempScores; j = 4; };
-                break;
-        };
-
-        float count = 1.0f;
-
-        for (int i = 0; i < 5; i++)
-        {
-            if (BrainstormGeneralManager.AveScore[i] != 0.0f && i != j)
-            {
-                count = count + 1.0f;
-                tempScores = tempScores + BrainstormGeneralManager.AveScore[i];
-            }
-        };
-
-        float totalScores = tempScores / count;
-
-        //Debug.Log(tempScores.ToString());
-
-        //increment the likeness bar
-        scoreProgress.IncrementProgress(totalScores);
+        BrainstormGeneralManager.Instance.EventManager.OnAnswerRankedTopEvent(this);
     }
 
     #endregion
@@ -287,7 +249,7 @@ public class AnswerBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     #region mouse interface
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
-        if (rankPanelManager.State == RankPanelState.Ranking)
+        if (BrainstormGeneralManager.Instance.MyBrainstormState == BrainstormState.Rank)
         {
             mouseOver = true;
         }
@@ -304,14 +266,14 @@ public class AnswerBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         {
             clickedOn = true;
             mouseOffset = transform.position - GetMousePosition();
-            transform.parent = rankPanelManager.superParent.transform;
+            transform.parent = answerUIContainer.superParent.transform;
         }
     }
     private void ClickedUp()
     {
         if (clickedOn)
         {
-            transform.parent = rankPanelManager.answerParent.transform;
+            transform.parent = answerUIContainer.answerParent.transform;
             SetAssignedPos(assignedPos, true);
         }
         clickedOn = false;
@@ -343,7 +305,7 @@ public class AnswerBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     public AnswerObject GetAnswer()
     {
-        return BrainstormGeneralManager.Instance.FocusedContainer.Prompt.Answers[column][ranking];
+        return BrainstormGeneralManager.Instance.Prompt.Answers[column][ranking];
     }
     public string GetAnswerText()
     {

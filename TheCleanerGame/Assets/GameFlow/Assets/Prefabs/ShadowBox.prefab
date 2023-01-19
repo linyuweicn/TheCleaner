@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2564695506326047373}
   - component: {fileID: 3018005224632019064}
   - component: {fileID: 989145031215377953}
+  - component: {fileID: 4005534708600711308}
   m_Layer: 7
   m_Name: ShadowBox
   m_TagString: Untagged
@@ -96,9 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9851477711c84274ea61cc0d5c916bb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  column: 0
-  ranking: 0
-  assignedPos: {x: 0, y: 0, z: 0}
+  animator: {fileID: 4005534708600711308}
 --- !u!61 &989145031215377953
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -125,3 +124,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.8962216, y: 0.8020142}
   m_EdgeRadius: 0
+--- !u!95 &4005534708600711308
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6210729528260033365}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 77906ad3e2c97464d88308a595e18f62, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -5,12 +5,15 @@ using UnityEngine;
 public class ShadowBox : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int column;
-    public int ranking;
-    public Vector3 assignedPos;
+    private int column;
+    private int ranking;
+    private Vector3 assignedPos;
+    private AnswerUIContainer answerUIContainer;
+    [SerializeField] private Animator animator;
+
     void Start()
     {
-        
+        animator.SetTrigger("Enter");
     }
 
     // Update is called once per frame
@@ -19,11 +22,13 @@ public class ShadowBox : MonoBehaviour
         
     }
 
-    public void Construct(int column, int ranking, Vector3 assignedPos)
+    public void Construct(int column, int ranking, Vector3 assignedPos, AnswerUIContainer container)
     {
         this.column = column;
         this.ranking = ranking;
         this.assignedPos = assignedPos;
+
+        answerUIContainer = container;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -31,9 +36,9 @@ public class ShadowBox : MonoBehaviour
         if (gameObject.layer == collision.gameObject.layer)
         {
             AnswerBox other = collision.gameObject.GetComponent<AnswerBox>();
-            if (column == other.GetColumn() && (ranking == 0 || BrainstormGeneralManager.Instance.FocusedContainer.Prompt.Answers[column][ranking] != null))
+            if (column == other.GetColumn() && (ranking == 0 || BrainstormGeneralManager.Instance.Prompt.Answers[column][ranking] != null))
             {
-                other.TryToSwapAnswers(column, BrainstormGeneralManager.Instance.rankPanelManager.AnswerBoxes[column][ranking], transform.position);
+                other.TryToSwapAnswers(column, answerUIContainer.AnswerBoxes[column][ranking], transform.position);
             }
         }
     }

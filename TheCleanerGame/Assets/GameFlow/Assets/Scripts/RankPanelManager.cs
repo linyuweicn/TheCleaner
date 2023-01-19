@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class RankPanelManager : MonoBehaviour
 {
-    #region variables
+/*    #region variables
     [SerializeField] TextMeshProUGUI promptText;
     [SerializeField] ArrowButtonObject nextButton;
     [SerializeField] float decisionTimeDelay;
@@ -211,5 +211,5 @@ public class RankPanelManager : MonoBehaviour
 
     #region
 
-    #endregion
+    #endregion*/
 }
