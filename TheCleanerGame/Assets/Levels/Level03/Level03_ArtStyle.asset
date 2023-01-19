@@ -15,10 +15,11 @@ MonoBehaviour:
   id: {x: 2, y: 0}
   promptType: 2
   text: The game will have a [art style] art style.
-  completed: 1
+  imageColumn: 0
+  completed: 0
   AnswersStorage:
   - answerColumn:
-    - text: Cel Shading
+    - text: minimalist
       production: 70
       satisfaction: 45
       censorFulfillment: 85
@@ -28,6 +29,7 @@ MonoBehaviour:
       feedbackText: This sounds absolutely delightful. I love fun, simple styles
         the best.
       criticType: 4
+      image: {fileID: 0}
     - text: Low Poly
       production: 55
       satisfaction: 55
@@ -38,6 +40,7 @@ MonoBehaviour:
       feedbackText: 'Sometimes the art style limits the content we could explore
         in-game, and this seems to be the case here. '
       criticType: 0
+      image: {fileID: 0}
     - text: Pixel Art
       production: 50
       satisfaction: 65
@@ -47,6 +50,7 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: It's a bit simple but I like it.
       criticType: 4
+      image: {fileID: 0}
     - text: Anime
       production: 40
       satisfaction: 75
@@ -57,6 +61,7 @@ MonoBehaviour:
       feedbackText: 'This is the mainstream at the moment, and I believe there are
         a lot possibilities we can explore! '
       criticType: 0
+      image: {fileID: 0}
     - text: Photorealism
       production: 80
       satisfaction: 85
@@ -66,6 +71,7 @@ MonoBehaviour:
       feedbackType: 2
       feedbackText: 'Well, this just sounds average. Meh. '
       criticType: 3
+      image: {fileID: 0}
     - text: Street Art
       production: 80
       satisfaction: 85
@@ -76,6 +82,7 @@ MonoBehaviour:
       feedbackText: I don't love it, but I don't hate it. I will concede that there
         is a market for it, so it will probably pass ANEA scrutiny.
       criticType: 4
+      image: {fileID: 0}
   segments:
   - 'The game will have a '
   - ' art style.'
