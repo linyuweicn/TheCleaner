@@ -16,60 +16,65 @@ MonoBehaviour:
   promptType: 2
   text: In the world, there is a notable conflict between [type of conflict].
   imageColumn: 0
-  completed: 1
+  completed: 0
   AnswersStorage:
   - answerColumn:
     - text: Man vs Nature
-      production: 0
-      satisfaction: 0
-      censorFulfillment: 0
-      innovation: 0
-      totalscore: 0
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      production: 80
+      satisfaction: 42
+      censorFulfillment: 83
+      innovation: 70
+      totalscore: 77
+      feedbackType: 1
+      feedbackText: Man conquering nature is the best and oldest story there is.
+      criticType: 4
       image: {fileID: 0}
     - text: Man vs Technology
-      production: 0
-      satisfaction: 0
-      censorFulfillment: 0
-      innovation: 0
-      totalscore: 0
-      feedbackType: 0
-      feedbackText: 
+      production: 70
+      satisfaction: 72
+      censorFulfillment: 41
+      innovation: 85
+      totalscore: 61
+      feedbackType: 1
+      feedbackText: This topic is very relevant and exciting now and in the future.
+        Also, games are the perfect medium for expressing your imagination.
       criticType: 0
       image: {fileID: 0}
     - text: Man vs Destiny
-      production: 0
-      satisfaction: 0
-      censorFulfillment: 0
-      innovation: 0
-      totalscore: 0
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      production: 65
+      satisfaction: 80
+      censorFulfillment: 24
+      innovation: 70
+      totalscore: 45
+      feedbackType: 1
+      feedbackText: Anybody can change their destiny, but not everyone wants to put
+        in the effort.
+      criticType: 3
       image: {fileID: 0}
     - text: Man vs Society
-      production: 0
-      satisfaction: 0
-      censorFulfillment: 0
-      innovation: 0
-      totalscore: 0
-      feedbackType: 0
-      feedbackText: 
+      production: 90
+      satisfaction: 93
+      censorFulfillment: 8
+      innovation: 90
+      totalscore: 41
+      feedbackType: 1
+      feedbackText: This topic can lead in many directions, so be careful with your
+        decision. A lot of people are not interested in a world that exactly simulates
+        reality; however, fantasy settings have the potential to project our world
+        in a meaningful way as well.
       criticType: 0
       image: {fileID: 0}
     - text: Man vs Supernatural
-      production: 0
-      satisfaction: 0
-      censorFulfillment: 0
-      innovation: 0
-      totalscore: 0
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      production: 75
+      satisfaction: 65
+      censorFulfillment: 70
+      innovation: 65
+      totalscore: 70
+      feedbackType: 1
+      feedbackText: This is interesting because it teaches the player to destroy
+        unnatural things.
+      criticType: 4
       image: {fileID: 0}
   segments:
-  - 'In the '
-  - ', there is a notable conflict between '
-  - ".\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+  - 'In the world, there is a notable conflict between '
+  - .
