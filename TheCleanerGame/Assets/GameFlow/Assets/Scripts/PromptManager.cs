@@ -9,8 +9,8 @@ public class PromptManager : MonoBehaviour
 
     public Dictionary<int, Dictionary<int, PromptObject>> PromptDictionary; //[Day][n-th Prompt]
 
-    [SerializeField] int totalTheme, totalCharacter, totalSetting, totalNarration, TotalProtagonist;
-    int completedTheme, completedCharacter, completedSetting, completedNarration, completedProtagonist;
+    [SerializeField] int totalTheme, totalCharacter, totalSetting, totalNarration, TotalProtagonist, TotalArt;
+    int completedTheme, completedCharacter, completedSetting, completedNarration, completedProtagonist, completedArt;
     //[SerializeField] GameObject ExitDoor;// enable the door when prompts are completed
 
     #endregion
@@ -66,6 +66,8 @@ public class PromptManager : MonoBehaviour
                 return totalNarration;
             case PromptType.Protagonist:
                 return TotalProtagonist;
+            case PromptType.Art:
+                return TotalArt;
             default:
                 return 0;
         }
@@ -85,6 +87,8 @@ public class PromptManager : MonoBehaviour
                 return completedNarration;
             case PromptType.Protagonist:
                 return completedProtagonist;
+            case PromptType.Art:
+                return completedArt;
             default:
                 return 0;
         }
@@ -108,6 +112,9 @@ public class PromptManager : MonoBehaviour
                 break;
             case PromptType.Protagonist:
                 completedProtagonist++;
+                break;
+            case PromptType.Art:
+                completedArt++;
                 break;
         }
     }

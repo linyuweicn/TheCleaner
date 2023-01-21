@@ -15,6 +15,7 @@ MonoBehaviour:
   id: {x: 1, y: 2}
   promptType: 1
   text: The Antagonist of the game will be [adjective] [noun].
+  imageColumn: 0
   completed: 0
   AnswersStorage:
   - answerColumn:
@@ -28,6 +29,7 @@ MonoBehaviour:
       feedbackText: This is a perfect villain. Someone who is so obviously evil even
         a child gets it.
       criticType: 4
+      image: {fileID: 0}
     - text: Comical
       production: 50
       satisfaction: 55
@@ -38,6 +40,7 @@ MonoBehaviour:
       feedbackText: 'Interesting... But a bit too predictable, don''t you think?
         Yet I think there''s more to explore. '
       criticType: 0
+      image: {fileID: 0}
     - text: Greedy
       production: 40
       satisfaction: 65
@@ -47,6 +50,7 @@ MonoBehaviour:
       feedbackType: 3
       feedbackText: Villains are bad enough without being this, too.
       criticType: 3
+      image: {fileID: 0}
     - text: Misguided
       production: 60
       satisfaction: 75
@@ -56,6 +60,7 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: Hmm...I love the misguided, misunderstood, fun ones.
       criticType: 3
+      image: {fileID: 0}
     - text: Charismatic
       production: 70
       satisfaction: 85
@@ -66,6 +71,7 @@ MonoBehaviour:
       feedbackText: Hmm. I feel like this kind of villain is almost too likeble.
         Can't the villain just be evil and dumb?
       criticType: 4
+      image: {fileID: 0}
     - text: Brilliant
       production: 40
       satisfaction: 95
@@ -77,6 +83,7 @@ MonoBehaviour:
         Afterall, there won't be excitement and fun If the villain can't match wits
         with our hero!
       criticType: 0
+      image: {fileID: 0}
   - answerColumn:
     - text: Tyrant
       production: 40
@@ -87,6 +94,7 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: Now that's a bad guy I totally understand.
       criticType: 4
+      image: {fileID: 21300000, guid: 55e7b71595251e54194f34f078bfde9e, type: 3}
     - text: Alien
       production: 70
       satisfaction: 55
@@ -97,6 +105,7 @@ MonoBehaviour:
       feedbackText: I love this! Nothing like something inhuman or impossible to
         make things spicy.
       criticType: 3
+      image: {fileID: 21300000, guid: 8c94b1e87f6bf694fb94da99303e206e, type: 3}
     - text: Cartoon Lizard
       production: 30
       satisfaction: 65
@@ -106,6 +115,7 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: I see what you're doing and I like it! This is a really fun villain.
       criticType: 4
+      image: {fileID: 21300000, guid: d047f37b2ec647d43a079d239946056c, type: 3}
     - text: Hunter
       production: 40
       satisfaction: 75
@@ -117,6 +127,7 @@ MonoBehaviour:
         else than its own villian, not sure how it will create a interesting match
         for the hero.  '
       criticType: 0
+      image: {fileID: 21300000, guid: 9353c65efe8c3044aa895403d7d28728, type: 3}
     - text: Henchman
       production: 40
       satisfaction: 75
@@ -126,6 +137,7 @@ MonoBehaviour:
       feedbackType: 3
       feedbackText: Personally, I don't see it. Is this really the best choice?
       criticType: 0
+      image: {fileID: 21300000, guid: f7211d2c7a9c96c4aaf6b0b0d1a40518, type: 3}
     - text: Nobleman
       production: 30
       satisfaction: 95
@@ -135,6 +147,7 @@ MonoBehaviour:
       feedbackType: 3
       feedbackText: Doesn't sound villainous to me. Can we pick something else please.
       criticType: 3
+      image: {fileID: 21300000, guid: d164c147a0060d8488c554bfd02f00fa, type: 3}
   segments:
   - 'The Antagonist of the game will be '
   - ' '

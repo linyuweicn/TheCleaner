@@ -9,7 +9,8 @@ public enum PromptType
     Setting,
     Narration,
     Protagonist,
-    Antagonist
+    Antagonist,
+    Art
 }
 public enum FeedbackType
 {
@@ -26,8 +27,8 @@ public enum CriticType
     Benjamine,
     Team,
     Luca,
-    Charlie,
-    Olivia
+    Charlie
+    
 }
 
 public enum BrainstormState

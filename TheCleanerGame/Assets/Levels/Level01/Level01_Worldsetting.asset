@@ -16,7 +16,8 @@ MonoBehaviour:
   promptType: 2
   text: The game will be set in a [world setting] with a focus on [unique style]
     game mechanic.
-  completed: 1
+  imageColumn: 0
+  completed: 0
   AnswersStorage:
   - answerColumn:
     - text: Post Apocalyptic Future
@@ -30,26 +31,29 @@ MonoBehaviour:
         right way, but the NEA doesn't like content that focuses on the failures
         of our modern world.
       criticType: 4
+      image: {fileID: 21300000, guid: bfb9c69483945f84d9e2caa8d49d29b9, type: 3}
     - text: World of Candy People
       production: 50
       satisfaction: 45
       censorFulfillment: 85
       innovation: 80
       totalscore: 80
-      feedbackType: 3
+      feedbackType: 1
       feedbackText: OMG. Help me. Get me outta here. We're not in a sugary hurry
         or anything.
       criticType: 3
+      image: {fileID: 21300000, guid: 5f83ba1b8c1b57246973a392859bd143, type: 3}
     - text: Underwater Atlantis
-      production: 0
-      satisfaction: 0
-      censorFulfillment: 0
-      innovation: 0
-      totalscore: 71
+      production: 70
+      satisfaction: 59
+      censorFulfillment: 70
+      innovation: 80
+      totalscore: 76
       feedbackType: 1
       feedbackText: This is a great idea! So little is known about Atlantis, so it
         has a lot of potential to be a cool world to explore.
       criticType: 4
+      image: {fileID: 21300000, guid: 254dfb74f4a56b34a8e5662d3dc1f9c8, type: 3}
     - text: Alien Homeworld
       production: 85
       satisfaction: 65
@@ -59,26 +63,29 @@ MonoBehaviour:
       feedbackType: 2
       feedbackText: I guess this could be cool. Depends on how it's done, really.
       criticType: 3
+      image: {fileID: 21300000, guid: dc739d5b940d1134c9cefb97d33ec76a, type: 3}
     - text: Hellscape of Dungeons, Demons, Dragons, and Devils
       production: 60
       satisfaction: 95
       censorFulfillment: 10
       innovation: 90
       totalscore: 47
-      feedbackType: 3
+      feedbackType: 1
       feedbackText: 'It is no doubt that such world settings bring excitement and
         fantasies, but I''m also concerned if we go too far and get the NEA''s attention.  '
       criticType: 0
+      image: {fileID: 21300000, guid: 82103c7bc0921e54594a6d3e9ad24760, type: 3}
     - text: Series of Historical Battles
       production: 90
       satisfaction: 85
       censorFulfillment: 25
       innovation: 80
       totalscore: 47
-      feedbackType: 3
+      feedbackType: 1
       feedbackText: 'Do we really want to focus so much on the past? The ANEA has
         emphasized that they want to focus on future facing content. '
       criticType: 1
+      image: {fileID: 21300000, guid: 68ce8aae04880a84a8a9ed78ff5e97f3, type: 3}
   - answerColumn:
     - text: Racing Simulator
       production: 55
@@ -91,6 +98,7 @@ MonoBehaviour:
         vehicles other than the usual ones we've seen in a racing game? I'd like
         to see your imagination on this.
       criticType: 0
+      image: {fileID: 0}
     - text: Tactical Espionage
       production: 60
       satisfaction: 95
@@ -101,6 +109,7 @@ MonoBehaviour:
       feedbackText: Sneaking around isn't my style, but if it's for a good cause,
         you may be able to talk me into it.
       criticType: 3
+      image: {fileID: 0}
     - text: Battle Royale
       production: 90
       satisfaction: 85
@@ -112,6 +121,7 @@ MonoBehaviour:
         engage in wonton violence? I feel like we can do better and I'm confident
         the NEA will say the same.
       criticType: 0
+      image: {fileID: 0}
     - text: Educational Puzzles
       production: 40
       satisfaction: 45
@@ -122,6 +132,7 @@ MonoBehaviour:
       feedbackText: Who needs action and violence when you have EDUCATION! The NEA
         loves anything that is kid-friendly, so this will be very easy to approve.
       criticType: 4
+      image: {fileID: 0}
     - text: Side Scrolling Action
       production: 35
       satisfaction: 65
@@ -133,6 +144,7 @@ MonoBehaviour:
         trying to explore. I also believe 2D games have unique traits that attract
         players, keep adventuring!
       criticType: 3
+      image: {fileID: 0}
     - text: First Person Shooter
       production: 90
       satisfaction: 75
@@ -144,6 +156,7 @@ MonoBehaviour:
         ban it outright but be aware that they are scrutinizing these games more
         than others. '
       criticType: 4
+      image: {fileID: 0}
   segments:
   - 'The game will be set in a '
   - ' with a focus on '

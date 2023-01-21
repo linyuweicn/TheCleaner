@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Level03_ArtStyle
   m_EditorClassIdentifier: 
   id: {x: 2, y: 0}
-  promptType: 2
+  promptType: 6
   text: The game will have a [art style] art style.
   imageColumn: 0
-  completed: 0
+  completed: 1
   AnswersStorage:
   - answerColumn:
     - text: minimalist
@@ -29,7 +29,7 @@ MonoBehaviour:
       feedbackText: This sounds absolutely delightful. I love fun, simple styles
         the best.
       criticType: 4
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: a2f1b456728af4240a1b4c50b90a5e3b, type: 3}
     - text: Low Poly
       production: 55
       satisfaction: 55
@@ -40,7 +40,7 @@ MonoBehaviour:
       feedbackText: 'Sometimes the art style limits the content we could explore
         in-game, and this seems to be the case here. '
       criticType: 0
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 815ca9a824b34ed4b909262c30aa8f3c, type: 3}
     - text: Pixel Art
       production: 50
       satisfaction: 65
@@ -50,7 +50,7 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: It's a bit simple but I like it.
       criticType: 4
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: a6303ccb5a6693d499d81b6021b515da, type: 3}
     - text: Anime
       production: 40
       satisfaction: 75
@@ -61,7 +61,7 @@ MonoBehaviour:
       feedbackText: 'This is the mainstream at the moment, and I believe there are
         a lot possibilities we can explore! '
       criticType: 0
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: ff97e608d4426a24887745b97e9920c2, type: 3}
     - text: Photorealism
       production: 80
       satisfaction: 85
@@ -71,7 +71,7 @@ MonoBehaviour:
       feedbackType: 2
       feedbackText: 'Well, this just sounds average. Meh. '
       criticType: 3
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: ac1abd261d3b4414abc129e79f31f318, type: 3}
     - text: Street Art
       production: 80
       satisfaction: 85
@@ -82,7 +82,7 @@ MonoBehaviour:
       feedbackText: I don't love it, but I don't hate it. I will concede that there
         is a market for it, so it will probably pass ANEA scrutiny.
       criticType: 4
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 4d9b59fdbc59fd84bab8e9f075face95, type: 3}
   segments:
   - 'The game will have a '
   - ' art style.'
