@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreProgress: BrainstormPanelUI
+public class ScoreProgressProduction: BrainstormPanelUI
 {
     private Slider slider;
     private float targetProgress =0f;
@@ -65,9 +65,9 @@ public class ScoreProgress: BrainstormPanelUI
     {
         //totalScore = 0.1f*answer.satisfaction + 0.3f*answer.innovation + 0.5f*answer.censorFulfillment - 0.1f*answer.production;
         //totalScoreText.text = totalScore.ToString();
-        float censorFulfillmentScore = answer.censorFulfillment;
-        //Debug.Log(censorFulfillmentScore);
-        return censorFulfillmentScore;
+        float productionScore = answer.production;
+        Debug.Log("productionScore is " + productionScore);
+        return productionScore;
     }
 
     public void UpdateScoreWhenAnswerRanked(AnswerBox answerBox)
