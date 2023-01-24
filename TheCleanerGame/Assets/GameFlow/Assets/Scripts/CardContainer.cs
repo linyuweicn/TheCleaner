@@ -14,10 +14,12 @@ public class CardContainer : BrainstormPanelUI
     [SerializeField] TextMeshProUGUI mouseOverName;
     [SerializeField] GameObject card;
     [SerializeField] SpriteRenderer image;
-    [SerializeField] Animator animator;
+    [SerializeField] Animator translationAnimator;
+    [SerializeField] Animator mouseAnimator;
 
     AudioManager audioManager;
     BrainstormTutorial brainstormTutorial;
+    Vector3 recordedPos;
 
     [SerializeField] bool mouseOver;
     private bool clickedOn;
@@ -39,6 +41,8 @@ public class CardContainer : BrainstormPanelUI
 
         mouseOverName.text = associatedPrompt.Type.ToString();
         mouseOverPrompt.text = associatedPrompt.Text;
+
+        recordedPos = transform.localPosition;
     }
     #endregion
 
@@ -87,18 +91,21 @@ public class CardContainer : BrainstormPanelUI
 
     IEnumerator Exit()
     {
-        animator.SetTrigger("Exit");
-        yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).IsName("Exit"));
-        yield return new WaitUntil(() => !animator.GetCurrentAnimatorStateInfo(0).IsName("Exit"));
-        Hide();
+        recordedPos = transform.localPosition;
+        translationAnimator.SetTrigger("Exit");
+        yield return new WaitUntil(() => translationAnimator.GetCurrentAnimatorStateInfo(0).IsName("Exit"));
+        yield return new WaitUntil(() => !translationAnimator.GetCurrentAnimatorStateInfo(0).IsName("Exit"));
+        //Hide();
+        transform.localPosition = new Vector3(3000, 3000);
     }
 
     IEnumerator Enter()
     {
-        animator.SetTrigger("Enter");
-        yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).IsName("Enter"));
+        translationAnimator.SetTrigger("Enter");
+        yield return new WaitUntil(() => translationAnimator.GetCurrentAnimatorStateInfo(0).IsName("Enter"));
         Show();
-        yield return new WaitUntil(() => !animator.GetCurrentAnimatorStateInfo(0).IsName("Enter"));
+        transform.localPosition = recordedPos;
+        yield return new WaitUntil(() => !translationAnimator.GetCurrentAnimatorStateInfo(0).IsName("Enter"));
     }
 
     void UpdateText()
@@ -113,13 +120,13 @@ public class CardContainer : BrainstormPanelUI
     private void OnMouseEnter()
     {
         mouseOver = true;
-        animator.SetTrigger("MouseEnter");
+        mouseAnimator.SetTrigger("MouseEnter");
     }
 
     private void OnMouseExit()
     {
         mouseOver = false;
-        animator.SetTrigger("MouseExit");
+        mouseAnimator.SetTrigger("MouseExit");
     }
 
     public void ClickedOn()
