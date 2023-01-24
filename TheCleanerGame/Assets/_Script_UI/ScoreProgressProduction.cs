@@ -8,10 +8,11 @@ public class ScoreProgressProduction: BrainstormPanelUI
     private Slider slider;
     private float targetProgress =0f;
     [SerializeField] float fillSpeed;
-
+    [SerializeField] GameObject FillColor;
+    private Image image;
 
     // inside of your update or animation method
-    
+
 
     private void Awake()
     {
@@ -21,6 +22,8 @@ public class ScoreProgressProduction: BrainstormPanelUI
     void Start()
     {
         slider = gameObject.GetComponent<Slider>();
+        image = FillColor.GetComponent<Image>();
+
         brainstormManager.EventManager.OnAnswerRankedTop += UpdateScoreWhenAnswerRanked;
     }
 
@@ -46,19 +49,23 @@ public class ScoreProgressProduction: BrainstormPanelUI
 
     public void IncrementProgress(float newProgress)
     {
-        //newProgress = answer.totalscore;
-        /*if (newProgress >= targetProgress)
-        {
-            targetProgress = slider.value + newProgress;
-        }
-        else
-        {
-            targetProgress = newProgress;
-        }*/
-
         targetProgress = newProgress;
 
-        //Debug.Log("new progress is "+ newProgress);
+        if (targetProgress < 50)
+        {
+            image.color = new Color32(148, 203, 72, 255);//green, it means the production cost is low
+
+            
+        }
+        else if (targetProgress < 70 && targetProgress > 51)
+        {
+
+            image.color = new Color32(226, 231, 17, 255);
+        }
+        else if (targetProgress > 70)
+        {
+            image.color = new Color32(219, 62, 47, 255);
+        }
     }
 
     public float GetScoreFromAnswer(AnswerObject answer)

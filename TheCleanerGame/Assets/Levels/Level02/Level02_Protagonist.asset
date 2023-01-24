@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Level02_Protagonist
   m_EditorClassIdentifier: 
   id: {x: 1, y: 0}
-  promptType: 4
+  promptType: 2
   text: The NEW HERO of the game will be [adjective] [noun].
+  imageColumn: 0
   completed: 0
   AnswersStorage:
   - answerColumn:
@@ -27,6 +28,7 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: 'This kind of character is a perfect role model for our nation. '
       criticType: 4
+      image: {fileID: 0}
     - text: Brave
       production: 40
       satisfaction: 55
@@ -36,6 +38,7 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: Yes! Who doesn't love a character with such charisma?
       criticType: 0
+      image: {fileID: 0}
     - text: Powerful
       production: 30
       satisfaction: 65
@@ -45,6 +48,7 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: Wow. I really like that. I can already see the character.
       criticType: 4
+      image: {fileID: 0}
     - text: Mysterious
       production: 65
       satisfaction: 75
@@ -54,6 +58,7 @@ MonoBehaviour:
       feedbackType: 2
       feedbackText: 'I see your intention here, but think of polishing it up more. '
       criticType: 0
+      image: {fileID: 0}
     - text: Unusual
       production: 4
       satisfaction: 74
@@ -63,6 +68,7 @@ MonoBehaviour:
       feedbackType: 3
       feedbackText: Are you sure this is the kind of trait you want a HERO to have?
       criticType: 4
+      image: {fileID: 0}
     - text: Mischievous
       production: 40
       satisfaction: 95
@@ -73,6 +79,7 @@ MonoBehaviour:
       feedbackText: hmm, very unconventional. I'm just afraid it won't be too appealing
         to the NEA Censors.
       criticType: 0
+      image: {fileID: 0}
   - answerColumn:
     - text: Cartoon Dog
       production: 40
@@ -83,6 +90,7 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: 'I LOVE this character already. '
       criticType: 4
+      image: {fileID: 21300000, guid: 49f910c1f6e077c40884d84d2524ce60, type: 3}
     - text: Scientist
       production: 55
       satisfaction: 55
@@ -92,6 +100,7 @@ MonoBehaviour:
       feedbackType: 3
       feedbackText: Really? Come on, guys.
       criticType: 3
+      image: {fileID: 21300000, guid: e7dba88a48c193c4f98f412767ddea0b, type: 3}
     - text: Super Soldier
       production: 0
       satisfaction: 0
@@ -102,6 +111,7 @@ MonoBehaviour:
       feedbackText: 'Interesting. This type of character can go either way, and be
         careful for what could be censored. '
       criticType: 0
+      image: {fileID: 21300000, guid: 17c69d7b47833b5419c738cca490282c, type: 3}
     - text: Spy
       production: 65
       satisfaction: 75
@@ -111,6 +121,7 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: Oh cool. I can totally see this type of hero.
       criticType: 4
+      image: {fileID: 21300000, guid: 94ce0e9eb5c11f64ea85906aaded509f, type: 3}
     - text: Farmer
       production: 40
       satisfaction: 85
@@ -121,6 +132,7 @@ MonoBehaviour:
       feedbackText: 'I''m not sure if it is a good idea. We are making a game, not
         duplicate reality, try to think out of the box more. '
       criticType: 0
+      image: {fileID: 21300000, guid: 1c4dd1c148188b74eb51bf4c3e369a40, type: 3}
     - text: Demon
       production: 30
       satisfaction: 95
@@ -130,6 +142,7 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: Now that's what I'm talking about.
       criticType: 3
+      image: {fileID: 21300000, guid: 4f7b7bfb2b5183b4cb993c61d3f7c003, type: 3}
   segments:
   - 'The NEW HERO of the game will be '
   - ' '

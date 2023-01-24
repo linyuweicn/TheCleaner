@@ -3,46 +3,46 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreProgressInnovation: BrainstormPanelUI
+public class ScoreProgressCensorship: BrainstormPanelUI
 {
-    private Slider slider;
-    private float targetProgress =0f;
+    
+    private float targetProgress = 0f;
     [SerializeField] float fillSpeed;
-    [SerializeField] GameObject FillColor;
+    
     private Image image;
-
 
     // inside of your update or animation method
 
 
     private void Awake()
     {
-        
+
     }
 
     void Start()
     {
-        slider = gameObject.GetComponent<Slider>();
-        image = FillColor.GetComponent<Image>();
+        
+        image = gameObject.GetComponent<Image>();
+
         brainstormManager.EventManager.OnAnswerRankedTop += UpdateScoreWhenAnswerRanked;
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-        if (slider.value < targetProgress)
+
+        if (image.fillAmount < targetProgress)
         {
-            
-            slider.value += fillSpeed * Time.deltaTime;
+
+            image.fillAmount += fillSpeed * Time.deltaTime;
         }
-        else if (slider.value > targetProgress + fillSpeed * Time.deltaTime)
+        else if (image.fillAmount > targetProgress + fillSpeed * Time.deltaTime)
         {
-            slider.value -= fillSpeed * Time.deltaTime;
+            image.fillAmount -= fillSpeed * Time.deltaTime;
         }
         else
         {
-            slider.value = targetProgress;
+            image.fillAmount = targetProgress;
         }
 
     }
@@ -51,18 +51,20 @@ public class ScoreProgressInnovation: BrainstormPanelUI
     {
         targetProgress = newProgress;
 
-        if (targetProgress < 50)
+        if (targetProgress < 0.5)
         {
+            image.color = new Color32(219, 62, 47, 255);//red
 
-            image.color = new Color32(219, 62, 47, 255);
+
         }
-        else if (targetProgress < 70 && targetProgress > 51)
+        else if (targetProgress < 0.7 && targetProgress > 0.51)
         {
 
             image.color = new Color32(226, 231, 17, 255);
         }
-        else if (targetProgress > 70)
+        else if (targetProgress > 0.7)
         {
+            
             image.color = new Color32(148, 203, 72, 255);
         }
     }
@@ -71,9 +73,9 @@ public class ScoreProgressInnovation: BrainstormPanelUI
     {
         //totalScore = 0.1f*answer.satisfaction + 0.3f*answer.innovation + 0.5f*answer.censorFulfillment - 0.1f*answer.production;
         //totalScoreText.text = totalScore.ToString();
-        float innovationScore = answer.innovation;
-        Debug.Log("innovationScore is " + innovationScore);
-        return innovationScore;
+        float censorshipScore = answer.censorFulfillment; 
+        Debug.Log("censorshipScore is " + censorshipScore);
+        return censorshipScore;
     }
 
     public void UpdateScoreWhenAnswerRanked(AnswerBox answerBox)
@@ -113,21 +115,21 @@ public class ScoreProgressInnovation: BrainstormPanelUI
         //Debug.Log(tempScores.ToString());
 
         //increment the likeness bar
-        IncrementProgress(totalScores);
+        IncrementProgress(totalScores/100); // because the censorship ring uses image.fill which is from 0-1
     }
 
     public override void TransitionFromStates(BrainstormState oldState, BrainstormState newState)
     {
-        
+
     }
 
     public override void Show()
     {
-        slider.enabled = true;
+        image.enabled = true;
     }
 
     public override void Hide()
     {
-        slider.enabled = false;
+        image.enabled = false;
     }
 }

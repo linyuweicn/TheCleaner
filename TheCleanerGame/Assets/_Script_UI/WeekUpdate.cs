@@ -15,7 +15,7 @@ public class WeekUpdate : MonoBehaviour
     {
         if (isWeekNumber)
         {
-            WeekNumber = SceneManager.GetActiveScene().buildIndex-1;
+            WeekNumber = SceneManager.GetActiveScene().buildIndex;
             Text.text = "Week 0" + WeekNumber;
         }
         
