@@ -19,6 +19,7 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
 
     Vector3 origPosition;
     [SerializeField] Vector3 NewPosition;
+    public bool startConvAtBegining;
 
     private bool canTurnOffCollider; //GeneralObjects uses this 
 
@@ -27,6 +28,11 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
     {
 
         origPosition = transform.position;
+        if (startConvAtBegining)
+        {
+            StartCoroutine(TriggerConv());
+            Debug.Log("start 1 conv");
+        }
 
     }
 
@@ -87,7 +93,7 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
        
     }
 
-    private void OnMouseOver()
+    public void OnMouseDown()
     {
         if (!BrainstormGeneralManager.Instance.ContainerDictionary[0].Prompt.completed)
         {
@@ -109,9 +115,7 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
     {
         
 
-        if (Input.GetMouseButtonDown(0))
-        {
-
+       
 
             if (SceneTransitionButton.gameIsPaused)
             {
@@ -139,13 +143,12 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
 
             }
 
-        }
+        
     }
 
     public void StartAfterBeforeWhieBoard()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
+        
             if (SceneTransitionButton.gameIsPaused)
             {
                 Debug.Log("game is paused and prevent conversation");
@@ -171,7 +174,7 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
                 }
             }
 
-        }
+        
     }
 
     IEnumerator MovingTo(Vector3 pos, float speed)
@@ -200,5 +203,13 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
         StartCoroutine(MovingTo(NewPosition, 0.2f));
     }
 
+    IEnumerator TriggerConv()
+    {
+        yield return new WaitForSeconds(2.1f);
+        OnMouseDown();
 
-}
+        //Input.GetMouseButtonDown(0);
+    }
+
+
+    }

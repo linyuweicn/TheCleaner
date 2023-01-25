@@ -110,7 +110,6 @@ public class ScoreProgressInnovation: BrainstormPanelUI
 
         float totalScores = tempScores / count;
 
-        //Debug.Log(tempScores.ToString());
 
         //increment the likeness bar
         IncrementProgress(totalScores);

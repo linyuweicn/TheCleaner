@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Level03_NarrationPlayerExp
   m_EditorClassIdentifier: 
   id: {x: 2, y: 1}
-  promptType: 3
+  promptType: 1
   text: 'The plot of the game will be told through a [narration type] narrative with
     a focus on [player experience]. '
+  imageColumn: 0
   completed: 1
   AnswersStorage:
   - answerColumn:
@@ -29,6 +30,7 @@ MonoBehaviour:
       feedbackText: 'Interactivity is always key to a good game experience. Yet sometimes
         it is not only about the interactivity itself, but how and why the interaction. '
       criticType: 0
+      image: {fileID: 0}
     - text: Linear
       production: 55
       satisfaction: 59
@@ -38,6 +40,7 @@ MonoBehaviour:
       feedbackType: 3
       feedbackText: Why would I play if I can't change anything? Sounds terrible.
       criticType: 0
+      image: {fileID: 0}
     - text: String of Pearls
       production: 50
       satisfaction: 71
@@ -48,6 +51,7 @@ MonoBehaviour:
       feedbackText: I can see how this can be fun. It will be a lot to review, but
         that's what the NEA is for!
       criticType: 4
+      image: {fileID: 0}
     - text: Branching
       production: 80
       satisfaction: 83
@@ -59,6 +63,7 @@ MonoBehaviour:
         to freely and interactively explore themselves as the protagonists of the
         world. '
       criticType: 0
+      image: {fileID: 0}
     - text: Environmental
       production: 90
       satisfaction: 95
@@ -69,6 +74,7 @@ MonoBehaviour:
       feedbackText: 'Great Idea. Environmental storytelling is just as critical as
         written texts to convey emotions. '
       criticType: 0
+      image: {fileID: 0}
   - answerColumn:
     - text: Parasocial Character Development
       production: 50
@@ -80,6 +86,7 @@ MonoBehaviour:
       feedbackText: 'Love it. Connecting with your character emotionally always signifies
         immersive and meaningful game play. '
       criticType: 0
+      image: {fileID: 0}
     - text: Changing the Environment
       production: 60
       satisfaction: 83
@@ -90,6 +97,7 @@ MonoBehaviour:
       feedbackText: 'I''m not sure the NEA wants the general public to feel like
         they can make changes to the world. What if they change the real world?! '
       criticType: 4
+      image: {fileID: 0}
     - text: Completing the Narrative
       production: 30
       satisfaction: 59
@@ -100,6 +108,7 @@ MonoBehaviour:
       feedbackText: 'The narratives are only one element of a game, but they shouldn''t
         be consuming the other aspects.   '
       criticType: 0
+      image: {fileID: 0}
     - text: Online Multiplayer Matches
       production: 70
       satisfaction: 47
@@ -110,6 +119,7 @@ MonoBehaviour:
       feedbackText: 'This style is not usually story focused, it''s money focused
         and the ANEA loves money. '
       criticType: 4
+      image: {fileID: 0}
     - text: Wish Fulfillment
       production: 50
       satisfaction: 71
@@ -120,6 +130,7 @@ MonoBehaviour:
       feedbackText: Well I guess people want to be entertained, but are we sure we
         want to give audiences that much agency?
       criticType: 4
+      image: {fileID: 0}
   segments:
   - 'The plot of the game will be told through a '
   - ' narrative with a focus on '

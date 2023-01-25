@@ -53,9 +53,7 @@ public class ScoreProgressProduction: BrainstormPanelUI
 
         if (targetProgress < 50)
         {
-            image.color = new Color32(148, 203, 72, 255);//green, it means the production cost is low
-
-            
+            image.color = new Color32(219, 62, 47, 255);
         }
         else if (targetProgress < 70 && targetProgress > 51)
         {
@@ -64,7 +62,8 @@ public class ScoreProgressProduction: BrainstormPanelUI
         }
         else if (targetProgress > 70)
         {
-            image.color = new Color32(219, 62, 47, 255);
+            image.color = new Color32(148, 203, 72, 255);
+           
         }
     }
 
@@ -73,7 +72,7 @@ public class ScoreProgressProduction: BrainstormPanelUI
         //totalScore = 0.1f*answer.satisfaction + 0.3f*answer.innovation + 0.5f*answer.censorFulfillment - 0.1f*answer.production;
         //totalScoreText.text = totalScore.ToString();
         float productionScore = answer.production;
-        Debug.Log("productionScore is " + productionScore);
+        //Debug.Log("productionScore is " + productionScore);
         return productionScore;
     }
 
@@ -86,7 +85,7 @@ public class ScoreProgressProduction: BrainstormPanelUI
 
         switch (type)
         {
-            case PromptType.Theme:
+            case PromptType.Theme: 
                 BrainstormGeneralManager.AveScore[0] = tempScores;
                 j = 0;
                 break;
@@ -109,12 +108,16 @@ public class ScoreProgressProduction: BrainstormPanelUI
             }
         };
 
-        float totalScores = tempScores / count;
+        float totalScores = (tempScores / count);
+        //float reverseTotalScore = 100 - totalScores;
+
+        Debug.Log(" production is " + totalScores);
 
         //Debug.Log(tempScores.ToString());
 
         //increment the likeness bar
         IncrementProgress(totalScores);
+        //Debug.Log("productionScore is " + totalScores);
     }
 
     public override void TransitionFromStates(BrainstormState oldState, BrainstormState newState)

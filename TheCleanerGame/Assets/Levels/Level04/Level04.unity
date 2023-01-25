@@ -732,6 +732,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 692556651611313370, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_text
+      value: Presentation day
+      objectReference: {fileID: 0}
     - target: {fileID: 1969992102177298768, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1244,6 +1248,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &196518443 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 467800783101137072, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+  m_PrefabInstance: {fileID: 196518430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &199617868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1258,6 +1267,10 @@ PrefabInstance:
     - target: {fileID: 334627398, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlaySFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 246780854459378429, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: m_text
+      value: Benjamine
       objectReference: {fileID: 0}
     - target: {fileID: 600523516364753233, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1355,6 +1368,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 3836115416211631155, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f5bc9a284532ad94bb4cd6c2933b1797, type: 3}
     - target: {fileID: 4917537125187386384, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
@@ -1501,11 +1518,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5735007599962322208, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: TotalArt
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5735007599962322208, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: totalTheme
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5735007599962322208, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: totalSetting
@@ -1513,11 +1530,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5735007599962322208, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: totalCharacter
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5735007599962322208, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: totalNarration
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5735007600028711157, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: m_text
@@ -1565,7 +1582,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6742359450972898650, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7448905675819679138, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: m_IsActive
@@ -1776,11 +1793,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 22
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":21}],"EditorInfo":{"isRoot":true,"xPos":-51.666687,"yPos":-321},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Morning
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":21}],"EditorInfo":{"isRoot":true,"xPos":115.999969,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Morning
     Lia, I believe you remember Mr. Benjamine, he will be the judges for today''s
-    presentation.","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":-48.666687,"yPos":61},"ID":6,"ParamActions":[],"TMPFontGUID":null,"Text":"Thank
-    you Yiran","parentUIDs":[10],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":6}],"EditorInfo":{"isRoot":false,"xPos":-54,"yPos":-71},"ID":10,"ParamActions":[],"TMPFontGUID":null,"Text":"I
-    believe in the game you are making. See you in the office later.","parentUIDs":[21],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":10}],"EditorInfo":{"isRoot":false,"xPos":-50.8333435,"yPos":-195},"ID":21,"ParamActions":[],"TMPFontGUID":null,"Text":"Just
+    presentation.","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":118.999969,"yPos":404},"ID":6,"ParamActions":[],"TMPFontGUID":null,"Text":"Thank
+    you Yiran","parentUIDs":[10],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":6}],"EditorInfo":{"isRoot":false,"xPos":113.666656,"yPos":272},"ID":10,"ParamActions":[],"TMPFontGUID":null,"Text":"I
+    believe in the game you are making. See you in the office later.","parentUIDs":[21],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":10}],"EditorInfo":{"isRoot":false,"xPos":116.833313,"yPos":148},"ID":21,"ParamActions":[],"TMPFontGUID":null,"Text":"Just
     relax and answer his question honestly. ","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: 
@@ -1800,6 +1817,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1800908163}
+        m_TargetAssemblyTypeName: NPCConvWithWhiteBoard, Assembly-CSharp
+        m_MethodName: MoveToNewPos
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2230,6 +2259,8 @@ MonoBehaviour:
     _prefab: Assets/Prefabs/Calendars and scene transition/EndTheDayCalendar.prefab
   - _gameObject: {fileID: 196518434}
     _prefab: Assets/Prefabs/Camera Prefabs/ExitOffice.prefab
+  - _gameObject: {fileID: 196518443}
+    _prefab: Assets/Levels/Level03/Luca's Note.prefab
   - _gameObject: {fileID: 196518436}
     _prefab: Assets/Prefabs/Calendars and scene transition/CrossFade.prefab
   - _gameObject: {fileID: 196518437}
@@ -4267,11 +4298,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7932807439458813120, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -64.8
+      value: -43.4
       objectReference: {fileID: 0}
     - target: {fileID: 7932807439458813120, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.39
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7932807439458813120, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4327,11 +4358,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: NewPosition.x
-      value: 12.9
+      value: 10.2
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: NewPosition.y
-      value: 1.65
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
+      propertyPath: startConvAtBegining
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: boxCollider2D.Array.size
@@ -4375,7 +4410,11 @@ PrefabInstance:
       objectReference: {fileID: 387035347}
     - target: {fileID: 7932807440485901663, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.9
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7932807440485901663, guid: 15923eefecdf7434785518204a650a62, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15923eefecdf7434785518204a650a62, type: 3}
@@ -4554,11 +4593,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9177617733875777336, guid: 4c73a6c272e85074d8770b4ee89fb519, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -12656.605
+      value: -14549.444
       objectReference: {fileID: 0}
     - target: {fileID: 9177617733875777336, guid: 4c73a6c272e85074d8770b4ee89fb519, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -128627.3
+      value: -148842.39
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c73a6c272e85074d8770b4ee89fb519, type: 3}
@@ -5645,6 +5684,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1800908163}
+        m_TargetAssemblyTypeName: NPCConvWithWhiteBoard, Assembly-CSharp
+        m_MethodName: MoveToNewPos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   NodeID: 6
   TMPFont: {fileID: 0}
   Icon: {fileID: 21300000, guid: 7fbac77c32bc5d84287dbed7468734e5, type: 3}
@@ -5701,19 +5752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1800908163}
-        m_TargetAssemblyTypeName: NPCConvWithWhiteBoard, Assembly-CSharp
-        m_MethodName: MoveToNewPos
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   NodeID: 21
   TMPFont: {fileID: 0}
   Icon: {fileID: 21300000, guid: a056ab62475517c4ba23e3b3061d91c0, type: 3}
