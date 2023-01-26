@@ -5,9 +5,10 @@ using DialogueEditor;
 
 public class TriggerConvAfterPrompts : MonoBehaviour
 {
-    [SerializeField] NPCConversation EndingComments;
+    //[SerializeField] NPCConversation EndingComments;
     [SerializeField] GameObject npc;
     private bool hasTriggered;
+    public NPCConvWithWhiteBoard npcScript;
     void Start()
     {
         
@@ -29,6 +30,7 @@ public class TriggerConvAfterPrompts : MonoBehaviour
             Debug.Log("trigger end");
             npc.SetActive(true);
             StartCoroutine(StartConv());
+            
             hasTriggered = true;
         }
         else
@@ -43,7 +45,8 @@ public class TriggerConvAfterPrompts : MonoBehaviour
 
         //Trigger conv after the animation + close the canvas
         // has been triggred is true
-        ConversationManager.Instance.StartConversation(EndingComments);
+        npcScript.OnMouseDown();
+        //ConversationManager.Instance.StartConversation(EndingComments);
     }
 
   

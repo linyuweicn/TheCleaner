@@ -24,13 +24,20 @@ public class SceneTransitionButton : MonoBehaviour
             pauseGame();
 
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            SceneManager.LoadScene(0);
-        }
+
         else if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            
+            ToNextScene();
+            Debug.Log("to next scene");
         }
 
     }
@@ -61,7 +68,10 @@ public class SceneTransitionButton : MonoBehaviour
     public void CloseGame()
     {
         Application.Quit();
+        Debug.Log("quit");
     }
+
+    
     public void ToStartPage()
     {
         SceneManager.LoadScene(0);

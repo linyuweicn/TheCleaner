@@ -19,6 +19,9 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
 
     Vector3 origPosition;
     [SerializeField] Vector3 NewPosition;
+    [SerializeField] Vector3 NewPosition2;
+    [SerializeField] Vector3 NewPosition3;
+
     public bool startConvAtBegining;
 
     private bool canTurnOffCollider; //GeneralObjects uses this 
@@ -201,6 +204,16 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
     public void MoveToNewPos()
     { 
         StartCoroutine(MovingTo(NewPosition, 0.2f));
+    }
+
+    public void MoveToNewPos2()
+    {
+        StartCoroutine(MovingTo(NewPosition2, 0.2f));
+    }
+
+    public void MoveToNewPos3()
+    {
+        StartCoroutine(MovingTo(NewPosition3, 0.2f));
     }
 
     IEnumerator TriggerConv()

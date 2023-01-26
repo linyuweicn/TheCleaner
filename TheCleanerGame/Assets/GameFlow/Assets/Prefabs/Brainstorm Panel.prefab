@@ -6561,11 +6561,11 @@ MonoBehaviour:
   feedbackText: {fileID: 3809346304989384095}
   summaryUIList:
   - scoreRange: {x: -1000, y: 50}
-    feedbackText: You did Bad
+    feedbackText: WIP Comment
   - scoreRange: {x: 51, y: 100}
-    feedbackText: You did Good
+    feedbackText: WIP Comment
   - scoreRange: {x: 101, y: 2000}
-    feedbackText: You did really well
+    feedbackText: WIP Comment
 --- !u!1 &6740753602045853296
 GameObject:
   m_ObjectHideFlags: 0
@@ -8065,8 +8065,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655ebc1ebc204ae4f9b7965bc2fb058c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EndingComments: {fileID: 0}
   npc: {fileID: 0}
+  npcScript: {fileID: 0}
 --- !u!114 &4785266267069755341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9107,13 +9107,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8201317553172113634}
     - target: {fileID: 5182886351303746990, guid: da66e57bc058d7e4fa567cce49d73fde, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182886351303746990, guid: da66e57bc058d7e4fa567cce49d73fde, type: 3}
       propertyPath: B4CompleteConversations.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5182886351303746990, guid: da66e57bc058d7e4fa567cce49d73fde, type: 3}
       propertyPath: B4CompleteConversations.Array.data[0]
       value: 
-      objectReference: {fileID: 9058479444864103349}
+      objectReference: {fileID: 0}
     - target: {fileID: 6164352820052783172, guid: da66e57bc058d7e4fa567cce49d73fde, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -9301,13 +9305,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5182886351303746990, guid: da66e57bc058d7e4fa567cce49d73fde, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182886351303746990, guid: da66e57bc058d7e4fa567cce49d73fde, type: 3}
       propertyPath: B4CompleteConversations.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5182886351303746990, guid: da66e57bc058d7e4fa567cce49d73fde, type: 3}
       propertyPath: B4CompleteConversations.Array.data[0]
       value: 
-      objectReference: {fileID: 4851492012800111778}
+      objectReference: {fileID: 0}
     - target: {fileID: 6164352820052783172, guid: da66e57bc058d7e4fa567cce49d73fde, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -9487,6 +9495,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2156640809727826525}
     - target: {fileID: 5182886351303746990, guid: da66e57bc058d7e4fa567cce49d73fde, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182886351303746990, guid: da66e57bc058d7e4fa567cce49d73fde, type: 3}
       propertyPath: newColor.b
       value: 1
       objectReference: {fileID: 0}
@@ -9505,7 +9517,7 @@ PrefabInstance:
     - target: {fileID: 5182886351303746990, guid: da66e57bc058d7e4fa567cce49d73fde, type: 3}
       propertyPath: B4CompleteConversations.Array.data[0]
       value: 
-      objectReference: {fileID: 9083056584869238325}
+      objectReference: {fileID: 0}
     - target: {fileID: 5182886351303746990, guid: da66e57bc058d7e4fa567cce49d73fde, type: 3}
       propertyPath: B4CompleteConversations.Array.data[1]
       value: 

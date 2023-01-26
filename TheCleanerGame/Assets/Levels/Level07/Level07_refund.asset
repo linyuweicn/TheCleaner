@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level07_refund
   m_EditorClassIdentifier: 
   id: {x: 6, y: 0}
-  promptType: 2
+  promptType: 0
   text: For mispurchase by players age 16 and below, we can refund [percentage] in-game
     purcahse.
   imageColumn: 0
@@ -21,53 +21,55 @@ MonoBehaviour:
   AnswersStorage:
   - answerColumn:
     - text: 0%
-      production: 0
-      satisfaction: 0
-      censorFulfillment: 0
-      innovation: 0
-      totalscore: 0
+      production: 80
+      satisfaction: 43
+      censorFulfillment: 90
+      innovation: 50
+      totalscore: 80
       feedbackType: 0
       feedbackText: 
       criticType: 0
       image: {fileID: 0}
     - text: 25%
-      production: 0
-      satisfaction: 0
-      censorFulfillment: 0
-      innovation: 0
-      totalscore: 0
+      production: 80
+      satisfaction: 84
+      censorFulfillment: 60
+      innovation: 50
+      totalscore: 68
       feedbackType: 0
       feedbackText: 
       criticType: 0
       image: {fileID: 0}
     - text: 50%
-      production: 0
-      satisfaction: 0
-      censorFulfillment: 0
-      innovation: 0
-      totalscore: 0
+      production: 80
+      satisfaction: 68
+      censorFulfillment: 70
+      innovation: 50
+      totalscore: 72
       feedbackType: 0
       feedbackText: 
       criticType: 0
       image: {fileID: 0}
     - text: 75%
-      production: 0
-      satisfaction: 0
-      censorFulfillment: 0
-      innovation: 0
-      totalscore: 0
+      production: 80
+      satisfaction: 56
+      censorFulfillment: 80
+      innovation: 50
+      totalscore: 76
       feedbackType: 0
       feedbackText: 
       criticType: 0
       image: {fileID: 0}
     - text: 100%
-      production: 0
-      satisfaction: 0
-      censorFulfillment: 0
-      innovation: 0
-      totalscore: 0
+      production: 80
+      satisfaction: 43
+      censorFulfillment: 90
+      innovation: 50
+      totalscore: 80
       feedbackType: 0
       feedbackText: 
       criticType: 0
       image: {fileID: 0}
-  segments: []
+  segments:
+  - 'For mispurchase by players age 16 and below, we can refund '
+  - ' in-game purcahse.'
