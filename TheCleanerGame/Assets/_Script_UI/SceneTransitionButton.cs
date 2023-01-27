@@ -7,6 +7,7 @@ public class SceneTransitionButton : MonoBehaviour
 {
     [SerializeField] Animator aimator; 
     [SerializeField] GameObject PauseMene;
+    [SerializeField] ConvoGlobalManager cgm;
     public static bool gameIsPaused;
     void Start()
     {
@@ -63,6 +64,27 @@ public class SceneTransitionButton : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
             
+    }
+
+    public void ToSpecificScene() //according to dialogue options chosen
+    {
+        StartCoroutine(LoadSpecificScene(cgm.GetComponent<ConvoGlobalManager>().getNextScene()));
+    }
+
+    IEnumerator LoadSpecificScene(int buildIndex)
+    {
+        if (aimator)
+        {
+            aimator.SetTrigger("Start");
+
+            yield return new WaitForSeconds(1f);
+
+            SceneManager.LoadScene(buildIndex);
+        }
+        else
+        {
+            SceneManager.LoadScene(buildIndex);
+        }
     }
 
     public void CloseGame()
