@@ -21,6 +21,7 @@ public class WhtieBoard : MonoBehaviour
     {
         m_Animator = Animator.GetComponent<Animator>();
         audioManager = FindObjectOfType<AudioManager>();
+        WhiteBoardCollider = GetComponent<BoxCollider2D>();
     }
 
     private void OnEnable()

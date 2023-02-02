@@ -221,7 +221,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimatorOrObject: {fileID: 0}
   Colliders: []
-  Objects: []
   OpenAtBegining: 0
 --- !u!1 &1042215866625172460
 GameObject:
@@ -1365,7 +1364,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimatorOrObject: {fileID: 0}
   Colliders: []
-  Objects: []
   OpenAtBegining: 0
 --- !u!1 &4387831575530801352
 GameObject:
@@ -1563,7 +1561,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimatorOrObject: {fileID: 0}
   Colliders: []
-  Objects: []
   OpenAtBegining: 0
 --- !u!61 &3442953122118859208
 BoxCollider2D:
@@ -2210,8 +2207,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimatorOrObject: {fileID: 0}
-  Colliders: []
-  Objects: []
+  Colliders:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 7390087118211352799}
+  - {fileID: 1880798978696324270}
+  - {fileID: 4387831574529843309}
   OpenAtBegining: 0
 --- !u!61 &5943694682644086270
 BoxCollider2D:
@@ -2343,6 +2344,11 @@ PrefabInstance:
 --- !u!4 &1880798978696324269 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1622173594132495604, guid: 83f0536f7381f7d4ebaee8db8d1a4a19, type: 3}
+  m_PrefabInstance: {fileID: 908301052801292377}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1880798978696324270 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 1622173594132495607, guid: 83f0536f7381f7d4ebaee8db8d1a4a19, type: 3}
   m_PrefabInstance: {fileID: 908301052801292377}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1170576862506529932
@@ -2701,6 +2707,11 @@ PrefabInstance:
 --- !u!4 &7390087118211352796 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1622173594132495604, guid: 83f0536f7381f7d4ebaee8db8d1a4a19, type: 3}
+  m_PrefabInstance: {fileID: 8074324517291602984}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &7390087118211352799 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 1622173594132495607, guid: 83f0536f7381f7d4ebaee8db8d1a4a19, type: 3}
   m_PrefabInstance: {fileID: 8074324517291602984}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8481068294274555762

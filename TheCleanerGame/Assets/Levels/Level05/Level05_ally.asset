@@ -17,7 +17,7 @@ MonoBehaviour:
   text: The player will encounter a [adjective] [occupation] member that wishes to
     assist the protagonist.
   imageColumn: 0
-  completed: 1
+  completed: 0
   AnswersStorage:
   - answerColumn:
     - text: Obedient
@@ -82,8 +82,8 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: But hackers are bad guys!
       criticType: 4
-      image: {fileID: 0}
-    - text: Thief
+      image: {fileID: 21300000, guid: 69748f05e3afae74c8524e792744e2fb, type: 3}
+    - text: Goblin Thief
       production: 60
       satisfaction: 89
       censorFulfillment: 25
@@ -92,7 +92,7 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: Thieves can come in handy. It's good to have a guy on the inside.
       criticType: 3
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 2750f0b7bc3470447ae8b09dc527e2b3, type: 3}
     - text: musician
       production: 75
       satisfaction: 72
@@ -102,18 +102,18 @@ MonoBehaviour:
       feedbackType: 2
       feedbackText: Just a regular person. Great.
       criticType: 3
-      image: {fileID: 0}
-    - text: Spy
+      image: {fileID: 21300000, guid: 538419a4fc7aebb4da2382b0891a0d69, type: 3}
+    - text: cat Spy
       production: 90
-      satisfaction: 61
+      satisfaction: 80
       censorFulfillment: 56
       innovation: 80
-      totalscore: 64
+      totalscore: 76
       feedbackType: 1
       feedbackText: 'A spy already implies an exciting setting for the story. The
         character must be powerful too, just what a protagonist needs.  '
       criticType: 0
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 29c4c5acf6eda5f488dc13cea13083cf, type: 3}
     - text: pet shop owner
       production: 85
       satisfaction: 54
@@ -124,7 +124,7 @@ MonoBehaviour:
       feedbackText: My grandma owned a pet shop. That's the only reason I like this
         so much.
       criticType: 4
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 20f448cc01760e84d85ae9f139515931, type: 3}
     - text: Cop
       production: 85
       satisfaction: 42
@@ -134,7 +134,7 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: Positive representation of police would be great.
       criticType: 4
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 25fce54204eca8642a1509292c7fe0b5, type: 3}
   segments:
   - 'The player will encounter a '
   - ' '

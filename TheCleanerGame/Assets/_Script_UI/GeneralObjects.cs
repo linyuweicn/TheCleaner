@@ -13,7 +13,7 @@ public class GeneralObjects : MonoBehaviour
     [SerializeField] BoxCollider2D[] Colliders;
 
     //a temp fix for rn
-    [SerializeField] GameObject[] Objects;
+    //[SerializeField] GameObject[] Objects;
     private bool hasClicked;
     public bool OpenAtBegining;
 
@@ -22,11 +22,11 @@ public class GeneralObjects : MonoBehaviour
     void Start()
     {
        
-        
+     /*   
         for (int i = 0; i < Colliders.Length; i++)
         {
             Colliders[i].GetComponent<Collider2D>();
-        }
+        }*/
 
 
 
@@ -84,12 +84,15 @@ public class GeneralObjects : MonoBehaviour
 
     public void CloseObject()
     {
-
+        hasClicked = false;
+        for (int i = 0; i < Colliders.Length; i++)
+        {
+            Colliders[i].enabled = true;
+        }
 
         if (m_Animator != null)
         {
             m_Animator.SetBool("isOn", false);
-
 
         }
         else
@@ -97,20 +100,23 @@ public class GeneralObjects : MonoBehaviour
             AnimatorOrObject.SetActive(false);
         }
         
-        for (int i = 0; i < Colliders.Length; i++)
-        {
-            Colliders[i].enabled = true;
-        }
-        for (int i = 0; i < Objects.Length; i++)
+    
+        /*for (int i = 0; i < Objects.Length; i++)
         {
             Objects[i].SetActive(true);
-        }
+        }*/
 
-        hasClicked = false;
+        
     }
 
     public void OpenObjects()
     {
+        for (int i = 0; i < Colliders.Length; i++)
+        {
+            Colliders[i].enabled = false;
+
+        }
+
         if (m_Animator != null)
         {
             m_Animator.SetBool("isOn", true); // turn on stuff such as calendar or email
@@ -123,15 +129,11 @@ public class GeneralObjects : MonoBehaviour
         }
         //Disable other clickable objects
 
-        for (int i = 0; i < Colliders.Length; i++)
-        {
-            Colliders[i].enabled = false;
-
-        }
-        for (int i = 0; i < Objects.Length; i++)
+      
+        /*for (int i = 0; i < Objects.Length; i++)
         {
             Objects[i].SetActive(false);
-        }
+        }*/
 
         hasClicked = true;
     }
