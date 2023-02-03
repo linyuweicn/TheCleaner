@@ -19,7 +19,6 @@ public class PromptObject : ScriptableObject
     [Header("Answers")]
     [SerializeField] public List<NestedList> AnswersStorage; //don't modify this
     public List<List<AnswerObject>> Answers;
-    public List<string> segments;
 
     //Answers.count
     #region private class
@@ -75,27 +74,6 @@ public class PromptObject : ScriptableObject
         }
         completed = false;
         displayText = text;
-        ParseSegment();
-    }
-
-    void ParseSegment()
-    {
-        int start = 0;
-        segments = new List<string>();
-        for (int c = 0; c < text.Length; c++)
-        {
-            if (text[c] == '[')
-            {
-                segments.Add(text.Substring(start, c - start));
-                start = c + 1;
-            }
-            else if (text[c] == ']')
-            {
-                start = c + 1;
-                
-            }
-        }
-        segments.Add(text.Substring(start, text.Length - start));
     }
 
     #endregion
@@ -110,20 +88,45 @@ public class PromptObject : ScriptableObject
 
     public void FillInPromptPlaceholders()
     {
-        displayText = segments[0];
-        for (int i = 1; i < segments.Count; i++)
+        displayText = "";
+        bool overwrite = false;
+        int answerIndex = 0;
+        for (int i = 0; i < text.Length; i++)
         {
-            if (i - 1 < Answers.Count)
+            if (!overwrite)
             {
-                displayText += Answers[i - 1][0].text;
+                if (text[i] == '[')
+                {
+                    Debug.LogError("BEginning " + answerIndex + " " + text + " " + Answers[answerIndex].Count);
+                    if (Answers[answerIndex].Count == 0) { Debug.LogError("That's the issue"); };
+                    if (Answers[answerIndex][0] != null)
+                    {
+                        overwrite = true;
+                        displayText += Answers[answerIndex][0].text;
+                        Debug.LogError("OVERWRITTEN");
+                    }
+                    else
+                    {
+                        displayText += '[';
+                    }
+                    answerIndex++;
+                }
+                else
+                {
+                    displayText += text[i];
+                }
             }
-
-            displayText += (segments[i]);
+            else if (text[i] == ']')
+            {
+                overwrite = false;
+            }
         }
+        Debug.LogError("Reached End");
+
     }
     #endregion
 
     #region Get/Set Functions
-    
+
     #endregion
 }

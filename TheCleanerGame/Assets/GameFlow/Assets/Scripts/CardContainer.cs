@@ -111,6 +111,7 @@ public class CardContainer : BrainstormPanelUI
     void UpdateText()
     {
         fractionText.text = PromptManager.Instance.GetCompletedPromptCount(Prompt.Type) + " / " + PromptManager.Instance.GetTotalPromptCount(Prompt.Type);
+        mouseOverPrompt.text = associatedPrompt.Text;
     }
 
     #endregion

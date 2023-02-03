@@ -12,6 +12,8 @@ public class PromptUIContainer : BrainstormPanelUI
 
     void UpdatePromptText()
     {
+        Debug.LogError("Called");
+        BrainstormGeneralManager.Instance.Prompt.FillInPromptPlaceholders();
         promptText.text = BrainstormGeneralManager.Instance.Prompt.Text;
     }
 
