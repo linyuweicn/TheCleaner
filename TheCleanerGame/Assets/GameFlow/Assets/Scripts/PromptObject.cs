@@ -97,13 +97,13 @@ public class PromptObject : ScriptableObject
             {
                 if (text[i] == '[')
                 {
-                    Debug.LogError("BEginning " + answerIndex + " " + text + " " + Answers[answerIndex].Count);
+                    //Debug.LogError("BEginning " + answerIndex + " " + text + " " + Answers[answerIndex].Count);
                     if (Answers[answerIndex].Count == 0) { Debug.LogError("That's the issue"); };
                     if (Answers[answerIndex][0] != null)
                     {
                         overwrite = true;
                         displayText += Answers[answerIndex][0].text;
-                        Debug.LogError("OVERWRITTEN");
+                        //Debug.LogError("OVERWRITTEN");
                     }
                     else
                     {
@@ -121,7 +121,7 @@ public class PromptObject : ScriptableObject
                 overwrite = false;
             }
         }
-        Debug.LogError("Reached End");
+        //Debug.LogError("Reached End");
 
     }
     #endregion
