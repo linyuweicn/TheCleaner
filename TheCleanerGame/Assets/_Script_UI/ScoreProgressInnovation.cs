@@ -72,7 +72,7 @@ public class ScoreProgressInnovation: BrainstormPanelUI
         //totalScore = 0.1f*answer.satisfaction + 0.3f*answer.innovation + 0.5f*answer.censorFulfillment - 0.1f*answer.production;
         //totalScoreText.text = totalScore.ToString();
         float innovationScore = answer.innovation;
-        Debug.Log("innovationScore is " + innovationScore);
+        
         return innovationScore;
     }
 
@@ -95,11 +95,15 @@ public class ScoreProgressInnovation: BrainstormPanelUI
             case PromptType.Setting:
                 if (answerBox.GetColumn() == 1) { BrainstormGeneralManager.AveScore[3] = tempScores; j = 3; } else { BrainstormGeneralManager.AveScore[4] = tempScores; j = 4; };
                 break;
+            case PromptType.Narration:
+                if (answerBox.GetColumn() == 1) { BrainstormGeneralManager.AveScore[5] = tempScores; j = 5; } else { BrainstormGeneralManager.AveScore[6] = tempScores; j = 6; };
+
+                break;
         };
 
         float count = 1.0f;
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 7; i++)
         {
             if (BrainstormGeneralManager.AveScore[i] != 0.0f && i != j)
             {
@@ -109,7 +113,7 @@ public class ScoreProgressInnovation: BrainstormPanelUI
         };
 
         float totalScores = tempScores / count;
-
+        Debug.Log("innovationScore toatl average is " + totalScores);
 
         //increment the likeness bar
         IncrementProgress(totalScores);

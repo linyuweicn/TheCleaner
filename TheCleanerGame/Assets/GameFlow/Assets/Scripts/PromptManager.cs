@@ -9,9 +9,9 @@ public class PromptManager : MonoBehaviour
 
     public Dictionary<int, Dictionary<int, PromptObject>> PromptDictionary; //[Day][n-th Prompt]
 
-    [SerializeField] int totalTheme, totalCharacter, totalSetting, totalNarration, TotalProtagonist, TotalArt;
-    int completedTheme, completedCharacter, completedSetting, completedNarration, completedProtagonist, completedArt;
-    //[SerializeField] GameObject ExitDoor;// enable the door when prompts are completed
+    [SerializeField] int totalTheme, totalCharacter, totalSetting, totalNarration;
+    int completedTheme, completedCharacter, completedSetting, completedNarration;
+
 
     #endregion
 
@@ -56,18 +56,14 @@ public class PromptManager : MonoBehaviour
     {
         switch (type)
         {
-            case PromptType.Theme:
+            case PromptType.Theme: //Theme_OneColunmPrompt
                 return totalTheme;
-            case PromptType.Character:
+            case PromptType.Character: //Character_TwoColumPrompt01
                 return totalCharacter;
-            case PromptType.Setting:
+            case PromptType.Setting: //Setting_TwoColumPrompt02
                 return totalSetting;
-            case PromptType.Narration:
+            case PromptType.Narration: //Narration_OneColunmPrompt02
                 return totalNarration;
-            case PromptType.Protagonist:
-                return TotalProtagonist;
-            case PromptType.Art:
-                return TotalArt;
             default:
                 return 0;
         }
@@ -85,10 +81,6 @@ public class PromptManager : MonoBehaviour
                 return completedSetting;
             case PromptType.Narration:
                 return completedNarration;
-            case PromptType.Protagonist:
-                return completedProtagonist;
-            case PromptType.Art:
-                return completedArt;
             default:
                 return 0;
         }
@@ -110,12 +102,6 @@ public class PromptManager : MonoBehaviour
             case PromptType.Narration:
                 completedNarration++;
                 break;
-            case PromptType.Protagonist:
-                completedProtagonist++;
-                break;
-            case PromptType.Art:
-                completedArt++;
-                break;
         }
     }
 
@@ -125,7 +111,7 @@ public class PromptManager : MonoBehaviour
         {
             prompt.completed = true;
             IncrementCompletedPromptCount(prompt.Type);
-            //ExitDoor.SetActive(true);
+            
         }
     }
     #endregion

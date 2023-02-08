@@ -9,7 +9,7 @@ public class BrainstormGeneralManager : MonoBehaviour
 
     // List of scores, AveScore[0] is for Character, AveScore[1], AveScore[2] are for Narration, 
     // AveScore[3] AveScore[4] are for Theme
-    public static List<float> AveScore = new List<float>(){0.0f, 0.0f, 0.0f, 0.0f, 0.0f};
+    public static List<float> AveScore = new List<float>(){0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f};
     
     public static BrainstormGeneralManager Instance { get; private set; }
     
