@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+
 namespace DialogueEditor
 {
     public class UIConversationButton : MonoBehaviour
     {
+       
         public enum eHoverState
         {
             idleOff,

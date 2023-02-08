@@ -143,6 +143,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5735007599390631565, guid: 8751829fc4dab354cb287a148f755140, type: 3}
   m_PrefabInstance: {fileID: 199617868}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &116215009 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6715017851394415091, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+  m_PrefabInstance: {fileID: 196518430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!61 &122150580 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 5943694682644086270, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
@@ -497,6 +502,10 @@ PrefabInstance:
     - target: {fileID: 692556651611313370, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_text
       value: 2 weeks until proposal due
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573146372285864631, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1796045099714811928, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_IsActive
@@ -938,6 +947,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7537009366319668080, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537009366319668080, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537009366319668080, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7541996981394167287, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -966,6 +987,38 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CloseObject
       objectReference: {fileID: 0}
+    - target: {fileID: 8508871692479868445, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508871692479868445, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508871692479868445, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 116215009}
+    - target: {fileID: 8508871692479868445, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508871692479868445, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508871692479868445, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508871692479868445, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508871692479868445, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8575354872858761494, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -989,6 +1042,10 @@ PrefabInstance:
     - target: {fileID: 8900570836872944403, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CloseObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037422150293530748, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0005906573
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1969992102908993092, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
@@ -1795,21 +1852,25 @@ MonoBehaviour:
   - _gameObject: {fileID: 196518431}
     _prefab: Assets/Prefabs/Newspaper Prefabs/ScrollTemplate.prefab
   - _gameObject: {fileID: 196518438}
-    _prefab: Assets/Prefabs/Calendars and scene transition/EndTheDayCalendar.prefab
+    _prefab: Assets/Prefabs/Calen&transition/EndTheDayCalendar.prefab
   - _gameObject: {fileID: 196518434}
     _prefab: Assets/Prefabs/Camera Prefabs/ExitOffice.prefab
   - _gameObject: {fileID: 196518437}
     _prefab: Assets/Levels/Level03/Luca's Note.prefab
-  - _gameObject: {fileID: 196518436}
-    _prefab: Assets/Prefabs/Calendars and scene transition/CrossFade.prefab
   - _gameObject: {fileID: 2007826890}
     _prefab: Assets/Plugins/UITabs/prefabs/UITabs_Horizontal.prefab
   - _gameObject: {fileID: 1139349829}
     _prefab: Assets/Prefabs/EmailParent.prefab
   - _gameObject: {fileID: 398954475}
     _prefab: Assets/Prefabs/ConversationManager Variant.prefab
+  - _gameObject: {fileID: 2137605267}
+    _prefab: Assets/Prefabs/Calen&transition/Ending Credits.prefab
   - _gameObject: {fileID: 1208540158}
-    _prefab: Assets/Prefabs/Calendars and scene transition/PauseScreen.prefab
+    _prefab: Assets/Prefabs/Calen&transition/PauseScreen.prefab
+  - _gameObject: {fileID: 1620659185}
+    _prefab: Assets/Prefabs/Newspaper Prefabs/ScrollTemplate.prefab
+  - _gameObject: {fileID: 196518436}
+    _prefab: Assets/Prefabs/Calen&transition/CrossFade.prefab
   - _gameObject: {fileID: 109289203}
     _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Panel.prefab
   - _gameObject: {fileID: 203774705}
@@ -1871,7 +1932,9 @@ MonoBehaviour:
   - _gameObject: {fileID: 2026036937}
     _prefab: Assets/Prefabs/LabDoor.prefab
   - _gameObject: {fileID: 1693308571}
-    _prefab: Assets/Prefabs/Calendars and scene transition/PauseScreen.prefab
+    _prefab: Assets/Prefabs/Calen&transition/PauseScreen.prefab
+  - _gameObject: {fileID: 1943243647}
+    _prefab: Assets/Prefabs/Newspaper Prefabs/ScrollTemplate.prefab
   - _gameObject: {fileID: 1891184925}
     _prefab: Assets/Prefabs/lights.prefab
   - _gameObject: {fileID: 1646905867}
@@ -1979,12 +2042,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1810707934999391398, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
       propertyPath: CharaCollider.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1810707934999391398, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
       propertyPath: boxCollider2D.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1810707934999391398, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
+      propertyPath: CharaCollider.Array.data[0]
+      value: 
+      objectReference: {fileID: 1815325923}
     - target: {fileID: 1810707934999391398, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
       propertyPath: boxCollider2D.Array.data[0]
       value: 
@@ -3721,12 +3788,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: CharaCollider.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: boxCollider2D.Array.size
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
+      propertyPath: CharaCollider.Array.data[0]
+      value: 
+      objectReference: {fileID: 607190234}
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: boxCollider2D.Array.data[0]
       value: 
@@ -4491,6 +4562,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1620659185 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 942441501569001942, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+  m_PrefabInstance: {fileID: 196518430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1621687922 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4187148195067597774, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+  m_PrefabInstance: {fileID: 196518430}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1627305040
 GameObject:
   m_ObjectHideFlags: 0
@@ -4968,6 +5055,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5213591442477351824, guid: 1b54442b0b05f6142b596996f2d3bab8, type: 3}
+      propertyPath: VolumeSlider
+      value: 
+      objectReference: {fileID: 1621687922}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b54442b0b05f6142b596996f2d3bab8, type: 3}
 --- !u!1 &1646905867 stripped
@@ -5086,6 +5177,14 @@ PrefabInstance:
     - target: {fileID: 1059384961673830084, guid: ae42d179e29f9c540abc6a3e8807a3f4, type: 3}
       propertyPath: m_Name
       value: PauseScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 4054247498631174745, guid: ae42d179e29f9c540abc6a3e8807a3f4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4054247498631174745, guid: ae42d179e29f9c540abc6a3e8807a3f4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4917001942537853512, guid: ae42d179e29f9c540abc6a3e8807a3f4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -5209,6 +5308,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7022737214256242620, guid: ae42d179e29f9c540abc6a3e8807a3f4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353286208178400271, guid: ae42d179e29f9c540abc6a3e8807a3f4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00076337584
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358565859504430851, guid: ae42d179e29f9c540abc6a3e8807a3f4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358565859504430851, guid: ae42d179e29f9c540abc6a3e8807a3f4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358565859504430851, guid: ae42d179e29f9c540abc6a3e8807a3f4, type: 3}
+      propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8861137084984893665, guid: ae42d179e29f9c540abc6a3e8807a3f4, type: 3}
@@ -5558,12 +5673,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: CharaCollider.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: boxCollider2D.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
+      propertyPath: CharaCollider.Array.data[0]
+      value: 
+      objectReference: {fileID: 1217081412}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: CharaCollider.Array.data[1]
       value: 
@@ -6252,6 +6371,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4500065215059781597, guid: 8a7c86fe66313ec43bd6136e99c0d43a, type: 3}
   m_PrefabInstance: {fileID: 1891184924}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1943243647 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1617769480835149221, guid: ae42d179e29f9c540abc6a3e8807a3f4, type: 3}
+  m_PrefabInstance: {fileID: 1693308570}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1980255742 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5259595796097352623, guid: 470e1f8b3c45c9e48b0d27ffacd813b9, type: 3}
@@ -6628,6 +6752,10 @@ PrefabInstance:
       propertyPath: PersonalRoomCamera
       value: 
       objectReference: {fileID: 1112813260}
+    - target: {fileID: 1571868868752888319, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1880798978696324265, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: ExitDoor
       value: 
@@ -6720,6 +6848,10 @@ PrefabInstance:
       propertyPath: DisabledObjects.Array.data[4]
       value: 
       objectReference: {fileID: 196518441}
+    - target: {fileID: 4387831574692617496, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4387831574767638172, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: Animator
       value: 
@@ -6940,6 +7072,10 @@ PrefabInstance:
       propertyPath: Colliders.Array.data[3]
       value: 
       objectReference: {fileID: 607190234}
+    - target: {fileID: 7802226804063181208, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8084904101425945098, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: Animator
       value: 
@@ -7468,3 +7604,8 @@ MonoBehaviour:
   TMPFont: {fileID: 0}
   Icon: {fileID: 0}
   Audio: {fileID: 0}
+--- !u!1 &2137605267 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4867717848232297833, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+  m_PrefabInstance: {fileID: 196518430}
+  m_PrefabAsset: {fileID: 0}

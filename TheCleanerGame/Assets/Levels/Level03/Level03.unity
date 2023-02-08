@@ -1452,21 +1452,25 @@ MonoBehaviour:
   - _gameObject: {fileID: 196518431}
     _prefab: Assets/Prefabs/Newspaper Prefabs/ScrollTemplate.prefab
   - _gameObject: {fileID: 196518438}
-    _prefab: Assets/Prefabs/Calendars and scene transition/EndTheDayCalendar.prefab
+    _prefab: Assets/Prefabs/Calen&transition/EndTheDayCalendar.prefab
   - _gameObject: {fileID: 196518434}
     _prefab: Assets/Prefabs/Camera Prefabs/ExitOffice.prefab
   - _gameObject: {fileID: 1011707444}
     _prefab: Assets/Levels/Level03/Luca's Note.prefab
-  - _gameObject: {fileID: 196518436}
-    _prefab: Assets/Prefabs/Calendars and scene transition/CrossFade.prefab
   - _gameObject: {fileID: 196518437}
     _prefab: Assets/Plugins/UITabs/prefabs/UITabs_Horizontal.prefab
   - _gameObject: {fileID: 438904284}
     _prefab: Assets/Prefabs/Newspaper Prefabs/GameNews_new template.prefab
   - _gameObject: {fileID: 398954475}
     _prefab: Assets/Prefabs/ConversationManager Variant.prefab
+  - _gameObject: {fileID: 1197130711}
+    _prefab: Assets/Prefabs/Calen&transition/Ending Credits.prefab
   - _gameObject: {fileID: 196518439}
-    _prefab: Assets/Prefabs/Calendars and scene transition/PauseScreen.prefab
+    _prefab: Assets/Prefabs/Calen&transition/PauseScreen.prefab
+  - _gameObject: {fileID: 1293649233}
+    _prefab: Assets/Prefabs/Newspaper Prefabs/ScrollTemplate.prefab
+  - _gameObject: {fileID: 196518436}
+    _prefab: Assets/Prefabs/Calen&transition/CrossFade.prefab
   - _gameObject: {fileID: 1181100749}
     _prefab: Assets/GameFlow/Assets/Prefabs/Brainstorm Panel.prefab
   - _gameObject: {fileID: 1181100748}
@@ -1760,16 +1764,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1810707934999391398, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
       propertyPath: CharaCollider.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1810707934999391398, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
       propertyPath: boxCollider2D.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1810707934999391398, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
       propertyPath: CharaCollider.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 469871565}
     - target: {fileID: 1810707934999391398, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
       propertyPath: boxCollider2D.Array.data[0]
       value: 
@@ -1786,6 +1790,14 @@ PrefabInstance:
       propertyPath: boxCollider2D.Array.data[3]
       value: 
       objectReference: {fileID: 502096626}
+    - target: {fileID: 1810707934999391398, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
+      propertyPath: boxCollider2D.Array.data[4]
+      value: 
+      objectReference: {fileID: 1800908163}
+    - target: {fileID: 1810707934999391398, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
+      propertyPath: boxCollider2D.Array.data[5]
+      value: 
+      objectReference: {fileID: 247457131}
     - target: {fileID: 1810707934999391398, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
       propertyPath: B4CompleteConversations.Array.size
       value: 0
@@ -2034,6 +2046,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2808817652812974878, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
   m_PrefabInstance: {fileID: 196518430}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &707478437 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4187148195067597774, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+  m_PrefabInstance: {fileID: 196518430}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &742902755
 GameObject:
   m_ObjectHideFlags: 0
@@ -3065,8 +3088,16 @@ PrefabInstance:
       value: 6.43
       objectReference: {fileID: 0}
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
+      propertyPath: CharaCollider.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: boxCollider2D.Array.size
-      value: 0
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
+      propertyPath: CharaCollider.Array.data[1]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: boxCollider2D.Array.data[0]
@@ -3075,15 +3106,23 @@ PrefabInstance:
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: boxCollider2D.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2026036945}
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: boxCollider2D.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2026036943}
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: boxCollider2D.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 502096626}
+    - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
+      propertyPath: boxCollider2D.Array.data[4]
+      value: 
+      objectReference: {fileID: 1800908163}
+    - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
+      propertyPath: boxCollider2D.Array.data[5]
+      value: 
+      objectReference: {fileID: 469871565}
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: B4CompleteConversations.Array.size
       value: 1
@@ -3172,6 +3211,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7369066094207266820, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
   m_PrefabInstance: {fileID: 1190591878}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1197130711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4867717848232297833, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+  m_PrefabInstance: {fileID: 196518430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1292974777 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6910870409342618884, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
@@ -3183,6 +3227,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83e3bc7b630d9c40a6fb1ccddae1002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1293649233 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 942441501569001942, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+  m_PrefabInstance: {fileID: 196518430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1341331150
 GameObject:
   m_ObjectHideFlags: 0
@@ -3558,11 +3607,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9177617733875777336, guid: 4c73a6c272e85074d8770b4ee89fb519, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -13853.539
+      value: -14886.922
       objectReference: {fileID: 0}
     - target: {fileID: 9177617733875777336, guid: 4c73a6c272e85074d8770b4ee89fb519, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -150060.12
+      value: -162162.48
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c73a6c272e85074d8770b4ee89fb519, type: 3}
@@ -3631,6 +3680,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5213591442477351824, guid: 1b54442b0b05f6142b596996f2d3bab8, type: 3}
+      propertyPath: VolumeSlider
+      value: 
+      objectReference: {fileID: 707478437}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b54442b0b05f6142b596996f2d3bab8, type: 3}
 --- !u!1 &1646905867 stripped
@@ -3791,12 +3844,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: CharaCollider.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: boxCollider2D.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
+      propertyPath: CharaCollider.Array.data[0]
+      value: 
+      objectReference: {fileID: 1800908163}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: CharaCollider.Array.data[1]
       value: 
@@ -3808,7 +3865,7 @@ PrefabInstance:
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: boxCollider2D.Array.data[1]
       value: 
-      objectReference: {fileID: 2026036944}
+      objectReference: {fileID: 2026036964}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: boxCollider2D.Array.data[2]
       value: 
@@ -3817,6 +3874,14 @@ PrefabInstance:
       propertyPath: boxCollider2D.Array.data[3]
       value: 
       objectReference: {fileID: 502096626}
+    - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
+      propertyPath: boxCollider2D.Array.data[4]
+      value: 
+      objectReference: {fileID: 247457131}
+    - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
+      propertyPath: boxCollider2D.Array.data[5]
+      value: 
+      objectReference: {fileID: 469871565}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: B4CompleteConversations.Array.size
       value: 2
@@ -3958,8 +4023,6 @@ MonoBehaviour:
   AnimatorOrObject: {fileID: 1011707444}
   Colliders:
   - {fileID: 405032102}
-  Objects:
-  - {fileID: 2026036938}
   OpenAtBegining: 1
 --- !u!61 &1816597094
 BoxCollider2D:
@@ -4351,6 +4414,10 @@ PrefabInstance:
       propertyPath: PersonalRoomCamera
       value: 
       objectReference: {fileID: 1112813260}
+    - target: {fileID: 1571868868752888319, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1880798978696324265, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: ExitDoor
       value: 
@@ -4442,6 +4509,10 @@ PrefabInstance:
     - target: {fileID: 4387831574529843308, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: DisabledObjects.Array.data[5]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387831574692617496, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4387831574767638172, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: Animator
@@ -4535,6 +4606,10 @@ PrefabInstance:
       propertyPath: PersonalRoomCamera
       value: 
       objectReference: {fileID: 1112813260}
+    - target: {fileID: 5292414893204378234, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: m_Name
+      value: OfficeDoor
+      objectReference: {fileID: 0}
     - target: {fileID: 6910870409342618884, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: Animator
       value: 
@@ -4591,6 +4666,14 @@ PrefabInstance:
       propertyPath: PersonalRoomCamera
       value: 
       objectReference: {fileID: 1112813260}
+    - target: {fileID: 7147723777900094457, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: m_Name
+      value: LabDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390087118211352739, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: m_Name
+      value: LabDoor
+      objectReference: {fileID: 0}
     - target: {fileID: 7390087118211352792, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: ExitDoor
       value: 
@@ -4654,6 +4737,10 @@ PrefabInstance:
     - target: {fileID: 7692026772752699705, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: Colliders.Array.data[2]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7802226804063181208, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8084904101425945098, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: Animator

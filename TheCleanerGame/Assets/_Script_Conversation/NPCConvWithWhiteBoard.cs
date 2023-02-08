@@ -15,7 +15,7 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
     private int convSequenceAfter;
 
     [SerializeField] BoxCollider2D[] boxCollider2D;
-    //[SerializeField] Collider2D []CharaCollider;
+    [SerializeField] Collider2D []CharaCollider;
 
     Vector3 origPosition;
     [SerializeField] Vector3 NewPosition;
@@ -25,8 +25,10 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
     public bool startConvAtBegining;
 
     private bool canTurnOffCollider; //GeneralObjects uses this 
-    private bool objectsAreDisabled; 
+    
     public bool hasFinishedConv; // Used in triggerending cut scene
+
+    AudioManager audioManager;
 
 
     void Start()
@@ -38,32 +40,70 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
             StartCoroutine(TriggerConv());
             Debug.Log("start 1 conv");
         }
-
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+       /* if (canTurnOffCollider)
+        {
+            for (int j = 0; j < CharaCollider.Length; j++)
+            {
+                CharaCollider[j].enabled = false;
+            }
+        }
+        else
+        {
+            for (int j = 0; j < CharaCollider.Length; j++)
+            {
+                CharaCollider[j].enabled = true;
+
+            }
+        }*/
+
+        
+        
+         //below is the method that does not need to trigger using Converstain Manger
+/*         if (canTurnOffCollider)
+        {
+            for (int j = 0; j < CharaCollider.Length; j++)
+            {
+                CharaCollider[j].enabled = false;
+            }
+
+        }else
+        {
+            if (ConversationManager.Instance.IsConversationActive)
+            {
+                DisableObjects();
+            }else
+            {
+                EnableObjects(); //-- the GneralObjects need to find abother way to turn it off
+            }
+        }*/
+
 
     }
 
     public void OnMouseDown()
     {
-        if (!BrainstormGeneralManager.Instance.ContainerDictionary[0].Prompt.completed)
+        audioManager.PlayUiSound("ui_highlight");
+        if (BrainstormGeneralManager.Instance.ContainerDictionary[0].Prompt.completed
+            && BrainstormGeneralManager.Instance.ContainerDictionary[1].Prompt.completed
+            && BrainstormGeneralManager.Instance.ContainerDictionary[2].Prompt.completed)
         {
-            DisableObjects();
-            StartConvBeforeWhieBoard();
-            //Debug.Log("not completed");
-            
+            StartAfterWhieBoard();
+
+
 
         }
         else
         {
-            DisableObjects();
-            StartAfterBeforeWhieBoard();
-            
+            StartConvBeforeWhieBoard();
+            //Debug.Log("not completed");
         }
-     
+
 
     }
 
@@ -83,26 +123,24 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
         //Debug.Log(convSequence);
         if (convSequenceB4 <= B4CompleteConversations.Length)
         {
+            //DisableObjects();
             ConversationManager.Instance.StartConversation(B4CompleteConversations[convSequenceB4 - 1]);
 
-            //diable the first item, do not let it had more conversation.
+            
 
             if (convSequenceB4 == B4CompleteConversations.Length)
             {
                 canTurnOffCollider = true;
                 hasFinishedConv = true;
-                Debug.Log(hasFinishedConv + "hasFinishedConv");
+                //Debug.Log(hasFinishedConv + "hasFinishedConv");
               
-                EnableObjects();//temporary fix
-
-
             }
 
         }
 
     }
 
-    public void StartAfterBeforeWhieBoard()
+    public void StartAfterWhieBoard()
     {
         
             if (SceneTransitionButton.gameIsPaused)
@@ -121,13 +159,14 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
             //Debug.Log(convSequence);
             if (convSequenceAfter <= AfterCompleteConversations.Length)
             {
+                //DisableObjects();
                 ConversationManager.Instance.StartConversation(AfterCompleteConversations[convSequenceAfter - 1]);
                 if (convSequenceAfter == AfterCompleteConversations.Length)
                 {
                     canTurnOffCollider = true;
                     Debug.Log(canTurnOffCollider + "canTurnOffColliderafter");
-                    EnableObjects();//temporary fix
-                 }
+                    
+                 }//when conversation is not ctive enable object? 
             }
 
         
@@ -179,49 +218,35 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
 
     public void DisableObjects()
     {
-        if (!objectsAreDisabled)
-        {
-            for (int i = 0; i < boxCollider2D.Length; i++)
-            {
-                boxCollider2D[i].enabled = false;
-                Debug.Log(boxCollider2D[i].name + "disabled");
-            }
-
-            /*   for (int j = 0; j < CharaCollider.Length; j++)
-               {
-                   CharaCollider[j].enabled = false;
-               }*/
+        
+       for (int i = 0; i < boxCollider2D.Length; i++)
+       {
+            boxCollider2D[i].enabled = false;
+            //Debug.Log(boxCollider2D[i].name + "disabled");
         }
-        objectsAreDisabled = true;
+
+        for (int j = 0; j < CharaCollider.Length; j++)
+        {
+            CharaCollider[j].enabled = false;
+        }
+
+
     }
 
     public void EnableObjects() // enable objects
     {
       
-            for (int i = 0; i < boxCollider2D.Length; i++)
-            {
-                boxCollider2D[i].enabled = true;
-                Debug.Log(boxCollider2D[i].name + "enabled");
-            }
-
-
-            /*if (canTurnOffCollider)
-            {
-                for (int j = 0; j < CharaCollider.Length; j++)
-                {
-                    CharaCollider[j].enabled = false;
-                }
-            }
-            else
-            {
-                for (int j = 0; j < CharaCollider.Length; j++)
-                {
-                    CharaCollider[j].enabled = true;
-                    
-                }
-            }*/
-
+     for (int i = 0; i < boxCollider2D.Length; i++)
+      {
+        boxCollider2D[i].enabled = true;
+         //Debug.Log(boxCollider2D[i].name + "enabled");
+       }
         
+        for (int j = 0; j < CharaCollider.Length; j++)
+        {
+            CharaCollider[j].enabled = true;
+        }
+
     }
 }
         

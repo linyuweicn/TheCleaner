@@ -33,7 +33,7 @@ public class ChangeSpriteMaterial : MonoBehaviour
         }
 
         rend.material = material;
-        audioManager.PlayUiSound("ui_highlight");
+        //audioManager.PlayUiSound("ui_highlight");
 
     }
 

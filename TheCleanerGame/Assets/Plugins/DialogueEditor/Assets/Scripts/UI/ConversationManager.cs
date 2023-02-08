@@ -29,7 +29,7 @@ namespace DialogueEditor
         public static ConversationStartEvent OnConversationStarted;
         public static ConversationEndEvent OnConversationEnded;
 
-        public GameObject fakeButton;
+        //public GameObject fakeButton;
 
         // User-Facing options
         // Drawn by custom inspector
@@ -109,7 +109,7 @@ namespace DialogueEditor
             TurnOffUI();
 
 
-            fakeButton = GameObject.Find("FakeButton");
+            //fakeButton = GameObject.Find("FakeButton");
             
             //initialize
             isEndState = false;
