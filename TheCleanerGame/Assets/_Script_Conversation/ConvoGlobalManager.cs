@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class ConvoGlobalManager : MonoBehaviour
 {
-    [SerializeField] int nextScene;
+    [HideInInspector] int nextScene;
+    [SerializeField] public static int agreeableScore;
 
     // Start is called before the first frame update
     void Start()
@@ -21,5 +22,20 @@ public class ConvoGlobalManager : MonoBehaviour
     public int getNextScene()
     {
         return nextScene;
+    }
+
+    public void IncreaseAgreeableScore(int inc)
+    {
+        agreeableScore += inc;
+    }
+
+    public void DecreaseAgreeableScore(int dec)
+    {
+        agreeableScore -= dec;
+    }
+    
+    public void SetNewAgreeableScore(int newScore)
+    {
+        agreeableScore = newScore;
     }
 }
