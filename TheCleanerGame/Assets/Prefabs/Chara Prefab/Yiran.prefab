@@ -42,8 +42,8 @@ GameObject:
   - component: {fileID: 7932807440485901663}
   - component: {fileID: 7932807440485901660}
   - component: {fileID: 7932807440485901661}
-  - component: {fileID: 7932807440485901602}
   - component: {fileID: 7932807440485901603}
+  - component: {fileID: 8831962336174921501}
   m_Layer: 0
   m_Name: Yiran idle_0
   m_TagString: Untagged
@@ -132,36 +132,12 @@ MonoBehaviour:
   AfterCompleteConversations: []
   boxCollider2D: []
   CharaCollider:
-  - {fileID: 7932807440485901602}
+  - {fileID: 0}
   NewPosition: {x: 0, y: 0, z: 0}
   NewPosition2: {x: 0, y: 0, z: 0}
+  NewPosition3: {x: 0, y: 0, z: 0}
   startConvAtBegining: 0
---- !u!61 &7932807440485901602
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7932807440485901662}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.1421113, y: 1.5072427}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.5409765, y: 27.19}
-    newSize: {x: 7.5409765, y: 27.19}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5.996006, y: 23.482334}
-  m_EdgeRadius: 0
+  hasFinishedConv: 0
 --- !u!114 &7932807440485901603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,3 +152,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rend: {fileID: 7932807440485901660}
   material: {fileID: 2100000, guid: d3a6e2b699db46f448010add5293626e, type: 2}
+--- !u!70 &8831962336174921501
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932807440485901662}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.2368, y: -0.3551994}
+  m_Size: {x: 2.6155403, y: 26.479603}
+  m_Direction: 0

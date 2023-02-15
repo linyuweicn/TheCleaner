@@ -46,42 +46,44 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       /* if (canTurnOffCollider)
+        /* if (canTurnOffCollider)
+         {
+             for (int j = 0; j < CharaCollider.Length; j++)
+             {
+                 CharaCollider[j].enabled = false;
+             }
+         }
+         else
+         {
+             for (int j = 0; j < CharaCollider.Length; j++)
+             {
+                 CharaCollider[j].enabled = true;
+
+             }
+         }*/
+
+
+
+        //below is the method that does not need to trigger using Converstain Manger
+        if (canTurnOffCollider)
         {
             for (int j = 0; j < CharaCollider.Length; j++)
             {
                 CharaCollider[j].enabled = false;
             }
+
         }
         else
-        {
-            for (int j = 0; j < CharaCollider.Length; j++)
-            {
-                CharaCollider[j].enabled = true;
-
-            }
-        }*/
-
-        
-        
-         //below is the method that does not need to trigger using Converstain Manger
-/*         if (canTurnOffCollider)
-        {
-            for (int j = 0; j < CharaCollider.Length; j++)
-            {
-                CharaCollider[j].enabled = false;
-            }
-
-        }else
         {
             if (ConversationManager.Instance.IsConversationActive)
             {
                 DisableObjects();
-            }else
+            }
+            else
             {
                 EnableObjects(); //-- the GneralObjects need to find abother way to turn it off
             }
-        }*/
+        }
 
 
     }
