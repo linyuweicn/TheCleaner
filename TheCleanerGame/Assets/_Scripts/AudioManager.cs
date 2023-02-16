@@ -35,6 +35,9 @@ public class AudioManager : MonoBehaviour
             case "ui_highlight":
                 PlaySFX(instance.uiSounds[4]);
                 break;
+            case "ui_click04":
+                PlaySFX(instance.uiSounds[5]);
+                break;
 
             default:
                 Debug.LogWarning("Wrong sfx Name");
