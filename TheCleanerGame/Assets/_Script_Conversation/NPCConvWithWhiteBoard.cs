@@ -4,12 +4,24 @@ using UnityEngine;
 using DialogueEditor;
 using UnityEngine.EventSystems;
 
+
 public class NPCConvWithWhiteBoard : MonoBehaviour
 {
+    [System.Serializable]
+    public class MultiDimensionalConvo
+    {
+        public NPCConversation[] convoArray;
+    }
 
-    
     public NPCConversation[] B4CompleteConversations;
     public NPCConversation[] AfterCompleteConversations;
+
+    public MultiDimensionalConvo[] B4Conversations;
+    public MultiDimensionalConvo[] AfterConversations;
+
+    [SerializeField] int lowMedBound = 0;
+    [SerializeField] int medHighBound = 5;
+    [SerializeField] bool useAgreeableScore;
 
     private int convSequenceB4;
     private int convSequenceAfter;
@@ -33,6 +45,9 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
 
     void Start()
     {
+
+        //public MultiDimensionalConvo[] B4Conversations = new MultiDimensionalConvo[3];
+        //public MultiDimensionalConvo[] AfterConversations = new MultiDimensionalConvo[3];
 
         origPosition = transform.position;
         if (startConvAtBegining)
@@ -122,22 +137,49 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
         }
 
         convSequenceB4++;
-        //Debug.Log(convSequence);
-        if (convSequenceB4 <= B4CompleteConversations.Length)
+
+        if(useAgreeableScore)
         {
-            //DisableObjects();
-            ConversationManager.Instance.StartConversation(B4CompleteConversations[convSequenceB4 - 1]);
-
-            
-
-            if (convSequenceB4 == B4CompleteConversations.Length)
+                //Debug.Log(convSequence);
+            if (convSequenceB4 <= B4Conversations[0].convoArray.Length)
             {
-                canTurnOffCollider = true;
-                hasFinishedConv = true;
-                //Debug.Log(hasFinishedConv + "hasFinishedConv");
-              
-            }
+                if(ConvoGlobalManager.agreeableScore <= lowMedBound)
+                    ConversationManager.Instance.StartConversation(B4Conversations[0].convoArray[convSequenceB4 - 1]);
+                else if(ConvoGlobalManager.agreeableScore > lowMedBound && ConvoGlobalManager.agreeableScore <= medHighBound)
+                    ConversationManager.Instance.StartConversation(B4Conversations[1].convoArray[convSequenceB4 - 1]);
+                else if(ConvoGlobalManager.agreeableScore > medHighBound)
+                    ConversationManager.Instance.StartConversation(B4Conversations[2].convoArray[convSequenceB4 - 1]);
+                //DisableObjects();
+                //ConversationManager.Instance.StartConversation(B4CompleteConversations[convSequenceB4 - 1]);
 
+                if (convSequenceB4 == B4Conversations[0].convoArray.Length)
+                {
+                    canTurnOffCollider = true;
+                    hasFinishedConv = true;
+                    //Debug.Log(hasFinishedConv + "hasFinishedConv");
+                
+                }
+
+            }
+        }
+        else
+        {
+            if (convSequenceB4 <= B4CompleteConversations.Length)
+            {
+                //DisableObjects();
+                ConversationManager.Instance.StartConversation(B4CompleteConversations[convSequenceB4 - 1]);
+
+                
+
+                if (convSequenceB4 == B4CompleteConversations.Length)
+                {
+                    canTurnOffCollider = true;
+                    hasFinishedConv = true;
+                    //Debug.Log(hasFinishedConv + "hasFinishedConv");
+                
+                }
+
+            }
         }
 
     }
@@ -157,18 +199,41 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
             Debug.Log("Clicked");
             convSequenceAfter++;
 
-
-            //Debug.Log(convSequence);
-            if (convSequenceAfter <= AfterCompleteConversations.Length)
+            if(useAgreeableScore)
             {
-                //DisableObjects();
-                ConversationManager.Instance.StartConversation(AfterCompleteConversations[convSequenceAfter - 1]);
-                if (convSequenceAfter == AfterCompleteConversations.Length)
+                //Debug.Log(convSequence);
+                if (convSequenceAfter <= AfterCompleteConversations.Length)
                 {
-                    canTurnOffCollider = true;
-                    Debug.Log(canTurnOffCollider + "canTurnOffColliderafter");
-                    
-                 }//when conversation is not ctive enable object? 
+                    if(ConvoGlobalManager.agreeableScore <= lowMedBound)
+                        ConversationManager.Instance.StartConversation(AfterConversations[0].convoArray[convSequenceAfter - 1]);
+                    else if(ConvoGlobalManager.agreeableScore > lowMedBound && ConvoGlobalManager.agreeableScore <= medHighBound)
+                        ConversationManager.Instance.StartConversation(AfterConversations[1].convoArray[convSequenceAfter - 1]);
+                    else if(ConvoGlobalManager.agreeableScore > medHighBound)
+                        ConversationManager.Instance.StartConversation(AfterConversations[2].convoArray[convSequenceAfter - 1]);
+                    //DisableObjects();
+                    //ConversationManager.Instance.StartConversation(AfterCompleteConversations[convSequenceAfter - 1]);
+                    if (convSequenceAfter == AfterCompleteConversations.Length)
+                    {
+                        canTurnOffCollider = true;
+                        Debug.Log(canTurnOffCollider + "canTurnOffColliderafter");
+                        
+                    }//when conversation is not ctive enable object? 
+                }
+            }
+            else
+            {
+                //Debug.Log(convSequence);
+                if (convSequenceAfter <= AfterCompleteConversations.Length)
+                {
+                    //DisableObjects();
+                    ConversationManager.Instance.StartConversation(AfterCompleteConversations[convSequenceAfter - 1]);
+                    if (convSequenceAfter == AfterCompleteConversations.Length)
+                    {
+                        canTurnOffCollider = true;
+                        Debug.Log(canTurnOffCollider + "canTurnOffColliderafter");
+                        
+                    }//when conversation is not ctive enable object? 
+                }
             }
 
         
