@@ -37,6 +37,9 @@ public class AudioManager : MonoBehaviour
                 break;
             case "ui_click04":
                 PlaySFX(instance.uiSounds[5]);
+                break;            
+            case "phone vibrate":
+                PlaySFX(instance.uiSounds[6]);
                 break;
 
             default:

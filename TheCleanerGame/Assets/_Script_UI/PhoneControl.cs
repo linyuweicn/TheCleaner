@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class PhoneControl : MonoBehaviour
 {
-    public GameObject PhoneParent;
+    //public GameObject PhoneParent;
+    private bool hasOpened;
+    private bool hasClickedTab;
+    private AudioManager audioManager;
     void Start()
     {
         //GameObject.Find("TimeParent").GetComponent<CanvasGroup>().alpha = 0;
-        PhoneParent.SetActive(false);
+        transform.parent.gameObject.SetActive(false);
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
@@ -29,7 +33,22 @@ public class PhoneControl : MonoBehaviour
 
     private void OnMouseDown()
     {
-        PhoneParent.SetActive(false);
+        transform.parent.gameObject.SetActive(false);
         Debug.Log("closePhone");
+    }
+
+    public void EnablePhone()
+    {
+        if (!hasOpened && hasClickedTab)
+        {
+            transform.parent.gameObject.SetActive(true);
+            hasOpened = true;
+            audioManager.PlayUiSound("phone vibrate");
+        }
+    }
+
+    public void ClickTab()
+    {
+        hasClickedTab = true;
     }
 }

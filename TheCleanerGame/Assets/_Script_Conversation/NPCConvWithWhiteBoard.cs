@@ -10,12 +10,15 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
     [System.Serializable]
     public class MultiDimensionalConvo
     {
+        [HideInInspector]
+        public string ConvType;
         public NPCConversation[] convoArray;
     }
 
     public NPCConversation[] B4CompleteConversations;
     public NPCConversation[] AfterCompleteConversations;
 
+    
     public MultiDimensionalConvo[] B4Conversations;
     public MultiDimensionalConvo[] AfterConversations;
 
@@ -138,6 +141,7 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
 
         convSequenceB4++;
 
+        Debug.Log(convSequenceB4);
         if(useAgreeableScore)
         {
                 //Debug.Log(convSequence);
@@ -146,9 +150,9 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
                 if(ConvoGlobalManager.agreeableScore <= lowMedBound)
                     ConversationManager.Instance.StartConversation(B4Conversations[0].convoArray[convSequenceB4 - 1]);
                 else if(ConvoGlobalManager.agreeableScore > lowMedBound && ConvoGlobalManager.agreeableScore <= medHighBound)
-                    ConversationManager.Instance.StartConversation(B4Conversations[1].convoArray[convSequenceB4 - 1]);
+                    ConversationManager.Instance.StartConversation(B4Conversations[1].convoArray[convSequenceB4 - 2]);
                 else if(ConvoGlobalManager.agreeableScore > medHighBound)
-                    ConversationManager.Instance.StartConversation(B4Conversations[2].convoArray[convSequenceB4 - 1]);
+                    ConversationManager.Instance.StartConversation(B4Conversations[2].convoArray[convSequenceB4 - 2]);
                 //DisableObjects();
                 //ConversationManager.Instance.StartConversation(B4CompleteConversations[convSequenceB4 - 1]);
 
@@ -207,9 +211,9 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
                     if(ConvoGlobalManager.agreeableScore <= lowMedBound)
                         ConversationManager.Instance.StartConversation(AfterConversations[0].convoArray[convSequenceAfter - 1]);
                     else if(ConvoGlobalManager.agreeableScore > lowMedBound && ConvoGlobalManager.agreeableScore <= medHighBound)
-                        ConversationManager.Instance.StartConversation(AfterConversations[1].convoArray[convSequenceAfter - 1]);
+                        ConversationManager.Instance.StartConversation(AfterConversations[1].convoArray[convSequenceAfter - 2]);
                     else if(ConvoGlobalManager.agreeableScore > medHighBound)
-                        ConversationManager.Instance.StartConversation(AfterConversations[2].convoArray[convSequenceAfter - 1]);
+                        ConversationManager.Instance.StartConversation(AfterConversations[2].convoArray[convSequenceAfter - 2]);
                     //DisableObjects();
                     //ConversationManager.Instance.StartConversation(AfterCompleteConversations[convSequenceAfter - 1]);
                     if (convSequenceAfter == AfterCompleteConversations.Length)
@@ -294,7 +298,11 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
 
         for (int j = 0; j < CharaCollider.Length; j++)
         {
-            CharaCollider[j].enabled = false;
+            if (CharaCollider != null)
+            {
+                CharaCollider[j].enabled = false;
+            }
+            
         }
 
 
@@ -311,7 +319,8 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
         
         for (int j = 0; j < CharaCollider.Length; j++)
         {
-            CharaCollider[j].enabled = true;
+            if (CharaCollider != null)
+                CharaCollider[j].enabled = true;
         }
 
     }

@@ -27,15 +27,18 @@ public class ConvoGlobalManager : MonoBehaviour
     public void IncreaseAgreeableScore(int inc)
     {
         agreeableScore += inc;
+        Debug.Log("Agreeable score is " + agreeableScore);
     }
 
     public void DecreaseAgreeableScore(int dec)
     {
         agreeableScore -= dec;
+        Debug.Log("Agreeable score is " + agreeableScore);
     }
     
     public void SetNewAgreeableScore(int newScore)
     {
         agreeableScore = newScore;
+        Debug.Log("Agreeable score is " + agreeableScore);
     }
 }
