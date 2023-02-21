@@ -44,6 +44,7 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
     public bool hasFinishedConv; // Used in triggerending cut scene
 
     AudioManager audioManager;
+    //public AudioClip audioClip;
 
 
     void Start()
@@ -108,7 +109,9 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
 
     public void OnMouseDown()
     {
+        //audioManager.PlaySFX(audioClip);
         audioManager.PlayUiSound("ui_highlight");
+        //Debug.Log(audioManager);
         if (BrainstormGeneralManager.Instance.ContainerDictionary[0].Prompt.completed
             && BrainstormGeneralManager.Instance.ContainerDictionary[1].Prompt.completed
             && BrainstormGeneralManager.Instance.ContainerDictionary[2].Prompt.completed)
@@ -141,10 +144,11 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
 
         convSequenceB4++;
 
-        Debug.Log(convSequenceB4);
+        //Debug.Log(convSequenceB4);
         if(useAgreeableScore)
         {
-                //Debug.Log(convSequence);
+                Debug.Log(convSequenceB4 + "convSequenceB4");
+            Debug.Log(B4Conversations[0].convoArray.Length + "B4Conversations[0].convoArray.Length");
             if (convSequenceB4 <= B4Conversations[0].convoArray.Length)
             {
                 if(ConvoGlobalManager.agreeableScore <= lowMedBound)
@@ -200,13 +204,15 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
                 }
             }
             canTurnOffCollider = false;
-            Debug.Log("Clicked");
+            //Debug.Log("Clicked");
             convSequenceAfter++;
-
-            if(useAgreeableScore)
+            Debug.Log(convSequenceAfter + " convSequenceAfter");
+            
+        if (useAgreeableScore)
             {
-                //Debug.Log(convSequence);
-                if (convSequenceAfter <= AfterCompleteConversations.Length)
+            Debug.Log(AfterConversations[0].convoArray.Length + " AfterConversations[0].convoArray.Length");
+            //Debug.Log(convSequence);
+            if (convSequenceAfter <= AfterConversations[0].convoArray.Length)
                 {
                     if(ConvoGlobalManager.agreeableScore <= lowMedBound)
                         ConversationManager.Instance.StartConversation(AfterConversations[0].convoArray[convSequenceAfter - 1]);
@@ -216,7 +222,7 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
                         ConversationManager.Instance.StartConversation(AfterConversations[2].convoArray[convSequenceAfter - 2]);
                     //DisableObjects();
                     //ConversationManager.Instance.StartConversation(AfterCompleteConversations[convSequenceAfter - 1]);
-                    if (convSequenceAfter == AfterCompleteConversations.Length)
+                    if (convSequenceAfter == AfterConversations[0].convoArray.Length)
                     {
                         canTurnOffCollider = true;
                         Debug.Log(canTurnOffCollider + "canTurnOffColliderafter");

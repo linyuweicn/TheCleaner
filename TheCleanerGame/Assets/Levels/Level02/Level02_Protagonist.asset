@@ -16,7 +16,7 @@ MonoBehaviour:
   promptType: 2
   text: The NEW HERO of the game will be [adjective] [noun].
   imageColumn: 0
-  completed: 1
+  completed: 0
   AnswersStorage:
   - answerColumn:
     - text: Obedient
@@ -65,7 +65,7 @@ MonoBehaviour:
       censorFulfillment: 25
       innovation: 70
       totalscore: 52
-      feedbackType: 2
+      feedbackType: 1
       feedbackText: Are you sure this is the kind of trait you want a HERO to have?
       criticType: 4
       image: {fileID: 0}
@@ -97,7 +97,7 @@ MonoBehaviour:
       censorFulfillment: 68
       innovation: 70
       totalscore: 72
-      feedbackType: 3
+      feedbackType: 1
       feedbackText: Really? Come on, guys.
       criticType: 3
       image: {fileID: 21300000, guid: e7dba88a48c193c4f98f412767ddea0b, type: 3}
@@ -128,7 +128,7 @@ MonoBehaviour:
       censorFulfillment: 24
       innovation: 65
       totalscore: 52
-      feedbackType: 3
+      feedbackType: 2
       feedbackText: 'I''m not sure if it is a good idea. We are making a game, not
         duplicate reality, try to think out of the box more. '
       criticType: 0
@@ -143,7 +143,3 @@ MonoBehaviour:
       feedbackText: Now that's what I'm talking about.
       criticType: 3
       image: {fileID: 21300000, guid: 4f7b7bfb2b5183b4cb993c61d3f7c003, type: 3}
-  segments:
-  - 'The NEW HERO of the game will be '
-  - ' '
-  - .

@@ -5,7 +5,8 @@ using UnityEngine.EventSystems;
 
 public class Doortransition : MonoBehaviour
 {
-
+    
+    private AudioManager AudioManager;
     public GameObject EntranceCamera;
     public GameObject BrainstormCamera;
     public GameObject YiranOfficeCamera;
@@ -41,7 +42,7 @@ public class Doortransition : MonoBehaviour
                    CanClick = true;
                     //Debug.Log(CanClick);
                 }*/
-
+        AudioManager = FindObjectOfType<AudioManager>();
         CanClick = true;
         CalendarPage.SetActive(false);
         ExitDoor.SetActive(false);
@@ -60,6 +61,7 @@ public class Doortransition : MonoBehaviour
         }
         if ((gameObject.name == "LabDoor") && CanClick)// click the Lab door
         {
+            AudioManager.PlayUiSound("ui_DoorClose01");
 
             if (!isDoor1clicked) // move to move to entrance
             {
@@ -77,6 +79,7 @@ public class Doortransition : MonoBehaviour
         }
         else if ((gameObject.name == "OfficeDoor") && CanClick) // DoorToMyOfficer
         {
+            AudioManager.PlayUiSound("ui_DoorClose02");
             if (!isDoor2clicked)
             {
                 BrainstormCamera.SetActive(true); // move to brainstorm room
@@ -93,7 +96,7 @@ public class Doortransition : MonoBehaviour
         else if ((gameObject.name == "ExitDoor") && CanClick) // transit to personal room = end the day 
         {
             CalendarPage.SetActive(true);
-
+            AudioManager.PlayUiSound("ui_DoorClose02");
         }
 
 

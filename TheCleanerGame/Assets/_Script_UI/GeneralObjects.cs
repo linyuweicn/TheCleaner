@@ -8,7 +8,7 @@ public class GeneralObjects : MonoBehaviour
 
     [SerializeField] GameObject AnimatorOrObject;
     Animator m_Animator;
-
+    AudioManager audioManager;
 
     [SerializeField] BoxCollider2D[] Colliders;
 
@@ -27,7 +27,7 @@ public class GeneralObjects : MonoBehaviour
            {
                Colliders[i].GetComponent<Collider2D>();
            }*/
-
+        audioManager = FindObjectOfType<AudioManager>();
 
 
         if (AnimatorOrObject != null)
@@ -65,11 +65,23 @@ public class GeneralObjects : MonoBehaviour
             }
         }
 
+        if (OpenAtBegining)
+        {
+            OpenAtBegining = false;
+            audioManager.PlayUiSound("");
+        }
+        else
+        {
+            audioManager.PlayUiSound("ui_confirm");
+        }
+       
+
 
         if (hasClicked == false)
         {
 
             OpenObjects();
+            
         }
         else
         {
@@ -105,6 +117,11 @@ public class GeneralObjects : MonoBehaviour
             m_Animator.SetBool("isOn", false);
 
         }
+        else
+        {
+            AnimatorOrObject.SetActive(false);
+
+        }
 
 
     }
@@ -117,6 +134,11 @@ public class GeneralObjects : MonoBehaviour
             m_Animator.SetBool("isOn", true); // turn on stuff such as calendar or email
 
         }
+        else
+        {
+            AnimatorOrObject.SetActive(true);
+        }
+
 
         for (int i = 0; i < Colliders.Length; i++)
         {
@@ -132,8 +154,8 @@ public class GeneralObjects : MonoBehaviour
                 {
                     Objects[j].SetActive(false);
                 }
-         }
-         
+        }
+     
        
         
 

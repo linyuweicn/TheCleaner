@@ -6,7 +6,7 @@ namespace DialogueEditor
 {
     public class UIConversationButton : MonoBehaviour
     {
-       
+        
         public enum eHoverState
         {
             idleOff,

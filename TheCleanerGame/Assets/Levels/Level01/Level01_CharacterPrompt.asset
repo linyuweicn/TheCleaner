@@ -16,7 +16,7 @@ MonoBehaviour:
   promptType: 1
   text: The Hero of the game is [Adjective] [Noun]
   imageColumn: 0
-  completed: 1
+  completed: 0
   AnswersStorage:
   - answerColumn:
     - text: Adorable
@@ -25,7 +25,7 @@ MonoBehaviour:
       censorFulfillment: 73
       innovation: 80
       totalscore: 83
-      feedbackType: 2
+      feedbackType: 1
       feedbackText: 'I see your intention here, but think of polishing it up more. '
       criticType: 0
       image: {fileID: 0}
@@ -116,7 +116,7 @@ MonoBehaviour:
       censorFulfillment: 40
       innovation: 85
       totalscore: 65
-      feedbackType: 2
+      feedbackType: 1
       feedbackText: Really? Is this the best we can do?
       criticType: 0
       image: {fileID: 21300000, guid: 6ada482f89dbd714a91c6200124e1c5a, type: 3}
@@ -140,7 +140,3 @@ MonoBehaviour:
       feedbackText: 'I LOVE this character already. '
       criticType: 4
       image: {fileID: 21300000, guid: abf2056fd93084e46acf507d846acdcc, type: 3}
-  segments:
-  - 'The Hero of the game is '
-  - ' '
-  - 

@@ -4,7 +4,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
-{
+{ //---------------- Variables ----------------
+    public AudioSource[] audioSources;
+
+    public AudioClip[] uiSounds;
+
+
+    //---------------- Unity Entrance ----------------
+    void Start()
+    {
+
+    }
+    void Update()
+    {
+
+    }
+
     //---------------- Singleton ----------------
     private static AudioManager instance;
     public float fadeTime = 1;
@@ -40,8 +55,16 @@ public class AudioManager : MonoBehaviour
                 break;            
             case "phone vibrate":
                 PlaySFX(instance.uiSounds[6]);
+                break;     
+            case "ui_click03":
+                PlaySFX(instance.uiSounds[7]);
+                break;  
+            case "ui_DoorClose01":
+                PlaySFX(instance.uiSounds[8]);
                 break;
-
+            case "ui_DoorClose02":
+                PlaySFX(instance.uiSounds[9]);
+                break;
             default:
                 Debug.LogWarning("Wrong sfx Name");
                 break;
@@ -60,21 +83,11 @@ public class AudioManager : MonoBehaviour
             audioSource.volume = Mathf.Lerp(1, 0,3 );
       
     }
+    public void ReplaceAudio(AudioClip NewAudioClip)
+    {
+        audioSources[0].clip = NewAudioClip;
+        audioSources[0].Play();
 
-    //---------------- Variables ----------------
-    public AudioSource[] audioSources;
-    
-    public AudioClip[] uiSounds;
-    
-    
-    //---------------- Unity Entrance ----------------
-    void Start()
-    {
-        
-    }
-    void Update()
-    {
-        
     }
 
     //---------------- Private method ----------------

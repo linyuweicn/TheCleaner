@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 namespace DialogueEditor
 {
@@ -19,6 +21,7 @@ namespace DialogueEditor
             NONE,
         }
 
+        
         private const float TRANSITION_TIME = 0.2f; // Transition time for fades
 
         public static ConversationManager Instance { get; private set; }
@@ -30,6 +33,8 @@ namespace DialogueEditor
         public static ConversationEndEvent OnConversationEnded;
 
         //public GameObject fakeButton;
+        
+        
 
         // User-Facing options
         // Drawn by custom inspector
@@ -87,6 +92,8 @@ namespace DialogueEditor
         //deal with continue and end states
         private bool isEndState; //true if current at last dialogue of convo with no more options
         private bool isContinueState; //true if in the middle of convo but no options currently
+
+       
 
 
         //--------------------------------------
@@ -598,6 +605,7 @@ namespace DialogueEditor
             if (option.Event != null)
                 option.Event.Invoke();
             SetState(eState.TransitioningOptionsOff);
+     
         }
 
         public void EndButtonSelected()
