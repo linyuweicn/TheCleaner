@@ -21,7 +21,7 @@ public class ScoreProgress: BrainstormPanelUI
     void Start()
     {
         slider = gameObject.GetComponent<Slider>();
-        brainstormManager.EventManager.OnAnswerRankedTop += UpdateScoreWhenAnswerRanked;
+        //brainstormManager.EventManager.OnAnswerRankedTop += UpdateScoreWhenAnswerRanked;
     }
 
     // Update is called once per frame

@@ -60,3 +60,11 @@ public enum ButtonType
     Back,
     CloseFeedback
 }
+
+public enum ScoreType
+{
+    Censorship,
+    Creativity,
+    Satisfaction,
+    Production
+}
