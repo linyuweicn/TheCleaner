@@ -24,7 +24,8 @@ public class ScoreProgressCensorship: BrainstormPanelUI
         
         image = gameObject.GetComponent<Image>();
 
-        brainstormManager.EventManager.OnAnswerRankedTop += UpdateScoreWhenAnswerRanked;
+        //brainstormManager.EventManager.OnAnswerRankedTop += UpdateScoreWhenAnswerRanked;
+
     }
 
     // Update is called once per frame

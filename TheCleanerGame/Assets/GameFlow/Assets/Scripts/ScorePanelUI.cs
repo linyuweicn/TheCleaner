@@ -4,18 +4,36 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 
-public class ScorePanelUI : MonoBehaviour
+public class ScorePanelUI : BrainstormPanelUI
 {
     [Tooltip("True == global, False == daily")][SerializeField] bool global;
     [SerializeField] List<ScoreFiller> m_list;
     Dictionary<ScoreType, ScoreFiller> scoreDictionary;
+    [SerializeField] GameObject m_object;
+    [SerializeField] float sliderFillSpeed;
+    [SerializeField] float imageFillSpeed;
     [Serializable]
     private class ScoreFiller
     {
         public ScoreType type;
-        public float range;
+        public float targetValue;
         public Image image;
         public Slider slider;
+    }
+
+    public override void TransitionFromStates(BrainstormState oldState, BrainstormState newState)
+    {
+        
+    }
+
+    public override void Hide()
+    {
+        m_object.SetActive(false);
+    }
+
+    public override void Show()
+    {
+        m_object.SetActive(true);
     }
 
     private void Awake()
@@ -25,18 +43,31 @@ public class ScorePanelUI : MonoBehaviour
         {
             scoreDictionary.Add(s.type, s);
         }
+    }
 
+    private void Start()
+    {
         if (global)
         {
-            UpdateGlobalScore();
+            UpdateGlobalScore(null);
+            brainstormManager.EventManager.OnAnswerRankedTop += UpdateGlobalScore;
         }
         else
         {
-            UpdateDailyScore();
+            brainstormManager.EventManager.OnAnswerRankedTop += UpdateDailyScore;
+
         }
     }
 
-    public void UpdateGlobalScore()
+    private void Update()
+    {
+        foreach (ScoreFiller s in scoreDictionary.Values)
+        {
+            OnUpdateScoreFiller(s);
+        }
+    }
+
+    public void UpdateGlobalScore(AnswerBox answer)
     {
         float totalCensorship = 0, totalProduction = 0, totalSatisfaction = 0, totalCreativity = 0;
         int count = 0;
@@ -58,14 +89,19 @@ public class ScorePanelUI : MonoBehaviour
             }
         }
 
+        if (count == 0) { return; }
+
         if (scoreDictionary.ContainsKey(ScoreType.Censorship)) { SetUpScoreFiller(scoreDictionary[ScoreType.Censorship], totalCensorship / count); }
         if (scoreDictionary.ContainsKey(ScoreType.Creativity)) { SetUpScoreFiller(scoreDictionary[ScoreType.Creativity], totalCreativity / count); }
         if (scoreDictionary.ContainsKey(ScoreType.Satisfaction)) { SetUpScoreFiller(scoreDictionary[ScoreType.Satisfaction], totalSatisfaction / count); }
         if (scoreDictionary.ContainsKey(ScoreType.Production)) { SetUpScoreFiller(scoreDictionary[ScoreType.Production], totalProduction / count); }
 
+
+        Debug.LogError("Values " + totalCensorship + " " + totalCreativity + " " + totalSatisfaction + " " + totalProduction + " " + count);
+
     }
 
-    public void UpdateDailyScore()
+    public void UpdateDailyScore(AnswerBox answer)
     {
         float totalCensorship = 0, totalProduction = 0, totalSatisfaction = 0, totalCreativity = 0;
         int count = 0;
@@ -82,18 +118,53 @@ public class ScorePanelUI : MonoBehaviour
             }
         }
 
+        if (count == 0) { return; }
+
         if (scoreDictionary.ContainsKey(ScoreType.Censorship)) { SetUpScoreFiller(scoreDictionary[ScoreType.Censorship], totalCensorship / count); }
         if (scoreDictionary.ContainsKey(ScoreType.Creativity)) { SetUpScoreFiller(scoreDictionary[ScoreType.Creativity], totalCreativity / count); }
         if (scoreDictionary.ContainsKey(ScoreType.Satisfaction)) { SetUpScoreFiller(scoreDictionary[ScoreType.Satisfaction], totalSatisfaction / count); }
         if (scoreDictionary.ContainsKey(ScoreType.Production)) { SetUpScoreFiller(scoreDictionary[ScoreType.Production], totalProduction / count); }
+
     }
 
     private void SetUpScoreFiller(ScoreFiller s, float range)
     {
-        s.range = range;
-        if (s.image != null) { s.image.fillAmount = range; }
-        if (s.slider != null) { s.slider.value = range * 100; }
+        s.targetValue = range;
     }
 
+    private void OnUpdateScoreFiller(ScoreFiller s)
+    {
+        if (s.image != null)
+        {
+            if (s.image.fillAmount + 0.05f > s.targetValue / 100.0f && s.image.fillAmount - 0.05f < s.targetValue / 100.0f)
+            {
+                s.image.fillAmount = s.targetValue / 100.0f;
+            }
+            else if (s.image.fillAmount < s.targetValue / 100.0f)
+            {
+                s.image.fillAmount += imageFillSpeed * Time.deltaTime;
+            }
+            else if (s.image.fillAmount > (s.targetValue / 100.0f))
+            {
 
+                s.image.fillAmount -= imageFillSpeed * Time.deltaTime;
+            }
+        }
+        if (s.slider != null)
+        {
+            if (s.slider.value + 5 > s.targetValue && s.slider.value - 5 < s.targetValue)
+            {
+                s.slider.value = s.targetValue;
+            }
+            else if (s.slider.value < s.targetValue)
+            {
+                s.slider.value += sliderFillSpeed * Time.deltaTime;
+                
+            }
+            else if (s.slider.value > s.targetValue)
+            {
+                s.slider.value -= sliderFillSpeed * Time.deltaTime;
+            }
+        }
+    }
 }

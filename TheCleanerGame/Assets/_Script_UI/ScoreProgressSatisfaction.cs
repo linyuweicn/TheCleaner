@@ -24,7 +24,7 @@ public class ScoreProgressSatisfaction : BrainstormPanelUI
     {
         slider = gameObject.GetComponent<Slider>();
         image = FillColor.GetComponent<Image>();
-        brainstormManager.EventManager.OnAnswerRankedTop += UpdateScoreWhenAnswerRanked;
+        //brainstormManager.EventManager.OnAnswerRankedTop += UpdateScoreWhenAnswerRanked;
     }
 
     // Update is called once per frame
