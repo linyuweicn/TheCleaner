@@ -154,9 +154,9 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
                 if(ConvoGlobalManager.agreeableScore <= lowMedBound)
                     ConversationManager.Instance.StartConversation(B4Conversations[0].convoArray[convSequenceB4 - 1]);
                 else if(ConvoGlobalManager.agreeableScore > lowMedBound && ConvoGlobalManager.agreeableScore <= medHighBound)
-                    ConversationManager.Instance.StartConversation(B4Conversations[1].convoArray[convSequenceB4 - 2]);
+                    ConversationManager.Instance.StartConversation(B4Conversations[1].convoArray[convSequenceB4 - 1]);
                 else if(ConvoGlobalManager.agreeableScore > medHighBound)
-                    ConversationManager.Instance.StartConversation(B4Conversations[2].convoArray[convSequenceB4 - 2]);
+                    ConversationManager.Instance.StartConversation(B4Conversations[2].convoArray[convSequenceB4 - 1]);
                 //DisableObjects();
                 //ConversationManager.Instance.StartConversation(B4CompleteConversations[convSequenceB4 - 1]);
 
@@ -217,9 +217,9 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
                     if(ConvoGlobalManager.agreeableScore <= lowMedBound)
                         ConversationManager.Instance.StartConversation(AfterConversations[0].convoArray[convSequenceAfter - 1]);
                     else if(ConvoGlobalManager.agreeableScore > lowMedBound && ConvoGlobalManager.agreeableScore <= medHighBound)
-                        ConversationManager.Instance.StartConversation(AfterConversations[1].convoArray[convSequenceAfter - 2]);
+                        ConversationManager.Instance.StartConversation(AfterConversations[1].convoArray[convSequenceAfter - 1]);
                     else if(ConvoGlobalManager.agreeableScore > medHighBound)
-                        ConversationManager.Instance.StartConversation(AfterConversations[2].convoArray[convSequenceAfter - 2]);
+                        ConversationManager.Instance.StartConversation(AfterConversations[2].convoArray[convSequenceAfter - 1]);
                     //DisableObjects();
                     //ConversationManager.Instance.StartConversation(AfterCompleteConversations[convSequenceAfter - 1]);
                     if (convSequenceAfter == AfterConversations[0].convoArray.Length)
@@ -253,7 +253,7 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
     {
 
 
-        yield return new WaitForSeconds(1.3f);
+        yield return new WaitForSeconds(1.5f);
         while (transform.position != pos)
         {
 
@@ -272,17 +272,17 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
 
     public void MoveToNewPos()
     { 
-        StartCoroutine(MovingTo(NewPosition, 0.2f));
+        StartCoroutine(MovingTo(NewPosition, 0.15f));
     }
 
     public void MoveToNewPos2()
     {
-        StartCoroutine(MovingTo(NewPosition2, 0.2f));
+        StartCoroutine(MovingTo(NewPosition2, 0.15f));
     }
 
     public void MoveToNewPos3()
     {
-        StartCoroutine(MovingTo(NewPosition3, 0.2f));
+        StartCoroutine(MovingTo(NewPosition3, 0.15f));
     }
 
     IEnumerator TriggerConv()

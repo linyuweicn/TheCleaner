@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2539964609188857533}
   - component: {fileID: 2539964609188857534}
   - component: {fileID: 2539964609188857535}
+  - component: {fileID: 8051062444997393270}
   m_Layer: 0
   m_Name: Ben idle_0
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1015411917
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 72af7f955ba1c5e4589cc4658008a01c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -124,7 +125,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.19794011, y: 0.067792416}
+  m_Offset: {x: -0.030085087, y: 0.7205615}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -135,7 +136,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.7588196, y: 9.862931}
+  m_Size: {x: 4.094529, y: 11.168469}
   m_EdgeRadius: 0
 --- !u!114 &2539964609188857535
 MonoBehaviour:
@@ -149,8 +150,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be3f963c62ad44542a186f4913a42200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 2539964609188857532}
   material: {fileID: 2100000, guid: d3a6e2b699db46f448010add5293626e, type: 2}
+  HoverSprite: {fileID: 0}
+  ChangeSpriteWhenHover: 0
+--- !u!114 &8051062444997393270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2539964609188857521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e883cf61567f6d4f97cf66b75d7c704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 10e086a333d9a5940bbb1014b92bd772, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &2539964609858106682
 GameObject:
   m_ObjectHideFlags: 0

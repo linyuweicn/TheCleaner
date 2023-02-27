@@ -6,17 +6,24 @@ using UnityEngine.EventSystems;
 
 public class ChangeSpriteMaterial : MonoBehaviour
 {
-    public Renderer rend;
+    //public Renderer rend;
+    private SpriteRenderer spriteRenderer;
     private Material originalMat;
     public Material material;
     private bool isShown;
     AudioManager audioManager;
 
+    
+    private Sprite OriginalSprite;
+    public Sprite HoverSprite;
+    public bool ChangeSpriteWhenHover;
+
     void Start()
     {
-        rend = GetComponent<Renderer>();
-        originalMat = GetComponent<Renderer>().material;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalMat = GetComponent<SpriteRenderer>().material;
         audioManager = FindObjectOfType<AudioManager>();
+        OriginalSprite = GetComponent<SpriteRenderer>().sprite;
     }
 
     // The mesh goes red when the mouse is over it...
@@ -32,8 +39,13 @@ public class ChangeSpriteMaterial : MonoBehaviour
             }
         }
 
-        rend.material = material;
+        spriteRenderer.material = material;
         //audioManager.PlayUiSound("ui_highlight");
+
+        if (ChangeSpriteWhenHover && HoverSprite != null)
+        {
+            spriteRenderer.sprite = HoverSprite;
+        }
 
     }
 
@@ -41,7 +53,12 @@ public class ChangeSpriteMaterial : MonoBehaviour
     public void OnMouseExit()
     {
         //rend.material.color = Color.white;
-        rend.material = originalMat;
+        spriteRenderer.material = originalMat;
+        if (ChangeSpriteWhenHover && HoverSprite != null)
+        {
+            spriteRenderer.sprite = OriginalSprite;
+        }
+
     }
 
     public void ChangMaterialForSeconds()
@@ -57,13 +74,13 @@ public class ChangeSpriteMaterial : MonoBehaviour
     IEnumerator ChangeMaterial()
     {
 
-        rend.material = material;
+        spriteRenderer.material = material;
         yield return new WaitForSeconds(2f);
-        rend.material = originalMat;
+        spriteRenderer.material = originalMat;
     }
 
     public void DisableChange()
     {
-        rend.material = originalMat;
+        spriteRenderer.material = originalMat;
     }
 }

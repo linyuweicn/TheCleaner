@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 7932807440485901661}
   - component: {fileID: 7932807440485901603}
   - component: {fileID: 1368556523426908519}
+  - component: {fileID: 6322810306569977160}
   m_Layer: 0
   m_Name: Yiran idle_0
   m_TagString: Untagged
@@ -104,7 +105,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1015411917
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 07a2b70c9747c0146988e7ea42be66fb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -130,6 +131,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   B4CompleteConversations: []
   AfterCompleteConversations: []
+  B4Conversations: []
+  AfterConversations: []
+  lowMedBound: 0
+  medHighBound: 5
+  useAgreeableScore: 0
   boxCollider2D: []
   CharaCollider:
   - {fileID: 0}
@@ -150,8 +156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be3f963c62ad44542a186f4913a42200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 7932807440485901660}
   material: {fileID: 2100000, guid: d3a6e2b699db46f448010add5293626e, type: 2}
+  HoverSprite: {fileID: 0}
+  ChangeSpriteWhenHover: 0
 --- !u!61 &1368556523426908519
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -178,3 +185,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.5005007, y: 26.553825}
   m_EdgeRadius: 0
+--- !u!114 &6322810306569977160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932807440485901662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e883cf61567f6d4f97cf66b75d7c704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 10e086a333d9a5940bbb1014b92bd772, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}

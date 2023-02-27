@@ -15,10 +15,12 @@ public class ScorePanelUI : BrainstormPanelUI
     [Serializable]
     private class ScoreFiller
     {
-        public ScoreType type;
+        public ScoreType type;    // grab here for tracting agreeable score
         public float targetValue;
-        public Image image;
+        public Image image; // only used for censorship circles
         public Slider slider;
+        public Image SliderFillImage; // used to change the color for slider
+
     }
 
     public override void TransitionFromStates(BrainstormState oldState, BrainstormState newState)
@@ -97,7 +99,7 @@ public class ScorePanelUI : BrainstormPanelUI
         if (scoreDictionary.ContainsKey(ScoreType.Production)) { SetUpScoreFiller(scoreDictionary[ScoreType.Production], totalProduction / count); }
 
 
-        Debug.LogError("Values " + totalCensorship + " " + totalCreativity + " " + totalSatisfaction + " " + totalProduction + " " + count);
+        Debug.Log(" totalProduction: " + totalProduction + " totalSatisfaction "+ totalSatisfaction +  " totalCensorship Values: " + totalCensorship + " totalCreativity: " + totalCreativity + " count" + count);
 
     }
 
@@ -124,6 +126,7 @@ public class ScorePanelUI : BrainstormPanelUI
         if (scoreDictionary.ContainsKey(ScoreType.Creativity)) { SetUpScoreFiller(scoreDictionary[ScoreType.Creativity], totalCreativity / count); }
         if (scoreDictionary.ContainsKey(ScoreType.Satisfaction)) { SetUpScoreFiller(scoreDictionary[ScoreType.Satisfaction], totalSatisfaction / count); }
         if (scoreDictionary.ContainsKey(ScoreType.Production)) { SetUpScoreFiller(scoreDictionary[ScoreType.Production], totalProduction / count); }
+        Debug.Log(" totalProduction: " + totalProduction + " totalSatisfaction " + totalSatisfaction + " totalCensorship Values: " + totalCensorship + " totalCreativity: " + totalCreativity + " count" + count);
 
     }
 
@@ -149,6 +152,26 @@ public class ScorePanelUI : BrainstormPanelUI
 
                 s.image.fillAmount -= imageFillSpeed * Time.deltaTime;
             }
+
+            //change slider color 
+            if (s.image.fillAmount < 0.5)
+            {
+                s.image.color = new Color32(219, 62, 47, 255);//red
+
+
+            }
+            else if (s.image.fillAmount < 0.7 && s.image.fillAmount > 0.51)
+            {
+
+                s.image.color = new Color32(226, 231, 17, 255);
+            }
+            else if (s.image.fillAmount > 0.7)
+            {
+
+                s.image.color = new Color32(148, 203, 72, 255);
+            }
+
+
         }
         if (s.slider != null)
         {
@@ -164,6 +187,22 @@ public class ScorePanelUI : BrainstormPanelUI
             else if (s.slider.value > s.targetValue)
             {
                 s.slider.value -= sliderFillSpeed * Time.deltaTime;
+            }
+
+            //change slider color 
+            if (s.slider.value < 50)
+            {
+
+                s.SliderFillImage.color = new Color32(219, 62, 47, 255);
+            }
+            else if (s.slider.value < 70 && s.slider.value > 51)
+            {
+
+                s.SliderFillImage.color = new Color32(226, 231, 17, 255);
+            }
+            else if (s.slider.value > 70)
+            {
+                s.SliderFillImage.color = new Color32(148, 203, 72, 255);
             }
         }
     }

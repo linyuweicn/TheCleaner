@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: {x: 3, y: 1}
   promptType: 3
-  text: 'Our game has [death] that have [color] blood effect for dead bodies. '
+  text: 'Our game has [death] and blood effect are in [color] color. '
   imageColumn: 0
-  completed: 0
+  completed: 1
   AnswersStorage:
   - answerColumn:
     - text: cartoon death
@@ -26,7 +26,7 @@ MonoBehaviour:
       innovation: 65
       totalscore: 77
       feedbackType: 1
-      feedbackText: 
+      feedbackText: It should be okay as long as it's more silly than violent.
       criticType: 1
       image: {fileID: 0}
     - text: realistic death
@@ -35,8 +35,8 @@ MonoBehaviour:
       censorFulfillment: 43
       innovation: 85
       totalscore: 63
-      feedbackType: 0
-      feedbackText: 
+      feedbackType: 1
+      feedbackText: Realistic? I'm sick to my stomach already.
       criticType: 1
       image: {fileID: 0}
     - text: artistic death
@@ -45,9 +45,9 @@ MonoBehaviour:
       censorFulfillment: 43
       innovation: 85
       totalscore: 63
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      feedbackType: 1
+      feedbackText: Well if it's tasteful, it might be okay.
+      criticType: 1
       image: {fileID: 0}
     - text: no death
       production: 70
@@ -55,9 +55,9 @@ MonoBehaviour:
       censorFulfillment: 99
       innovation: 55
       totalscore: 86
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      feedbackType: 1
+      feedbackText: That's what I like to hear.
+      criticType: 1
       image: {fileID: 0}
     - text: intense death
       production: 30
@@ -65,9 +65,9 @@ MonoBehaviour:
       censorFulfillment: 14
       innovation: 75
       totalscore: 46
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      feedbackType: 1
+      feedbackText: No way.
+      criticType: 1
       image: {fileID: 0}
   - answerColumn:
     - text: no
@@ -76,9 +76,9 @@ MonoBehaviour:
       censorFulfillment: 99
       innovation: 55
       totalscore: 86
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      feedbackType: 1
+      feedbackText: No blood at all? Sign me up.
+      criticType: 1
       image: {fileID: 0}
     - text: green
       production: 50
@@ -86,9 +86,9 @@ MonoBehaviour:
       censorFulfillment: 85
       innovation: 45
       totalscore: 75
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      feedbackType: 1
+      feedbackText: Okay. I can work with that.
+      criticType: 1
       image: {fileID: 0}
     - text: black
       production: 50
@@ -96,9 +96,9 @@ MonoBehaviour:
       censorFulfillment: 65
       innovation: 50
       totalscore: 65
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      feedbackType: 1
+      feedbackText: Black... that might pass.
+      criticType: 1
       image: {fileID: 0}
     - text: pink
       production: 50
@@ -106,9 +106,9 @@ MonoBehaviour:
       censorFulfillment: 50
       innovation: 65
       totalscore: 63
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      feedbackType: 1
+      feedbackText: That's practically red.
+      criticType: 1
       image: {fileID: 0}
     - text: red
       production: 50
@@ -116,7 +116,7 @@ MonoBehaviour:
       censorFulfillment: 30
       innovation: 70
       totalscore: 56
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      feedbackType: 1
+      feedbackText: That's the color of real blood! No.
+      criticType: 1
       image: {fileID: 0}

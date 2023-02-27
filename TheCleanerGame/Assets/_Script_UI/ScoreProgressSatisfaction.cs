@@ -74,7 +74,7 @@ public class ScoreProgressSatisfaction : BrainstormPanelUI
         //totalScore = 0.1f*answer.satisfaction + 0.3f*answer.innovation + 0.5f*answer.censorFulfillment - 0.1f*answer.production;
         //totalScoreText.text = totalScore.ToString();
         float satisfactionScore = answer.satisfaction;
-        Debug.Log("satisfactionScore is " + satisfactionScore);
+        //Debug.Log("satisfactionScore is " + satisfactionScore);
         return satisfactionScore;
     }
 

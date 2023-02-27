@@ -17,7 +17,7 @@ MonoBehaviour:
   text: 'Our game has [amount] descriptions of crime and we believe those descriptions
     are [adj] for narrations. '
   imageColumn: 0
-  completed: 0
+  completed: 1
   AnswersStorage:
   - answerColumn:
     - text: 'a lot '
@@ -27,7 +27,7 @@ MonoBehaviour:
       innovation: 75
       totalscore: 43
       feedbackType: 1
-      feedbackText: 
+      feedbackText: Are you trying to give make this process difficult?
       criticType: 1
       image: {fileID: 0}
     - text: many
@@ -36,8 +36,8 @@ MonoBehaviour:
       censorFulfillment: 30
       innovation: 70
       totalscore: 51
-      feedbackType: 0
-      feedbackText: 
+      feedbackType: 1
+      feedbackText: Wow. Really? That's not good.
       criticType: 1
       image: {fileID: 0}
     - text: medium
@@ -46,9 +46,9 @@ MonoBehaviour:
       censorFulfillment: 50
       innovation: 65
       totalscore: 61
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      feedbackType: 1
+      feedbackText: Hmm. That's more than I thought.
+      criticType: 1
       image: {fileID: 0}
     - text: seldom
       production: 40
@@ -56,9 +56,9 @@ MonoBehaviour:
       censorFulfillment: 90
       innovation: 60
       totalscore: 80
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      feedbackType: 1
+      feedbackText: Okay. I'm sure we can work with that.
+      criticType: 1
       image: {fileID: 0}
     - text: no
       production: 50
@@ -66,9 +66,9 @@ MonoBehaviour:
       censorFulfillment: 99
       innovation: 55
       totalscore: 84
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      feedbackType: 1
+      feedbackText: That's amazing! This should be easy to approve.
+      criticType: 1
       image: {fileID: 0}
   - answerColumn:
     - text: susceptible to change
@@ -77,9 +77,9 @@ MonoBehaviour:
       censorFulfillment: 99
       innovation: 75
       totalscore: 88
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      feedbackType: 1
+      feedbackText: Perfect.
+      criticType: 1
       image: {fileID: 0}
     - text: reasonable
       production: 50
@@ -87,9 +87,9 @@ MonoBehaviour:
       censorFulfillment: 12
       innovation: 90
       totalscore: 52
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      feedbackType: 1
+      feedbackText: Reasonable for you maybe. What about the children?
+      criticType: 1
       image: {fileID: 0}
     - text: censored already
       production: 60
@@ -97,9 +97,9 @@ MonoBehaviour:
       censorFulfillment: 85
       innovation: 70
       totalscore: 83
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      feedbackType: 1
+      feedbackText: I'll be the judge of that.
+      criticType: 1
       image: {fileID: 0}
     - text: mild
       production: 40
@@ -107,9 +107,9 @@ MonoBehaviour:
       censorFulfillment: 33
       innovation: 80
       totalscore: 60
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      feedbackType: 1
+      feedbackText: I'm not convinced it's all that mild.
+      criticType: 1
       image: {fileID: 0}
     - text: 'negligible '
       production: 50
@@ -117,11 +117,7 @@ MonoBehaviour:
       censorFulfillment: 90
       innovation: 60
       totalscore: 81
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      feedbackType: 1
+      feedbackText: If you don't need them, remove them!
+      criticType: 1
       image: {fileID: 0}
-  segments:
-  - 'Our game has '
-  - ' descriptions of crime and we believe those descriptions are '
-  - ' for narrations. '

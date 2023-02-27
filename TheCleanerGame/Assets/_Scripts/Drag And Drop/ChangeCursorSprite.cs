@@ -23,6 +23,7 @@ public class ChangeCursorSprite : MonoBehaviour, IPointerEnterHandler, IPointerE
     {
        
         Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+       
     }
 
     public void OnPointerExit(PointerEventData pointerEventData)
@@ -31,5 +32,14 @@ public class ChangeCursorSprite : MonoBehaviour, IPointerEnterHandler, IPointerE
         Cursor.SetCursor(null, Vector2.zero, cursorMode);
     }
 
+    private void OnMouseEnter()
+    {
+        Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
 
+    }
+
+    private void OnMouseExit()
+    {
+        Cursor.SetCursor(null, Vector2.zero, cursorMode);
+    }
 }

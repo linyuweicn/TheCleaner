@@ -53,7 +53,7 @@ public class BrainstormTutorial : MonoBehaviour
 
     public void StartPanelTutorial()
     {
-        if (!hasClickedOnPanel)
+        if (!skipTutorial && !hasClickedOnPanel)
         {
             //start new conv and animations
             StartCoroutine(StartPanelConv());

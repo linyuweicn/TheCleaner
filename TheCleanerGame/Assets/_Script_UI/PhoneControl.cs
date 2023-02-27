@@ -37,9 +37,19 @@ public class PhoneControl : MonoBehaviour
         Debug.Log("closePhone");
     }
 
-    public void EnablePhone()
+    public void EnablePhoneAfterEmail()
     {
         if (!hasOpened && hasClickedTab)
+        {
+            transform.parent.gameObject.SetActive(true);
+            hasOpened = true;
+            audioManager.PlayUiSound("phone vibrate");
+        }
+    }
+
+    public void EnablePhoneAfterConverstaion()
+    {
+        if (!hasOpened)
         {
             transform.parent.gameObject.SetActive(true);
             hasOpened = true;

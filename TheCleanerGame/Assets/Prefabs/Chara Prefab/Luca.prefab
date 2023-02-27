@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 1810707934999391385}
   - component: {fileID: 1810707934999391398}
   - component: {fileID: 1810707934999391384}
+  - component: {fileID: 8823591897657248924}
   m_Layer: 0
   m_Name: Luca Idle_0
   m_TagString: Untagged
@@ -104,7 +105,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1015411917
   m_SortingLayer: 1
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 29c4bf4c65de1994f98b3eb0dc844a4b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -181,5 +182,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be3f963c62ad44542a186f4913a42200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 1810707934999391399}
   material: {fileID: 2100000, guid: d3a6e2b699db46f448010add5293626e, type: 2}
+  HoverSprite: {fileID: 0}
+  ChangeSpriteWhenHover: 0
+--- !u!114 &8823591897657248924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810707934999391397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e883cf61567f6d4f97cf66b75d7c704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 10e086a333d9a5940bbb1014b92bd772, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}

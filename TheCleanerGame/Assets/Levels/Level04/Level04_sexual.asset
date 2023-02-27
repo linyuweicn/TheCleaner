@@ -16,7 +16,7 @@ MonoBehaviour:
   promptType: 0
   text: I believe including sexual activities in games are [adj].
   imageColumn: 0
-  completed: 0
+  completed: 1
   AnswersStorage:
   - answerColumn:
     - text: disgusting
@@ -25,9 +25,9 @@ MonoBehaviour:
       censorFulfillment: 90
       innovation: 70
       totalscore: 84
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      feedbackType: 1
+      feedbackText: I completely agree.
+      criticType: 1
       image: {fileID: 0}
     - text: dangerous
       production: 50
@@ -35,9 +35,9 @@ MonoBehaviour:
       censorFulfillment: 80
       innovation: 75
       totalscore: 82
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      feedbackType: 1
+      feedbackText: Very dangerous. And definitely avoidable.
+      criticType: 1
       image: {fileID: 0}
     - text: educational
       production: 50
@@ -45,9 +45,9 @@ MonoBehaviour:
       censorFulfillment: 44
       innovation: 87
       totalscore: 67
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      feedbackType: 1
+      feedbackText: I don't know that I agree.
+      criticType: 1
       image: {fileID: 0}
     - text: understandable
       production: 50
@@ -55,9 +55,9 @@ MonoBehaviour:
       censorFulfillment: 25
       innovation: 60
       totalscore: 49
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      feedbackType: 1
+      feedbackText: But think of the children.
+      criticType: 1
       image: {fileID: 0}
     - text: magnificant
       production: 50
@@ -65,10 +65,7 @@ MonoBehaviour:
       censorFulfillment: 12
       innovation: 75
       totalscore: 48
-      feedbackType: 0
-      feedbackText: 
-      criticType: 0
+      feedbackType: 1
+      feedbackText: That's a good way to get this game cancelled.
+      criticType: 1
       image: {fileID: 0}
-  segments:
-  - 'I believe including sexual activities in games are '
-  - .

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 693207189369412312}
   - component: {fileID: 693207189369412313}
   - component: {fileID: 3991998720191209086}
+  - component: {fileID: 1047283237723792573}
   m_Layer: 0
   m_Name: Lia_idle_0
   m_TagString: Untagged
@@ -123,8 +124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be3f963c62ad44542a186f4913a42200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 693207189369412315}
   material: {fileID: 2100000, guid: d3a6e2b699db46f448010add5293626e, type: 2}
+  HoverSprite: {fileID: 0}
+  ChangeSpriteWhenHover: 0
 --- !u!114 &3991998720191209086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,11 +139,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efc638d2b06dad4d92c2fe95ab2c132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 0}
   B4CompleteConversations: []
   AfterCompleteConversations: []
+  B4Conversations: []
+  AfterConversations: []
+  lowMedBound: 0
+  medHighBound: 5
+  useAgreeableScore: 0
   boxCollider2D: []
   CharaCollider: []
+  NewPosition: {x: 0, y: 0, z: 0}
+  NewPosition2: {x: 0, y: 0, z: 0}
+  NewPosition3: {x: 0, y: 0, z: 0}
+  startConvAtBegining: 0
+  hasFinishedConv: 0
+--- !u!114 &1047283237723792573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693207189369412316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e883cf61567f6d4f97cf66b75d7c704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 10e086a333d9a5940bbb1014b92bd772, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &693207189808960769
 GameObject:
   m_ObjectHideFlags: 0
