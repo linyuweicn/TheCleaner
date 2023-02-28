@@ -17,6 +17,7 @@ public class ChangeSpriteMaterial : MonoBehaviour
     private Sprite OriginalSprite;
     public Sprite HoverSprite;
     public bool ChangeSpriteWhenHover;
+    public bool LightUpAtBegining;
 
     void Start()
     {
@@ -24,6 +25,10 @@ public class ChangeSpriteMaterial : MonoBehaviour
         originalMat = GetComponent<SpriteRenderer>().material;
         audioManager = FindObjectOfType<AudioManager>();
         OriginalSprite = GetComponent<SpriteRenderer>().sprite;
+        if (LightUpAtBegining)
+        {
+            spriteRenderer.material = material;
+        }
     }
 
     // The mesh goes red when the mouse is over it...

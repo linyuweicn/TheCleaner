@@ -2381,6 +2381,10 @@ PrefabInstance:
       propertyPath: CharaColliders.Array.data[1]
       value: 
       objectReference: {fileID: 479614455}
+    - target: {fileID: 1571868868752888319, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4387831573563643315, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2392,6 +2396,10 @@ PrefabInstance:
     - target: {fileID: 4387831574529843304, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387831574692617496, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4387831574767638168, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: m_LocalScale.x
@@ -2513,6 +2521,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4387831574788649086, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: LightUpAtBegining
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4387831575152013974, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2520,6 +2532,14 @@ PrefabInstance:
     - target: {fileID: 6469293662507327266, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271790577305095710, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: LightUpAtBegining
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7802226804063181208, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8084904101425945098, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: Animator
@@ -2565,6 +2585,10 @@ PrefabInstance:
       propertyPath: CharaColliders.Array.data[1]
       value: 
       objectReference: {fileID: 479614455}
+    - target: {fileID: 9100798848429328276, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
 --- !u!1 &1045905908 stripped
@@ -2626,17 +2650,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d83e3bc7b630d9c40a6fb1ccddae1002, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1045905919 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7271790577305095710, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
-  m_PrefabInstance: {fileID: 1045905907}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1045905913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be3f963c62ad44542a186f4913a42200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1045905920 stripped
@@ -3159,30 +3172,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2054666437}
-        m_TargetAssemblyTypeName: ChangeSpriteMaterial, Assembly-CSharp
-        m_MethodName: ChangMaterialForSeconds
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1045905919}
-        m_TargetAssemblyTypeName: ChangeSpriteMaterial, Assembly-CSharp
-        m_MethodName: ChangMaterialForSeconds
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4011,17 +4000,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 509862493205393731, guid: 8751829fc4dab354cb287a148f755140, type: 3}
   m_PrefabInstance: {fileID: 1369273217}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2054666437 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4387831574788649086, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
-  m_PrefabInstance: {fileID: 1045905907}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1045905920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be3f963c62ad44542a186f4913a42200, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &2064274009 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 4387831574788649024, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
