@@ -107,6 +107,7 @@ public class SceneTransitionButton : MonoBehaviour
     
     public void ToStartPage()
     {
+        resume();
         StartCoroutine(LoadSpecificScene(0));
 
     }

@@ -7,6 +7,7 @@ public class TriggerConvAfterPrompts : MonoBehaviour
 {
     //[SerializeField] NPCConversation EndingComments;
     [SerializeField] GameObject npc;
+    [SerializeField] NPCConvWithWhiteBoard[] CharaColliders;
     private bool hasTriggered;
     public NPCConvWithWhiteBoard npcScript;
     void Start()
@@ -49,5 +50,18 @@ public class TriggerConvAfterPrompts : MonoBehaviour
         //ConversationManager.Instance.StartConversation(EndingComments);
     }
 
-  
+    public void enableCharacterColliders()
+    {
+        if (BrainstormGeneralManager.Instance.ContainerDictionary[0].Prompt.completed
+           && BrainstormGeneralManager.Instance.ContainerDictionary[1].Prompt.completed
+           && BrainstormGeneralManager.Instance.ContainerDictionary[2].Prompt.completed
+           )
+        {
+            for (int i = 0; i < CharaColliders.Length; i++)
+            {
+                CharaColliders[i].canTurnOffCollider = false;
+                Debug.Log(CharaColliders[i].name);
+            }
+        }
+    }
 }

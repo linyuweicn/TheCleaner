@@ -384,7 +384,7 @@ namespace DialogueEditor
             float timePerChar = (60.0f / charactersPerSecond);
             timePerChar *= ScrollSpeed;
 
-            m_elapsedScrollTime += Time.deltaTime;
+            m_elapsedScrollTime += Time.fixedDeltaTime;
 
             if (m_elapsedScrollTime > timePerChar)
             {

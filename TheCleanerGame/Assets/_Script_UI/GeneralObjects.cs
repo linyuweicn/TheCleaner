@@ -36,12 +36,17 @@ public class GeneralObjects : MonoBehaviour
             //for aniamted objects, enable them at the begining
             if (OpenAtBegining)
             {
+                AnimatorOrObject.SetActive(true);
                 OnMouseDown();
                 Debug.Log("ShouldClick");
             }
+            else
+            {
+                AnimatorOrObject.SetActive(false);
+            }
         }
 
-
+        
 
     }
 
@@ -67,8 +72,9 @@ public class GeneralObjects : MonoBehaviour
 
         if (OpenAtBegining)
         {
+            
             OpenAtBegining = false;
-            audioManager.PlayUiSound("");
+            audioManager.PlayUiSound("");//sounds only
         }
         else
         {
@@ -77,7 +83,7 @@ public class GeneralObjects : MonoBehaviour
        
 
 
-        if (hasClicked == false)
+        if (!hasClicked)
         {
 
             OpenObjects();
@@ -115,6 +121,7 @@ public class GeneralObjects : MonoBehaviour
         if (m_Animator != null)
         {
             m_Animator.SetBool("isOn", false);
+            StartCoroutine(CloseAnimationObjeccts());
 
         }
         else
@@ -128,9 +135,11 @@ public class GeneralObjects : MonoBehaviour
 
     public void OpenObjects()
     {
+        
         hasClicked = true;
         if (m_Animator != null)
         {
+            AnimatorOrObject.SetActive(true);
             m_Animator.SetBool("isOn", true); // turn on stuff such as calendar or email
 
         }
@@ -156,9 +165,13 @@ public class GeneralObjects : MonoBehaviour
                 }
         }
      
-       
-        
+    }
 
+    IEnumerator CloseAnimationObjeccts()
+    {
+        yield return new WaitForSeconds(1.1f);
 
+        AnimatorOrObject.SetActive(false);
+        //ConversationManager.Instance.StartConversation(EndingComments);
     }
 }
