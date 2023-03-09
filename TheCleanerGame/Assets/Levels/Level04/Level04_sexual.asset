@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: {x: 3, y: 2}
   promptType: 0
-  text: I believe including sexual activities in games are [adj].
+  text: We believe sexual contents in games are [adj].
   imageColumn: 0
-  completed: 1
+  completed: 0
   AnswersStorage:
   - answerColumn:
-    - text: disgusting
+    - text: preventable
       production: 50
       satisfaction: 51
       censorFulfillment: 90
@@ -28,7 +28,7 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: I completely agree.
       criticType: 1
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 17e1b45f52035ae4bbba46a8d1abc9b7, type: 3}
     - text: dangerous
       production: 50
       satisfaction: 63
@@ -38,7 +38,7 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: Very dangerous. And definitely avoidable.
       criticType: 1
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: cb81c6e96c792184ab92c79568e10ed9, type: 3}
     - text: educational
       production: 50
       satisfaction: 75
@@ -48,7 +48,7 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: I don't know that I agree.
       criticType: 1
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 87af2c01463ad60418f85e02aa64b998, type: 3}
     - text: understandable
       production: 50
       satisfaction: 83
@@ -58,8 +58,8 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: But think of the children.
       criticType: 1
-      image: {fileID: 0}
-    - text: magnificant
+      image: {fileID: 21300000, guid: 19be619d6b5d9f941879791c19c5e69d, type: 3}
+    - text: necessary
       production: 50
       satisfaction: 93
       censorFulfillment: 12
@@ -68,4 +68,4 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: That's a good way to get this game cancelled.
       criticType: 1
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: f0719b77c59f0074f8525e0e681e9111, type: 3}

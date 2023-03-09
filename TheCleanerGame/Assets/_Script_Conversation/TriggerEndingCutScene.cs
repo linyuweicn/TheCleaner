@@ -24,7 +24,7 @@ public class TriggerEndingCutScene : MonoBehaviour
         if (ConvScipt.hasFinishedConv)
         {
             Debug.Log("finished conv");
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(2.5f);
             EndingCamera.SetActive(true);
             EndingCredits.SetActive(true);
         }

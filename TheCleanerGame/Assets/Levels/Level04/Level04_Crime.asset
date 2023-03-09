@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: {x: 3, y: 0}
   promptType: 2
-  text: 'Our game has [amount] descriptions of crime and we believe those descriptions
-    are [adj] for narrations. '
+  text: Our game features [amount] descriptions of crimes that are [adj] for narration
+    purposes.
   imageColumn: 0
-  completed: 1
+  completed: 0
   AnswersStorage:
   - answerColumn:
     - text: 'a lot '
@@ -80,7 +80,7 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: Perfect.
       criticType: 1
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 350cc2e7bf0b0eb428d4c7b8995570d2, type: 3}
     - text: reasonable
       production: 50
       satisfaction: 90
@@ -90,7 +90,7 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: Reasonable for you maybe. What about the children?
       criticType: 1
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: b07e1a4ae4f90d54a9298e5d24702b6d, type: 3}
     - text: censored already
       production: 60
       satisfaction: 74
@@ -100,7 +100,7 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: I'll be the judge of that.
       criticType: 1
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 71dfcb0917704b145a791343ed44eb26, type: 3}
     - text: mild
       production: 40
       satisfaction: 80
@@ -110,7 +110,7 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: I'm not convinced it's all that mild.
       criticType: 1
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 4bc33cd63e080514891206166d679f4c, type: 3}
     - text: 'negligible '
       production: 50
       satisfaction: 54
@@ -120,4 +120,4 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: If you don't need them, remove them!
       criticType: 1
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 6abcacd68856feb4388b195dea4cbcd5, type: 3}

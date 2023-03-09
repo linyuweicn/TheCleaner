@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: {x: 3, y: 1}
   promptType: 3
-  text: 'Our game has [death] and blood effect are in [color] color. '
+  text: Our game features [death] and [color] blood effects
   imageColumn: 0
-  completed: 1
+  completed: 0
   AnswersStorage:
   - answerColumn:
     - text: cartoon death
@@ -79,7 +79,7 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: No blood at all? Sign me up.
       criticType: 1
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 38fa3fd0fdd9ee8448835677b390cd5f, type: 3}
     - text: green
       production: 50
       satisfaction: 60
@@ -89,7 +89,7 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: Okay. I can work with that.
       criticType: 1
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: d89bceafebc713d419e20cbd08bb813c, type: 3}
     - text: black
       production: 50
       satisfaction: 69
@@ -99,7 +99,7 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: Black... that might pass.
       criticType: 1
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 77475536180ae414381ae24aaf448b45, type: 3}
     - text: pink
       production: 50
       satisfaction: 82
@@ -109,7 +109,7 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: That's practically red.
       criticType: 1
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 3ac896e0a7c3cde4abdfe5db85bd1b9f, type: 3}
     - text: red
       production: 50
       satisfaction: 99
@@ -119,4 +119,4 @@ MonoBehaviour:
       feedbackType: 1
       feedbackText: That's the color of real blood! No.
       criticType: 1
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 9493f7f36b2d144488c1388db44d4f55, type: 3}

@@ -9,19 +9,21 @@ public class NPC1_Con1 : MonoBehaviour
     // this script should be intergrated with NPCConWithWhiteBoard.
 
 
-    private int convSequence=0;
-    public NPCConversation[] B4CompleteConversations;
-    [SerializeField] GameObject[] GameObjets;
-    Collider2D CharaCollider;
-    public static bool canTurnOffCollider; //GeneralObjects uses this 
-    private Button mybutton;
-     
+    
+    public NPCConversation BuyLicenseConversation;
+    public NPCConversation RefuseLicenseConversation;
+    private BoxCollider2D CharaCollider;
+    ConvoGlobalManager LicenseResult;
+
+    [SerializeField] BoxCollider2D[] boxCollider2D;
 
 
     void Start()
     {
-        CharaCollider = gameObject.GetComponent<Collider2D>();
-        mybutton = gameObject.GetComponent<Button>();
+        CharaCollider = gameObject.GetComponent<BoxCollider2D>();
+        LicenseResult = FindObjectOfType<ConvoGlobalManager>();
+
+
     }
 
     // Update is called once per frame
@@ -32,9 +34,9 @@ public class NPC1_Con1 : MonoBehaviour
             if (ConversationManager.Instance.IsConversationActive)
             {
 
-                for (int i = 0; i < GameObjets.Length; i++)
+                for (int i = 0; i < boxCollider2D.Length; i++)
                 {
-                    GameObjets[i].SetActive(false); // do not set collider to unenabled for those gameObjects. It will conflict with GenrealObjects Scripst.
+                    boxCollider2D[i].enabled = false; // do not set collider to unenabled for those gameObjects. It will conflict with GenrealObjects Scripst.
                     
                 }
 
@@ -42,87 +44,39 @@ public class NPC1_Con1 : MonoBehaviour
             }
             else // if conv is not active
             {
-                for (int i = 0; i < GameObjets.Length; i++)
+                for (int i = 0; i < boxCollider2D.Length; i++)
                 {
-                    GameObjets[i].SetActive(true); // do not set collider to unenabled for those gameObjects. It will conflict with GenrealObjects Scripst.
+                    boxCollider2D[i].enabled = true; // do not set collider to unenabled for those gameObjects. It will conflict with GenrealObjects Scripst.
 
                 }
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
-            ConversationManager.Instance.SelectPreviousOption();
-        else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
-            ConversationManager.Instance.SelectNextOption();
-        else if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space))
-            ConversationManager.Instance.PressSelectedOption();
+      
+    }
+
+    public void OnMouseDown()
+    {
+        StartConv();
 
     }
 
-    public void OnMouseOver()
+
+    public void StartConv()
     {
-        if (mybutton = null)
+        if (LicenseResult.BuyLicense)
         {
-            ClikOnNonButtonConv();
+            ConversationManager.Instance.StartConversation(BuyLicenseConversation);
+            CharaCollider.enabled = false;
         }
         else
         {
-            ClickButtonPeople();
-
-        }
-       
-
-
-    }
-
-
-    public void ClikOnNonButtonConv()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("Clicked");
-            convSequence++;
-            //Debug.Log(convSequence);
-            if (convSequence <= B4CompleteConversations.Length)
-            {
-                ConversationManager.Instance.StartConversation(B4CompleteConversations[convSequence - 1]);
-
-                //diable the first item, do not let it had more conversation.
-
-                if (convSequence == B4CompleteConversations.Length)
-                {
-                    canTurnOffCollider = true;
-                    if (canTurnOffCollider)
-                    {
-                        CharaCollider.enabled = false;
-                    }
-
-
-                }
-
-            }
-
+            ConversationManager.Instance.StartConversation(RefuseLicenseConversation);
+            CharaCollider.enabled = false;
         }
 
-    }
-    public void ClickButtonPeople()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            convSequence++;
-            if (convSequence <= B4CompleteConversations.Length)
-            {
-                ConversationManager.Instance.StartConversation(B4CompleteConversations[convSequence - 1]);
+     }
 
-            }
-            else
-            {
-                Debug.Log("should disable button");
-              /*  ColorBlock colorVar = mybutton.colors;
-                colorVar.highlightedColor = new Color(255, 255, 255);
-                mybutton.colors = colorVar;*/
-           
-            }
-        }
     }
-}
+    
+

@@ -39,7 +39,7 @@ public class SummaryFeedbackUI : FeedbackUI
         for (int i = 0; i < prompt.Answers.Count; i++)
         {
             totalScore += prompt.Answers[i][0].totalscore;
-            //Debug.Log(totalScore);
+            Debug.Log(totalScore + "total score in summary feedback");
         }
 
         foreach (SummaryUI su in summaryUIList)

@@ -7,6 +7,7 @@ public class ConvoGlobalManager : MonoBehaviour
 {
     [HideInInspector] int nextScene;
     [SerializeField] public static int agreeableScore;
+    public bool BuyLicense;
 
     // Start is called before the first frame update
     void Start()
@@ -40,5 +41,11 @@ public class ConvoGlobalManager : MonoBehaviour
     {
         agreeableScore = newScore;
         Debug.Log("Agreeable score is " + agreeableScore);
+    }
+
+    public void BuyLicenseResult()
+    {
+        BuyLicense = true;
+        Debug.Log(BuyLicense + "BuyLicense");
     }
 }
