@@ -12,6 +12,12 @@ public class ScorePanelUI : BrainstormPanelUI
     [SerializeField] GameObject m_object;
     [SerializeField] float sliderFillSpeed;
     [SerializeField] float imageFillSpeed;
+    [SerializeField] SpriteRenderer CensorshipIcon;
+    private Sprite CensorshipOriginal;
+    [SerializeField] Sprite CensorshipAngry;
+    [SerializeField] Sprite CensorshipHappy;
+
+
     [Serializable]
     private class ScoreFiller
     {
@@ -59,6 +65,8 @@ public class ScorePanelUI : BrainstormPanelUI
             brainstormManager.EventManager.OnAnswerRankedTop += UpdateDailyScore;
 
         }
+
+        CensorshipOriginal = CensorshipIcon.GetComponent<SpriteRenderer>().sprite;
     }
 
     private void Update()
@@ -157,17 +165,17 @@ public class ScorePanelUI : BrainstormPanelUI
             if (s.image.fillAmount < 0.5)
             {
                 s.image.color = new Color32(219, 62, 47, 255);//red
-
+                CensorshipIcon.sprite = CensorshipAngry;
 
             }
             else if (s.image.fillAmount < 0.7 && s.image.fillAmount > 0.51)
             {
-
+                CensorshipIcon.sprite = CensorshipOriginal;
                 s.image.color = new Color32(226, 231, 17, 255);
             }
             else if (s.image.fillAmount > 0.7)
             {
-
+                CensorshipIcon.sprite = CensorshipHappy;
                 s.image.color = new Color32(148, 203, 72, 255);
             }
 
