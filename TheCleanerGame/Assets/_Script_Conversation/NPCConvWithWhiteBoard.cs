@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using DialogueEditor;
 using UnityEngine.EventSystems;
+using System;
 
 
 public class NPCConvWithWhiteBoard : MonoBehaviour
 {
+    
     [System.Serializable]
     public class MultiDimensionalConvo
     {
@@ -14,7 +16,7 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
         public string ConvType;
         public NPCConversation[] convoArray;
     }
-
+    [Header("Conversations!")]
     public NPCConversation[] B4CompleteConversations;
     public NPCConversation[] AfterCompleteConversations;
 
@@ -25,25 +27,29 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
     [SerializeField] int lowMedBound = 0;
     [SerializeField] int medHighBound = 5;
     [SerializeField] bool useAgreeableScore;
-
+    [SerializeField] bool startConvAtBegining;
     private int convSequenceB4;
     private int convSequenceAfter;
 
+    [Header("Colliders!")]
     [SerializeField] BoxCollider2D[] boxCollider2D; // for items, do not put characters in here because the Conversation plugin disables clicking other characters already
-    private BoxCollider2D CharaCollider; // ?should be distinguished between other NPC collider and the gameobject's collider
+    private BoxCollider2D CharaCollider;
 
+    [Header("Positions!")]
     Vector3 origPosition;
     [SerializeField] Vector3 NewPosition;
     [SerializeField] Vector3 NewPosition2;
     [SerializeField] Vector3 NewPosition3;
+    public bool FlipWhenMoving;
+    private SpriteRenderer CharaSpriteRenderer;
+  
 
-    public bool startConvAtBegining;
-
+    [HideInInspector]
     public bool canTurnOffCollider; //GeneralObjects and TriggerConvAfterPrompts uses this 
-
+    [HideInInspector]
     public bool hasFinishedConv; // Used in triggerending cut scene
 
-    AudioManager audioManager;
+    private AudioManager audioManager;
     //public AudioClip audioClip;
 
 
@@ -52,7 +58,8 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
 
         //public MultiDimensionalConvo[] B4Conversations = new MultiDimensionalConvo[3];
         //public MultiDimensionalConvo[] AfterConversations = new MultiDimensionalConvo[3];
-
+        CharaSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        
         CharaCollider = gameObject.GetComponent<BoxCollider2D>();
         //Debug.Log(CharaCollider);
         origPosition = transform.position;
@@ -241,16 +248,21 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
     IEnumerator MovingTo(Vector3 pos, float speed)
     {
 
-
         yield return new WaitForSeconds(1.5f);
+        if (FlipWhenMoving)
+            CharaSpriteRenderer.flipX = !CharaSpriteRenderer.flipX;
+      
+
         while (transform.position != pos)
         {
-
+           
             transform.position = Vector3.MoveTowards(transform.position, pos, speed * Time.deltaTime * 60);
 
             if (Vector3.Distance(transform.position, pos) <= 0.01f)
             {
                 transform.position = pos;
+                if (FlipWhenMoving)
+                    CharaSpriteRenderer.flipX = !CharaSpriteRenderer.flipX;
                 break;
             }
             yield return null;
@@ -261,17 +273,17 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
 
     public void MoveToNewPos()
     {
-        StartCoroutine(MovingTo(NewPosition, 0.15f));
+        StartCoroutine(MovingTo(NewPosition, 0.2f));
     }
 
     public void MoveToNewPos2()
     {
-        StartCoroutine(MovingTo(NewPosition2, 0.15f));
+        StartCoroutine(MovingTo(NewPosition2, 0.2f));
     }
 
     public void MoveToNewPos3()
     {
-        StartCoroutine(MovingTo(NewPosition3, 0.15f));
+        StartCoroutine(MovingTo(NewPosition3, 0.2f));
     }
 
     IEnumerator TriggerConv()
@@ -317,6 +329,23 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
 
 
         }
+    }
+
+    public void SwapExpression(Sprite s)
+    {
+        CharaSpriteRenderer.sprite = s;
+    }
+
+    public void FlipWHenMoving()
+    {
+        CharaSpriteRenderer.flipX = !CharaSpriteRenderer.flipX;
+    }
+
+    public void SpawnParticle(GameObject ParticlePrefab)
+    {
+        Vector2 spawnPosition = transform.Find("ParticleLocation").transform.position;
+        Debug.Log(spawnPosition);
+        Instantiate(ParticlePrefab, spawnPosition, Quaternion.identity);
     }
 }
         

@@ -65,10 +65,10 @@ public class QuitPrototypingUIButton : BrainstormPanelUI
 
     IEnumerator Enter()
     {
-        Debug.LogError("Attempted to Enter");
+        //Debug.LogError("Attempted to Enter");
         translationAnimator.SetTrigger("Enter");
         yield return new WaitUntil(() => translationAnimator.GetCurrentAnimatorStateInfo(0).IsName("Enter"));
-        Debug.LogError("Attempted to Try To Enter");
+        //Debug.LogError("Attempted to Try To Enter");
         Show();
         image.transform.localPosition = recordedPos;
         yield return new WaitUntil(() => !translationAnimator.GetCurrentAnimatorStateInfo(0).IsName("Enter"));
