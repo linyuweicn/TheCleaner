@@ -64,6 +64,7 @@ public class FeedbackUIContainer : BrainstormPanelUI
         {
             f.Hide();
         }
+        brainstormManager.SwitchFeedbackState(FeedbackType.Null);
     }
 
     public override void Show()

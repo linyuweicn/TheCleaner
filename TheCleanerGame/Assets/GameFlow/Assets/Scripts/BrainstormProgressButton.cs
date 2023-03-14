@@ -9,6 +9,7 @@ public class BrainstormProgressButton : BrainstormPanelUI
     [SerializeField] private Sprite decisionSprite;
     [SerializeField] private Color darkColor;
     [SerializeField] private Image image;
+    [SerializeField] FeedbackUIContainer feedbackUI;
 
     private bool mouseOver;
 
@@ -19,23 +20,21 @@ public class BrainstormProgressButton : BrainstormPanelUI
 
     public void OnClick()
     {
-        if (brainstormManager.MyFeedbackState == FeedbackType.Null)
-        {
-            switch (brainstormManager.MyBrainstormState)
-            {
-                case BrainstormState.Rank:
-                    if (brainstormManager.Prompt.completed)
-                    {
-                        image.sprite = decisionSprite;
-                        brainstormManager.SwitchState(BrainstormState.Decision);
-                    }
-                    break;
-                case BrainstormState.Decision:
-                    brainstormManager.SwitchState(BrainstormState.Menu);
-                    break;
-            }
-        }
+        feedbackUI.Hide();
 
+        switch (brainstormManager.MyBrainstormState)
+        {
+            case BrainstormState.Rank:
+                if (brainstormManager.Prompt.completed)
+                {
+                    image.sprite = decisionSprite;
+                    brainstormManager.SwitchState(BrainstormState.Decision);
+                }
+                break;
+            case BrainstormState.Decision:
+                brainstormManager.SwitchState(BrainstormState.Menu);
+                break;
+        }
     }
 
     public override void TransitionFromStates(BrainstormState oldState, BrainstormState newState)
