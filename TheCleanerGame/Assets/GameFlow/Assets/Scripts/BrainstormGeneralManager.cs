@@ -99,6 +99,18 @@ public class BrainstormGeneralManager : MonoBehaviour
         this.prompt = prompt;
     }
 
+    public bool CheckIfAllDailyPromptsHaveBeenCompleted()
+    {
+        foreach (CardContainer c in ContainerDictionary.Values)
+        {
+            if (!c.Prompt.completed)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
     #endregion
 
     #region helper functions
