@@ -138,6 +138,31 @@ public class ScorePanelUI : BrainstormPanelUI
 
     }
 
+    public void UpdateConvoScores()
+    {
+        float totalCensorship = 0, totalProduction = 0, totalSatisfaction = 0, totalCreativity = 0;
+        int count = 0;
+
+        foreach (List<AnswerObject> a in BrainstormGeneralManager.Instance.Prompt.Answers)
+        {
+            if (a[0] != null)
+            {
+                totalCensorship += a[0].censorFulfillment;
+                totalCreativity += a[0].innovation;
+                totalProduction += a[0].production;
+                totalSatisfaction += a[0].satisfaction;
+                count++;
+            }
+        }
+
+        GameObject cgm = GameObject.Find("ConvoGlobalManager");
+        if(cgm != null)
+        {
+            ConvoGlobalManager cgmScript = cgm.GetComponent<ConvoGlobalManager>();
+            cgmScript.UpdateScoreWithWhiteboardScore((int)totalProduction, (int)totalSatisfaction, (int)totalCensorship, (int)totalCreativity);
+        }
+    }
+
     private void SetUpScoreFiller(ScoreFiller s, float range)
     {
         s.targetValue = range;

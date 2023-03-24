@@ -26,7 +26,9 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
 
     [SerializeField] int lowMedBound = 0;
     [SerializeField] int medHighBound = 5;
-    [SerializeField] bool useAgreeableScore;
+    [SerializeField] bool useOnlyAgreeableScore;
+    [SerializeField] bool useAgreeableAndDailyTotalScore;
+    [SerializeField] bool useAgreeableAndOverallTotalScore;
     [SerializeField] bool startConvAtBegining;
     private int convSequenceB4;
     private int convSequenceAfter;
@@ -141,17 +143,24 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
         convSequenceB4++;
 
         //Debug.Log(convSequenceB4);
-        if (useAgreeableScore)
+        if (useOnlyAgreeableScore || useAgreeableAndDailyTotalScore || useAgreeableAndOverallTotalScore)
         {
+            int score = 0;
+            if(useOnlyAgreeableScore)
+                score = ConvoGlobalManager.agreeableScore;
+            else if(useAgreeableAndDailyTotalScore)
+                score = ConvoGlobalManager.agreeableScore + ConvoGlobalManager.dailyTotalScore;
+            else if(useAgreeableAndOverallTotalScore)
+                score = ConvoGlobalManager.agreeableScore + ConvoGlobalManager.overallTotalScore;
             Debug.Log(convSequenceB4 + "convSequenceB4");
             Debug.Log(B4Conversations[0].convoArray.Length + "B4Conversations[0].convoArray.Length");
             if (convSequenceB4 <= B4Conversations[0].convoArray.Length)
             {
-                if (ConvoGlobalManager.agreeableScore <= lowMedBound)
+                if (score <= lowMedBound)
                     ConversationManager.Instance.StartConversation(B4Conversations[0].convoArray[convSequenceB4 - 1]);
-                else if (ConvoGlobalManager.agreeableScore > lowMedBound && ConvoGlobalManager.agreeableScore <= medHighBound)
+                else if (score > lowMedBound && score <= medHighBound)
                     ConversationManager.Instance.StartConversation(B4Conversations[1].convoArray[convSequenceB4 - 1]);
-                else if (ConvoGlobalManager.agreeableScore > medHighBound)
+                else if (score > medHighBound)
                     ConversationManager.Instance.StartConversation(B4Conversations[2].convoArray[convSequenceB4 - 1]);
                 
 
@@ -203,18 +212,25 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
         convSequenceAfter++;
         Debug.Log(convSequenceAfter + " convSequenceAfter");
         CharaCollider.enabled = true;
-        if (useAgreeableScore)
+        if (useOnlyAgreeableScore || useAgreeableAndDailyTotalScore || useAgreeableAndOverallTotalScore)
         {
+            int score = 0;
+            if(useOnlyAgreeableScore)
+                score = ConvoGlobalManager.agreeableScore;
+            else if(useAgreeableAndDailyTotalScore)
+                score = ConvoGlobalManager.agreeableScore + ConvoGlobalManager.dailyTotalScore;
+            else if(useAgreeableAndOverallTotalScore)
+                score = ConvoGlobalManager.agreeableScore + ConvoGlobalManager.overallTotalScore;
             Debug.Log(AfterConversations[0].convoArray.Length + " AfterConversations[0].convoArray.Length");
             //Debug.Log(convSequence);
             if (convSequenceAfter <= AfterConversations[0].convoArray.Length)
             {
 
-                if (ConvoGlobalManager.agreeableScore <= lowMedBound)
+                if (score <= lowMedBound)
                     ConversationManager.Instance.StartConversation(AfterConversations[0].convoArray[convSequenceAfter - 1]);
-                else if (ConvoGlobalManager.agreeableScore > lowMedBound && ConvoGlobalManager.agreeableScore <= medHighBound)
+                else if (score > lowMedBound && score <= medHighBound)
                     ConversationManager.Instance.StartConversation(AfterConversations[1].convoArray[convSequenceAfter - 1]);
-                else if (ConvoGlobalManager.agreeableScore > medHighBound)
+                else if (score > medHighBound)
                     ConversationManager.Instance.StartConversation(AfterConversations[2].convoArray[convSequenceAfter - 1]);
                 
                 if (convSequenceAfter == AfterConversations[0].convoArray.Length)

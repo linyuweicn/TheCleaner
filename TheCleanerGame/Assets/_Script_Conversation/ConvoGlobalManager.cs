@@ -6,7 +6,10 @@ using UnityEngine.SceneManagement;
 public class ConvoGlobalManager : MonoBehaviour
 {
     [HideInInspector] int nextScene;
-    [SerializeField] public static int agreeableScore;
+    public static int agreeableScore;
+    public static int overallTotalScore; //across all levels
+    public static int dailyTotalScore; //specific to one level
+
     public bool BuyLicense;
 
     // Start is called before the first frame update
@@ -41,6 +44,14 @@ public class ConvoGlobalManager : MonoBehaviour
     {
         agreeableScore = newScore;
         Debug.Log("Agreeable score is " + agreeableScore);
+    }
+
+    public void UpdateScoreWithWhiteboardScore(int totalProduction, int totalSatisfaction, int totalCensorship, int totalCreativity)
+    {
+        dailyTotalScore = 0; //reset daily total score
+        dailyTotalScore = totalProduction + totalSatisfaction + totalCensorship + totalCreativity;
+        overallTotalScore += dailyTotalScore;
+        Debug.Log(dailyTotalScore + " " + overallTotalScore);
     }
 
     public void BuyLicenseResult()
