@@ -51,7 +51,7 @@ public class ConvoGlobalManager : MonoBehaviour
         dailyTotalScore = 0; //reset daily total score
         dailyTotalScore = totalProduction + totalSatisfaction + totalCensorship + totalCreativity;
         overallTotalScore += dailyTotalScore;
-        Debug.Log(dailyTotalScore + " " + overallTotalScore);
+        Debug.Log("dailyTotalScore"+ dailyTotalScore + " " + "overallTotalScore"+overallTotalScore);
     }
 
     public void BuyLicenseResult()

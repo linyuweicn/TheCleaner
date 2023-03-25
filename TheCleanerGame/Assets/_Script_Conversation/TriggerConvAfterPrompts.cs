@@ -60,7 +60,7 @@ public class TriggerConvAfterPrompts : MonoBehaviour
             for (int i = 0; i < CharaColliders.Length; i++)
             {
                 CharaColliders[i].canTurnOffCollider = false;
-                Debug.Log(CharaColliders[i].name);
+                //Debug.Log(CharaColliders[i].name);
             }
         }
     }

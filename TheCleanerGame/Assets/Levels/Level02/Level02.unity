@@ -1342,6 +1342,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1969992102177298768, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
   m_PrefabInstance: {fileID: 196518430}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &196518439 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7395448799980517253, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+  m_PrefabInstance: {fileID: 196518430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &196518440 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7395448800898905352, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
@@ -1371,6 +1376,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &196518443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196518439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e47212744c7b8499f5decf7ea9f5ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LowSscoreText: QUESTIONS RISE OVER ANEA CENSOR TRAINING
+  MedSscoreText: med
+  HighSscoreText: High
+  AgreeableScore: 1
 --- !u!1001 &199617868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2707,6 +2728,27 @@ MonoBehaviour:
   Event:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &559348578 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7395448800439609797, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+  m_PrefabInstance: {fileID: 196518430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &559348582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559348578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e47212744c7b8499f5decf7ea9f5ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LowSscoreText: low right
+  MedSscoreText: med left
+  HighSscoreText: high
+  AgreeableScore: 1
 --- !u!114 &579228525 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1810707934999391398, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
@@ -5424,50 +5466,27 @@ MonoBehaviour:
   TMPFont: {fileID: 0}
   Icon: {fileID: 21300000, guid: a056ab62475517c4ba23e3b3061d91c0, type: 3}
   Audio: {fileID: 0}
---- !u!1 &1563980496
+--- !u!1 &1564193778 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 7395448799599413507, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+  m_PrefabInstance: {fileID: 196518430}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1563980498}
-  - component: {fileID: 1563980497}
-  m_Layer: 0
-  m_Name: GlobalConvManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1563980497
+--- !u!114 &1564193782
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1563980496}
+  m_GameObject: {fileID: 1564193778}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7248e7bfb87d4f4a803037ed175e7d9, type: 3}
+  m_Script: {fileID: 11500000, guid: a4e47212744c7b8499f5decf7ea9f5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuyLicense: 0
---- !u!4 &1563980498
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1563980496}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  LowSscoreText: low left
+  MedSscoreText: med left
+  HighSscoreText: high
+  AgreeableScore: 1
 --- !u!4 &1573990035 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4387831574321334288, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
@@ -6494,7 +6513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: startConvAtBegining
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: CharaCollider.Array.size
@@ -6906,7 +6925,7 @@ MonoBehaviour:
   Event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1563980497}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ConvoGlobalManager, Assembly-CSharp
         m_MethodName: DecreaseAgreeableScore
         m_Mode: 3
@@ -7018,7 +7037,7 @@ MonoBehaviour:
   Event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1563980497}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ConvoGlobalManager, Assembly-CSharp
         m_MethodName: DecreaseAgreeableScore
         m_Mode: 3

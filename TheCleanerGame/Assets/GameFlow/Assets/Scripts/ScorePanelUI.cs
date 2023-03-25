@@ -160,6 +160,7 @@ public class ScorePanelUI : BrainstormPanelUI
         {
             ConvoGlobalManager cgmScript = cgm.GetComponent<ConvoGlobalManager>();
             cgmScript.UpdateScoreWithWhiteboardScore((int)totalProduction, (int)totalSatisfaction, (int)totalCensorship, (int)totalCreativity);
+            Debug.Log("");
         }
     }
 
