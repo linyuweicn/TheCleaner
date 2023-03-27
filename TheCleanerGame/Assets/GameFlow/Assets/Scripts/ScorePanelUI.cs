@@ -79,7 +79,7 @@ public class ScorePanelUI : BrainstormPanelUI
 
     public void UpdateGlobalScore(AnswerBox answer)
     {
-        float totalCensorship = 0, totalProduction = 0, totalSatisfaction = 0, totalCreativity = 0;
+        float totalCensorship = 0, totalProduction = 0, totalSatisfaction = 0, totalCreativity = 0, totalScore = 0;
         int count = 0;
         foreach (Dictionary<int, PromptObject> p in PromptManager.Instance.PromptDictionary.Values)
         {
@@ -93,6 +93,7 @@ public class ScorePanelUI : BrainstormPanelUI
                         totalCreativity += a[0].innovation;
                         totalProduction += a[0].production;
                         totalSatisfaction += a[0].satisfaction;
+                        totalScore += a[0].totalscore;
                         count++;
                     }
                 }
@@ -107,7 +108,7 @@ public class ScorePanelUI : BrainstormPanelUI
         if (scoreDictionary.ContainsKey(ScoreType.Production)) { SetUpScoreFiller(scoreDictionary[ScoreType.Production], totalProduction / count); }
 
 
-        Debug.Log(" totalProduction: " + totalProduction + " totalSatisfaction "+ totalSatisfaction +  " totalCensorship Values: " + totalCensorship + " totalCreativity: " + totalCreativity + " count" + count);
+        Debug.Log(" totalProduction: " + totalProduction + " totalSatisfaction "+ totalSatisfaction +  " totalCensorship Values: " + totalCensorship + " totalCreativity: " + totalCreativity + " totalScore:" + totalScore + " count" + count);
 
     }
 
@@ -140,27 +141,31 @@ public class ScorePanelUI : BrainstormPanelUI
 
     public void UpdateConvoScores()
     {
-        float totalCensorship = 0, totalProduction = 0, totalSatisfaction = 0, totalCreativity = 0;
+        float totalScore = 0;
         int count = 0;
 
-        foreach (List<AnswerObject> a in BrainstormGeneralManager.Instance.Prompt.Answers)
+        foreach (Dictionary<int, PromptObject> p in PromptManager.Instance.PromptDictionary.Values)
         {
-            if (a[0] != null)
+            foreach (PromptObject o in p.Values)
             {
-                totalCensorship += a[0].censorFulfillment;
-                totalCreativity += a[0].innovation;
-                totalProduction += a[0].production;
-                totalSatisfaction += a[0].satisfaction;
-                count++;
+                foreach (List<AnswerObject> a in o.Answers)
+                {
+                    if (a[0] != null)
+                    {
+                        totalScore += a[0].totalscore;
+                        count++;
+                    }
+                }
             }
         }
+
+        if(count == 0) return;
 
         GameObject cgm = GameObject.Find("ConvoGlobalManager");
         if(cgm != null)
         {
             ConvoGlobalManager cgmScript = cgm.GetComponent<ConvoGlobalManager>();
-            cgmScript.UpdateScoreWithWhiteboardScore((int)totalProduction, (int)totalSatisfaction, (int)totalCensorship, (int)totalCreativity);
-            Debug.Log("");
+            cgmScript.UpdateScoreWithWhiteboardScore((int)(totalScore/count));
         }
     }
 

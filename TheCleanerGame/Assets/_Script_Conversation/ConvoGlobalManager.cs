@@ -46,10 +46,10 @@ public class ConvoGlobalManager : MonoBehaviour
         Debug.Log("Agreeable score is " + agreeableScore);
     }
 
-    public void UpdateScoreWithWhiteboardScore(int totalProduction, int totalSatisfaction, int totalCensorship, int totalCreativity)
+    public void UpdateScoreWithWhiteboardScore(int totalScore)
     {
         dailyTotalScore = 0; //reset daily total score
-        dailyTotalScore = totalProduction + totalSatisfaction + totalCensorship + totalCreativity;
+        dailyTotalScore = totalScore;
         overallTotalScore += dailyTotalScore;
         Debug.Log("dailyTotalScore"+ dailyTotalScore + " " + "overallTotalScore"+overallTotalScore);
     }

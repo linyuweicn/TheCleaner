@@ -66,5 +66,6 @@ public enum ScoreType
     Censorship,
     Creativity,
     Satisfaction,
-    Production
+    Production,
+    TotalScore
 }
