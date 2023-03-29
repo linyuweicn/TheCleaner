@@ -5,12 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class ConvoGlobalManager : MonoBehaviour
 {
-    [HideInInspector] int nextScene;
+    [HideInInspector] 
+    int nextScene;
     public static int agreeableScore;
     public static int overallTotalScore; //across all levels
     public static int dailyTotalScore; //specific to one level
 
+    [HideInInspector]
     public bool BuyLicense;
+    public static bool Betrayl;
 
     // Start is called before the first frame update
     void Start()
@@ -58,5 +61,11 @@ public class ConvoGlobalManager : MonoBehaviour
     {
         BuyLicense = true;
         Debug.Log(BuyLicense + "BuyLicense");
+    }
+
+    public void LiaBsetrays()
+    {
+        Betrayl = true;
+        Debug.Log(Betrayl + "Betrayl");
     }
 }

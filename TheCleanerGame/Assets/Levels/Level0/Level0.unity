@@ -449,7 +449,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227941494103382719, guid: b967980ba88ecb04ba0f64ca2829ca49, type: 3}
       propertyPath: isWeekNumber
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4389914298813360556, guid: b967980ba88ecb04ba0f64ca2829ca49, type: 3}
       propertyPath: m_text
@@ -2855,6 +2855,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2191931192948037241}
   - component: {fileID: 1892742506741250633}
+  - component: {fileID: 318608767757892685}
   m_Layer: 0
   m_Name: Pendula
   m_TagString: Untagged
@@ -2862,6 +2863,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &318608767757892685
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318608767757892684}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9c1c1ada8a2e14e43ba1ec9e1db3f8a6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &362583217746621357
 GameObject:
   m_ObjectHideFlags: 0
@@ -3181,6 +3201,10 @@ PrefabInstance:
       propertyPath: PauseMene
       value: 
       objectReference: {fileID: 960262637}
+    - target: {fileID: 5663114897738188943, guid: 47c82489de3ce9940ba6e17fe460ea85, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c355a7c44c61cd34da2a513ab7c2c9d0, type: 3}
     - target: {fileID: 5663114897778377032, guid: 47c82489de3ce9940ba6e17fe460ea85, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3634,7 +3658,9 @@ MonoBehaviour:
   AfterConversations: []
   lowMedBound: 0
   medHighBound: 5
-  useAgreeableScore: 0
+  useOnlyAgreeableScore: 0
+  useAgreeableAndDailyTotalScore: 0
+  useAgreeableAndOverallTotalScore: 0
   startConvAtBegining: 0
   boxCollider2D: []
   NewPosition: {x: 0, y: 0, z: 0}
