@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2539964609188857521}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 415856101704815849}
   m_Father: {fileID: 2539964609858106681}
@@ -76,9 +76,9 @@ SpriteRenderer:
   m_SortingLayerID: -1015411917
   m_SortingLayer: 1
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 72af7f955ba1c5e4589cc4658008a01c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f58421d6f91bd4144b1351dca2efa099, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.88, y: 2.48}
@@ -105,7 +105,9 @@ MonoBehaviour:
   AfterConversations: []
   lowMedBound: 0
   medHighBound: 5
-  useAgreeableScore: 0
+  useOnlyAgreeableScore: 0
+  useAgreeableAndDailyTotalScore: 0
+  useAgreeableAndOverallTotalScore: 0
   startConvAtBegining: 0
   boxCollider2D: []
   NewPosition: {x: 0, y: 0, z: 0}
@@ -131,7 +133,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 15}
+    oldSize: {x: 5.12, y: 10.24}
     newSize: {x: 0.88, y: 2.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
