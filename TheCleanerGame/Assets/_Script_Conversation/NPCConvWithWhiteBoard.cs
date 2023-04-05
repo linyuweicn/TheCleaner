@@ -12,7 +12,7 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
     [System.Serializable]
     public class MultiDimensionalConvo
     {
-   
+        [HideInInspector]
         public string ConvType;
         public NPCConversation[] convoArray;
     }

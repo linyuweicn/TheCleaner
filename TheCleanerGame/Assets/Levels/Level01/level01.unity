@@ -1907,6 +1907,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: cd20d0d315bfc33468c9d3ee93ef050c, type: 3}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
+      propertyPath: lowMedBound
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: CharaAnnoyed
       value: 
       objectReference: {fileID: 21300000, guid: df847642a6d401f4cba975c7feb7bb50, type: 3}
@@ -1916,7 +1920,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 36e5c92f84521704b8262bfbea8d8242, type: 3}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: medHighBound
-      value: 60
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: NewPosition.x
@@ -2037,7 +2041,7 @@ PrefabInstance:
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: AfterConversations.Array.data[0].convoArray.Array.data[0]
       value: 
-      objectReference: {fileID: 1577436494}
+      objectReference: {fileID: 291290404}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: AfterConversations.Array.data[0].convoArray.Array.data[1]
       value: 
@@ -2061,7 +2065,7 @@ PrefabInstance:
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: AfterConversations.Array.data[2].convoArray.Array.data[0]
       value: 
-      objectReference: {fileID: 291290404}
+      objectReference: {fileID: 1577436494}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: AfterConversations.Array.data[2].convoArray.Array.data[1]
       value: 
@@ -2330,9 +2334,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 8
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":7}],"EditorInfo":{"isRoot":true,"xPos":12.6666718,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Great
-    job today! ","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":20.6666718,"yPos":148},"ID":7,"ParamActions":[],"TMPFontGUID":null,"Text":"Thank
-    you Yiran!","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":7}],"EditorInfo":{"isRoot":true,"xPos":67.66666,"yPos":89},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Hey
+    Lia, I understand it is your first day leading a project and you might be nervous,
+    but we need to keep up a high quality ideas. ","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":75.66666,"yPos":215},"ID":7,"ParamActions":[],"TMPFontGUID":null,"Text":"Got
+    it Boss!","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -2349,7 +2354,19 @@ MonoBehaviour:
   EndConversationFont: {fileID: 0}
   Event:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 242666454}
+        m_TargetAssemblyTypeName: NPCConvWithWhiteBoard, Assembly-CSharp
+        m_MethodName: EnableObjects
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &292062391
 GameObject:
   m_ObjectHideFlags: 0
@@ -3113,11 +3130,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9177617733875777336, guid: 4c73a6c272e85074d8770b4ee89fb519, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -279990.22
+      value: -281764.7
       objectReference: {fileID: 0}
     - target: {fileID: 9177617733875777336, guid: 4c73a6c272e85074d8770b4ee89fb519, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2223940.2
+      value: -2239674.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c73a6c272e85074d8770b4ee89fb519, type: 3}
@@ -3286,7 +3303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2539964609858106682, guid: 4d6fd38c8c7d00347b0a8d75acd67e58, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4594062439992920517, guid: 4d6fd38c8c7d00347b0a8d75acd67e58, type: 3}
       propertyPath: m_RootOrder
@@ -9052,8 +9069,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 8
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":7}],"EditorInfo":{"isRoot":true,"xPos":126.666656,"yPos":90},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Great
-    job today! ","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":134.666656,"yPos":216},"ID":7,"ParamActions":[],"TMPFontGUID":null,"Text":"Thank
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":7}],"EditorInfo":{"isRoot":true,"xPos":46.99997,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Great
+    job today! We''re glad to have you on the team!","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":54.99997,"yPos":148},"ID":7,"ParamActions":[],"TMPFontGUID":null,"Text":"Thank
     you Yiran!","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: 
@@ -9903,8 +9920,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 8
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":7}],"EditorInfo":{"isRoot":true,"xPos":93.33331,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Great
-    job today! ","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":101.333313,"yPos":148},"ID":7,"ParamActions":[],"TMPFontGUID":null,"Text":"Thank
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":7}],"EditorInfo":{"isRoot":true,"xPos":46.99997,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"You
+    have shown some potentials in your design ideas, let''s keep diving deeper.","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":54.99997,"yPos":148},"ID":7,"ParamActions":[],"TMPFontGUID":null,"Text":"Thank
     you Yiran!","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: 
@@ -10204,6 +10221,22 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.8962264
       objectReference: {fileID: 0}
+    - target: {fileID: 355527635810630381, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: ExitDoor
+      value: 
+      objectReference: {fileID: 782763326}
+    - target: {fileID: 355527635810630381, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: ActiveCamera
+      value: 
+      objectReference: {fileID: 359586729}
+    - target: {fileID: 355527635810630381, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: CalendarPage
+      value: 
+      objectReference: {fileID: 1291877188}
+    - target: {fileID: 355527635810630381, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: DeActiveCamera
+      value: 
+      objectReference: {fileID: 432669779}
     - target: {fileID: 485728221127968775, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -10256,6 +10289,22 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1114630154803478517, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: ExitDoor
+      value: 
+      objectReference: {fileID: 782763326}
+    - target: {fileID: 1114630154803478517, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: ActiveCamera
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114630154803478517, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: CalendarPage
+      value: 
+      objectReference: {fileID: 1291877187}
+    - target: {fileID: 1114630154803478517, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: DeActiveCamera
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1218664524884753368, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: m_Size.x
       value: 1.4994946
@@ -10264,6 +10313,22 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: 0.04971376
       objectReference: {fileID: 0}
+    - target: {fileID: 1450148393758058051, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: ExitDoor
+      value: 
+      objectReference: {fileID: 782763326}
+    - target: {fileID: 1450148393758058051, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: ActiveCamera
+      value: 
+      objectReference: {fileID: 432669779}
+    - target: {fileID: 1450148393758058051, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: CalendarPage
+      value: 
+      objectReference: {fileID: 1291877188}
+    - target: {fileID: 1450148393758058051, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: DeActiveCamera
+      value: 
+      objectReference: {fileID: 359586729}
     - target: {fileID: 1571868868752888319, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -10288,6 +10353,10 @@ PrefabInstance:
       propertyPath: ExitDoor
       value: 
       objectReference: {fileID: 782763326}
+    - target: {fileID: 1880798978696324265, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1880798978696324265, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: CalendarPage
       value: 
@@ -10340,6 +10409,22 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2175951209445060439, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: ExitDoor
+      value: 
+      objectReference: {fileID: 782763326}
+    - target: {fileID: 2175951209445060439, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: ActiveCamera
+      value: 
+      objectReference: {fileID: 432669779}
+    - target: {fileID: 2175951209445060439, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: CalendarPage
+      value: 
+      objectReference: {fileID: 1291877188}
+    - target: {fileID: 2175951209445060439, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: DeActiveCamera
+      value: 
+      objectReference: {fileID: 2030194364}
     - target: {fileID: 2627732303335460333, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -10569,6 +10654,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 782763326}
     - target: {fileID: 5292414893204378113, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292414893204378113, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: CalendarPage
       value: 
       objectReference: {fileID: 1291877187}
@@ -10600,6 +10689,22 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 217623957}
+    - target: {fileID: 5398786542495436748, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: ExitDoor
+      value: 
+      objectReference: {fileID: 782763326}
+    - target: {fileID: 5398786542495436748, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: ActiveCamera
+      value: 
+      objectReference: {fileID: 432669779}
+    - target: {fileID: 5398786542495436748, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: CalendarPage
+      value: 
+      objectReference: {fileID: 1291877188}
+    - target: {fileID: 5398786542495436748, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: DeActiveCamera
+      value: 
+      objectReference: {fileID: 2030194364}
     - target: {fileID: 5832247671469528615, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: AnimatorOrObject
       value: 
@@ -10858,6 +10963,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4543379826773154566, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+    - {fileID: 1880798978696324265, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+    - {fileID: 5292414893204378113, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
 --- !u!1 &4387831574434259042 stripped
 GameObject:

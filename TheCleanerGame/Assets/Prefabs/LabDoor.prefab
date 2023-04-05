@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1622173594132495605}
   - component: {fileID: 1622173594132495606}
   - component: {fileID: 1622173594132495607}
-  - component: {fileID: 1622173594132495600}
   m_Layer: 0
   m_Name: LabDoor
   m_TagString: Untagged
@@ -97,8 +96,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be3f963c62ad44542a186f4913a42200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 1622173594132495605}
   material: {fileID: 2100000, guid: d3a6e2b699db46f448010add5293626e, type: 2}
+  HoverSprite: {fileID: 0}
+  ChangeSpriteWhenHover: 0
+  LightUpAtBegining: 0
 --- !u!61 &1622173594132495607
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -115,8 +116,8 @@ BoxCollider2D:
   m_Offset: {x: 0.042800486, y: 0.49330878}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.73, y: 14.08}
+    pivot: {x: 1, y: 0.5}
+    oldSize: {x: 1.13, y: 9.01}
     newSize: {x: 2.33, y: 1.51}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -125,21 +126,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6180419, y: 12.816816}
   m_EdgeRadius: 0
---- !u!114 &1622173594132495600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1622173594132495499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb655f46bca4f3d45b1cb845ddc06bc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EntranceCamera: {fileID: 6401161462605337728, guid: a5c5c5470a250504695bee821e643c56, type: 3}
-  BrainstormCamera: {fileID: 6481295081114280050, guid: f7672c3c3d94c6741896589fd2e820ab, type: 3}
-  YiranOfficeCamera: {fileID: 1078428527755146765, guid: 4acf8226e2451164b9eb1965a9643bc2, type: 3}
-  PersonalRoomCamera: {fileID: 4582486874389767300, guid: 186d658fd0d7ec74fad78791303fddb1, type: 3}
-  ExitDoor: {fileID: 0}
-  CalendarPage: {fileID: 4226144523472313124, guid: 11e8ea80cf8fa8441b959478e2b73670, type: 3}
