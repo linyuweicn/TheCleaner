@@ -13,6 +13,7 @@ public class PromptObject : ScriptableObject
     [SerializeField] PromptType promptType;
     [SerializeField] [TextArea(2, 20)] string text; //don't modify this
     [SerializeField] int imageColumn;
+    Sprite image;
     string displayText;
     public bool completed;
 
@@ -42,20 +43,8 @@ public class PromptObject : ScriptableObject
         get { return displayText; }
     }
 
-    public Sprite TopImage
-    {
-        get
-        {
-            if (completed)
-            {
-                return Answers[imageColumn][0].image;
-            }
-            else
-            {
-                return null;
-            }
-        }
-    }
+    public Sprite TopImage { get { return image; } }
+
     #endregion
 
     #region initialization
@@ -127,6 +116,11 @@ public class PromptObject : ScriptableObject
     #endregion
 
     #region Get/Set Functions
+
+    public void SetTopImage(AnswerBox box)
+    {
+        image = box.GetAnswer().image;
+    }
 
     #endregion
 }

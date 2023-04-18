@@ -21,6 +21,7 @@ public class DecisionImage : BrainstormPanelUI
 
     public override void Show()
     {
+        image.sprite = brainstormManager.Prompt.TopImage;
         image.enabled = true;
     }
 
@@ -59,6 +60,6 @@ public class DecisionImage : BrainstormPanelUI
     public void SetImageFromTopAnswer(AnswerBox answerbox)
     {
         AnswerObject answer = answerbox.GetAnswer();
-        if (answer != null && answer.image != null) { image.sprite = answer.image; }
+        if (answer != null && answer.image != null) { brainstormManager.Prompt.SetTopImage(answerbox); }
     }
 }
