@@ -285,7 +285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 253548492290374187, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 253548492290374191, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_Pivot.x
@@ -465,7 +465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1969992102177298768, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1969992102177298774, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_Alpha
@@ -557,27 +557,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2808551057189979612, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2808551057189979612, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2808551057189979612, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1599.5901
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2808551057189979612, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 60
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2808551057189979612, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 799.79504
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2808551057189979612, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -33.82
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4628018036042144430, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_Size
@@ -914,6 +914,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1969992102177298768, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
   m_PrefabInstance: {fileID: 196518430}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &196518439 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7395448800439609797, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+  m_PrefabInstance: {fileID: 196518430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &196518440 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7395448800898905352, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
@@ -953,11 +958,66 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4867717848232297833, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
   m_PrefabInstance: {fileID: 196518430}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &196518445 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7395448799599413507, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+  m_PrefabInstance: {fileID: 196518430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &196518446 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5283416567589469587, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
   m_PrefabInstance: {fileID: 196518430}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &196518448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196518439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e47212744c7b8499f5decf7ea9f5ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LowSscoreText: "\tA group\t\u201CGames take a special recipe of freedom and creativity
+    to thrive\u2026This new wave of legislation has burdened the process, changing
+    the recipe into something unpalatable.\u201D  \tOver 100,000 people rely on the
+    gaming industry for income and if our nation is to maintain its cultural foothold,
+    we need to change how we regulate art.of gaming companies filed a class action
+    lawsuit on behalf of the entire media industry. Lawyers are citing unclear legislation
+    and untrained ANEA censors as reasons to believe that the environment is virtually
+    impossible to succeed in."
+  MedSscoreText: The ANEA has promised to hire more qualified censors and work with
+    gaming companies to establish clearer guidelines. The class action lawsuit was
+    settled and the gaming industry can now move forward with renewed confidence.
+  HighSscoreText: 'A representitive mentioned that ANEA recognized the importance
+    of artistic expression and worked with the industry to establish guidelines that
+    balance freedom and responsibility. '
+  lowMedBound: 220
+  medHighBound: 300
+--- !u!114 &196518449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196518445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e47212744c7b8499f5decf7ea9f5ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LowSscoreText: "\tA group of gaming companies filed a class action lawsuit on behalf
+    of the entire media industry. Lawyers are citing unclear legislation and untrained
+    ANEA censors as reasons to believe that the environment is virtually impossible
+    to succeed in."
+  MedSscoreText: 'After weeks of negotiations and protests, the government agreed
+    to re-evaluate its policies regarding the gaming industry. '
+  HighSscoreText: 'After weeks of negotiations and protests, the government agreed
+    to re-evaluate its policies regarding the gaming industry. '
+  lowMedBound: 220
+  medHighBound: 300
 --- !u!1001 &199617868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1229,6 +1289,54 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[0].feedbackTextSU.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[1].feedbackTextSU.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[2].feedbackTextSU.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[0].feedbackTextSU.Array.data[0]
+      value: Let's get back to safer chocies.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[0].feedbackTextSU.Array.data[1]
+      value: I would suggest read the guidelines again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[0].feedbackTextSU.Array.data[2]
+      value: We need to review your gameplay strategy and optimize it. it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[1].feedbackTextSU.Array.data[0]
+      value: You're doing well, but there's always room for improvement.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[1].feedbackTextSU.Array.data[1]
+      value: Your idea is good, but we can make it better.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[1].feedbackTextSU.Array.data[2]
+      value: Looks good so far, let's fine-tune your strategy.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[2].feedbackTextSU.Array.data[0]
+      value: I think this will pass the final check.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[2].feedbackTextSU.Array.data[1]
+      value: We are on the right track.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[2].feedbackTextSU.Array.data[2]
+      value: Nice work for this one.
+      objectReference: {fileID: 0}
     - target: {fileID: 4917537125187386384, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
@@ -1432,11 +1540,11 @@ PrefabInstance:
     - target: {fileID: 5927320332373086589, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 199617872}
+      objectReference: {fileID: 1905041725}
     - target: {fileID: 5927320332373086589, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 199617872}
+      objectReference: {fileID: 1905041725}
     - target: {fileID: 5927320332373086589, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
@@ -1898,11 +2006,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 13
-  json: '{"Options":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":11}],"EditorInfo":{"isRoot":false,"xPos":-48.3332825,"yPos":365},"ID":9,"ParamActions":[],"TMPFontGUID":null,"Text":"Thanks,
-    Luca. I''ll take you up on that.","parentUIDs":[0],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":12}],"EditorInfo":{"isRoot":false,"xPos":168.666718,"yPos":366},"ID":10,"ParamActions":[],"TMPFontGUID":null,"Text":"Luca,
-    you know I can''t. Thanks, though.","parentUIDs":[0],"SpeechUID":-1}],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":9},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":10}],"EditorInfo":{"isRoot":true,"xPos":115.333374,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Hey
-    Lia, last chance for us to buy a license. ","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":-48.3332825,"yPos":435},"ID":11,"ParamActions":[],"TMPFontGUID":null,"Text":"You
-    got it. We have to keep this between us, Lia.","parentUIDs":[9],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":181.666718,"yPos":441},"ID":12,"ParamActions":[],"TMPFontGUID":null,"Text":"Ok,
+  json: '{"Options":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":11}],"EditorInfo":{"isRoot":false,"xPos":59,"yPos":40},"ID":9,"ParamActions":[],"TMPFontGUID":null,"Text":"Thanks,
+    Luca. I''ll take you up on that.","parentUIDs":[0],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":12}],"EditorInfo":{"isRoot":false,"xPos":276,"yPos":41},"ID":10,"ParamActions":[],"TMPFontGUID":null,"Text":"Luca,
+    you know I can''t. Thanks, though.","parentUIDs":[0],"SpeechUID":-1}],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":9},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":10}],"EditorInfo":{"isRoot":true,"xPos":222.666656,"yPos":-303},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Hey
+    Lia, last chance for us to buy a license. ","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":52,"yPos":106},"ID":11,"ParamActions":[],"TMPFontGUID":null,"Text":"You
+    got it. We have to keep this between us, Lia.","parentUIDs":[9],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":289,"yPos":116},"ID":12,"ParamActions":[],"TMPFontGUID":null,"Text":"Ok,
     suit yourself. We have to keep this between us, Lia.","parentUIDs":[10],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: Luca
@@ -1918,7 +2026,31 @@ MonoBehaviour:
   EndConversationFont: {fileID: 0}
   Event:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 196518435}
+        m_TargetAssemblyTypeName: ConvoGlobalManager, Assembly-CSharp
+        m_MethodName: setNextScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 12
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 196518435}
+        m_TargetAssemblyTypeName: ConvoGlobalManager, Assembly-CSharp
+        m_MethodName: BuyLicenseResult
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &455439269
 GameObject:
   m_ObjectHideFlags: 0
@@ -2398,28 +2530,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 25
-  json: '{"Options":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":16}],"EditorInfo":{"isRoot":false,"xPos":5.53329468,"yPos":248},"ID":14,"ParamActions":[],"TMPFontGUID":null,"Text":"Luca!
-    What''s wrong with you? ","parentUIDs":[6,24],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":17}],"EditorInfo":{"isRoot":false,"xPos":222.5333,"yPos":249},"ID":15,"ParamActions":[],"TMPFontGUID":null,"Text":"Luca,
-    I do not want you to risk your life or career. ","parentUIDs":[6,24],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":24}],"EditorInfo":{"isRoot":false,"xPos":460.6667,"yPos":258},"ID":23,"ParamActions":[],"TMPFontGUID":null,"Text":"Sorry,
-    I didn''t get the email.","parentUIDs":[6],"SpeechUID":-1}],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":6}],"EditorInfo":{"isRoot":true,"xPos":105.333313,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Hey
-    Lia. Just a quick reminder to get that email to me.","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":14},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":15},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":23}],"EditorInfo":{"isRoot":false,"xPos":82,"yPos":132},"ID":6,"ParamActions":[],"TMPFontGUID":null,"Text":"
-    I can buy the license if you want. Would you like to join me?","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":13}],"EditorInfo":{"isRoot":false,"xPos":51,"yPos":821},"ID":11,"ParamActions":[],"TMPFontGUID":null,"Text":"No
+  json: '{"Options":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":16}],"EditorInfo":{"isRoot":false,"xPos":36.19998,"yPos":-192},"ID":14,"ParamActions":[],"TMPFontGUID":null,"Text":"Luca!
+    What''s wrong with you? ","parentUIDs":[6,24],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":17}],"EditorInfo":{"isRoot":false,"xPos":253.199982,"yPos":-191},"ID":15,"ParamActions":[],"TMPFontGUID":null,"Text":"Luca,
+    I do not want you to risk your life or career. ","parentUIDs":[6,24],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":24}],"EditorInfo":{"isRoot":false,"xPos":491.333374,"yPos":-182},"ID":23,"ParamActions":[],"TMPFontGUID":null,"Text":"Sorry,
+    I didn''t get the email.","parentUIDs":[6],"SpeechUID":-1}],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":6}],"EditorInfo":{"isRoot":true,"xPos":136,"yPos":-418},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Hey
+    Lia. Just a quick reminder to get that email to me.","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":14},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":15},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":23}],"EditorInfo":{"isRoot":false,"xPos":112.666687,"yPos":-308},"ID":6,"ParamActions":[],"TMPFontGUID":null,"Text":"
+    I can buy the license if you want. Would you like to join me?","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":13}],"EditorInfo":{"isRoot":false,"xPos":81.66669,"yPos":381},"ID":11,"ParamActions":[],"TMPFontGUID":null,"Text":"No
     pressure, Lia. Take your time with your decision. Sorry if it feels like I''m
-    being pushy.","parentUIDs":[21,22],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":56.6666565,"yPos":943},"ID":13,"ParamActions":[],"TMPFontGUID":null,"Text":"But
-    I do need an answer by the end of the day, see you at the brainstorm.","parentUIDs":[11],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":19}],"EditorInfo":{"isRoot":false,"xPos":-15.4667053,"yPos":320},"ID":16,"ParamActions":[],"TMPFontGUID":null,"Text":"Why
+    being pushy.","parentUIDs":[21,22],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":87.33334,"yPos":503},"ID":13,"ParamActions":[],"TMPFontGUID":null,"Text":"But
+    I do need an answer by the end of the day, see you at the brainstorm.","parentUIDs":[11],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":19}],"EditorInfo":{"isRoot":false,"xPos":15.1999817,"yPos":-120},"ID":16,"ParamActions":[],"TMPFontGUID":null,"Text":"Why
     are you insisting on going forward with this? I don''t get you. It''s like you
-    want to be fired or worse, go to jail!","parentUIDs":[14],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":18}],"EditorInfo":{"isRoot":false,"xPos":221.5333,"yPos":321},"ID":17,"ParamActions":[],"TMPFontGUID":null,"Text":"You
+    want to be fired or worse, go to jail!","parentUIDs":[14],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":18}],"EditorInfo":{"isRoot":false,"xPos":252.199982,"yPos":-119},"ID":17,"ParamActions":[],"TMPFontGUID":null,"Text":"You
     know, Luca. You''re my best friend, so I''m saying this from a place of caring.
-    ","parentUIDs":[15],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":20}],"EditorInfo":{"isRoot":false,"xPos":220.5333,"yPos":445},"ID":18,"ParamActions":[],"TMPFontGUID":null,"Text":"People
+    ","parentUIDs":[15],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":20}],"EditorInfo":{"isRoot":false,"xPos":251.199982,"yPos":5},"ID":18,"ParamActions":[],"TMPFontGUID":null,"Text":"People
     are getting arrested for this type of stuff, right? You have to be smarter, and
-    more patient. Your time will come.","parentUIDs":[17],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":22}],"EditorInfo":{"isRoot":false,"xPos":-23.4667053,"yPos":439},"ID":19,"ParamActions":[],"TMPFontGUID":null,"Text":"Well,
+    more patient. Your time will come.","parentUIDs":[17],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":22}],"EditorInfo":{"isRoot":false,"xPos":7.19998169,"yPos":-1},"ID":19,"ParamActions":[],"TMPFontGUID":null,"Text":"Well,
     clearly the censors care more about censoring and judging our game than actual
-    content. Infuriating.","parentUIDs":[16],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":21}],"EditorInfo":{"isRoot":false,"xPos":208.5333,"yPos":546},"ID":20,"ParamActions":[],"TMPFontGUID":null,"Text":"The
-    stupid censors and their lame system are the reason why my game can''t be made.","parentUIDs":[18],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":11}],"EditorInfo":{"isRoot":false,"xPos":224.5333,"yPos":660},"ID":21,"ParamActions":[],"TMPFontGUID":null,"Text":"When
+    content. Infuriating.","parentUIDs":[16],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":21}],"EditorInfo":{"isRoot":false,"xPos":239.199982,"yPos":106},"ID":20,"ParamActions":[],"TMPFontGUID":null,"Text":"The
+    stupid censors and their lame system are the reason why my game can''t be made.","parentUIDs":[18],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":11}],"EditorInfo":{"isRoot":false,"xPos":255.199982,"yPos":220},"ID":21,"ParamActions":[],"TMPFontGUID":null,"Text":"When
     the ANEA has the power to reject and even arrest content creators, freedom of
-    expression suffers. I can''t even imagine what the world is becoming.","parentUIDs":[20],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":11}],"EditorInfo":{"isRoot":false,"xPos":-19.4667053,"yPos":566},"ID":22,"ParamActions":[],"TMPFontGUID":null,"Text":"I
+    expression suffers. I can''t even imagine what the world is becoming.","parentUIDs":[20],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":11}],"EditorInfo":{"isRoot":false,"xPos":11.1999817,"yPos":126},"ID":22,"ParamActions":[],"TMPFontGUID":null,"Text":"I
     don''t think they''ll ever let our game get published, so this may be the only
-    opportunity that I have.","parentUIDs":[19],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":15},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":14}],"EditorInfo":{"isRoot":false,"xPos":472.6667,"yPos":333},"ID":24,"ParamActions":[],"TMPFontGUID":null,"Text":"Alright,
+    opportunity that I have.","parentUIDs":[19],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":15},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":14}],"EditorInfo":{"isRoot":false,"xPos":503.333374,"yPos":-107},"ID":24,"ParamActions":[],"TMPFontGUID":null,"Text":"Alright,
     long story short, I can buy a license for our game, what do you think?","parentUIDs":[23],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Luca","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: Luca
@@ -4112,7 +4244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7369066094207266820, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.13
+      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 7369066094207266820, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4222,11 +4354,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 9
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":7}],"EditorInfo":{"isRoot":true,"xPos":55.00003,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"I
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":7}],"EditorInfo":{"isRoot":true,"xPos":34,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"I
     know it''s risky to get the license, but I can''t let my hard work go to waste.
-    ","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":8}],"EditorInfo":{"isRoot":false,"xPos":52.00006,"yPos":134},"ID":7,"ParamActions":[],"TMPFontGUID":null,"Text":"At
+    ","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":8}],"EditorInfo":{"isRoot":false,"xPos":31.00003,"yPos":134},"ID":7,"ParamActions":[],"TMPFontGUID":null,"Text":"At
     least for now, I can focus on the creative side of things without worrying about
-    the censors. I just hope I''m making the right decision.","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":51.00006,"yPos":254},"ID":8,"ParamActions":[],"TMPFontGUID":null,"Text":"Oh
+    the censors. I just hope I''m making the right decision.","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":30.00003,"yPos":254},"ID":8,"ParamActions":[],"TMPFontGUID":null,"Text":"Oh
     no, Yiran is calling...","parentUIDs":[7],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: Lia
@@ -4334,7 +4466,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 10
+          m_IntArgument: 12
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5151,11 +5283,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7687357805778766900, guid: 4c73a6c272e85074d8770b4ee89fb519, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7687357805778766900, guid: 4c73a6c272e85074d8770b4ee89fb519, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.7970924
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7687357805778766900, guid: 4c73a6c272e85074d8770b4ee89fb519, type: 3}
       propertyPath: m_AnchorMin.y
@@ -5177,11 +5309,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9177617733875777336, guid: 4c73a6c272e85074d8770b4ee89fb519, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -5265.5557
+      value: -7638.4307
       objectReference: {fileID: 0}
     - target: {fileID: 9177617733875777336, guid: 4c73a6c272e85074d8770b4ee89fb519, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -56616.324
+      value: -80403.23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c73a6c272e85074d8770b4ee89fb519, type: 3}
@@ -5995,6 +6127,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4500065215059781597, guid: 8a7c86fe66313ec43bd6136e99c0d43a, type: 3}
   m_PrefabInstance: {fileID: 1891184924}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1905041725 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4168075817805215031, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+  m_PrefabInstance: {fileID: 199617868}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 655ebc1ebc204ae4f9b7965bc2fb058c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1921603117
 GameObject:
   m_ObjectHideFlags: 0

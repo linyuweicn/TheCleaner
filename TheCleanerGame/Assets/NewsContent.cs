@@ -8,27 +8,33 @@ public class NewsContent : MonoBehaviour
 {
   
     private TextMeshProUGUI Content;
+    [TextArea(3, 10)]
     [SerializeField] string LowSscoreText;
+    [TextArea(3, 10)]
     [SerializeField] string MedSscoreText;
+    [TextArea(3, 10)]
     [SerializeField] string HighSscoreText;
     private string finalMessage;
 
-    [SerializeField] float AgreeableScore;
+    private float score;
+    [SerializeField] int lowMedBound = 0;
+    [SerializeField] int medHighBound = 5;
 
     void Start()
     {
-        
+        score = ConvoGlobalManager.agreeableScore + ConvoGlobalManager.overallTotalScore;
+        Debug.Log("news score is " + score);
         Content = gameObject.GetComponent<TextMeshProUGUI>();
 
-        if (0 < AgreeableScore && AgreeableScore < 10)
+        if (score  < lowMedBound)
         {
             finalMessage = LowSscoreText;
         }
-        else if (10 <= AgreeableScore && AgreeableScore < 15)
+        else if (lowMedBound < score && score < medHighBound)
         {
             finalMessage = MedSscoreText;
         }
-        else
+        else if (score > medHighBound)
         {
             finalMessage = HighSscoreText;
         }

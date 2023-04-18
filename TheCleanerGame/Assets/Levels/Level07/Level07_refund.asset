@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Level07_refund
   m_EditorClassIdentifier: 
   id: {x: 6, y: 0}
-  promptType: 0
+  promptType: 2
   text: For mispurchase by players age 16 and below, we can refund [percentage] in-game
     purcahse.
   imageColumn: 0
-  completed: 0
+  completed: 1
   AnswersStorage:
   - answerColumn:
     - text: 0%
@@ -70,6 +70,3 @@ MonoBehaviour:
       feedbackText: 
       criticType: 0
       image: {fileID: 21300000, guid: ccc71afbb05d60c4598745742f9f12fd, type: 3}
-  segments:
-  - 'For mispurchase by players age 16 and below, we can refund '
-  - ' in-game purcahse.'

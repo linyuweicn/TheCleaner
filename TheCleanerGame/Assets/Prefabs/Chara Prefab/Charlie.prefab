@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7369066093753934813}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7435, y: 0.7435, z: 0.7435}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.2}
   m_Children: []
   m_Father: {fileID: 7369066094207266820}
   m_RootOrder: 0
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: -1015411917
   m_SortingLayer: 1
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 60dde32473fc8da498f53c8e4b8ca006, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 5e39a36aabfd5f74099e09d50e270c40, type: 3}
+  m_Color: {r: 0.9056604, g: 0.9056604, b: 0.9056604, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,6 +101,7 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d3a6e2b699db46f448010add5293626e, type: 2}
   HoverSprite: {fileID: 0}
   ChangeSpriteWhenHover: 0
+  LightUpAtBegining: 0
 --- !u!114 &7369066093753934784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,14 +120,16 @@ MonoBehaviour:
   AfterConversations: []
   lowMedBound: 0
   medHighBound: 5
-  useAgreeableScore: 0
+  useOnlyAgreeableScore: 0
+  useAgreeableAndDailyTotalScore: 0
+  useAgreeableAndOverallTotalScore: 0
+  startConvAtBegining: 0
   boxCollider2D: []
-  CharaCollider:
-  - {fileID: 657939835192024307}
   NewPosition: {x: 0, y: 0, z: 0}
   NewPosition2: {x: 0, y: 0, z: 0}
   NewPosition3: {x: 0, y: 0, z: 0}
-  startConvAtBegining: 0
+  FlipWhenMoving: 0
+  canTurnOffCollider: 0
   hasFinishedConv: 0
 --- !u!61 &657939835192024307
 BoxCollider2D:
@@ -145,7 +148,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.64, y: 6.7}
+    oldSize: {x: 5.12, y: 10.24}
     newSize: {x: 5.64, y: 6.7}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

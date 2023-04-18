@@ -1267,8 +1267,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 7
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":6}],"EditorInfo":{"isRoot":true,"xPos":96.333374,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"(Wish
-    I can pass tomorrow.)","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":101.666687,"yPos":134},"ID":6,"ParamActions":[],"TMPFontGUID":null,"Text":"(Who''s
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":6}],"EditorInfo":{"isRoot":true,"xPos":71.33334,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"(Wish
+    I can pass tomorrow.)","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":76.66666,"yPos":134},"ID":6,"ParamActions":[],"TMPFontGUID":null,"Text":"(Who''s
     calling me this late?)","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: Lia
@@ -1281,19 +1281,7 @@ MonoBehaviour:
   EndConversationFont: {fileID: 0}
   Event:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 82956155}
-        m_TargetAssemblyTypeName: PhoneControl, Assembly-CSharp
-        m_MethodName: EnablePhoneAfterConverstaion
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!4 &228204743
 Transform:
   m_ObjectHideFlags: 0
@@ -3707,11 +3695,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: NewPosition.x
-      value: -11.1
+      value: -10.5
       objectReference: {fileID: 0}
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: NewPosition.y
-      value: 6.43
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: CharaCollider.Array.size
@@ -3783,11 +3771,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7369066094207266820, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.43
+      value: 10.31
       objectReference: {fileID: 0}
     - target: {fileID: 7369066094207266820, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.43
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 7369066094207266820, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4043,11 +4031,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9177617733875777336, guid: 4c73a6c272e85074d8770b4ee89fb519, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -9549.105
+      value: -11171.31
       objectReference: {fileID: 0}
     - target: {fileID: 9177617733875777336, guid: 4c73a6c272e85074d8770b4ee89fb519, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -109541.81
+      value: -126989.586
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c73a6c272e85074d8770b4ee89fb519, type: 3}
@@ -4399,7 +4387,7 @@ Transform:
   m_LocalScale: {x: 0.8682417, y: 0.8682417, z: 0.8682417}
   m_Children: []
   m_Father: {fileID: 2026036947}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1816597092
 SpriteRenderer:
@@ -5036,7 +5024,11 @@ PrefabInstance:
       objectReference: {fileID: 1112813263}
     - target: {fileID: 1571868868752888319, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612513185005338901, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1880798978696324265, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: ExitDoor
@@ -5156,7 +5148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4387831574692617496, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4387831574767638172, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: Animator
@@ -5444,7 +5436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7802226804063181208, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8084904101425945098, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: Animator
@@ -5484,7 +5476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9100798848429328276, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}

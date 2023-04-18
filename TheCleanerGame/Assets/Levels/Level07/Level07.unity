@@ -424,6 +424,10 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetVolume
       objectReference: {fileID: 0}
+    - target: {fileID: 1969992101977436229, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: m_text
+      value: Go to the next week?
+      objectReference: {fileID: 0}
     - target: {fileID: 1969992102177298768, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -443,10 +447,10 @@ PrefabInstance:
     - target: {fileID: 1969992102908993093, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1909430846}
+      objectReference: {fileID: 1361564771}
     - target: {fileID: 1969992102908993093, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ToNextScene
+      value: ToSpecificScene
       objectReference: {fileID: 0}
     - target: {fileID: 1969992103161514617, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -556,6 +560,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -389.61572
       objectReference: {fileID: 0}
+    - target: {fileID: 5331107114912236875, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+      propertyPath: cgm
+      value: 
+      objectReference: {fileID: 196518432}
     - target: {fileID: 6481111624994406986, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
       propertyPath: m_text
       value: PLACEHOLDER DAY2 NEWS
@@ -833,6 +841,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4653869614765604982, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
   m_PrefabInstance: {fileID: 196518430}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &196518432 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2271086860561964481, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+  m_PrefabInstance: {fileID: 196518430}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7248e7bfb87d4f4a803037ed175e7d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &196518433 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 253548492290374187, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
@@ -841,6 +860,11 @@ GameObject:
 --- !u!1 &196518434 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 253548493712607748, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+  m_PrefabInstance: {fileID: 196518430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &196518435 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7395448799599413507, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
   m_PrefabInstance: {fileID: 196518430}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &196518436 stripped
@@ -858,11 +882,30 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1969992102177298768, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
   m_PrefabInstance: {fileID: 196518430}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &196518439 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1796045099714811927, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
-  m_PrefabInstance: {fileID: 196518430}
+--- !u!114 &196518439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196518435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e47212744c7b8499f5decf7ea9f5ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LowSscoreText: "With little pushback from the art community, ANEA regulators have
+    become the gatekeepers.  \n\nAlmost overnight, the ANEA went from a defunct agency
+    to the official gatekeeper of all art produced within ASPA.   "
+  MedSscoreText: After a period of tension, the ANEA and gaming industry have come
+    to a mutual understanding. The ANEA has agreed to be more transparent in their
+    censorship decisions while gaming companies have implemented new measures to
+    ensure compliance with ANEA regulations.
+  HighSscoreText: As concerns grew over the ANEA's unchecked authority, lawmakers
+    passed a bill to revise the agency's mandate. The new law requires the ANEA to
+    consult with industry experts before enforcing any new policies.
+  lowMedBound: 330
+  medHighBound: 450
 --- !u!1 &196518440 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7395448800898905352, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
@@ -897,6 +940,59 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2729820918536156998, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
   m_PrefabInstance: {fileID: 196518430}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &196518444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7395448800439609797, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+  m_PrefabInstance: {fileID: 196518430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &196518445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196518444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e47212744c7b8499f5decf7ea9f5ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LowSscoreText: "No formal efforts have been made to combat or reel down the agency's
+    mandate, despite many questions about its legitimacy. As a result, the ANEA has
+    secured its position as an essential arbiter of what can and cannot be brought
+    to market.   \n\nSome companies are making changes to meet the ANEA's demands
+    while other companies are simply shuttering their doors."
+  MedSscoreText: The industry has adapted to the new environment, with many companies
+    finding innovative ways to create engaging games while staying within the ANEA's
+    guidelines.
+  HighSscoreText: This change has led to a more productive relationship between the
+    ANEA and gaming companies. Both parties are now working together to create games
+    that meet industry standards while still respecting the cultural values of ASPA.
+  lowMedBound: 330
+  medHighBound: 450
+--- !u!1 &196518446 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7395448799980517253, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+  m_PrefabInstance: {fileID: 196518430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &196518447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196518446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e47212744c7b8499f5decf7ea9f5ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LowSscoreText: "GOV\u2019T WINS CULTURE WAR"
+  MedSscoreText: ANEA and Gaming Companies Find Common Ground on Censorship
+  HighSscoreText: 'Victory for Artistic Freedom: ANEA Censorship Overturned in Landmark
+    Decision'
+  lowMedBound: 330
+  medHighBound: 450
 --- !u!1001 &199617868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1000,6 +1096,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2770596891069316712, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 139.9789
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770596891069316712, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.2673
+      objectReference: {fileID: 0}
     - target: {fileID: 2770596891069316715, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: m_text
       value: Refund Policy
@@ -1043,6 +1147,62 @@ PrefabInstance:
     - target: {fileID: 4601394969790145470, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[0].scoreRange.y
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[1].scoreRange.x
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[0].feedbackTextSU.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[1].feedbackTextSU.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[2].feedbackTextSU.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[0].feedbackTextSU.Array.data[0]
+      value: Let's think twice.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[0].feedbackTextSU.Array.data[1]
+      value: Hey Lia, remember this is our last day.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[0].feedbackTextSU.Array.data[2]
+      value: Be sure to make your decision wisely.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[1].feedbackTextSU.Array.data[0]
+      value: Decent choice.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[1].feedbackTextSU.Array.data[1]
+      value: We can do better.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[1].feedbackTextSU.Array.data[2]
+      value: I think there is a better option.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[2].feedbackTextSU.Array.data[0]
+      value: I'm glad you made this choice.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[2].feedbackTextSU.Array.data[1]
+      value: Looks good to me.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903127024097025076, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: summaryUIList.Array.data[2].feedbackTextSU.Array.data[2]
+      value: I agree with this.
       objectReference: {fileID: 0}
     - target: {fileID: 4917537125187386384, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1158,11 +1318,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5735007599962322208, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: totalTheme
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5735007599962322208, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: totalSetting
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5735007599962322208, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: totalCharacter
@@ -1346,7 +1506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8787113171449609872, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.96
+      value: -0.64
       objectReference: {fileID: 0}
     - target: {fileID: 8787113172314994612, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: m_text
@@ -1367,6 +1527,10 @@ PrefabInstance:
     - target: {fileID: 8787113172314994615, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 1.3264
+      objectReference: {fileID: 0}
+    - target: {fileID: 8787113172314994615, guid: 8751829fc4dab354cb287a148f755140, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 9194635855363504321, guid: 8751829fc4dab354cb287a148f755140, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1573,9 +1737,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 21
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":10}],"EditorInfo":{"isRoot":true,"xPos":37.3333435,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Hey
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":10}],"EditorInfo":{"isRoot":true,"xPos":99.33331,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Hey
     Lia, ready for the brainstorming session? You will do great! Just make sure you
-    are staying in the safe zone and don''t violate any regulation rules. ","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":38.00003,"yPos":123},"ID":10,"ParamActions":[],"TMPFontGUID":null,"Text":"I''m
+    are staying in the safe zone and don''t violate any regulation rules. ","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":100,"yPos":123},"ID":10,"ParamActions":[],"TMPFontGUID":null,"Text":"I''m
     really looking forward to today''s brainstorming. I am sure you will master it.
     ","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
@@ -2061,9 +2225,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 22
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":21}],"EditorInfo":{"isRoot":true,"xPos":37.3333435,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Everything
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":21}],"EditorInfo":{"isRoot":true,"xPos":95.00003,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Everything
     looks fine. But there are just one or two points I am still worried that it''s
-    a bit risky.  ","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":37,"yPos":133},"ID":21,"ParamActions":[],"TMPFontGUID":null,"Text":"The
+    a bit risky.  ","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":94.66669,"yPos":133},"ID":21,"ParamActions":[],"TMPFontGUID":null,"Text":"The
     game will likely be passed, but I am still vert concerned.","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: 
@@ -2076,7 +2240,19 @@ MonoBehaviour:
   EndConversationFont: {fileID: 0}
   Event:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 196518432}
+        m_TargetAssemblyTypeName: ConvoGlobalManager, Assembly-CSharp
+        m_MethodName: setNextScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &500711319 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2118019611612403937, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
@@ -2357,9 +2533,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 9
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":8}],"EditorInfo":{"isRoot":true,"xPos":43.00003,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"I
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":8}],"EditorInfo":{"isRoot":true,"xPos":99.33331,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"I
     know how tempting it could be to buy an illegal license. But ultimately, she''s
-    doing the right thing.","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Charlie","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":58.666687,"yPos":128},"ID":8,"ParamActions":[],"TMPFontGUID":null,"Text":"See
+    doing the right thing.","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Charlie","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":114.999969,"yPos":128},"ID":8,"ParamActions":[],"TMPFontGUID":null,"Text":"See
     you at the brainstorm!","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Charlie","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: Charlie
@@ -2382,7 +2558,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 693207189808960768, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 693207189808960768, guid: e00ecbc2aac299244bc89fa332fd6c02, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2596,7 +2772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 4
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":37.3333435,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"I
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":51.666687,"yPos":133},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"I
     have taken meticulous notes of all of your decisions, and I should warn you that
     I wouldn''t count on the ANEA granting this game a license.","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Benjamine","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
@@ -2880,8 +3056,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 8
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":6}],"EditorInfo":{"isRoot":true,"xPos":43.00003,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"I
-    know this is my first time working on a game, but I love this company. ","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Charlie","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":37.3333435,"yPos":132},"ID":6,"ParamActions":[],"TMPFontGUID":null,"Text":"Yiran
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":6}],"EditorInfo":{"isRoot":true,"xPos":99.33331,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"I
+    know this is my first time working on a game, but I love this company. ","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Charlie","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":93.666626,"yPos":132},"ID":6,"ParamActions":[],"TMPFontGUID":null,"Text":"Yiran
     has been so supportive and is dealing with all this game license stuff really
     well.","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Charlie","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
@@ -2986,7 +3162,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 196518432}
+        m_TargetAssemblyTypeName: ConvoGlobalManager, Assembly-CSharp
+        m_MethodName: setNextScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   NodeID: 0
   TMPFont: {fileID: 0}
   Icon: {fileID: 21300000, guid: a056ab62475517c4ba23e3b3061d91c0, type: 3}
@@ -3074,11 +3262,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: lowMedBound
-      value: 55
+      value: 385
       objectReference: {fileID: 0}
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: medHighBound
-      value: 70
+      value: 550
       objectReference: {fileID: 0}
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: CharaCollider.Array.size
@@ -3090,7 +3278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: B4Conversations.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: CharaCollider.Array.data[0]
@@ -3149,6 +3337,14 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
+      propertyPath: B4Conversations.Array.data[1].convoArray.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
+      propertyPath: B4Conversations.Array.data[2].convoArray.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: AfterConversations.Array.data[0].convoArray.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -3169,6 +3365,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 807123289}
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
+      propertyPath: B4Conversations.Array.data[1].convoArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 1120071302}
+    - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
+      propertyPath: B4Conversations.Array.data[1].convoArray.Array.data[1]
+      value: 
+      objectReference: {fileID: 807123289}
+    - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
+      propertyPath: B4Conversations.Array.data[2].convoArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 1120071302}
+    - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
+      propertyPath: B4Conversations.Array.data[2].convoArray.Array.data[1]
+      value: 
+      objectReference: {fileID: 807123289}
+    - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: AfterConversations.Array.data[0].convoArray.Array.data[0]
       value: 
       objectReference: {fileID: 1039694940}
@@ -3182,15 +3394,15 @@ PrefabInstance:
       objectReference: {fileID: 1329868670}
     - target: {fileID: 7369066094207266820, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7369066094207266820, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.61
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7369066094207266820, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.15
+      value: 3.04
       objectReference: {fileID: 0}
     - target: {fileID: 7369066094207266820, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3249,19 +3461,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2539964609188857533, guid: 4d6fd38c8c7d00347b0a8d75acd67e58, type: 3}
       propertyPath: lowMedBound
-      value: 55
+      value: 385
       objectReference: {fileID: 0}
     - target: {fileID: 2539964609188857533, guid: 4d6fd38c8c7d00347b0a8d75acd67e58, type: 3}
       propertyPath: medHighBound
-      value: 70
+      value: 550
       objectReference: {fileID: 0}
     - target: {fileID: 2539964609188857533, guid: 4d6fd38c8c7d00347b0a8d75acd67e58, type: 3}
       propertyPath: NewPosition.x
-      value: 9.63
+      value: -16.4
       objectReference: {fileID: 0}
     - target: {fileID: 2539964609188857533, guid: 4d6fd38c8c7d00347b0a8d75acd67e58, type: 3}
       propertyPath: NewPosition.y
-      value: 2.61
+      value: 2.03
       objectReference: {fileID: 0}
     - target: {fileID: 2539964609188857533, guid: 4d6fd38c8c7d00347b0a8d75acd67e58, type: 3}
       propertyPath: CharaCollider.Array.size
@@ -3273,7 +3485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2539964609188857533, guid: 4d6fd38c8c7d00347b0a8d75acd67e58, type: 3}
       propertyPath: B4Conversations.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2539964609188857533, guid: 4d6fd38c8c7d00347b0a8d75acd67e58, type: 3}
       propertyPath: CharaCollider.Array.data[0]
@@ -3316,6 +3528,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2539964609188857533, guid: 4d6fd38c8c7d00347b0a8d75acd67e58, type: 3}
+      propertyPath: B4Conversations.Array.data[1].convoArray.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539964609188857533, guid: 4d6fd38c8c7d00347b0a8d75acd67e58, type: 3}
+      propertyPath: B4Conversations.Array.data[2].convoArray.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539964609188857533, guid: 4d6fd38c8c7d00347b0a8d75acd67e58, type: 3}
       propertyPath: AfterConversations.Array.data[0].convoArray.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -3332,6 +3552,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 771726383}
     - target: {fileID: 2539964609188857533, guid: 4d6fd38c8c7d00347b0a8d75acd67e58, type: 3}
+      propertyPath: B4Conversations.Array.data[1].convoArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 771726383}
+    - target: {fileID: 2539964609188857533, guid: 4d6fd38c8c7d00347b0a8d75acd67e58, type: 3}
+      propertyPath: B4Conversations.Array.data[2].convoArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 771726383}
+    - target: {fileID: 2539964609188857533, guid: 4d6fd38c8c7d00347b0a8d75acd67e58, type: 3}
       propertyPath: AfterConversations.Array.data[0].convoArray.Array.data[0]
       value: 
       objectReference: {fileID: 1036125666}
@@ -3345,7 +3573,7 @@ PrefabInstance:
       objectReference: {fileID: 1867724707}
     - target: {fileID: 2539964609858106681, guid: 4d6fd38c8c7d00347b0a8d75acd67e58, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2539964609858106681, guid: 4d6fd38c8c7d00347b0a8d75acd67e58, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3498,7 +3726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 22
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":37.3333435,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"I''m
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":95.00003,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"I''m
     just not sure if this is good enough for ANEA. But now, this is ANEA''s decision
     to make, and all we can do now is pray for the game to be approved. Finger crossed.","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
@@ -3511,7 +3739,19 @@ MonoBehaviour:
   EndConversationFont: {fileID: 0}
   Event:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 196518432}
+        m_TargetAssemblyTypeName: ConvoGlobalManager, Assembly-CSharp
+        m_MethodName: setNextScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1236099410
 Transform:
   m_ObjectHideFlags: 0
@@ -3582,8 +3822,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 7
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":6}],"EditorInfo":{"isRoot":true,"xPos":43.00003,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"It''s
-    been a long journey desining the game.","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":56,"yPos":156},"ID":6,"ParamActions":[],"TMPFontGUID":null,"Text":"The
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":6}],"EditorInfo":{"isRoot":true,"xPos":99.33331,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"It''s
+    been a long journey desining the game.","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":112.333282,"yPos":156},"ID":6,"ParamActions":[],"TMPFontGUID":null,"Text":"The
     results will be released next week, hope I get it!","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: 
@@ -3835,6 +4075,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4387831574249257176, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
   m_PrefabInstance: {fileID: 2026036935}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1361564771 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5331107114912236875, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
+  m_PrefabInstance: {fileID: 196518430}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76980068ab8cb444898e8d6b2c78412, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1390595478 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4168075817805215031, guid: 8751829fc4dab354cb287a148f755140, type: 3}
@@ -4120,9 +4371,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 22
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":21}],"EditorInfo":{"isRoot":true,"xPos":37.3333435,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"This
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":21}],"EditorInfo":{"isRoot":true,"xPos":84.00003,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"This
     is really on the right track for a game that plays both safely and creatively.
-    I don''t see any things that need to be improved.","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":33,"yPos":158},"ID":21,"ParamActions":[],"TMPFontGUID":null,"Text":"But
+    I don''t see any things that need to be improved.","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":79.66669,"yPos":158},"ID":21,"ParamActions":[],"TMPFontGUID":null,"Text":"But
     we don''t know anything before the result comes out, now I''m just nervous about
     it. ","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Yiran","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
@@ -4136,7 +4387,19 @@ MonoBehaviour:
   EndConversationFont: {fileID: 0}
   Event:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 196518432}
+        m_TargetAssemblyTypeName: ConvoGlobalManager, Assembly-CSharp
+        m_MethodName: setNextScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 11
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1613299597 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4867717848232297833, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
@@ -4205,6 +4468,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 839790356259416070, guid: 1b54442b0b05f6142b596996f2d3bab8, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c0a060673c73e6e45b281207ee05f8c9, type: 3}
     - target: {fileID: 839790356919731180, guid: 1b54442b0b05f6142b596996f2d3bab8, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -4395,7 +4662,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7932807439458813120, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7932807439458813120, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4455,11 +4722,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: lowMedBound
-      value: 55
+      value: 385
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: medHighBound
-      value: 70
+      value: 550
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: startConvAtBegining
@@ -4475,7 +4742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: B4Conversations.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: CharaCollider.Array.data[0]
@@ -4530,6 +4797,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
+      propertyPath: B4Conversations.Array.data[1].convoArray.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
+      propertyPath: B4Conversations.Array.data[2].convoArray.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: AfterConversations.Array.data[0].convoArray.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -4543,6 +4818,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: B4Conversations.Array.data[0].convoArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 387035347}
+    - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
+      propertyPath: B4Conversations.Array.data[0].convoArray.Array.data[1]
+      value: 
+      objectReference: {fileID: 387035347}
+    - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
+      propertyPath: B4Conversations.Array.data[0].convoArray.Array.data[2]
+      value: 
+      objectReference: {fileID: 387035347}
+    - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
+      propertyPath: B4Conversations.Array.data[1].convoArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 387035347}
+    - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
+      propertyPath: B4Conversations.Array.data[2].convoArray.Array.data[0]
       value: 
       objectReference: {fileID: 387035347}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
@@ -4716,52 +5007,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4500065215059781597, guid: 8a7c86fe66313ec43bd6136e99c0d43a, type: 3}
   m_PrefabInstance: {fileID: 1891184924}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1909430845
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1909430847}
-  - component: {fileID: 1909430846}
-  m_Layer: 0
-  m_Name: SceneManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1909430846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1909430845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d76980068ab8cb444898e8d6b2c78412, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aimator: {fileID: 196518439}
-  PauseMene: {fileID: 0}
-  cgm: {fileID: 0}
---- !u!4 &1909430847
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1909430845}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.805903, y: -16.552263, z: 45.65049}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1978524137
 GameObject:
   m_ObjectHideFlags: 0
@@ -4808,7 +5053,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 196518432}
+        m_TargetAssemblyTypeName: ConvoGlobalManager, Assembly-CSharp
+        m_MethodName: setNextScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   NodeID: 21
   TMPFont: {fileID: 0}
   Icon: {fileID: 21300000, guid: a056ab62475517c4ba23e3b3061d91c0, type: 3}
@@ -5421,7 +5678,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 196518432}
+        m_TargetAssemblyTypeName: ConvoGlobalManager, Assembly-CSharp
+        m_MethodName: setNextScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 11
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   NodeID: 21
   TMPFont: {fileID: 0}
   Icon: {fileID: 21300000, guid: a056ab62475517c4ba23e3b3061d91c0, type: 3}

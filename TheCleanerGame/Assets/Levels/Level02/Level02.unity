@@ -1282,11 +1282,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1969992102177298768, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
   m_PrefabInstance: {fileID: 196518430}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &196518439 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7395448799980517253, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
-  m_PrefabInstance: {fileID: 196518430}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &196518440 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7395448800898905352, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
@@ -1316,22 +1311,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &196518443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 196518439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4e47212744c7b8499f5decf7ea9f5ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LowSscoreText: QUESTIONS RISE OVER ANEA CENSOR TRAINING
-  MedSscoreText: med
-  HighSscoreText: High
-  AgreeableScore: 1
 --- !u!1001 &199617868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2785,27 +2764,6 @@ MonoBehaviour:
   Event:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &559348578 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7395448800439609797, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
-  m_PrefabInstance: {fileID: 196518430}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &559348582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 559348578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4e47212744c7b8499f5decf7ea9f5ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LowSscoreText: low right
-  MedSscoreText: med left
-  HighSscoreText: high
-  AgreeableScore: 1
 --- !u!114 &579228525 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1810707934999391398, guid: e3ba879a44abf724a855f9072a2c1603, type: 3}
@@ -4347,6 +4305,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
+      propertyPath: lowMedBound
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
+      propertyPath: medHighBound
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: useAgreeableScore
       value: 0
       objectReference: {fileID: 0}
@@ -4389,6 +4355,10 @@ PrefabInstance:
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: AfterConversations.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
+      propertyPath: useAgreeableAndOverallTotalScore
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7369066093753934784, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: B4CompleteConversations.Array.size
@@ -4500,7 +4470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7369066094207266820, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.04
+      value: 3.4
       objectReference: {fileID: 0}
     - target: {fileID: 7369066094207266820, guid: 07566a95404c2e7448e11bb3bf9b94dc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5248,27 +5218,6 @@ MonoBehaviour:
   TMPFont: {fileID: 0}
   Icon: {fileID: 21300000, guid: a056ab62475517c4ba23e3b3061d91c0, type: 3}
   Audio: {fileID: 0}
---- !u!1 &1564193778 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7395448799599413507, guid: 8e4691c909b133b40b5fc793ebb27f30, type: 3}
-  m_PrefabInstance: {fileID: 196518430}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1564193782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1564193778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4e47212744c7b8499f5decf7ea9f5ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LowSscoreText: low left
-  MedSscoreText: med left
-  HighSscoreText: high
-  AgreeableScore: 1
 --- !u!4 &1573990035 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4387831574321334288, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
@@ -6283,11 +6232,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: lowMedBound
-      value: 50
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: medHighBound
-      value: 70
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: NewPosition.x
@@ -6303,7 +6252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: startConvAtBegining
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: CharaCollider.Array.size
@@ -6315,7 +6264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: B4Conversations.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: CharaCollider.Array.data[0]
@@ -6355,6 +6304,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: useAgreeableAndDailyTotalScore
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
+      propertyPath: useAgreeableAndOverallTotalScore
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
@@ -6399,11 +6352,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: B4Conversations.Array.data[1].convoArray.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: B4Conversations.Array.data[2].convoArray.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: AfterConversations.Array.data[0].convoArray.Array.size
@@ -6432,11 +6385,11 @@ PrefabInstance:
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: B4Conversations.Array.data[1].convoArray.Array.data[0]
       value: 
-      objectReference: {fileID: 387035347}
+      objectReference: {fileID: 1832981171}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: B4Conversations.Array.data[1].convoArray.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 387035347}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: B4Conversations.Array.data[1].convoArray.Array.data[2]
       value: 
@@ -6444,11 +6397,11 @@ PrefabInstance:
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: B4Conversations.Array.data[2].convoArray.Array.data[0]
       value: 
-      objectReference: {fileID: 387035347}
+      objectReference: {fileID: 1832981171}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: B4Conversations.Array.data[2].convoArray.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 387035347}
     - target: {fileID: 7932807440485901661, guid: 15923eefecdf7434785518204a650a62, type: 3}
       propertyPath: AfterConversations.Array.data[0].convoArray.Array.data[0]
       value: 

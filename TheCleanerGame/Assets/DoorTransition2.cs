@@ -11,12 +11,15 @@ public class DoorTransition2 : MonoBehaviour
     [SerializeField] GameObject CalendarPage;
 
     private AudioManager AudioManager;
+
     void Start()
     {
         AudioManager = FindObjectOfType<AudioManager>();
         
         CalendarPage.SetActive(false);
-        ExitDoor.SetActive(false);
+        if (ExitDoor != null)
+            ExitDoor.SetActive(false);
+ 
     }
 
     // Update is called once per frame
@@ -25,10 +28,11 @@ public class DoorTransition2 : MonoBehaviour
         if (BrainstormGeneralManager.Instance.ContainerDictionary[0].Prompt.completed
            && BrainstormGeneralManager.Instance.ContainerDictionary[1].Prompt.completed
            && BrainstormGeneralManager.Instance.ContainerDictionary[2].Prompt.completed
-           )
+           && ExitDoor != null)
         {
             ExitDoor.SetActive(true);
         }
+       
     }
 
     private void OnMouseDown()
@@ -47,4 +51,6 @@ public class DoorTransition2 : MonoBehaviour
             AudioManager.PlayUiSound("ui_DoorClose02");
         }
     }
+
+
 }

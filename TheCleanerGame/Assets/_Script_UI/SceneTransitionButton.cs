@@ -49,6 +49,11 @@ public class SceneTransitionButton : MonoBehaviour
             ToNextScene();
             Debug.Log("to next scene");
         }
+        else if (Input.GetKeyDown(KeyCode.N))
+        {
+            SceneManager.LoadScene(9);
+        }
+        
 
     }
 

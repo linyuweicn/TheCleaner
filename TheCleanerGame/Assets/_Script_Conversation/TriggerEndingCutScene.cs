@@ -30,4 +30,10 @@ public class TriggerEndingCutScene : MonoBehaviour
         }
 
      }
+
+    public void TriggerImeediately()
+    {
+        EndingCamera.SetActive(true);
+        EndingCredits.SetActive(true);
+    }
 }
