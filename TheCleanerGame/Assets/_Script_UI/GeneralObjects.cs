@@ -149,6 +149,7 @@ public class GeneralObjects : MonoBehaviour
         for (int i = 0; i < Colliders.Length; i++)
         {
             Colliders[i].enabled = false;
+            
         } 
             
 
@@ -161,7 +162,7 @@ public class GeneralObjects : MonoBehaviour
                     Objects[j].SetActive(false);
                 }
         }
-     
+   
     }
 
     IEnumerator CloseAnimationObjeccts()

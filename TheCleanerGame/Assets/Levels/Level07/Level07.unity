@@ -2772,7 +2772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 4
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":51.666687,"yPos":133},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"I
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":23.00003,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"I
     have taken meticulous notes of all of your decisions, and I should warn you that
     I wouldn''t count on the ANEA granting this game a license.","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Benjamine","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
@@ -3117,7 +3117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 9
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":37.3333435,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"I
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":8.333313,"yPos":116},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"I
     know that our target audience will love the game. I''m just nervous we won''t
     be granted a license.","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Charlie","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
@@ -4503,6 +4503,29 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 839790356259416070, guid: 1b54442b0b05f6142b596996f2d3bab8, type: 3}
   m_PrefabInstance: {fileID: 1646905866}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1646905870 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 839790356259416068, guid: 1b54442b0b05f6142b596996f2d3bab8, type: 3}
+  m_PrefabInstance: {fileID: 1646905866}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1646905871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646905870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e86f8fabe36347245967e6d72cf08c66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lowMedBound: 330
+  medHighBound: 450
+  LowBMG: {fileID: 8300000, guid: c8da0037e39aec64ab10dbe2fefcdcb0, type: 3}
+  MedBMG: {fileID: 8300000, guid: e605de0d30d8cd84b8deb638994a84d6, type: 3}
+  HighBMG: {fileID: 8300000, guid: c0a060673c73e6e45b281207ee05f8c9, type: 3}
+  audioSource: {fileID: 1646905869}
 --- !u!1 &1677354086
 GameObject:
   m_ObjectHideFlags: 0
@@ -4639,7 +4662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 4
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":37.3333435,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"And
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":54.6666565,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"And
     while I don''t agree with all of your choices, I can see how this game could
     be a potential hit. Good work.","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Benjamine","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
@@ -4926,7 +4949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 4
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":37.3333435,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"I
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":54.6666565,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"I
     have taken meticulous notes of all of your decisions, and I should warn you that
     I wouldn''t count on the ANEA granting this game a license.","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Benjamine","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
@@ -5789,7 +5812,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5213591442477351824, guid: 1b54442b0b05f6142b596996f2d3bab8, type: 3}
   m_PrefabInstance: {fileID: 1646905866}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1646905870}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c20ac7408999e484da12223b43417763, type: 3}

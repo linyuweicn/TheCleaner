@@ -152,8 +152,8 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
                 score = ConvoGlobalManager.agreeableScore + ConvoGlobalManager.dailyTotalScore;
             else if(useAgreeableAndOverallTotalScore)
                 score = ConvoGlobalManager.agreeableScore + ConvoGlobalManager.overallTotalScore;
-            Debug.Log(convSequenceB4 + "convSequenceB4");
-            Debug.Log(B4Conversations[0].convoArray.Length + "B4Conversations[0].convoArray.Length");
+            //Debug.Log(convSequenceB4 + "convSequenceB4");
+            //Debug.Log(B4Conversations[0].convoArray.Length + "B4Conversations[0].convoArray.Length");
             if (convSequenceB4 <= B4Conversations[0].convoArray.Length)
             {
                 if (score <= lowMedBound)
@@ -210,7 +210,7 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
 
         //Debug.Log("Clicked");
         convSequenceAfter++;
-        Debug.Log(convSequenceAfter + " convSequenceAfter");
+        //Debug.Log(convSequenceAfter + " convSequenceAfter");
         CharaCollider.enabled = true;
         if (useOnlyAgreeableScore || useAgreeableAndDailyTotalScore || useAgreeableAndOverallTotalScore)
         {
@@ -221,8 +221,8 @@ public class NPCConvWithWhiteBoard : MonoBehaviour
                 score = ConvoGlobalManager.agreeableScore + ConvoGlobalManager.dailyTotalScore;
             else if(useAgreeableAndOverallTotalScore)
                 score = ConvoGlobalManager.agreeableScore + ConvoGlobalManager.overallTotalScore;
-            Debug.Log(AfterConversations[0].convoArray.Length + " AfterConversations[0].convoArray.Length");
-            //Debug.Log(convSequence);
+            //Debug.Log(AfterConversations[0].convoArray.Length + " AfterConversations[0].convoArray.Length");
+            ///Debug.Log(convSequence);
             if (convSequenceAfter <= AfterConversations[0].convoArray.Length)
             {
 

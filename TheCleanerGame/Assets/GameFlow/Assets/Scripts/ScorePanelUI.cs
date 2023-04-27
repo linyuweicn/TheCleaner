@@ -16,7 +16,7 @@ public class ScorePanelUI : BrainstormPanelUI
     private Sprite CensorshipOriginal;
     [SerializeField] Sprite CensorshipAngry;
     [SerializeField] Sprite CensorshipHappy;
-
+    private bool hasCaulculatedScore;
 
     [Serializable]
     private class ScoreFiller
@@ -108,7 +108,7 @@ public class ScorePanelUI : BrainstormPanelUI
         if (scoreDictionary.ContainsKey(ScoreType.Production)) { SetUpScoreFiller(scoreDictionary[ScoreType.Production], totalProduction / count); }
 
 
-        Debug.Log(" totalProduction: " + totalProduction + " totalSatisfaction "+ totalSatisfaction +  " totalCensorship Values: " + totalCensorship + " totalCreativity: " + totalCreativity + " totalScore:" + totalScore + " count" + count);
+        //Debug.Log(" totalProduction: " + totalProduction + " totalSatisfaction "+ totalSatisfaction +  " totalCensorship Values: " + totalCensorship + " totalCreativity: " + totalCreativity + " totalScore:" + totalScore + " count" + count);
 
     }
 
@@ -164,8 +164,14 @@ public class ScorePanelUI : BrainstormPanelUI
         GameObject cgm = GameObject.Find("ConvoGlobalManager");
         if(cgm != null)
         {
-            ConvoGlobalManager cgmScript = cgm.GetComponent<ConvoGlobalManager>();
-            cgmScript.UpdateScoreWithWhiteboardScore((int)(totalScore/count));
+          if (!hasCaulculatedScore)
+            {
+                ConvoGlobalManager cgmScript = cgm.GetComponent<ConvoGlobalManager>();
+                cgmScript.UpdateScoreWithWhiteboardScore((int)(totalScore / count));
+                hasCaulculatedScore = true;
+            }
+            
+          
         }
     }
 
