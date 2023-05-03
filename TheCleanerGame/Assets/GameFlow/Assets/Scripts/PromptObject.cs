@@ -29,7 +29,7 @@ public class PromptObject : ScriptableObject
         public List<AnswerObject> answerColumn;
     }
     #endregion
-
+    private void OnEnable() => hideFlags = HideFlags.DontUnloadUnusedAsset;
     public Vector2Int ID
     {
         get { return id; }
@@ -49,7 +49,7 @@ public class PromptObject : ScriptableObject
 
     #region initialization
 
-    private void OnEnable()
+    public void Initialize()
     {
         Answers = new List<List<AnswerObject>>();
         for (int i = 0; i < AnswersStorage.Count; i++)
@@ -87,7 +87,6 @@ public class PromptObject : ScriptableObject
                 if (text[i] == '[')
                 {
                     //Debug.LogError("BEginning " + answerIndex + " " + text + " " + Answers[answerIndex].Count);
-                    if (Answers[answerIndex].Count == 0) { Debug.LogError("That's the issue"); };
                     if (Answers[answerIndex][0] != null)
                     {
                         overwrite = true;
@@ -120,6 +119,7 @@ public class PromptObject : ScriptableObject
     public void SetTopImage(AnswerBox box)
     {
         image = box.GetAnswer().image;
+        topAnswer = new List<string>();
     }
 
     #endregion

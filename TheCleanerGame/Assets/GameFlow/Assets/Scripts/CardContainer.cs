@@ -29,6 +29,12 @@ public class CardContainer : BrainstormPanelUI
     #endregion
 
     #region initialization
+    private new void Awake()
+    {
+        base.Awake();
+        Prompt.Initialize();
+    }
+
     void Start()
     {
         audioManager = FindObjectOfType<AudioManager>();
@@ -43,6 +49,7 @@ public class CardContainer : BrainstormPanelUI
         mouseOverPrompt.text = associatedPrompt.Text;
 
         recordedPos = transform.localPosition;
+
     }
     #endregion
 

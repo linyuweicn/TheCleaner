@@ -35,7 +35,7 @@ public class BeginFeedbackUI : FeedbackUI
                 {
                     if (feedbacktext[i] == '[')
                     {
-                        if (referencedPrompts.Count > promptIndex &&
+                        if (referencedPrompts.Count > promptIndex && referencedPrompts[promptIndex].prompt.Answers != null &&
                             referencedPrompts[promptIndex].prompt.Answers[referencedPrompts[promptIndex].column][0] != null)
                         {
                             overwrite = true;

@@ -7,7 +7,7 @@ public abstract class BrainstormPanelUI : MonoBehaviour
     [SerializeField] protected BrainstormGeneralManager brainstormManager;
     [SerializeField] protected List<BrainstormState> activeStates;
 
-    private void Awake()
+    protected void Awake()
     {
         AddToBrainstormGeneralManager();
     }

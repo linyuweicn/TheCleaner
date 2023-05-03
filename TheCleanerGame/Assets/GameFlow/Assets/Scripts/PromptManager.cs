@@ -109,9 +109,9 @@ public class PromptManager : MonoBehaviour
     {
         if (!prompt.completed)
         {
+            Debug.LogError("Completed prompt " + prompt.Text);
             prompt.completed = true;
             IncrementCompletedPromptCount(prompt.Type);
-            
         }
     }
     #endregion
