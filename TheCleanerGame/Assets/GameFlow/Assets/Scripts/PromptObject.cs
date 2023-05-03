@@ -119,7 +119,6 @@ public class PromptObject : ScriptableObject
     public void SetTopImage(AnswerBox box)
     {
         image = box.GetAnswer().image;
-        topAnswer = new List<string>();
     }
 
     #endregion
