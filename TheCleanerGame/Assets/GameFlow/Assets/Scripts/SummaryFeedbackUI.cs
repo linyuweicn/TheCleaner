@@ -57,8 +57,6 @@ public class SummaryFeedbackUI : FeedbackUI
                     {
                         totalScore += a[0].totalscore;
                         count++;
-
-                        
                     }
                 }
             }
@@ -80,7 +78,6 @@ public class SummaryFeedbackUI : FeedbackUI
             }
         }
     }
-
     public override void OnClick(FeedbackButton button)
     {
         brainstormManager.SwitchFeedbackState(FeedbackType.Null);

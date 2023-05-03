@@ -18,7 +18,8 @@ public enum FeedbackType
     Critical,
     Neutral,
     Summary,
-    Note
+    Note,
+    Begin
 }
 
 public enum CriticType
