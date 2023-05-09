@@ -3157,6 +3157,7 @@ MonoBehaviour:
   EndingCamera: {fileID: 1112813260}
   EndingCredits: {fileID: 941063709}
   ConvScipt: {fileID: 1686199444}
+  detection: {fileID: 0}
 --- !u!1 &941063709
 GameObject:
   m_ObjectHideFlags: 0
@@ -3174,7 +3175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &941063710
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3915,11 +3916,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9177617733875777336, guid: 4c73a6c272e85074d8770b4ee89fb519, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -66088.78
+      value: -66172.2
       objectReference: {fileID: 0}
     - target: {fileID: 9177617733875777336, guid: 4c73a6c272e85074d8770b4ee89fb519, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -649477.56
+      value: -650905.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c73a6c272e85074d8770b4ee89fb519, type: 3}
@@ -6143,6 +6144,10 @@ PrefabInstance:
       propertyPath: DeActiveCamera
       value: 
       objectReference: {fileID: 1112813262}
+    - target: {fileID: 485728221127968775, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 485728221127968892, guid: bdba8049b62dd33479d390396a37ca5b, type: 3}
       propertyPath: ExitDoor
       value: 

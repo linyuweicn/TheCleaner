@@ -8,6 +8,7 @@ public class TriggerEndingCutScene : MonoBehaviour
     public GameObject EndingCamera;
     public GameObject EndingCredits;
     public NPCConvWithWhiteBoard ConvScipt;
+    public endingdetections detection;
 
     public void Start()
     {
@@ -16,7 +17,16 @@ public class TriggerEndingCutScene : MonoBehaviour
 
     public void TriggerCredits()
     {
-        StartCoroutine(WaitToTrigger());
+       if(detection!= null && detection.YiranComplete && detection.CharlieComplete && detection.LucaCopmlete)
+        {
+            StartCoroutine(WaitToTrigger());
+        }
+        else
+        {
+            Debug.Log("wrong ending");
+
+        }
+
     }
 
     IEnumerator WaitToTrigger( )

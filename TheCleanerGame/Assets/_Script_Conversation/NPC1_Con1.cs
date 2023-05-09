@@ -14,6 +14,7 @@ public class NPC1_Con1 : MonoBehaviour
     public NPCConversation RefuseLicenseOrCoverConversation;
     private BoxCollider2D CharaCollider;
     ConvoGlobalManager LicenseResult;
+    private bool canturnoff;
 
 
     [SerializeField] BoxCollider2D[] boxCollider2D;
@@ -53,7 +54,10 @@ public class NPC1_Con1 : MonoBehaviour
             }
         }
 
-      
+        if (canturnoff)
+        {
+            CharaCollider.enabled = false;
+        }
     }
 
     public void OnMouseDown()
@@ -69,18 +73,16 @@ public class NPC1_Con1 : MonoBehaviour
         if (LicenseResult.BuyLicense || ConvoGlobalManager.Betrayl)
         {
             ConversationManager.Instance.StartConversation(BuyLicenseOrBetraylConversation);
+
             
-            if (LicenseResult.BuyLicense)
-                CharaCollider.enabled = false;
         }
         else
         {
             ConversationManager.Instance.StartConversation(RefuseLicenseOrCoverConversation);
-            if (!LicenseResult.BuyLicense)
-                CharaCollider.enabled = false;
+            
         }
-
-     }
+        canturnoff = true;
+    }
 
     }
     
